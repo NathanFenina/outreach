@@ -54,9 +54,24 @@ outbound-machine/
 - [x] Exports Clay reçus (39 CSV via Drive) + liste call FullEnrich (157 contacts, 100 % tel)
 - [x] Consolidation : 39 fichiers -> **7 574 leads uniques** (767 doublons retirés)
       - 4 551 avec email (60 %), 3 023 sans email (à ré-enrichir)
-- [ ] CRM Supabase (source de vérité) — table `leads` + statuts par canal
+- [x] CRM Supabase — projet "LinkedIn App", tables `outbound_*` (schéma `db/schema.sql`)
+      - `outbound_leads` chargée : **7 574 leads** (4 551 côté email, 3 023 sans email)
+      - RLS activée, tables verrouillées
+- [ ] Charger la liste call (157 tel) en `channel='call'` + exclusion mutuelle
 - [ ] Split cohortes email / call
-- [ ] Push Instantly
+- [ ] Connecter Instantly + push cohorte email
+- [ ] Webhook Instantly -> maj statuts dans `outbound_campaign_leads`
+
+## CRM Outbound (Supabase)
+
+Modèle en 3 tables (voir `db/schema.sql`) :
+- `outbound_leads` — source de vérité (qui contacter).
+- `outbound_campaigns` — campagnes email/call (+ `instantly_campaign_id`).
+- `outbound_campaign_leads` — 1 ligne = 1 lead dans 1 campagne, avec `status`
+  (`pending → sent → opened → replied → interested / bounced / unsubscribed`).
+
+Vues `outbound_v_email_leads` / `outbound_v_call_leads` = vue côté email / côté call.
+Chargement des leads : `scripts/02_load_supabase.py` (env `SUPABASE_URL`, `SUPABASE_KEY`).
 
 > Données (PII) stockées hors Git : voir `.gitignore`. Le repo ne contient que le code.
 > `scripts/01_consolidate.py` régénère `data/01_clean/master_leads.csv` depuis `data/00_raw/`.
