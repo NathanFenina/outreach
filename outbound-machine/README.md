@@ -57,10 +57,19 @@ outbound-machine/
 - [x] CRM Supabase — projet "LinkedIn App", tables `outbound_*` (schéma `db/schema.sql`)
       - `outbound_leads` chargée : **7 574 leads** (4 551 côté email, 3 023 sans email)
       - RLS activée, tables verrouillées
-- [ ] Charger la liste call (157 tel) en `channel='call'` + exclusion mutuelle
-- [ ] Split cohortes email / call
+- [x] Liste call (157 tel) chargée en `channel='call'` (exclusion mutuelle : 0 overlap)
+- [x] Registre d'audiences `outbound_audiences` (1 call + 5 email) + rattachement leads
+- [x] App web `web/` (Next.js) : onglets Cold Mail / Cold Call, audiences + prospects
+- [ ] Déployer l'app sur Vercel (root `outbound-machine/web`, 2 env vars)
+- [ ] Taguer les verticales (ré-export Clay par secteur) pour affiner les audiences
 - [ ] Connecter Instantly + push cohorte email
 - [ ] Webhook Instantly -> maj statuts dans `outbound_campaign_leads`
+
+## App web (Vercel)
+
+`web/` — Next.js, 2 onglets **Cold Mail** / **Cold Call**, lisant Supabase en
+server-side (clé `service_role`, jamais exposée au navigateur). Voir `web/README.md`
+pour le déploiement. Registre d'audiences : `db/002_audiences_registry.sql`.
 
 ## CRM Outbound (Supabase)
 
