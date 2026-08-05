@@ -1,0 +1,10 @@
+# Données = PII (emails, téléphones, noms). NE JAMAIS committer dans Git.
+# La source de vérité des leads est Supabase (le CRM), pas le repo.
+data/00_raw/
+data/01_clean/
+data/*.csv
+*.csv
+
+# garde les dossiers versionnés (structure) sans leur contenu
+!data/00_raw/.gitkeep
+!data/01_clean/.gitkeep

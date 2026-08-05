@@ -51,8 +51,12 @@ outbound-machine/
 ## Statut courant
 
 - [x] Arborescence de travail créée
-- [ ] Exports Clay reçus (en attente — export manuel côté utilisateur)
-- [ ] Récupération de la 1re liste FullEnrich (en attente de l'`enrichment_id`)
-- [ ] Nettoyage / fusion
-- [ ] Split A/B
+- [x] Exports Clay reçus (39 CSV via Drive) + liste call FullEnrich (157 contacts, 100 % tel)
+- [x] Consolidation : 39 fichiers -> **7 574 leads uniques** (767 doublons retirés)
+      - 4 551 avec email (60 %), 3 023 sans email (à ré-enrichir)
+- [ ] CRM Supabase (source de vérité) — table `leads` + statuts par canal
+- [ ] Split cohortes email / call
 - [ ] Push Instantly
+
+> Données (PII) stockées hors Git : voir `.gitignore`. Le repo ne contient que le code.
+> `scripts/01_consolidate.py` régénère `data/01_clean/master_leads.csv` depuis `data/00_raw/`.
