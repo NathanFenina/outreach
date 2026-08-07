@@ -2,6 +2,7 @@
 # La source de vérité des leads est Supabase (le CRM), pas le repo.
 data/00_raw/
 data/01_clean/
+data/sectors/
 data/*.csv
 *.csv
 
