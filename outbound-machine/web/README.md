@@ -10,12 +10,15 @@ Les données (emails, téléphones) sont lues **server-side** avec la clé
 jamais exposée (pas de préfixe `NEXT_PUBLIC_`).
 
 ## Variables d'environnement
-| Variable | Où la trouver |
+| Variable | Où la trouver / valeur |
 |---|---|
 | `SUPABASE_URL` | Supabase → Project Settings → API → Project URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API → `service_role` (secret) |
+| `BASIC_AUTH_USER` | Identifiant de connexion à l'app (au choix) |
+| `BASIC_AUTH_PASSWORD` | Mot de passe de l'app (au choix, fort) |
 
-Voir `.env.example`.
+Voir `.env.example`. **Sans `BASIC_AUTH_*`, l'app est ouverte** — définis-les en prod
+pour protéger l'accès aux données (l'app n'a pas d'autre authentification).
 
 ## Déploiement Vercel (le plus simple)
 1. Sur https://vercel.com → **Add New… → Project** → importe le repo `NathanFenina/outreach`.
