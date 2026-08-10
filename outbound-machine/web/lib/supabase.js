@@ -25,15 +25,16 @@ export async function getAudiences(channel) {
   return data || [];
 }
 
-export async function getProspects(channel, limit = 300) {
+export async function getProspects(channel, { audienceId = null, limit = 500 } = {}) {
   const sb = db();
-  const { data, error } = await sb
+  let q = sb
     .from("outbound_leads")
     .select(
-      "id,full_name,email,phone,job_title,company,persona,segment,email_certainty,location,company_size"
+      "id,full_name,email,phone,job_title,company,persona,segment,email_certainty,location,company_size,lemlist_status"
     )
-    .eq("channel", channel)
-    .limit(limit);
+    .eq("channel", channel);
+  if (audienceId) q = q.eq("audience_id", audienceId);
+  const { data, error } = await q.limit(limit);
   if (error) throw error;
   const rows = data || [];
   rows.sort(
@@ -41,6 +42,17 @@ export async function getProspects(channel, limit = 300) {
       (CERT_ORDER[a.email_certainty] ?? 2) - (CERT_ORDER[b.email_certainty] ?? 2)
   );
   return rows;
+}
+
+export async function getAudienceById(id) {
+  const sb = db();
+  const { data, error } = await sb
+    .from("outbound_audiences_counts")
+    .select("*")
+    .eq("id", id)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
 }
 
 export async function getTotals() {
