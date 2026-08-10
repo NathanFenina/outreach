@@ -31,14 +31,20 @@
 ## C. Éléments de réassurance / preuve sociale (proof bank)
 
 À piocher dans les mails (claims de Nathan, à utiliser tels quels) :
-- A bossé avec **Decathlon**.
-- A bossé avec **Point P** (à confirmer orthographe/logo).
+- A bossé avec **Le Point**, **Pluxee**, **Décathlon**.
+- Preuve résultat : **+20 % de pipeline sur le canal organique** (Le Point / Pluxee / Décathlon).
 - Classé **Top 20 SEO expert en France**.
-- **500 K€** de CA généré via le search local (référence perso Décupler).
 - "On a **gagné 30h** sur notre SEO" / "on a **automatisé** X".
 - Modèle Décupler : **agents IA pour la production, humains pour le pilotage / relation client / QA**.
+- ❌ **NE PAS utiliser** "500 K€ via le search local" → validé par Nathan comme pas crédible/pas de sens.
 
 > Règle : la preuve sociale est de la **réassurance**, pas de la personnalisation. 1 preuve max par mail.
+
+## C-bis. Règles de copy (retours Stéphanie Orrico)
+
+- ❌ **Pas de longs tirets `—`** (cadratins) : ça fait "rédigé par l'IA". Utiliser virgules, `:` ou couper la phrase.
+- **Objets des relances (mail 2, 3)** : doivent susciter la curiosité pour être ouverts (pas juste "je clôture ?").
+- **Breakup soft** : éviter "j'arrête de t'écrire, promis" (trop noir/blanc) — ce sont des leads recontactables plus tard. Formuler une pause, pas une fin définitive.
 
 ## D. Expansion géographique (À NE PAS OUBLIER)
 

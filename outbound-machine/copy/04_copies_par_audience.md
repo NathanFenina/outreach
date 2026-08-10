@@ -134,6 +134,44 @@ Nathan — Décupler
 
 ---
 
+# SÉQUENCE RÉACTIVATION (base Clay = déjà contactés / semi-tièdes)
+
+Idéale pour relancer les anciennes campagnes. Corrigée : pas de cadratins, objets curiosité, breakup soft.
+
+### Mail 1 · J0
+```
+Objet A : on s'était parlé, {prénom}   /   Objet B : l'IA te recommande ?
+Salut {prénom},
+On a échangé il y a quelque temps autour de ta visibilité. Je reviens parce que le jeu a pas mal bougé depuis.
+Une question : quand un client demande à ChatGPT ou Perplexity qui choisir sur ton marché, c'est toi qui sors, ou tes concurrents ?
+Une partie des achats B2B se décide là, avant le moindre clic sur Google, et la plupart des marques ne le voient même pas.
+Ce que je propose : 15 min, je te montre où l'IA te cite (ou cite tes concurrents) sur ta catégorie. Offert, tu repars avec de la matière quoi qu'il arrive.
+Ça te dit ?
+Nathan
+(Si le sujet ne t'intéresse pas, dis-le moi, je n'insiste pas.)
+```
+
+### Mail 2 · J+4
+```
+Objet : ChatGPT ne cite jamais {marque}
+{prénom},
+Je reviens là-dessus, le sujet est plus gros qu'il n'en a l'air.
+Avant, le SEO servait à gagner des clics. Aujourd'hui une partie des décisions se prend avant qu'un clic existe. Si ChatGPT ne cite jamais ta marque, tu perds des opportunités sans que ton Analytics ne montre rien.
+On a bossé ça avec Le Point, Pluxee et Décathlon : +20 % de pipeline sur le canal organique. Pas plus de trafic, juste les bonnes réponses au bon endroit.
+Si tu veux, 15 min et je te montre ce que ça donne sur ton marché. Offert, sans engagement.
+Nathan
+```
+
+### Mail 3 · J+10 (breakup soft)
+```
+Objet : je mets ça en pause ?
+{prénom},
+Je ne veux pas t'encombrer, donc je mets le sujet en pause de mon côté.
+Si un jour tu veux voir où l'IA te situe face à tes concurrents et par où récupérer des opportunités, un mot et je te prépare ça. Offert.
+Bonne continuation,
+Nathan
+```
+
 ## Multi-pays (rappel)
 FR d'abord. Décliner ensuite : Afrique subsaharienne (FR/EN, angle "prenez l'avance sur la visibilité IA"),
 Middle East (EN, angle premium/marque). Domaines/inboxes + horaires par géo si volume.
