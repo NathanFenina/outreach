@@ -26,7 +26,11 @@ create index if not exists outbound_leads_audience_ix on public.outbound_leads (
 create or replace view public.outbound_audiences_counts as
   select a.*, count(l.id) as nb_leads,
          count(l.id) filter (where l.email is not null) as nb_email,
-         count(l.id) filter (where l.phone is not null) as nb_phone
+         count(l.id) filter (where l.phone is not null) as nb_phone,
+         -- "in Lemlist" = pushed OK OR déjà présent dans une autre campagne Lemlist
+         count(l.id) filter (where l.lemlist_status in ('Envoyé Lemlist','Déjà en campagne Lemlist')) as nb_lemlist,
+         -- cold call : lead traité = statut différent de "À appeler"
+         count(l.id) filter (where l.channel = 'call' and l.call_status <> 'À appeler') as nb_called
   from public.outbound_audiences a
   left join public.outbound_leads l on l.audience_id = a.id
   group by a.id;
