@@ -30,7 +30,7 @@ export async function getProspects(channel, { audienceId = null, limit = 500 } =
   let q = sb
     .from("outbound_leads")
     .select(
-      "id,full_name,email,phone,job_title,company,persona,segment,email_certainty,location,company_size,lemlist_status"
+      "id,full_name,email,phone,job_title,company,persona,segment,email_certainty,location,company_size,lemlist_status,call_status,notes,industry"
     )
     .eq("channel", channel);
   if (audienceId) q = q.eq("audience_id", audienceId);

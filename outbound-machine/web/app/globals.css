@@ -70,5 +70,17 @@ td .muted{color:var(--muted)}
 .b-prob{background:var(--prob-bg);color:var(--prob)}
 .b-none{background:var(--none-bg);color:var(--none)}
 .empty{padding:40px;text-align:center;color:var(--faint)}
+.sent-pill{margin-top:8px;display:inline-block;font-size:11px;font-weight:650;padding:3px 9px;border-radius:999px;background:var(--ultra-bg);color:var(--ultra)}
+.statusSel{font-size:12.5px;font-weight:600;padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);cursor:pointer}
+.statusSel:focus{outline:2px solid var(--accent);outline-offset:1px}
+.statusSel.st-todo{color:var(--muted)}
+.statusSel.st-done{color:var(--accent-ink);border-color:var(--accent)}
+.statusSel.st-win{background:var(--ultra-bg);color:var(--ultra);border-color:var(--ultra)}
+.statusSel.st-warn{background:var(--prob-bg);color:var(--prob);border-color:var(--prob)}
+.statusSel.st-dead{color:var(--faint);text-decoration:line-through}
+.noteCell{min-width:240px}
+.noteInput{width:220px;font-size:12.5px;padding:6px 9px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink)}
+.noteInput:focus{outline:2px solid var(--accent);outline-offset:1px;background:var(--surface)}
+.savemark{margin-left:6px;font-size:12px;color:var(--ultra)}
 footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
 .err{background:var(--prob-bg);color:var(--prob);border:1px solid var(--line);border-radius:var(--radius);padding:18px;font-size:13.5px}

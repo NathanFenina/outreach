@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Tabs from "./Tabs";
+import CallRow from "./CallRow";
 import {
   getAudiences,
   getProspects,
@@ -79,6 +80,12 @@ export default async function Dashboard({ channel, audienceId }) {
                     ? `${Number(a.nb_email).toLocaleString("fr-FR")} avec email`
                     : `${Number(a.nb_phone).toLocaleString("fr-FR")} avec téléphone`}
                 </div>
+                {isEmail && Number(a.nb_lemlist) > 0 && (
+                  <div className="sent-pill">✓ {Number(a.nb_lemlist).toLocaleString("fr-FR")} envoyés Lemlist</div>
+                )}
+                {!isEmail && Number(a.nb_called) > 0 && (
+                  <div className="sent-pill">{Number(a.nb_called).toLocaleString("fr-FR")} traités</div>
+                )}
                 <div className="chips">
                   {a.segment && <span className="chip">{a.segment}</span>}
                   {a.persona && <span className="chip">{a.persona}</span>}
@@ -132,6 +139,38 @@ function Shell({ channel, totals, children }) {
 }
 
 function ProspectTable({ rows, isEmail }) {
+  if (!isEmail) {
+    // Cold call : CRM éditable (statut + remarque)
+    return (
+      <div className="card">
+        <div className="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Entreprise</th>
+                <th>Téléphone</th>
+                <th>Secteur</th>
+                <th>Statut appel</th>
+                <th>Remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((p) => (
+                <CallRow key={p.id} p={p} />
+              ))}
+              {rows.length === 0 && (
+                <tr>
+                  <td colSpan={5} className="empty">
+                    Aucun prospect dans cette audience.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="card">
       <div className="tablewrap">
@@ -139,11 +178,11 @@ function ProspectTable({ rows, isEmail }) {
           <thead>
             <tr>
               <th>Nom</th>
-              <th>{isEmail ? "Email" : "Téléphone"}</th>
+              <th>Email</th>
               <th>Poste</th>
               <th>Entreprise</th>
               <th>Effectif</th>
-              {isEmail ? <th>Qualité</th> : <th>Persona</th>}
+              <th>Qualité</th>
               <th>Statut Lemlist</th>
             </tr>
           </thead>
@@ -153,17 +192,13 @@ function ProspectTable({ rows, isEmail }) {
                 <td>
                   <span className="name">{p.full_name || "—"}</span>
                 </td>
-                <td className="muted">{isEmail ? p.email || "—" : p.phone || "—"}</td>
+                <td className="muted">{p.email || "—"}</td>
                 <td className="muted">{p.job_title || "—"}</td>
                 <td>{p.company || "—"}</td>
                 <td className="muted">{p.company_size || "—"}</td>
-                {isEmail ? (
-                  <td>
-                    <CertBadge c={p.email_certainty} />
-                  </td>
-                ) : (
-                  <td className="muted">{p.persona || "—"}</td>
-                )}
+                <td>
+                  <CertBadge c={p.email_certainty} />
+                </td>
                 <td>
                   <StatusBadge s={p.lemlist_status} />
                 </td>
