@@ -60,7 +60,7 @@ je vous prépare déjà la cartographie des 3 opportunités organiques prioritai
 si l'approche vous parle, on vous montre comment on capte ça. sinon vous gardez tout, sans engagement.
 seriez-vous contre un échange de 10 min pour vous présenter la carto ?
 Nathan — Décupler
-PS : Top 20 SEO France, 500K€ via le search local — on applique exactement ça.
+PS : on a fait +20% de pipeline sur le canal organique pour Le Point, Pluxee et Décathlon.
 PPS : pas le bon moment ? un « no biz » et je vous laisse tranquille.
 ```
 

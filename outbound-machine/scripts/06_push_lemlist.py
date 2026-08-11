@@ -14,9 +14,16 @@ Notes :
   body = {firstName, companyName, ...customVars}
 - Un lead déjà présent dans une AUTRE campagne Lemlist renvoie 500 "Lead already in
   other campaign" -> on le classe 'Déjà en campagne Lemlist' (protection anti-doublon Lemlist).
-- L'API NE permet PAS d'écrire le contenu de la séquence ni d'attacher un sender :
-  ça se fait dans l'UI Lemlist. Les variables {{firstName}}/{{companyName}} sont poussées
-  par lead et rendues par Lemlist.
+- ÉCRIRE LE CONTENU DE LA SÉQUENCE : possible via l'API (découvert le 2026-08-11).
+    POST  /api/sequences/{seqId}/steps            (crée une étape)
+    PATCH /api/sequences/{seqId}/steps/{stepId}   (modifie une étape)
+  body = {"type":"email","subject":..., "message":<html>, "delay":<jours>, "index":<n>}
+  -> "type" est OBLIGATOIRE et doit valoir "email" (sinon 400 "Type is required" /
+     "Invalid request body"). Le seqId s'obtient via GET /api/campaigns/{cid}/sequences.
+  Le "message" est du HTML (un <div> par ligne, <div><br></div> pour un saut).
+  Variables Lemlist : {{firstName}}, {{companyName}}, {{companyDomain}} (natives) +
+  variables custom ({{concurrent}}, {{categorie}}, {{secteur}}...) remplies par lead.
+- Attacher un sender / lancer la campagne : se fait dans l'UI Lemlist.
 """
 import os, json, time, base64, urllib.request, urllib.parse, urllib.error
 
@@ -42,6 +49,30 @@ def add_lead(campaign_id, email, fields):
 def create_campaign(name):
     rq = urllib.request.Request("https://api.lemlist.com/api/campaigns",
         data=json.dumps({"name": name}).encode(), method="POST",
+        headers={"Authorization": "Basic " + AUTH, "Content-Type": "application/json", "User-Agent": UA})
+    return json.load(urllib.request.urlopen(rq, timeout=30))
+
+def get_sequence_id(campaign_id):
+    """Renvoie le 1er seqId d'une campagne (via GET .../sequences)."""
+    rq = urllib.request.Request(f"https://api.lemlist.com/api/campaigns/{campaign_id}/sequences",
+        headers={"Authorization": "Basic " + AUTH, "User-Agent": UA})
+    seqs = json.load(urllib.request.urlopen(rq, timeout=30))
+    return next(iter(seqs))  # les clés du dict sont les seqId
+
+def lines_to_html(lines):
+    """['a','', 'b'] -> HTML style éditeur Lemlist (un <div> par ligne)."""
+    return "".join("<div><br></div>" if l == "" else f"<div>{l}</div>" for l in lines)
+
+def write_step(seq_id, subject, message_html, delay=0, index=1, step_id=None):
+    """Crée (POST) ou modifie (PATCH si step_id fourni) une étape email de séquence.
+    'type':'email' est obligatoire côté API Lemlist."""
+    body = {"type": "email", "subject": subject, "message": message_html,
+            "delay": delay, "index": index}
+    url = f"https://api.lemlist.com/api/sequences/{seq_id}/steps"
+    method = "POST"
+    if step_id:
+        url += f"/{step_id}"; method = "PATCH"
+    rq = urllib.request.Request(url, data=json.dumps(body).encode(), method=method,
         headers={"Authorization": "Basic " + AUTH, "Content-Type": "application/json", "User-Agent": UA})
     return json.load(urllib.request.urlopen(rq, timeout=30))
 
