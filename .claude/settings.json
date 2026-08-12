@@ -1,6 +1,14 @@
 {
   "permissions": {
     "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
       "mcp__Supabase__execute_sql",
       "mcp__Supabase__apply_migration",
       "mcp__Supabase__list_tables",
@@ -9,7 +17,15 @@
       "mcp__Supabase__get_publishable_keys",
       "mcp__Supabase__list_migrations",
       "mcp__Supabase__get_advisors",
-      "mcp__Supabase__get_logs"
+      "mcp__Supabase__get_logs",
+      "mcp__FullEnrich__get_credits",
+      "mcp__FullEnrich__search_people",
+      "mcp__FullEnrich__search_companies",
+      "mcp__FullEnrich__list_industries",
+      "mcp__Google_Drive__read_file_content",
+      "mcp__Google_Drive__search_files",
+      "mcp__Google_Drive__copy_file",
+      "mcp__Google_Drive__get_file_metadata"
     ]
   }
 }
