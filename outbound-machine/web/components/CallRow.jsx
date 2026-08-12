@@ -5,9 +5,11 @@ import { updateLeadCrm } from "../app/actions";
 const STATUSES = [
   "À appeler",
   "Appelé",
-  "RDV",
   "Répondu",
+  "RDV",
   "Rappeler",
+  "SMS à envoyer",
+  "SMS envoyé",
   "Pas intéressé",
   "Mauvais numéro",
   "Ne pas contacter",
@@ -16,15 +18,18 @@ const STATUSES = [
 const STATUS_CLASS = {
   "À appeler": "st-todo",
   Appelé: "st-done",
-  RDV: "st-win",
   Répondu: "st-win",
+  RDV: "st-win",
   Rappeler: "st-warn",
+  "SMS à envoyer": "st-warn",
+  "SMS envoyé": "st-done",
   "Pas intéressé": "st-dead",
   "Mauvais numéro": "st-dead",
   "Ne pas contacter": "st-dead",
 };
 
 export default function CallRow({ p }) {
+  const perso = p.personalization || {};
   const [status, setStatus] = useState(p.call_status || "À appeler");
   const [notes, setNotes] = useState(p.notes || "");
   const [pending, start] = useTransition();
@@ -34,17 +39,43 @@ export default function CallRow({ p }) {
     start(async () => {
       const r = await updateLeadCrm(p.id, patch);
       setFlash(r.ok ? "ok" : "err");
-      setTimeout(() => setFlash(""), 1400);
+      setTimeout(() => setFlash(""), 1600);
     });
   }
 
   return (
     <tr>
       <td>
-        <span className="name">{p.full_name || p.company || "—"}</span>
+        <span className="name">{p.company || p.full_name || "—"}</span>
       </td>
       <td className="muted">{p.phone || "—"}</td>
-      <td className="muted">{p.industry || p.company_size || "—"}</td>
+      <td className="muted">
+        {perso.rating ? (
+          <span>
+            ⭐ {perso.rating}
+            {perso.reviews ? ` (${perso.reviews})` : ""}
+          </span>
+        ) : (
+          "—"
+        )}
+      </td>
+      <td>
+        {perso.website ? (
+          <a className="lnk" href={perso.website} target="_blank" rel="noreferrer">
+            site
+          </a>
+        ) : (
+          "—"
+        )}
+        {perso.maps_url && (
+          <>
+            {" · "}
+            <a className="lnk" href={perso.maps_url} target="_blank" rel="noreferrer">
+              maps
+            </a>
+          </>
+        )}
+      </td>
       <td>
         <select
           className={"statusSel " + (STATUS_CLASS[status] || "")}

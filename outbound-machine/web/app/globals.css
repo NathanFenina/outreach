@@ -58,9 +58,13 @@ section{margin-top:26px}
 
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 .tablewrap{overflow-x:auto}
+/* boîte scrollable : header figé + scroll vertical ET horizontal accessibles sans aller au bas */
+.tallscroll{max-height:72vh;overflow:auto}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th,td{text-align:left;padding:11px 14px;white-space:nowrap}
-thead th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:640;border-bottom:1px solid var(--line)}
+thead th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:640;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2;background:var(--surface)}
+.lnk{color:var(--accent-ink);font-weight:600}
+.lnk:hover{text-decoration:underline}
 tbody tr{border-top:1px solid var(--line)}
 tbody tr:first-child{border-top:0}
 td .name{font-weight:600}

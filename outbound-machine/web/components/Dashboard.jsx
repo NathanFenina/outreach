@@ -143,13 +143,14 @@ function ProspectTable({ rows, isEmail }) {
     // Cold call : CRM éditable (statut + remarque)
     return (
       <div className="card">
-        <div className="tablewrap">
+        <div className="tablewrap tallscroll">
           <table>
             <thead>
               <tr>
                 <th>Entreprise</th>
                 <th>Téléphone</th>
-                <th>Secteur</th>
+                <th>Note Google</th>
+                <th>Liens</th>
                 <th>Statut appel</th>
                 <th>Remarque</th>
               </tr>
@@ -160,7 +161,7 @@ function ProspectTable({ rows, isEmail }) {
               ))}
               {rows.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="empty">
+                  <td colSpan={6} className="empty">
                     Aucun prospect dans cette audience.
                   </td>
                 </tr>
@@ -173,7 +174,7 @@ function ProspectTable({ rows, isEmail }) {
   }
   return (
     <div className="card">
-      <div className="tablewrap">
+      <div className="tablewrap tallscroll">
         <table>
           <thead>
             <tr>
