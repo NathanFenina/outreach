@@ -65,6 +65,8 @@ th,td{text-align:left;padding:11px 14px;white-space:nowrap}
 thead th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:640;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2;background:var(--surface)}
 .lnk{color:var(--accent-ink);font-weight:600}
 .lnk:hover{text-decoration:underline}
+.lnk.wa{color:#25a366}
+.cellclip{display:inline-block;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}
 tbody tr{border-top:1px solid var(--line)}
 tbody tr:first-child{border-top:0}
 td .name{font-weight:600}

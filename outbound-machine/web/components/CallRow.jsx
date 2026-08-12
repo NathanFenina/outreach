@@ -43,10 +43,17 @@ export default function CallRow({ p }) {
     });
   }
 
+  const waDigits = (p.phone || "").replace(/[^0-9]/g, "");
+  const waText = encodeURIComponent(
+    `Bonjour, Nathan de Décupler. Suite à mon appel, je vous envoie la carte des zones autour de Nantes où vous pouvez récupérer des demandes de devis. Je vous partage ça ?`
+  );
+
   return (
     <tr>
       <td>
-        <span className="name">{p.company || p.full_name || "—"}</span>
+        <span className="name cellclip" title={p.company || p.full_name || ""}>
+          {p.company || p.full_name || "—"}
+        </span>
       </td>
       <td className="muted">{p.phone || "—"}</td>
       <td className="muted">
@@ -72,6 +79,20 @@ export default function CallRow({ p }) {
             {" · "}
             <a className="lnk" href={perso.maps_url} target="_blank" rel="noreferrer">
               maps
+            </a>
+          </>
+        )}
+        {waDigits && (
+          <>
+            {" · "}
+            <a
+              className="lnk wa"
+              href={`https://wa.me/${waDigits}?text=${waText}`}
+              target="_blank"
+              rel="noreferrer"
+              title="Ouvrir WhatsApp avec un message pré-rempli"
+            >
+              WhatsApp
             </a>
           </>
         )}
