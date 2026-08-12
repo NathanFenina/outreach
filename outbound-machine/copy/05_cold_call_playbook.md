@@ -77,3 +77,42 @@ C'est quoi votre mail ?"
 ## KPI cohorte call (à tracker)
 appels · barrages · discussions · **R2 pris** · mails récupérés (permission) · taux R2/discussion.
 Session max 2h. Batch ~100. A/B sur l'accroche.
+
+---
+
+## SMS / WhatsApp — reco d'expert (Nathan, 12/08)
+
+**Décision : bouton in-app WhatsApp d'abord, SMS en repli. C'est le plus pertinent, le plus intéressant et le moins cher.**
+
+### Pourquoi WhatsApp click-to-chat (déjà implémenté dans l'app)
+- **Coût : 0€.** Le lien `wa.me/{numéro}?text=...` ouvre WhatsApp avec un message pré-rempli. Aucun
+  abonnement, aucun coût par message, aucune API à connecter. On paie zéro.
+- **Zéro friction de conformité.** Pas de A2P/10DLC, pas de déclaration d'expéditeur, pas de STOP
+  obligatoire comme en SMS marketing. On envoie depuis un vrai compte, comme un humain.
+- **Meilleur canal de réponse en local/B2C artisan.** Les artisans lisent WhatsApp plus vite que
+  l'email, et une conversation ouverte = R2 plus facile qu'un mail.
+- **Contexte conservé.** On envoie APRÈS un appel (statut « SMS à envoyer ») => le message rappelle
+  l'appel et propose la carte des zones. Suite naturelle, pas du cold pur.
+
+### Ce qui est déjà en place dans l'app
+- Bouton **WhatsApp** par ligne (composant `CallRow.jsx`) : ouvre WhatsApp web/mobile avec un texte
+  pré-rempli (relance carte des zones autour de Nantes).
+- Statuts CRM dédiés : **« SMS à envoyer »** et **« SMS envoyé »** pour piloter le suivi.
+
+### Message WhatsApp pré-rempli (par défaut, éditable)
+```
+Bonjour {prénom}, Nathan de Décupler. Suite à mon appel, je vous envoie la carte des zones
+autour de {ville} où vous pouvez récupérer des demandes de devis. Je vous partage ça ?
+```
+
+### Limites honnêtes + repli SMS
+- WhatsApp click-to-chat = **1 par 1, manuel** (pas d'envoi de masse). C'est voulu : ça reste
+  personnel et non-spam. Pour du volume, ce n'est pas l'outil.
+- **Numéros sans WhatsApp** (rares en B2C FR, plus fréquents en B2B fixe) => repli **SMS**.
+- Repli SMS le moins cher / le plus simple si besoin de volume plus tard : provider type
+  **Brevo / OVH SMS / smsfactor** (~0,04-0,06€/SMS, mention STOP obligatoire). À ne connecter
+  que si le manuel WhatsApp montre ses limites. Ne pas sur-investir avant d'avoir la preuve.
+
+**Recommandation nette : garder le bouton WhatsApp manuel (gratuit, déjà là), tracker via les
+statuts « SMS à envoyer / envoyé », et ne connecter un provider SMS payant que si le volume le
+justifie. Simple, pertinent, pas cher.**

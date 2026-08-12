@@ -121,3 +121,32 @@ Regards, Nathan
   - Niveau 1 (~70%) : micro-signal léger, campagne segmentée.
   - Niveau 2 (~25%) : insight enrichi (1-3 pages, 1 concurrent, 1 opportunité).
   - Niveau 3 (~5%, ABM) : Loom / cartographie / maquette pour gros comptes.
+
+## H. Mails bruts "que Nathan aimerait recevoir" (verbatim, 12/08)
+
+> Capturés tels quels (rien ne se perd). Versions **challengées + retenues** dans
+> `06_angles_offres_sequences.md` section A. Ne pas les envoyer bruts.
+
+1. **Site moderne déjà préparé** : « J'ai pris les devants et je vous ai préparé un site moderne, je
+   peux vous le montrer ? C'est offert mais faut payer pour le hoster. »
+   -> ❌ « payez l'hébergement » = piège. Retenu : maquette stratégique d'UNE page (voir 06 A.1).
+2. **Quick wins audit** : « Je suis allé sur le site de Décupler, j'ai trouvé quelques quick wins :
+   manque de contenu, pas de bot sur robots.txt, contenu pas adapté au GEO... Seriez-vous contre de
+   découvrir les autres points lors d'un appel de 30 min ? Ça ne vous engage à rien. »
+   -> ❌ jargon `robots.txt` + call 30 min trop tôt. Retenu : audit sans jargon, permission facile (06 D).
+3. **Outil GEO gratuit** : « On a développé un outil SEO qui vous donne l'audit GEO, gratuit, il vous
+   dit où vous en êtes, vous pouvez le tester juste là. Petit cadeau audit E-E-A-T. »
+   -> ✅ reverse lead magnet, à activer quand l'outil de score GEO est prêt (skill `seo-geo-score`).
+4. **Masterclass FR** : « hello Marc, je cherchais des boîtes à booster en SEO/GEO et je suis tombé sur
+   site.com, j'ai vu que vous avez bossé avec X et Y. On accompagne les boîtes B2B à générer +20 leads
+   SEO/GEO/mois via une cartographie. Je souhaite t'offrir une première mini-cartographie. Si satisfait,
+   je t'en prépare une plus dense. Sinon tu gardes celle-ci. »
+   -> ✅ = notre campagne B (Carto). Mécanique validée.
+5. **Idée produit par verticale** : « hello Marc, je suis tombé sur votre site de cheveux, ça peut être
+   intéressant de proposer une simulation capillaire / un système de nettoyage de photo immo. »
+   -> ✅ à décliner avec l'agent de perso sur e-commerce / cibles à cas d'usage produit évident.
+
+### Angle le plus fort (avis GPT, confirmé Claude)
+**Micro-cartographie personnalisée** = 1 opportunité à intention commerciale + 1 concurrent qui la
+capte + 1 estimation de potentiel + 1 plan d'action. Rend Décupler tangible >> « audit SEO gratuit ».
+=> c'est exactement la logique des campagnes A (X-Ray) et B (Carto). Cf. `07_campagnes_A_B_completes.md`.

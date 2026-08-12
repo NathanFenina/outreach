@@ -191,11 +191,25 @@ function ProspectTable({ rows, isEmail }) {
             {rows.map((p) => (
               <tr key={p.id}>
                 <td>
-                  <span className="name">{p.full_name || "—"}</span>
+                  <span className="name cellclip" title={p.full_name || ""}>
+                    {p.full_name || "—"}
+                  </span>
                 </td>
-                <td className="muted">{p.email || "—"}</td>
-                <td className="muted">{p.job_title || "—"}</td>
-                <td>{p.company || "—"}</td>
+                <td className="muted">
+                  <span className="cellclip" title={p.email || ""}>
+                    {p.email || "—"}
+                  </span>
+                </td>
+                <td className="muted">
+                  <span className="cellclip" title={p.job_title || ""}>
+                    {p.job_title || "—"}
+                  </span>
+                </td>
+                <td>
+                  <span className="cellclip" title={p.company || ""}>
+                    {p.company || "—"}
+                  </span>
+                </td>
                 <td className="muted">{p.company_size || "—"}</td>
                 <td>
                   <CertBadge c={p.email_certainty} />
