@@ -1,0 +1,455 @@
+<title>Base Copy Décupler</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#F5F7F9; --surface:#FFFFFF; --surface-2:#EDF1F5;
+  --ink:#171B21; --muted:#586170; --faint:#8b94a1;
+  --line:#E3E7EC; --line-2:#D3D9E0;
+  --accent:#2952E3; --accent-ink:#1E3FC0; --accent-soft:#E9EDFD;
+  --keep:#0F855A; --keep-soft:#E1F3EA;
+  --drop:#C0433A; --drop-soft:#FAE9E7;
+  --warn:#9C6212; --warn-soft:#F7EEDC;
+  --shadow:0 1px 2px rgba(20,30,50,.04),0 8px 30px rgba(20,30,50,.06);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono","Menlo",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1218; --surface:#161C24; --surface-2:#1D2530;
+  --ink:#E8EDF3; --muted:#9CA6B4; --faint:#6B7684;
+  --line:#28313C; --line-2:#333E4B;
+  --accent:#8AA0FF; --accent-ink:#A9B9FF; --accent-soft:#1A2440;
+  --keep:#45C68B; --keep-soft:#0F2B22;
+  --drop:#F08379; --drop-soft:#3A1E1C;
+  --warn:#E0A44A; --warn-soft:#33260F;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1218; --surface:#161C24; --surface-2:#1D2530;
+  --ink:#E8EDF3; --muted:#9CA6B4; --faint:#6B7684;
+  --line:#28313C; --line-2:#333E4B;
+  --accent:#8AA0FF; --accent-ink:#A9B9FF; --accent-soft:#1A2440;
+  --keep:#45C68B; --keep-soft:#0F2B22;
+  --drop:#F08379; --drop-soft:#3A1E1C;
+  --warn:#E0A44A; --warn-soft:#33260F;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+header.hero{border-bottom:1px solid var(--line);background:
+  radial-gradient(120% 140% at 88% -20%,var(--accent-soft) 0%,transparent 46%),var(--surface)}
+.hero .wrap{padding:54px 24px 40px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent-ink);font-weight:600}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.04;
+  margin:.28em 0 .2em;letter-spacing:-.01em;text-wrap:balance}
+.lede{font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--muted);max-width:60ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:26px;font-size:13.5px;color:var(--faint);
+  font-family:var(--mono)}
+.meta b{color:var(--ink);font-weight:600}
+
+/* layout with toc */
+.shell{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:1000px){.shell{grid-template-columns:230px minmax(0,1fr);gap:48px;
+  align-items:start;padding-top:8px}}
+nav.toc{display:none}
+@media(min-width:1000px){nav.toc{display:block;position:sticky;top:20px;padding:26px 0 40px;
+  font-size:13.5px;max-height:calc(100vh - 40px);overflow:auto}}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+nav.toc a{display:block;color:var(--muted);padding:5px 0 5px 30px;position:relative;line-height:1.35;
+  border-left:2px solid var(--line);}
+nav.toc a::before{counter-increment:t;content:counter(t,decimal-leading-zero);
+  position:absolute;left:8px;font-family:var(--mono);font-size:11px;color:var(--faint);top:6px}
+nav.toc a:hover{color:var(--ink);text-decoration:none;border-left-color:var(--accent)}
+
+main{padding:14px 0 90px;min-width:0}
+section{padding:40px 0;border-top:1px solid var(--line)}
+section:first-child{border-top:0}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent-ink);font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);border-radius:2px}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);line-height:1.12;
+  margin:0 0 .5em;letter-spacing:-.01em;text-wrap:balance}
+h3{font-size:1.06rem;font-weight:680;margin:1.8em 0 .5em;letter-spacing:-.005em}
+p{margin:.7em 0;max-width:68ch}
+.sub{color:var(--muted);max-width:66ch}
+strong{font-weight:670}
+
+/* pull quote */
+.pull{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.32;
+  font-style:italic;color:var(--ink);border-left:3px solid var(--accent);
+  padding:6px 0 6px 24px;margin:26px 0;max-width:40ch;text-wrap:balance}
+.pull b{font-style:normal;font-weight:640;color:var(--accent-ink)}
+
+/* principle list */
+.rules{display:grid;gap:14px;margin:22px 0;padding:0;list-style:none;counter-reset:r}
+.rules li{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px 16px 56px;position:relative;box-shadow:var(--shadow)}
+.rules li::before{counter-increment:r;content:counter(r);position:absolute;left:16px;top:15px;
+  width:26px;height:26px;border-radius:7px;background:var(--accent-soft);color:var(--accent-ink);
+  font-family:var(--mono);font-weight:700;font-size:13px;display:grid;place-items:center}
+.rules b{display:block;margin-bottom:2px}
+.rules .small{font-size:13.5px;color:var(--muted);font-family:var(--mono)}
+
+/* decision rows keep/drop */
+.decis{display:grid;gap:10px;margin:20px 0}
+.drow{display:grid;grid-template-columns:1fr;gap:8px;background:var(--surface);
+  border:1px solid var(--line);border-radius:12px;padding:15px 16px;box-shadow:var(--shadow)}
+@media(min-width:640px){.drow{grid-template-columns:1.1fr 1fr;align-items:center;gap:18px}}
+.drow .q{color:var(--muted);font-size:14.5px}
+.verdict{display:flex;gap:9px;align-items:flex-start;font-size:14.5px}
+.tag{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.03em;
+  padding:3px 8px;border-radius:6px;margin-top:1px}
+.tag.keep{background:var(--keep-soft);color:var(--keep)}
+.tag.drop{background:var(--drop-soft);color:var(--drop)}
+
+/* email card */
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);margin:16px 0}
+.mail .subj{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--line);
+  background:var(--surface-2);font-size:13px}
+.mail .subj .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint)}
+.mail .subj .val{font-weight:640;color:var(--ink)}
+.mail .body{padding:15px 17px;font-family:var(--mono);font-size:13px;line-height:1.62;
+  color:var(--ink);white-space:pre-wrap;word-break:break-word}
+.mail .var{color:var(--accent-ink);font-weight:640}
+.mail .foot{padding:9px 17px 13px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line)}
+
+/* two-col campaigns */
+.ab{display:grid;gap:18px;margin-top:8px}
+@media(min-width:860px){.ab{grid-template-columns:1fr 1fr}}
+.col-h{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
+.col-h .pill{font-family:var(--mono);font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px}
+.pill.a{background:var(--accent-soft);color:var(--accent-ink)}
+.pill.b{background:var(--keep-soft);color:var(--keep)}
+.col-h h3{margin:0}
+.col-sub{font-size:13.5px;color:var(--muted);margin:2px 0 6px}
+
+/* generic cards grid */
+.grid{display:grid;gap:14px;margin:20px 0}
+@media(min-width:620px){.grid.two{grid-template-columns:1fr 1fr}}
+@media(min-width:720px){.grid.three{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 17px;
+  box-shadow:var(--shadow)}
+.card h4{margin:0 0 5px;font-size:14.5px;font-weight:680}
+.card p{margin:0;font-size:13.5px;color:var(--muted);max-width:none}
+.card .star{color:var(--warn);font-size:12px}
+
+/* proof chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.chip{font-size:13px;background:var(--surface-2);border:1px solid var(--line);border-radius:20px;
+  padding:5px 13px;color:var(--ink)}
+.chip.no{background:var(--drop-soft);color:var(--drop);border-color:transparent;
+  text-decoration:line-through;text-decoration-color:var(--drop)}
+
+/* callout */
+.note{border-radius:12px;padding:14px 16px;margin:20px 0;font-size:14.5px;border:1px solid var(--line);
+  background:var(--surface-2)}
+.note.warn{background:var(--warn-soft);border-color:transparent}
+.note b{font-weight:670}
+
+/* segment table-ish */
+.seg{display:grid;gap:12px;margin:18px 0}
+.seg .row{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+  box-shadow:var(--shadow)}
+.seg .row .name{font-weight:680;font-size:14.5px;display:flex;align-items:center;gap:9px}
+.seg .row .name .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.seg .row .txt{font-size:13.8px;color:var(--muted);margin-top:4px}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:13px}
+footer .wrap{padding:26px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer .mono{font-family:var(--mono);color:var(--faint)}
+.hr-note{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:6px}
+
+/* econ levels */
+.levels{display:grid;gap:12px;margin:18px 0}
+@media(min-width:720px){.levels{grid-template-columns:repeat(3,1fr)}}
+.lvl{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--surface);
+  box-shadow:var(--shadow);position:relative;overflow:hidden}
+.lvl .pct{font-family:var(--serif);font-size:1.9rem;font-weight:600;line-height:1}
+.lvl .nm{font-size:13px;font-weight:680;margin:6px 0 4px;text-transform:uppercase;letter-spacing:.05em;
+  font-family:var(--mono);color:var(--accent-ink)}
+.lvl p{font-size:13.3px;color:var(--muted);margin:0}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Décupler · Machine d'acquisition B2B</div>
+    <h1>Base Copy Cold Outbound</h1>
+    <p class="lede">La doctrine, les frameworks et les deux campagnes A/B en test. Un seul principe directeur : prouver la valeur avant le rendez-vous, en offrant un actif tangible plutôt qu'en pitchant.</p>
+    <div class="meta">
+      <span>Segment pilote <b>SaaS / Fintech · CEO-CMO</b></span>
+      <span>Canaux <b>Cold mail · Cold call · WhatsApp</b></span>
+      <span>Outils <b>Supabase · Lemlist</b></span>
+      <span>MàJ <b>13 août 2026</b></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="shell">
+  <nav class="toc" aria-label="Sommaire">
+    <ol>
+      <li><a href="#principe">Le principe central</a></li>
+      <li><a href="#doctrine">Doctrine : 6 règles non négociables</a></li>
+      <li><a href="#decisions">Garder / jeter : les arbitrages</a></li>
+      <li><a href="#preuve">Banque de preuve &amp; règles de style</a></li>
+      <li><a href="#offres">Offres irrésistibles</a></li>
+      <li><a href="#frameworks">Frameworks d'accroche</a></li>
+      <li><a href="#campagnes">Campagnes A/B en test</a></li>
+      <li><a href="#sequence">Séquence &amp; réactivation</a></li>
+      <li><a href="#segments">Angles par segment</a></li>
+      <li><a href="#call">Cold call &amp; WhatsApp</a></li>
+      <li><a href="#econ">Économie de l'analyse</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- 1 -->
+    <section id="principe">
+      <div class="eyebrow">Le principe central</div>
+      <h2>Reverse lead magnet + radiographie</h2>
+      <p class="sub">En 2026, deux choses sont mortes : l'audit générique, et la fausse personnalisation « j'ai vu votre profil » (repérable comme de l'IA). Ce qui gagne, c'est une observation unique, spécifique et vérifiable, suivie d'un actif gratuit et d'un CTA à friction quasi nulle.</p>
+      <div class="pull">Le mail 1 <b>montre la faille, il ne la répare pas.</b> La réparation se livre après la permission. C'est ça qui crée la conversation.</div>
+      <p class="sub">L'avantage déloyal de Décupler : ses simulateurs (visibilité GEO, E-E-A-T, cartographie IA) <strong>sont</strong> le reverse lead magnet. On n'offre pas « un audit », on offre un morceau de solution.</p>
+    </section>
+
+    <!-- 2 -->
+    <section id="doctrine">
+      <div class="eyebrow">Doctrine</div>
+      <h2>Six règles non négociables</h2>
+      <ol class="rules">
+        <li><b>Objet camouflage</b><span class="small">1–2 mots, minuscules, ton collègue interne. Ex : visibilité ia · carto seo · 15 prompts</span></li>
+        <li><b>80–120 mots, moins de 15 secondes de lecture</b><span class="small">Test à voix basse. Si c'est trop long, on coupe.</span></li>
+        <li><b>Structure en 4 temps</b><span class="small">relevance vérifiable → problème non technique → 1 preuve → CTA orienté « non »</span></li>
+        <li><b>Écrire comme un humain</b><span class="small">pas de jargon (robots.txt…), pas de salutation pompeuse, pas d'AI slop, pas de cadratins —</span></li>
+        <li><b>1 ICP + 1 problème + 1 offre par campagne</b><span class="small">Jamais « SEO + GEO + contenu + technique » d'un coup.</span></li>
+        <li><b>Le mail ne vend pas, il qualifie</b><span class="small">Objectif unique : la permission de livrer l'actif. La vente se fait à la livraison ou au call.</span></li>
+      </ol>
+    </section>
+
+    <!-- 3 -->
+    <section id="decisions">
+      <div class="eyebrow">Arbitrages d'expert</div>
+      <h2>Ce qu'on garde, ce qu'on jette</h2>
+      <p class="sub">Les six hésitations de départ, tranchées. La logique est constante : on protège la curiosité et la crédibilité.</p>
+      <div class="decis">
+        <div class="drow"><div class="q">« J'ai vu que vous avez bossé avec X » comme personnalisation ?</div>
+          <div class="verdict"><span class="tag drop">JETÉ</span><span>Générique. On garde plutôt UNE observation business vérifiable (relevance, pas flatterie).</span></div></div>
+        <div class="drow"><div class="q">« J'ai préparé une analyse, seriez-vous contre que je la partage ? »</div>
+          <div class="verdict"><span class="tag keep">CŒUR</span><span>Reverse lead magnet + CTA orienté « non ». C'est la mécanique centrale.</span></div></div>
+        <div class="drow"><div class="q">Balancer le lien du simulateur dès le mail 1 ?</div>
+          <div class="verdict"><span class="tag drop">JETÉ</span><span>Friction + délivrabilité. On teaser, on livre après la réponse.</span></div></div>
+        <div class="drow"><div class="q">Mettre tous les quick wins dans le mail 1 ?</div>
+          <div class="verdict"><span class="tag drop">JETÉ</span><span>On teaser UN insight (la faille). Tout donner = plus aucune raison de répondre.</span></div></div>
+        <div class="drow"><div class="q">Attaquer un pain précis (« 15 prompts où vous n'êtes pas cité ») ?</div>
+          <div class="verdict"><span class="tag keep">GARDÉ</span><span>Concret, chiffrable, nouveau mécanisme (GEO). Le meilleur angle.</span></div></div>
+        <div class="drow"><div class="q">Demander un call de 30 min au premier contact ?</div>
+          <div class="verdict"><span class="tag drop">JETÉ</span><span>Trop tôt. On demande une permission facile : « je vous l'envoie ? »</span></div></div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="preuve">
+      <div class="eyebrow">Réassurance</div>
+      <h2>Banque de preuve &amp; règles de style</h2>
+      <p class="sub">La preuve sociale est de la réassurance, pas de la personnalisation. <strong>Une seule par mail.</strong></p>
+      <div class="chips">
+        <span class="chip">A bossé avec Le Point, Pluxee, Décathlon</span>
+        <span class="chip">+20 % de pipeline sur le canal organique</span>
+        <span class="chip">Top 20 SEO expert en France</span>
+        <span class="chip">30h/mois gagnées via l'automatisation</span>
+        <span class="chip no">500 K€ via le search local</span>
+      </div>
+      <h3>Règles de style (retours Stéphanie Orrico)</h3>
+      <div class="grid three">
+        <div class="card"><h4>Pas de cadratins —</h4><p>Les longs tirets font « rédigé par l'IA ». Virgules, deux-points, ou on coupe la phrase.</p></div>
+        <div class="card"><h4>Objets de relance = curiosité</h4><p>Les mails 2 et 3 doivent donner envie d'ouvrir. Pas de « je clôture ? » plat.</p></div>
+        <div class="card"><h4>Breakup soft</h4><p>Une pause, pas une fin définitive. Ce sont des leads recontactables plus tard.</p></div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="offres">
+      <div class="eyebrow">L'actif immédiat</div>
+      <h2>Offres irrésistibles</h2>
+      <p class="sub">Toujours un actif tangible et gratuit livré tout de suite ; le résultat (leads, visibilité, infra) se vend au call et se livre en back-end.</p>
+      <div class="grid two">
+        <div class="card"><h4>Benchmark visibilité IA <span class="star">★</span></h4><p>« J'ai testé N prompts sur ChatGPT / Perplexity / Google AI pour votre catégorie : qui est cité, qui domine, pourquoi vous n'apparaissez pas encore. »</p></div>
+        <div class="card"><h4>La page manquante</h4><p>Une requête commerciale où le prospect est absent + plan de page, mots-clés, concurrents qui captent, potentiel estimé.</p></div>
+        <div class="card"><h4>Cartographie « revenu SEO inexploité »</h4><p>X clusters à intention commerciale, ~Y demandes/mois. Toujours présenté comme estimation, jamais garantie.</p></div>
+        <div class="card"><h4>Score de citation dans les IA</h4><p>Taux de présence, prompts où la marque est absente, sources citées, N contenus à créer pour devenir recommandable.</p></div>
+        <div class="card"><h4>Money page teardown (Loom 3 min)</h4><p>Une vidéo courte sur une page stratégique : souvent plus différenciant qu'un PDF.</p></div>
+        <div class="card"><h4>Content gap des commerciaux</h4><p>Comparatifs, alternatives, prix, intégrations, ROI, sécurité, migration : ce qui manque pour aider le sales.</p></div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="frameworks">
+      <div class="eyebrow">Accroches</div>
+      <h2>Frameworks d'accroche</h2>
+      <p class="sub">Des frameworks, pas des templates figés. On A/B teste. Les <span class="mail"><span class="var" style="font-family:var(--mono)">{variables}</span></span> sont remplies par lead.</p>
+
+      <h3>Framework A — X-Ray GEO <span style="color:var(--warn);font-size:13px">★ le plus fort</span></h3>
+      <div class="mail">
+        <div class="subj"><span class="lbl">Objet</span><span class="val">visibilité ia</span></div>
+        <div class="body">hello <span class="var">{prénom}</span>, j'ai testé ce que répondent ChatGPT et Perplexity sur <span class="var">{catégorie}</span> : <span class="var">{concurrent}</span> ressort, <span class="var">{entreprise}</span> n'apparaît sur aucun des prompts que j'ai lancés.
+j'ai listé les 15 prompts exacts où vous êtes absents, plus le format de contenu qui fait citer <span class="var">{concurrent}</span> à votre place.
+(on a fait ça pour Décathlon entre autres)
+seriez-vous contre que je vous partage la liste ?
+Nathan, Décupler</div>
+        <div class="foot">≈ 70 mots · livrable après « oui » : la liste des 15 prompts + comment y apparaître.</div>
+      </div>
+
+      <h3>Framework C — Échantillon offert (adapté du mail masterclass Elena / UltB)</h3>
+      <div class="mail">
+        <div class="subj"><span class="lbl">Objet</span><span class="val">carto {secteur}</span></div>
+        <div class="body">hello <span class="var">{prénom}</span>, je bosse avec des boîtes <span class="var">{secteur}</span> qui veulent plus de demandes entrantes via le search.
+je vous prépare déjà la cartographie des 3 opportunités organiques prioritaires pour <span class="var">{entreprise}</span>, offert, pour vous montrer le niveau.
+si l'approche vous parle, on vous montre comment on capte ça. sinon vous gardez tout, sans engagement.
+seriez-vous contre un échange de 10 min pour vous présenter la carto ?
+Nathan, Décupler
+PS : +20 % de pipeline organique pour Le Point, Pluxee et Décathlon.</div>
+        <div class="foot">≈ 95 mots · risk-reversal « vous gardez tout » + CTA orienté « non ».</div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="campagnes">
+      <div class="eyebrow">En test · audience SaaS-Fintech (200 leads, split 120/80)</div>
+      <h2>Les deux campagnes A/B</h2>
+      <p class="sub">Même ICP, même actif immédiat, deux promesses différentes. Objectif du test : quelle formulation convertit le mieux à froid. Variables Lemlist substituées à l'envoi (coût par lead nul).</p>
+      <div class="ab">
+        <div>
+          <div class="col-h"><span class="pill a">A</span><h3>X-Ray GEO</h3></div>
+          <div class="col-sub">« Voici les prompts IA exacts où votre concurrent sort et où vous êtes absent. »</div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J0 · Objet</span><span class="val">visibilité ia</span></div>
+            <div class="body">hello <span class="var">{firstName}</span>, j'ai testé ce que répondent ChatGPT et Perplexity sur <span class="var">{categorie}</span> : <span class="var">{concurrent}</span> ressort, <span class="var">{companyName}</span> n'apparaît sur aucun des prompts que j'ai lancés.
+j'ai listé les 15 prompts exacts où vous êtes absents, plus le format de contenu qui fait citer <span class="var">{concurrent}</span> à votre place.
+(on a fait ça pour Décathlon entre autres)
+seriez-vous contre que je vous partage la liste ?
+Nathan, Décupler
+PS : 3 de ces prompts sont des requêtes d'achat pures.</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+3 · Objet</span><span class="val">re: 15 prompts</span></div>
+            <div class="body"><span class="var">{firstName}</span>, sur <span class="var">{categorie}</span> il y a 3 prompts d'achat où la marque citée gagne la vente avant le moindre clic sur Google.
+<span class="var">{companyName}</span> peut devenir la réponse par défaut sur ces 3 prompts, c'est rapide à corriger.
+je vous envoie la liste + le plan pour y ranker ?
+Nathan</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+7 · Objet</span><span class="val">je vous laisse la liste ?</span></div>
+            <div class="body"><span class="var">{firstName}</span>, je mets le sujet en pause de mon côté, sans souci si ce n'est pas le moment.
+la liste des prompts GEO pour <span class="var">{companyName}</span> est déjà prête. si vous la voulez, répondez juste « prompts ».
+Nathan, Décupler</div>
+          </div>
+        </div>
+        <div>
+          <div class="col-h"><span class="pill b">B</span><h3>Échantillon Carto</h3></div>
+          <div class="col-sub">« Je vous prépare déjà la cartographie, offert. Satisfait, on va plus loin ; sinon vous gardez tout. »</div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J0 · Objet</span><span class="val">carto {secteur}</span></div>
+            <div class="body">hello <span class="var">{firstName}</span>, je bosse avec des boîtes <span class="var">{secteur}</span> qui veulent plus de demandes entrantes via le search.
+je vous prépare déjà la cartographie des 3 opportunités organiques prioritaires pour <span class="var">{companyName}</span>, offert, pour vous montrer le niveau : mots-clés qui rapportent, prompts IA à viser, projection de demandes/mois.
+si l'approche vous parle, on vous montre comment on capte ça. sinon vous gardez tout, sans engagement.
+seriez-vous contre un échange de 10 min ?
+Nathan, Décupler
+PS : +20 % de pipeline organique pour Le Point, Pluxee et Décathlon.</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+3 · Objet</span><span class="val">re: carto {secteur}</span></div>
+            <div class="body"><span class="var">{firstName}</span>, un aperçu concret : la carto ne parle pas de « plus de trafic », mais des requêtes d'achat de <span class="var">{categorie}</span> que <span class="var">{concurrent}</span> capte déjà et pas vous.
+j'ai aussi une projection du nombre de demandes/mois que ça représente (estimation, pas une promesse).
+je vous envoie la première version ?
+Nathan</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+7 · Objet</span><span class="val">je vous laisse la carto ?</span></div>
+            <div class="body"><span class="var">{firstName}</span>, je clôture simplement le sujet.
+la 1re version de la cartographie SEO/GEO pour <span class="var">{companyName}</span> est déjà prête. si vous la voulez, répondez juste « carto ».
+Nathan, Décupler
+PPS : pas le bon moment ? un « no biz » et je vous laisse tranquille.</div>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Garde-fou variables :</b> chaque balise porte un fallback (ex. <span style="font-family:var(--mono);font-size:13px">{concurrent | "vos concurrents"}</span>) ; un lead sans <span style="font-family:var(--mono);font-size:13px">concurrent / categorie / secteur</span> ne part pas dans la campagne qui en dépend.</div>
+    </section>
+
+    <!-- 8 -->
+    <section id="sequence">
+      <div class="eyebrow">Timing &amp; relances</div>
+      <h2>Séquence type &amp; réactivation</h2>
+      <p class="sub">La cadence standard demande une permission de plus en plus facile, puis met le sujet en pause sans le fermer.</p>
+      <div class="grid two">
+        <div class="card"><h4>J0 — Accroche + offre d'actif</h4><p>Framework A ou C. CTA orienté « non ».</p></div>
+        <div class="card"><h4>J+3 — Relance sans pitch</h4><p>« Je voulais m'assurer que vous aviez vu — le point qui saute aux yeux c'est {fait précis}. Je vous envoie l'analyse ? »</p></div>
+        <div class="card"><h4>J+7 — Offre d'actif « clôture »</h4><p>« J'ai déjà préparé la 1re version. Si vous la voulez, répondez juste « carto ». »</p></div>
+        <div class="card"><h4>J+12 — Breakup (optionnel)</h4><p>Une ligne, porte de sortie douce. On met en pause, on ne ferme pas.</p></div>
+      </div>
+      <h3>Réponse quand ils disent oui</h3>
+      <div class="pull" style="font-size:1.1rem">Vendre la rustine, pas le garage.</div>
+      <p class="sub">On livre l'actif promis + <strong>une seule</strong> next step (« le point le plus rentable c'est X, je vous montre comment on le met en place en 10 min ? »). On ne pitche jamais toute l'infra d'un coup.</p>
+    </section>
+
+    <!-- 9 -->
+    <section id="segments">
+      <div class="eyebrow">Ciblage</div>
+      <h2>Angles par segment</h2>
+      <p class="sub">L'angle = le pain du segment. On promet une chose précise, pas « SEO + GEO + contenu ».</p>
+      <div class="seg">
+        <div class="row"><div class="name"><span class="dot" style="background:var(--accent)"></span>SaaS / IT / Fintech</div><div class="txt">Capturer les recherches de comparaison et d'évaluation qui précèdent une demande de démo. Pages comparaison / alternative / intégration, visibilité IA. Persona : CEO, CMO, Head of Growth.</div></div>
+        <div class="row"><div class="name"><span class="dot" style="background:var(--keep)"></span>E-commerce</div><div class="txt">Capter des requêtes transactionnelles laissées aux concurrents. Catégories manquantes, guides d'achat, visibilité IA / Shopping, pages catégorie qui rankent mais ne vendent pas.</div></div>
+        <div class="row"><div class="name"><span class="dot" style="background:var(--warn)"></span>BTP / Artisans / Local</div><div class="txt">Plus d'appels et de devis via Google Maps et le local. Zones non couvertes, fiche Google Business Profile, avis, pages « service + ville ». Souvent meilleur en cold call.</div></div>
+        <div class="row"><div class="name"><span class="dot" style="background:var(--drop)"></span>Agence-Ads / Consulting</div><div class="txt">GEO en marque blanche pour leurs clients, ou capacité d'exécution. Angle : « vos clients vont demander leur visibilité IA en 2026. »</div></div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="call">
+      <div class="eyebrow">Canal local</div>
+      <h2>Cold call &amp; WhatsApp</h2>
+      <p class="sub">Pour le local (artisans), l'appel prime et le premier objectif n'est pas de vendre : c'est d'obtenir la permission d'envoyer l'actif (la carte des zones).</p>
+      <div class="mail">
+        <div class="subj"><span class="lbl">Script call · accroche 15s</span><span class="val">local / zones</span></div>
+        <div class="body">Bonjour <span class="var">{prénom}</span>, Nathan de Décupler, je fais court.
+J'ai regardé votre visibilité sur Google à <span class="var">{ville}</span> et j'ai repéré un truc précis qui vous fait perdre des demandes de devis.
+Sur <span class="var">{ville voisine}</span>, quand les gens cherchent <span class="var">{service}</span>, c'est <span class="var">{concurrent}</span> qui sort, pas vous. Et c'est pas cher à corriger.
+Je vous envoie la carte des zones + ce qu'il faut faire, vous regardez tranquille. C'est quoi votre mail ?</div>
+      </div>
+      <div class="note"><b>WhatsApp d'abord, SMS en repli.</b> Le bouton WhatsApp click-to-chat (message pré-rempli après l'appel) est gratuit, sans contrainte de conformité, et lu plus vite que l'email en local. Manuel et 1 par 1, donc non-spam. Un provider SMS payant seulement si le volume l'exige.</div>
+    </section>
+
+    <!-- 11 -->
+    <section id="econ">
+      <div class="eyebrow">Ne pas se ruiner en IA</div>
+      <h2>L'économie de l'analyse</h2>
+      <p class="sub">On ne prépare pas un audit complet pour chaque prospect. Une machine à micro-insights, en trois niveaux : l'agent doit pouvoir répondre <strong>SKIP</strong> s'il ne trouve rien de solide, sinon il invente et tue la crédibilité.</p>
+      <div class="levels">
+        <div class="lvl"><div class="pct">70%</div><div class="nm">Niveau 1 · signal léger</div><p>Secteur, page/angle manquant, concurrent, ville. Campagne segmentée, 1re ligne légèrement adaptée.</p></div>
+        <div class="lvl"><div class="pct">25%</div><div class="nm">Niveau 2 · insight enrichi</div><p>1–3 pages, 1–2 concurrents, une opportunité précise. Meilleure première ligne.</p></div>
+        <div class="lvl"><div class="pct">5%</div><div class="nm">Niveau 3 · ABM</div><p>Loom, mini-cartographie ou maquette. Gros comptes ou répondants chauds uniquement.</p></div>
+      </div>
+      <p class="hr-note">Expansion prévue : France d'abord, puis Afrique subsaharienne (FR/EN, angle « prenez l'avance sur la visibilité IA ») et Middle East (EN, angle premium/marque).</p>
+    </section>
+  </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Base de copy · Décupler — machine d'acquisition B2B</span>
+    <span class="mono">Doctrine → frameworks → A/B test → scale</span>
+  </div>
+</footer>
