@@ -214,6 +214,7 @@ footer .mono{font-family:var(--mono);color:var(--faint)}
       <li><a href="#frameworks">Frameworks d'accroche</a></li>
       <li><a href="#accroches">Banque d'accroches (12)</a></li>
       <li><a href="#campagnes">Campagnes A/B en test</a></li>
+      <li><a href="#usp">Séquences à valider (2 USP × 4)</a></li>
       <li><a href="#sequence">Séquence &amp; réactivation</a></li>
       <li><a href="#segments">Angles par segment</a></li>
       <li><a href="#call">Cold call &amp; WhatsApp</a></li>
@@ -456,6 +457,87 @@ PPS : pas le bon moment ? un « no biz » et je vous laisse tranquille.</div>
         </div>
       </div>
       <div class="note"><b>Garde-fou variables :</b> chaque balise porte un fallback (ex. <span style="font-family:var(--mono);font-size:13px">{concurrent | "vos concurrents"}</span>) ; un lead sans <span style="font-family:var(--mono);font-size:13px">concurrent / categorie / secteur</span> ne part pas dans la campagne qui en dépend.</div>
+    </section>
+
+    <!-- usp sequences to validate -->
+    <section id="usp">
+      <div class="eyebrow">À valider avant lancement · cadence J0 / J2 / J3 / J5</div>
+      <h2>Séquences 2 USP × 4 messages</h2>
+      <p class="sub">Structure du coach : accroche &amp; teaser → « manque de temps ? » + outil interne → offre signature (RDV + cadeau) → breakup 3 raisons. Esprit UltB gardé : on offre, vous gardez tout.</p>
+      <div class="ab">
+        <div>
+          <div class="col-h"><span class="pill a">USP 1</span><h3>X-Ray GEO</h3></div>
+          <div class="col-sub">variables : concurrent, categorie</div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J0 · accroche</span><span class="val">j'arrive pas à vous trouver</span></div>
+            <div class="body">hello <span class="var">{{firstName}}</span>, j'ai testé ce que répondent ChatGPT et Perplexity sur <span class="var">{{categorie}}</span>. <span class="var">{{concurrent}}</span> ressort, <span class="var">{{companyName}}</span> n'apparaît sur aucun des prompts que j'ai lancés.
+j'ai listé les 15 prompts exacts où vous êtes absents + le format de contenu qui fait citer <span class="var">{{concurrent}}</span> à votre place.
+(on a fait ça pour Décathlon entre autres)
+seriez-vous contre un échange de 10 min que je vous partage la liste et le plan d'action ?
+Nathan, Décupler
+PS : 3 de ces prompts sont des requêtes d'achat pures.
+PPS : si c'est pas vous qui gérez ça, vous me dites vers qui me tourner ?</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+2 · outil interne</span><span class="val">re: j'arrive pas à vous trouver</span></div>
+            <div class="body"><span class="var">{{firstName}}</span>, si vous manquez de temps, pas besoin d'attendre notre échange : on a développé un outil interne qui vous sort votre score de visibilité IA sur <span class="var">{{categorie}}</span>.
+vous mettez votre URL, il vous donne où vous en êtes + les premières actions. je vous envoie le lien ?
+Nathan</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+3 · offre signature</span><span class="val">je vous prépare 2 articles ?</span></div>
+            <div class="body"><span class="var">{{firstName}}</span>, on prend 20 min, on ouvre ensemble ChatGPT/Perplexity, je vous montre quel concurrent est cité et ce qu'il faut rédiger pour récupérer sa place.
+et si on cale ce RDV, je vous écris gratuitement 1 à 2 contenus GEO-friendly, que vous gardez quoi qu'il arrive.
+ça vous dit ?
+Nathan, Décupler</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+5 · breakup 3 raisons</span><span class="val">je clôture, {{firstName}} ?</span></div>
+            <div class="body"><span class="var">{{firstName}}</span>, sans réponse je pars du principe que :
+1. ce n'est pas vous qui gérez la visibilité (vers qui me tourner ?),
+2. vous le lancez déjà en interne (top, je vous laisse),
+3. ce n'est pas le moment (on en reparle plus tard ?).
+un mot et j'arrête. la liste des 15 prompts reste dispo si vous la voulez.
+Nathan</div>
+          </div>
+        </div>
+        <div>
+          <div class="col-h"><span class="pill b">USP 2</span><h3>Opportunités organiques</h3></div>
+          <div class="col-sub">variable : secteur</div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J0 · analyse offerte</span><span class="val">petit cadeau {{companyName}}</span></div>
+            <div class="body">hello <span class="var">{{firstName}}</span>, je bosse avec des boîtes <span class="var">{{secteur}}</span> qui veulent plus de demandes entrantes via le search.
+je vous ai préparé une analyse avec les 10 grandes opportunités organiques prioritaires pour <span class="var">{{companyName}}</span>, offert, pour vous montrer le niveau : les mots-clés qui rapportent, les prompts IA à viser, et une projection de leads/mois.
+si l'approche vous parle, on vous montre comment on capte ça. sinon vous gardez tout, sans engagement.
+seriez-vous contre un échange de 10 min pour vous présenter la carto ?
+Nathan Fenina, Décupler
+PS : on a travaillé sur la visibilité organique chez Le Point, Pluxee et Décathlon.
+PPS : pas le bon moment ? un « no biz » et je vous laisse tranquille.</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+2 · outil</span><span class="val">re: petit cadeau {{companyName}}</span></div>
+            <div class="body"><span class="var">{{firstName}}</span>, si vous manquez de temps pour qu'on en parle, je peux déjà vous partager la matière : un outil interne qui, depuis votre URL, sort les opportunités organiques + votre score de visibilité IA sur <span class="var">{{secteur}}</span>.
+vous le testez, on cale 10 min seulement si ça vous parle. je vous envoie le lien ?
+Nathan</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+3 · cas client + RDV</span><span class="val">comme {{secteur}} X ?</span></div>
+            <div class="body"><span class="var">{{firstName}}</span>, vous me faites penser à une boîte <span class="var">{{secteur}}</span> qu'on accompagne : elle captait peu de demandes, ses concurrents raflaient les requêtes d'achat. on a priorisé 10 pages + le format GEO, résultat : plus de demandes qualifiées sans dépendre du paid.
+on fait le même exercice pour <span class="var">{{companyName}}</span> en 20 min ? je vous laisse la carto + 1 contenu rédigé, que vous gardez.
+Nathan, Décupler</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">J+5 · breakup 3 raisons</span><span class="val">je clôture, {{firstName}} ?</span></div>
+            <div class="body"><span class="var">{{firstName}}</span>, sans réponse, je pars du principe que :
+1. ce n'est pas vous qui gérez le sujet (vers qui me tourner ?),
+2. vous êtes déjà bien couvert en organique (bravo, je vous laisse),
+3. ce n'est pas prioritaire là (on en reparle plus tard ?).
+un mot et j'arrête. la cartographie des 10 opportunités pour <span class="var">{{companyName}}</span> reste prête si vous la voulez.
+Nathan</div>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Statut :</b> en attente de ta validation. Rien n'est préparé ni poussé tant que la copy n'est pas figée. Prochaine étape une fois validée : variables (secteur cheap, concurrent = recherche) sur les 272 leads IT-Services, puis import dans 2 campagnes taguées.</div>
     </section>
 
     <!-- 8 -->
