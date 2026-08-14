@@ -79,3 +79,23 @@ On NE prépare PAS un audit complet pour chaque prospect. Machine à **micro-ins
 - App (plus tard) : table `outbound_templates` (framework, objet, corps, séquence, segment,
   variante géo/langue, statut A/B, taux de réponse) + onglet "Copy". On branche Lemlist ensuite.
 - Statut prospect : colonne `lemlist_status` déjà en base (À importer → Importé → Répondu…).
+
+---
+
+## 8. Mise à jour — retours coach Jason Béraud (session août 2026)
+
+Compléments à intégrer (détail complet : `10_debrief_coach_jason.md`) :
+
+1. **1re ligne = une question** ("Vous êtes déjà lancé sur le GEO / les LLM ?"). Systématique.
+2. **Plus de "vous" que de "je"** ("je" seulement caché derrière des clients).
+3. **Promesse vendeuse, chiffrée et datée** : « j'accompagne les {secteur} à être positionnés en
+   GEO en moins de 3 mois, +18% de leads en moyenne » (pattern interrupt façon Ads).
+4. **Structure de séquence (4 mails)** : TOF (info/actif) → MOF (comment / calculateur / cas client
+   Problème-Agiter-Solution-Outcome) → Offre signature (roadmap + RDV + articles offerts) → Breakup.
+5. **Cadence J0 / J2 / J3 / J5** (Fibonacci), sprint de 2 semaines, **batch de 500**.
+6. **Funnel email → call lié** : liens dans chaque mail pour récolter les clics, le call devient du
+   **warm call** (retargeting cliqueurs → ouvreurs → non-ouvreurs).
+7. **Objet** : curiosité MAIS compréhensible. ⚠️ "carto" trop énigmatique, à remplacer.
+8. **CTA vidéo sur mesure** : ~80% des réponses laissent un numéro → vidéo puis appel.
+9. **Volume de validation** : ne pas juger une offre sous ~6 000 contacts / 3 mois (2 000 mini).
+10. **BTP = bourrin** (prix/résultat/ROI tout de suite) ; **B2B sur-sollicité** = ok si gros budget.

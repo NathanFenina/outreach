@@ -163,7 +163,13 @@ strong{font-weight:670}
   box-shadow:var(--shadow)}
 .seg .row .name{font-weight:680;font-size:14.5px;display:flex;align-items:center;gap:9px}
 .seg .row .name .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.seg .row .name .num{flex:none;width:24px;height:24px;border-radius:7px;background:var(--accent-soft);
+  color:var(--accent-ink);font-family:var(--mono);font-weight:700;font-size:12px;display:grid;
+  place-items:center;font-variant-numeric:tabular-nums}
 .seg .row .txt{font-size:13.8px;color:var(--muted);margin-top:4px}
+.seg .row .txt .src{font-family:var(--mono);font-size:11px;color:var(--faint);
+  border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-left:4px;white-space:nowrap}
+.seg .row .txt .src.new{color:var(--keep);border-color:transparent;background:var(--keep-soft)}
 
 /* footer */
 footer{border-top:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:13px}
@@ -206,10 +212,13 @@ footer .mono{font-family:var(--mono);color:var(--faint)}
       <li><a href="#preuve">Banque de preuve &amp; règles de style</a></li>
       <li><a href="#offres">Offres irrésistibles</a></li>
       <li><a href="#frameworks">Frameworks d'accroche</a></li>
+      <li><a href="#accroches">Banque d'accroches (12)</a></li>
       <li><a href="#campagnes">Campagnes A/B en test</a></li>
       <li><a href="#sequence">Séquence &amp; réactivation</a></li>
       <li><a href="#segments">Angles par segment</a></li>
       <li><a href="#call">Cold call &amp; WhatsApp</a></li>
+      <li><a href="#btp">Campagne BTP</a></li>
+      <li><a href="#coach">Retours du coach</a></li>
       <li><a href="#econ">Économie de l'analyse</a></li>
     </ol>
   </nav>
@@ -324,6 +333,67 @@ PS : +20 % de pipeline organique pour Le Point, Pluxee et Décathlon.</div>
       </div>
     </section>
 
+    <!-- 6b -->
+    <section id="accroches">
+      <div class="eyebrow">Inventaire complet</div>
+      <h2>Banque d'accroches à tester</h2>
+      <p class="sub">Toutes les accroches abordées, numérotées. Règle d'or : on ne garde que celles qui <strong>offrent toujours quelque chose</strong>. Le « garde / jette » se tranche au fil des tests.</p>
+      <div class="seg">
+        <div class="row"><div class="name"><span class="num">1</span>X-Ray GEO / prompts</div><div class="txt">Offre : la liste des 15 prompts IA où le concurrent sort et vous non. <span class="src">campagne A</span></div></div>
+        <div class="row"><div class="name"><span class="num">2</span>Audit score chiffré</div><div class="txt">Offre : le score /100 et ce qu'il révèle. <span class="src new">nouveau</span></div></div>
+        <div class="row"><div class="name"><span class="num">3</span>Relance « vous avez reçu l'audit ? »</div><div class="txt">Relance sans pitch, sur un fait précis de l'audit. <span class="src new">nouveau</span></div></div>
+        <div class="row"><div class="name"><span class="num">4</span>Cartographie offerte</div><div class="txt">Offre : mini-carto (mots-clés + prompts + projection). <span class="src">campagne B</span></div></div>
+        <div class="row"><div class="name"><span class="num">5</span>Page manquante / mot-clé</div><div class="txt">Offre : le plan de la page à intention commerciale que le concurrent capte.</div></div>
+        <div class="row"><div class="name"><span class="num">6</span>Quick wins sans jargon</div><div class="txt">Offre : 3 opportunités liées à l'acquisition (jamais « robots.txt » à un dirigeant).</div></div>
+        <div class="row"><div class="name"><span class="num">7</span>Outil / audit GEO gratuit</div><div class="txt">Offre : le lien de l'outil qui sort le score (reverse lead magnet).</div></div>
+        <div class="row"><div class="name"><span class="num">8</span>Loom / vidéo sur mesure</div><div class="txt">Offre : une vidéo 3 min, la faille et la correction. ≈ 80 % des réponses laissent un numéro.</div></div>
+        <div class="row"><div class="name"><span class="num">9</span>« Je vous ai trouvé… »</div><div class="txt">Offre : un échantillon concret gratuit (mécanique Elena / UltB), « sinon vous gardez tout ».</div></div>
+        <div class="row"><div class="name"><span class="num">10</span>Site moderne offert · BTP</div><div class="txt">Offre : un site déjà construit, présenté à l'écran. <span class="src new">nouveau · BTP</span></div></div>
+        <div class="row"><div class="name"><span class="num">11</span>Cas client (middle of funnel)</div><div class="txt">Preuve : problème → agiter → solution → résultat d'un client similaire. <span class="src new">coach</span></div></div>
+        <div class="row"><div class="name"><span class="num">12</span>Pattern interrupt direct</div><div class="txt">1re ligne = une question + promesse chiffrée et datée. <span class="src new">coach</span></div></div>
+      </div>
+
+      <h3>Les nouvelles, en toutes lettres</h3>
+      <div class="ab">
+        <div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">#2 · Audit score</span><span class="val">score {entreprise}</span></div>
+            <div class="body">Hello <span class="var">{prénom}</span>, j'analysais la présence en ligne de <span class="var">{entreprise}</span> et j'ai compilé un audit rapide.
+Votre score ressort à 31 sur 100.
+Je me suis dit que vous voudriez le voir. Sans engagement.
+Nathan, Décupler</div>
+            <div class="foot">Radiographie : un chiffre factuel qu'ils ignorent.</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">#3 · Relance</span><span class="val">re: audit {entreprise}</span></div>
+            <div class="body">Hello <span class="var">{prénom}</span>, je voulais juste m'assurer que vous aviez bien reçu l'audit.
+Une chose qui m'a sauté aux yeux, c'est <span class="var">{fait précis, ex : le nombre de requêtes IA sans réponse}</span>.
+Je voulais m'assurer que vous l'aviez vu.
+Nathan</div>
+          </div>
+        </div>
+        <div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">#11 · Cas client (MOF)</span><span class="val">votre concurrent</span></div>
+            <div class="body">hello <span class="var">{prénom}</span>, vous me faites penser à mon client <span class="var">{X}</span>.
+il avait perdu 40 % en SEO. en analysant, c'était pire : ses concurrents captaient déjà les grosses requêtes en GEO.
+on a retravaillé ses articles pour qu'ils soient GEO-friendly, 3 mois après il avait tout récupéré et ressort dans le top 3.
+vous avez lancé le GEO, ou remarqué une baisse SEO ? on regarde ensemble ?
+Nathan</div>
+          </div>
+          <div class="mail">
+            <div class="subj"><span class="lbl">#12 · Pattern interrupt</span><span class="val">geo ?</span></div>
+            <div class="body">hello <span class="var">{prénom}</span>, vous êtes déjà lancé sur le GEO ?
+j'accompagne les <span class="var">{secteur}</span> à être positionnés en GEO en moins de 3 mois, ce qui amène en moyenne +18 % de leads.
+si ça vous parle, je vous donne déjà les 3 opportunités prioritaires. on cale 10 min ?
+Nathan, Décupler</div>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Objets :</b> curiosité mais <b>compréhensible</b>. « carto » est jugé trop énigmatique (Nathan &amp; le coach ne l'ont pas compris) : à remplacer / tester.</div>
+      <div class="note"><b>Débat à trancher par le test :</b> partager l'actif directement dès le mail 1 (position du coach) ou jouer la curiosité pour décrocher le call (position de Nathan). On teste les deux, côte à côte.</div>
+    </section>
+
     <!-- 7 -->
     <section id="campagnes">
       <div class="eyebrow">En test · audience SaaS-Fintech (200 leads, split 120/80)</div>
@@ -429,6 +499,49 @@ Sur <span class="var">{ville voisine}</span>, quand les gens cherchent <span cla
 Je vous envoie la carte des zones + ce qu'il faut faire, vous regardez tranquille. C'est quoi votre mail ?</div>
       </div>
       <div class="note"><b>WhatsApp d'abord, SMS en repli.</b> Le bouton WhatsApp click-to-chat (message pré-rempli après l'appel) est gratuit, sans contrainte de conformité, et lu plus vite que l'email en local. Manuel et 1 par 1, donc non-spam. Un provider SMS payant seulement si le volume l'exige.</div>
+    </section>
+
+    <!-- btp -->
+    <section id="btp">
+      <div class="eyebrow">Offre distincte · canal call + SMS</div>
+      <h2>Campagne BTP</h2>
+      <p class="sub">Offre différente du B2B, déjà validée. Cible artisans : ton <strong>bourrin et direct</strong>, prix / résultat / ROI dès le premier contact. Ils veulent des devis chauds qualifiés. Le nerf de la guerre, c'est le <strong>follow-up</strong>.</p>
+      <div class="grid two">
+        <div class="card"><h4>Promesse A — Site moderne offert</h4><p>« Je vous ai préparé un site moderne pour trouver plus de chantiers, je vous l'offre. »</p></div>
+        <div class="card"><h4>Promesse B — Audit SEO local</h4><p>« Je vous ai préparé un audit pour vous montrer sur quoi ranker et comment dépasser vos concurrents. »</p></div>
+      </div>
+      <div class="mail">
+        <div class="subj"><span class="lbl">Email 1 BTP · direct</span><span class="val">plus de chantiers à {ville} ?</span></div>
+        <div class="body">Bonjour <span class="var">{prénom}</span>, je peux vous positionner sur Google à <span class="var">{ville}</span> : dans 3 mois vous pouvez doubler vos demandes de devis.
+la prestation coûte <span class="var">{X}</span> € et vous ramène des leads en moyenne à <span class="var">{Y}</span> € pièce, qualifiés, pas des plateformes où 14 boîtes se battent sur le même devis.
+je l'ai déjà fait pour <span class="var">{référence}</span>, ça marche.
+je vous explique en 10 min, ou pas du tout ?
+Nathan, Décupler</div>
+      </div>
+      <h3>Script cold call BTP — le travail est déjà fait</h3>
+      <div class="grid two">
+        <div class="card"><h4>1 · Accroche (0-10 s)</h4><p>« Je suis bien chez {entreprise} ? » puis un vrai compliment : « j'ai vu vos avis 5 étoiles sur Google, vous faites du super boulot. » On obtient le premier oui.</p></div>
+        <div class="card"><h4>2 · Pattern interrupt (10-30 s)</h4><p>« Je me suis chauffé et je vous ai déjà construit un site moderne. Je vous l'offre. Si vous l'aimez vous le gardez, sinon on en reste là ! »</p></div>
+        <div class="card"><h4>3 · Objection « pourquoi gratuit ? »</h4><p>« Zéro arnaque. La création est offerte. Si vous gardez le site en ligne, on facture juste un petit abonnement : hébergement + SMS auto si vous manquez un appel, avis Google, réponses IA. »</p></div>
+        <div class="card"><h4>4 · Closing</h4><p>« Mardi 15 h ou mercredi matin ? Votre meilleur email pour l'invitation ? » On envoie l'invitation Google Agenda en direct.</p></div>
+      </div>
+      <div class="note"><b>SMS / WhatsApp :</b> même logique, court et orienté chantier, surtout en relance de follow-up (le point faible du BTP). Détail à travailler plus tard.</div>
+    </section>
+
+    <!-- coach -->
+    <section id="coach">
+      <div class="eyebrow">Session avec un expert outbound</div>
+      <h2>Ce qu'on garde du coach</h2>
+      <p class="sub">Les décisions structurantes issues du débrief : ciblage, volume, funnel et copy.</p>
+      <div class="grid two">
+        <div class="card"><h4>Ciblage</h4><p>BTP = très bon ROI pour une agence SEO. Ne pas viser que le CMO (sur-attaqué) : tester aussi gérants / dirigeants et responsables (tier 3).</p></div>
+        <div class="card"><h4>Volume = pub bien segmentée</h4><p>Batches de 500, séquence 4 mails J0 / J2 / J3 / J5, sprints de 2 semaines. ~2000 personnes / mois / offre avec 10 inboxes.</p></div>
+        <div class="card"><h4>Valider une offre</h4><p>Ne pas juger sous ~6000 contacts / 3 mois (2000 mini). 2 à 6 sprints, un sprint = une proposition de valeur.</p></div>
+        <div class="card"><h4>Email + call liés</h4><p>Le call devient du warm call : on rappelle d'abord ceux qui ont cliqué, puis les ouvreurs, puis les autres. Des liens dans chaque mail pour la data.</p></div>
+        <div class="card"><h4>Règles de copy</h4><p>80-100 mots. 1re ligne = une question. Plus de « vous » que de « je ». Promesse chiffrée et datée. Structure TOF → MOF → offre signature → breakup.</p></div>
+        <div class="card"><h4>Data &amp; géo</h4><p>Pharow (profondeur) et Scrap.io / Outscraper pour le BTP. À l'international : Europe en anglais ou USA côte Est, plutôt qu'Afrique / Middle East (déjà saturés).</p></div>
+      </div>
+      <div class="pull" style="font-size:1.12rem">Le call devient du retargeting : après un email, c'est du warm call, pas du cold.</div>
     </section>
 
     <!-- 11 -->
