@@ -121,12 +121,34 @@ Règle Jason : **1re ligne = une question**, promesse **chiffrée et datée**, "
 
 ---
 
-## §Objets — retour Nathan + coach Jason
+## §Esprit UltB — NON NÉGOCIABLE (préférence Nathan)
 
-- ✅ Un objet doit être **curiosité / "suspicieux"** (donne envie d'ouvrir) MAIS rester **compréhensible**.
-- ⚠️ **`carto`** = trop énigmatique, "ça ne veut rien dire" (Nathan + Jason ne l'ont pas compris). À remplacer/tester.
-- Pistes d'objets : `visibilité ia` · `votre score geo` · `15 prompts` · `page manquante` ·
-  `{concurrent} vous devance` · `question {domaine}` · `re: audit {entreprise}`.
+Fil rouge de TOUTES les accroches : **on offre toujours quelque chose, et dans tous les cas vous
+gardez un truc, vous ne perdez rien.** (risk-reversal Elena/UltB). Ne jamais retirer cet esprit.
+C'est ce qui casse le pattern du cold mail classique.
+
+## §Objets — préférence Nathan (énigmatique MAIS qui parle)
+
+Nathan aime les objets **énigmatiques qui intriguent** (pas plats, pas "score /100" trop cru).
+⚠️ **`carto` reste dans le CORPS** ("je vous ai préparé une cartographie / une analyse"), **JAMAIS
+comme objet** (ça ne veut rien dire seul).
+
+**Banque d'objets à tester (minuscules) :**
+- `j'arrive pas à vous trouver`  ← ⭐ favori Nathan (intrigue + sous-entend l'invisibilité)
+- `visibilité ia`
+- `audit geo offert`
+- `besoin d'un coup de main ?`  /  `besoin d'aide`
+- `vous n'êtes pas cité`
+- `j'ai regardé {entreprise}`
+- `votre nom n'est pas sorti`
+- `un truc sur {entreprise}`
+- `{entreprise} sur chatgpt`
+- `3 requêtes qui partent chez {concurrent}`
+- `avant vos concurrents`
+- `petit cadeau {entreprise}`  ← angle UltB/cadeau
+
+> Règle : l'objet intrigue, le CORPS révèle l'offre ("je vous ai préparé une cartographie / une
+> analyse / un audit… vous le gardez quoi qu'il arrive").
 
 ## §Débat — partager direct vs jouer la curiosité (à trancher par le test)
 
