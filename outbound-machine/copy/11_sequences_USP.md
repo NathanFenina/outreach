@@ -25,30 +25,29 @@ PS : 3 de ces prompts sont des requêtes d'achat pures, c'est du cash qui part c
 PPS : si c'est pas vous qui gérez ça, vous me dites vers qui me tourner ?
 ```
 
-### Mail 2 · J+2 — "manque de temps ?" + outil interne (reverse lead magnet, façon Jason)
+### Mail 2 · J+2 — 2 contenus offerts + RDV (offre signature, version Nathan)
 ```
 Objet : re: j'arrive pas à vous trouver
-{{firstName}}, si vous manquez de temps, pas besoin d'attendre notre échange :
-on a développé un outil interne qui vous sort votre score de visibilité IA (GEO) sur {{categorie}}.
-vous mettez votre URL, il vous donne où vous en êtes et les premières actions.
-vous pouvez l'actionner avec ou sans nous. je vous envoie le lien ?
-Nathan
-```
-> Variante Jason (partage direct) : « vous cliquez ici, vous mettez votre URL, ça vous calcule
-> l'audit + les 1res actions ; le plus simple c'est qu'on cale ensuite 10 min pour que je vous
-> explique comment. » (lien audit GEO / cartographie GEO / audit E-E-A-T selon ce qui est prêt)
-
-### Mail 3 · J+3 — offre signature (RDV + cadeau, façon Jason)
-```
-Objet : je vous prépare 2 articles ?
-{{firstName}}, je vous propose concret : on prend 20 min, on ouvre ensemble ChatGPT/Perplexity,
-je vous montre en direct quel concurrent est cité, sur quels prompts, et ce qu'il faut rédiger
-pour récupérer sa place.
-et si on cale ce RDV, je vous écris gratuitement 1 à 2 contenus GEO-friendly pour démarrer,
-que vous gardez quoi qu'il arrive.
+{{firstName}}, on prend 20 min, on ouvre ensemble ChatGPT/Perplexity, je vous montre quel
+concurrent est cité et ce qu'il faut rédiger pour récupérer sa place.
+et si on cale ce RDV, je vous écris gratuitement 1 à 2 contenus GEO-friendly, que vous gardez
+quoi qu'il arrive.
 ça vous dit ?
 Nathan, Décupler
 ```
+
+### Mail 3 · J+3 — outil gratuit + lien (si manque de temps, version Nathan)
+```
+Objet : re: j'arrive pas à vous trouver
+{{firstName}}, si vous manquez de temps, pas besoin d'attendre notre échange : on a développé un
+outil interne qui vous sort votre score de visibilité IA sur {{categorie}}.
+vous mettez votre URL, il vous donne où vous en êtes + les premières actions. voici le lien :
+https://app.decupler.com/audit-geo-gratuit
+toutefois, ça ne remplace pas une expertise humaine et un échange humain.
+Nathan
+```
+> Lien = audit GEO (le plus aligné avec l'angle X-Ray). Alternatives dispo :
+> `app.decupler.com/cartographie-ia` · `app.decupler.com/audit-eeat`.
 
 ### Mail 4 · J+5 — breakup 3 raisons (technique Jason)
 ```
@@ -72,7 +71,7 @@ hello {{firstName}}, je bosse avec des boîtes {{secteur}} qui veulent plus de d
 je vous ai préparé une analyse avec les 10 grandes opportunités organiques prioritaires pour
 {{companyName}}, offert, pour vous montrer le niveau : les mots-clés qui rapportent, les prompts IA
 à viser, et une projection de leads/mois.
-si l'approche vous parle, on vous montre comment on capte ça. sinon vous gardez tout, sans engagement.
+si l'approche vous parle, on vous montre comment on capte plus de leads. sinon vous gardez tout, sans engagement.
 seriez-vous contre un échange de 10 min pour vous présenter la carto ?
 Nathan Fenina
 Décupler
@@ -85,8 +84,9 @@ PPS : pas le bon moment ? un « no biz » et je vous laisse tranquille.
 Objet : re: petit cadeau {{companyName}}
 {{firstName}}, si vous manquez de temps pour qu'on en parle, je peux déjà vous partager la matière :
 on a un outil interne qui, à partir de votre URL, sort les opportunités organiques et votre score
-de visibilité IA sur {{secteur}}.
-vous le testez, et on cale 10 min seulement si ça vous parle. je vous envoie le lien ?
+de visibilité IA sur {{secteur}}. voici le lien :
+https://app.decupler.com/cartographie-ia
+toutefois, ça ne remplace pas un regard humain et un échange. on cale 10 min si ça vous parle ?
 Nathan
 ```
 

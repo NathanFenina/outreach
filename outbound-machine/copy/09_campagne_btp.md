@@ -87,3 +87,51 @@ Règle BTP : **tout de suite** le prix, le résultat, le ROI. Pas de lead magnet
 - **Scrap.io** (scrape Google Maps, équipe recommandée) ou **Outscraper** (~20 € / 2000 lignes) ou
   Instant Data Scraper (gratuit, manuel). Pharow en a aussi.
 - Les leads BTP arrivent en **canal call** (audiences type #44 Couvreurs, #45 Plombiers Nantes).
+
+---
+
+## Angles BTP supplémentaires (ajout Nathan — à tester)
+
+### Option A — "Décalage d'avis Google" (Adam Erhart)
+```
+Bonjour {prénom}, je cherchais un {métier, ex: plombier} sur {ville} et je suis tombé sur votre fiche.
+vous avez de très bons avis ! j'ai juste remarqué que {concurrent local} a plus de {ex: 1 500} avis
+alors que vous en avez {ex: 28}.
+j'ai fait une courte vidéo de 2 min montrant comment combler cet écart facilement, je peux vous l'envoyer ?
+```
+Offre = la vidéo 2 min. Radiographie (un chiffre factuel qu'ils ignorent) + offre tangible.
+
+### Option B — "Direct / Volume de chantiers" (Michael Vanhoutte)
+```
+Salut {prénom}, c'est {votre prénom}. je cherche 1 entreprise de {secteur, ex: rénovation/plomberie}
+capable de gérer 5 à 15 chantiers de plus sur les 8 prochaines semaines.
+ça vous intéresse ou pas du tout ?
+```
+Ultra-direct, orienté volume. CTA "oui/non" (Michael Vanhoutte). Parfait cold call / SMS BTP.
+
+### Option C — "Pied dans la porte / offre offerte"
+```
+Salut {prénom}, je viens de préparer une maquette de site web automatisé pour une boîte de {secteur}
+à {ville} pour vous apporter plus de clients.
+je peux vous envoyer le lien pour que vous me donniez votre avis ?
+```
+Offre = la maquette. Pied dans la porte (feedback demandé, pas une vente).
+
+### Variante D — Site vieillissant / absent → nouveau site offert
+```
+hello {prénom}, j'ai vu votre site et je le trouvais un peu vieillissant (ou : j'ai vu que vous n'aviez pas de site),
+alors je vous ai préparé un tout nouveau site moderne. si vous l'aimez, vous le gardez gratuitement.
+auriez-vous 10 min mardi ou jeudi pour que je vous le partage ?
+```
+Offre = le site. (version email/appel de l'accroche pattern-interrupt du script call.)
+
+### Variante E — Avis + analyse visibilité locale (GBP + maps + IA)
+```
+hello {prénom}, j'ai vu vos notes et avis (4,5 ★). j'ai mené une analyse sur votre visibilité sur Maps,
+Google et ChatGPT et j'ai sorti un plan d'action avec des quick wins.
+je voulais vous le partager. seriez-vous intéressé de le découvrir mardi ?
+```
+Offre = le plan d'action quick wins. Bon pont entre "avis" et notre expertise GEO/local.
+
+> Relances BTP : appliquer la même logique que Jason (mail 2 outil/valeur, mail 3 offre + RDV,
+> mail 4 breakup 3 raisons), mais **plus bourrin et plus court** (BTP = immédiat, RDV ou rappel).
