@@ -8,22 +8,26 @@
 
 ---
 
-## USP 1 — X-Ray GEO (campagne A) — variables : concurrent, categorie
+## USP 1 — Autorité + analyse offerte (campagne A) — variable : secteur
 
-### Mail 1 · J0 — accroche X-Ray (version validée Nathan)
+> Virage Nathan : on **abandonne la variable `concurrent`** (trop coûteuse à préparer + peut sonner
+> agressif/faux). Nouvel angle = **crédibilité (ingénieur + N boîtes accompagnées) + analyse de
+> visibilité organique offerte, avec les leads à récupérer**. Ne dépend plus que de `{{secteur}}`.
+> ⚠️ Claims à garder VRAIS : « ingénieur », « 40 boîtes IT » → n'utiliser que si exact (sinon adapter le chiffre/segment).
+
+### Mail 1 · J0 — autorité + analyse offerte (version validée Nathan)
 ```
 Objet : j'arrive pas à vous trouver
-hello {{firstName}}, j'ai testé ce que répondent ChatGPT et Perplexity sur {{categorie}}.
-{{concurrent}} ressort, {{companyName}} n'apparaît sur aucun des prompts que j'ai lancés.
-j'ai listé les 15 prompts exacts où vous êtes absents + le format de contenu qui fait citer
-{{concurrent}} à votre place.
-(on a fait ça pour Décathlon entre autres)
-seriez-vous contre un échange de 10 min que je vous partage la liste et le plan d'action ?
-Nathan
-Décupler
-PS : 3 de ces prompts sont des requêtes d'achat pures, c'est du cash qui part chez {{concurrent}}.
-PPS : si c'est pas vous qui gérez ça, vous me dites vers qui me tourner ?
+hello {{firstName}}, je suis ingénieur et j'aide les boîtes {{secteur}} à être référencées sur
+Google et dans les IA (ChatGPT, Perplexity).
+j'ai préparé pour {{companyName}} une analyse de votre visibilité organique, avec les leads que
+vous pourriez récupérer.
+on l'a fait pour 40 boîtes IT.
+je vous la partage lors d'un échange de 10 min ?
+Nathan, Décupler
 ```
+> Variante Jason (1re ligne = question) : « vous êtes déjà référencé dans les réponses IA ? je suis
+> ingénieur, j'aide les boîtes {{secteur}} à… ».
 
 ### Mail 2 · J+2 — 2 contenus offerts + RDV (offre signature, version Nathan)
 ```
@@ -40,7 +44,7 @@ Nathan, Décupler
 ```
 Objet : re: j'arrive pas à vous trouver
 {{firstName}}, si vous manquez de temps, pas besoin d'attendre notre échange : on a développé un
-outil interne qui vous sort votre score de visibilité IA sur {{categorie}}.
+outil interne qui vous sort votre score de visibilité IA sur {{secteur}}.
 vous mettez votre URL, il vous donne où vous en êtes + les premières actions. voici le lien :
 https://app.decupler.com/audit-geo-gratuit
 toutefois, ça ne remplace pas une expertise humaine et un échange humain.
