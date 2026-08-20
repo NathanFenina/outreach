@@ -12,40 +12,42 @@
 ### Mail 1 · J0 — le hook GEO + l'offre marque blanche
 ```
 Objet : le SEO/GEO de vos clients
-{{firstName}}, vos clients vont bientôt vous demander s'ils ressortent dans ChatGPT et les IA
-(Perplexity, AI Overviews de Google). la plupart des agences n'ont pas encore la réponse technique.
-nous chez Decupler on ne fait que ça : le SEO et le GEO (la visibilité dans les IA). et on peut le
+{{firstName}}, vos clients vous demandent s'ils ressortent dans ChatGPT et les IA (Perplexity,
+AI Overviews). la plupart des agences n'ont pas encore la réponse technique et utilisent des outils
+faillibles.
+nous chez Decupler on ne fait que ça : on crée nos propres systèmes et agents IA. et on peut le
 produire en marque blanche, sous le nom de {{companyName}}.
 vous ajoutez une ligne SEO/GEO à vos offres, vous gardez la marge, on livre dans l'ombre.
-on en parle 15 min ?
+on en parle 15 min pour vous montrer nos livrables ?
 Nathan Fenina
 Agence Decupler
-PS : même si on ne bosse pas ensemble, je vous envoie notre grille de ce qu'un audit GEO doit couvrir
-— utile pour vos clients.
+PS : même si on ne bosse pas ensemble, je vous envoie notre grille de ce qu'un audit GEO doit couvrir.
 ```
 
-### Mail 2 · J+2 — comment ça marche concrètement
+### Mail 2 · J+2 — l'offre qui déclenche le RDV (audit client offert, marque blanche)
 ```
 Objet : re: le SEO/GEO de vos clients
-{{firstName}}, concrètement : vous nous envoyez un client (ou un prospect que vous voulez signer),
-on lui produit l'audit SEO/GEO + le plan d'action, à votre marque. vous le présentez, vous facturez,
-on exécute dans l'ombre.
-zéro recrutement, zéro risque. si le client dit non, vous ne perdez rien.
-je vous montre un exemple d'audit livré en marque blanche ?
+{{firstName}}, pour vous montrer concrètement plutôt que d'en parler dans le vide :
+choisissez UN de vos clients (ou un prospect que vous voulez signer), et on vous produit son audit
+de visibilité IA — en marque blanche, à votre nom, offert.
+vous le présentez comme le vôtre. s'il vous sert à upseller ou à signer, on continue ensemble ;
+sinon vous gardez l'audit, vous ne perdez rien.
+on cale 15 min pour que vous me donniez le client et que je vous montre le format de nos livrables ?
 Nathan Fenina
 Agence Decupler
 ```
 
-### Mail 3 · J+3 — preuve / cas agence
+### Mail 3 · J+3 — preuve / cas agence  (version soft, sans chiffre inventé)
 ```
-Objet : comme cette agence ?
-{{firstName}}, une agence avec qui on travaille a signé un budget annuel juste en ajoutant
-« visibilité IA » à sa proposition — un truc que son client ne trouvait nulle part ailleurs.
-on a livré en marque blanche, elle a gardé la relation client et la marge.
+Objet : comme ces agences ?
+{{firstName}}, de plus en plus d'agences ajoutent « visibilité IA » à leurs propositions — c'est un
+angle que leurs clients ne trouvent quasiment nulle part, et qui aide à signer ou à upseller.
+elles présentent, on livre en marque blanche dans l'ombre : elles gardent la relation client et la marge.
 on regarde si ça colle avec vos clients à vous ? je vous laisse la grille d'audit GEO, que vous gardez.
 Nathan Fenina
 Agence Decupler
 ```
+> (Si tu as un VRAI cas chiffré — « X a signé un budget annuel » — dis-le-moi et je le remets, c'est plus fort.)
 
 ### Mail 4 · J+5 — breakup 3 raisons
 ```
