@@ -48,9 +48,11 @@ export default function CallRow({ p }) {
   }
 
   const waDigits = (p.phone || "").replace(/[^0-9]/g, "");
-  const waText = encodeURIComponent(
-    `Bonjour, Nathan de Décupler. Suite à mon appel, je vous envoie la carte des zones autour de Nantes où vous pouvez récupérer des demandes de devis. Je vous partage ça ?`
-  );
+  const relance = `Bonjour, Nathan de l'agence Décupler. Suite à mon appel, je vous prépare un site moderne pour capter plus de chantiers. Je vous le montre 10 min à l'écran ?`;
+  const waText = encodeURIComponent(relance);
+  const smsText = encodeURIComponent(relance);
+  const telHref = p.phone ? `tel:${p.phone.replace(/[^0-9+]/g, "")}` : null;
+  const smsHref = p.phone ? `sms:${p.phone.replace(/[^0-9+]/g, "")}?body=${smsText}` : null;
 
   return (
     <tr>
@@ -59,7 +61,15 @@ export default function CallRow({ p }) {
           {p.company || p.full_name || "—"}
         </span>
       </td>
-      <td className="muted">{p.phone || "—"}</td>
+      <td className="muted">
+        {telHref ? (
+          <a className="lnk" href={telHref} title="Appeler">
+            {p.phone}
+          </a>
+        ) : (
+          "—"
+        )}
+      </td>
       <td className="muted">
         {perso.rating ? (
           <span>
@@ -97,6 +107,14 @@ export default function CallRow({ p }) {
               title="Ouvrir WhatsApp avec un message pré-rempli"
             >
               WhatsApp
+            </a>
+          </>
+        )}
+        {smsHref && (
+          <>
+            {" · "}
+            <a className="lnk" href={smsHref} title="Ouvrir un SMS pré-rempli (via OnOff / téléphone)">
+              SMS
             </a>
           </>
         )}
