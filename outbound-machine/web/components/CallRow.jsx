@@ -48,7 +48,7 @@ export default function CallRow({ p }) {
   }
 
   const waDigits = (p.phone || "").replace(/[^0-9]/g, "");
-  const relance = `Bonjour, Nathan de l'agence Décupler. Suite à mon appel, je vous prépare un site moderne pour capter plus de chantiers. Je vous le montre 10 min à l'écran ?`;
+  const relance = `Bonjour, Nathan de l'agence Decupler. Suite à mon appel, je vous prépare un site moderne pour capter plus de chantiers. Je vous le montre 10 min à l'écran ?`;
   const waText = encodeURIComponent(relance);
   const smsText = encodeURIComponent(relance);
   const telHref = p.phone ? `tel:${p.phone.replace(/[^0-9+]/g, "")}` : null;

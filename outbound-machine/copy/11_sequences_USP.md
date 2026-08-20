@@ -3,7 +3,7 @@
 > Campagne **Tech / IT-Services** (audience #16, 272 leads). 2-3 USP côte à côte, cadence
 > J0/J2/J3/J5 (Fibonacci). **Variables = `{{firstName}}` + `{{companyName}}` uniquement** (le secteur
 > est écrit en dur « IT » car l'audience est 100% IT) → **aucune prépa de variable, prêt à pousser.**
-> Signature partout : **Nathan Fenina / Agence Décupler** (renforce le SEO de marque).
+> Signature partout : **Nathan Fenina / Agence Decupler** (renforce le SEO de marque).
 > Esprit UltB gardé : on offre, vous gardez tout → PS à la fin.
 > ⚠️ Claims à confirmer VRAIS : Nathan **ingénieur en IT** ; **« 40 boîtes IT, +20% de leads »**.
 
@@ -21,7 +21,7 @@ endroits où vous perdez des leads.
 on a déjà accompagné 40 boîtes IT à faire +20% de leads.
 je vous la partage lors d'un échange de 10 min ?
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 PS : l'analyse est à vous, que vous bossiez avec nous ou pas.
 ```
 
@@ -34,7 +34,7 @@ et pendant ce RDV je vous montre la qualité de notre travail et comment on trou
 vous plaît, je vous offre en plus un contenu GEO-friendly prêt à publier sur un sujet.
 ça vous dit ?
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 ```
 
 ### Mail 3 · J+3 — outil gratuit
@@ -45,7 +45,7 @@ outil interne qui vous sort votre score de visibilité IA. vous mettez votre URL
 vous en êtes + les premières actions. voici le lien : app.decupler.com/audit-geo-gratuit
 toutefois, ça ne remplace pas une expertise humaine et un échange humain.
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 ```
 
 ### Mail 4 · J+5 — breakup 3 raisons
@@ -57,7 +57,7 @@ Objet : je clôture, {{firstName}} ?
 3. ce n'est pas le moment (on en reparle plus tard ?).
 un mot et j'arrête. l'analyse pour {{companyName}} reste dispo si vous la voulez.
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 PPS : pas le bon moment ? un « stop » et je vous laisse tranquille.
 ```
 
@@ -75,7 +75,7 @@ viser, et une projection de leads/mois.
 si l'approche vous parle, on vous montre comment on capte plus de leads. sinon vous gardez tout, sans engagement.
 seriez-vous contre un échange de 10 min pour vous présenter la carto ?
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 PS : on a travaillé sur la visibilité organique chez Le Point, Pluxee et Décathlon.
 PPS : pas le bon moment ? un « no biz » et je vous laisse tranquille.
 ```
@@ -88,7 +88,7 @@ un outil interne qui, depuis votre URL, sort les opportunités organiques + votr
 IA. voici le lien : app.decupler.com/cartographie-ia
 toutefois, ça ne remplace pas un regard humain et un échange.
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 ```
 
 ### Mail 3 · J+3 — cas client + RDV
@@ -100,7 +100,7 @@ plus de demandes qualifiées sans dépendre du paid.
 on fait le même exercice pour {{companyName}} en 20 min ? je vous laisse la carto + 1 contenu rédigé,
 que vous gardez.
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 ```
 
 ### Mail 4 · J+5 — breakup 3 raisons
@@ -110,7 +110,7 @@ Objet : je clôture, {{firstName}} ?
 2. vous êtes déjà bien couvert en organique ; 3. ce n'est pas prioritaire là. un mot et j'arrête.
 la cartographie pour {{companyName}} reste prête.
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 PPS : un « no biz » et je vous laisse tranquille.
 ```
 
@@ -130,7 +130,7 @@ on a monté une infrastructure qui va chercher ces leads, et surtout qui vous mo
 que vous récupérez, mois par mois.
 je vous fais une projection chiffrée pour {{companyName}} ?
 Nathan Fenina
-Agence Décupler
+Agence Decupler
 PS : la projection est à vous, que vous bossiez avec nous ou pas.
 ```
 > Relances : mail 2 = « voici comment on track » (dashboard/preuve), mail 3 = RDV + 1 contenu offert,
