@@ -11,7 +11,7 @@
 
 ### Mail 1 · J0 — le hook GEO + l'offre marque blanche
 ```
-Objet : le SEO/GEO de vos clients
+Objet : partenaires ?
 {{firstName}}, vos clients vous demandent s'ils ressortent dans ChatGPT et les IA (Perplexity,
 AI Overviews). la plupart des agences n'ont pas encore la réponse technique et utilisent des outils
 faillibles.
@@ -37,17 +37,18 @@ Nathan Fenina
 Agence Decupler
 ```
 
-### Mail 3 · J+3 — preuve / cas agence  (version soft, sans chiffre inventé)
+### Mail 3 · J+3 — flexibilité (« on crée ce que vous voulez ») + preuve grands comptes
 ```
-Objet : comme ces agences ?
-{{firstName}}, de plus en plus d'agences ajoutent « visibilité IA » à leurs propositions — c'est un
-angle que leurs clients ne trouvent quasiment nulle part, et qui aide à signer ou à upseller.
-elles présentent, on livre en marque blanche dans l'ombre : elles gardent la relation client et la marge.
-on regarde si ça colle avec vos clients à vous ? je vous laisse la grille d'audit GEO, que vous gardez.
+Objet : on exécute, vous livrez
+{{firstName}}, au fond c'est simple : avec nos systèmes et agents IA, on crée le livrable que VOUS
+voulez — audit de visibilité IA, cartographie GEO, contenu optimisé, monitoring des IA, page prête à
+publier... vous nous dites ce dont vos clients ont besoin, on l'exécute en marque blanche.
+on prend un moment pour en discuter ?
 Nathan Fenina
 Agence Decupler
+PS : si vous n'avez rien à déléguer là tout de suite, dites-le-moi et je vous laisse tranquille.
+PS2 : on a bossé sur le SEO de grands comptes — SG, Le Point, Sodexo.
 ```
-> (Si tu as un VRAI cas chiffré — « X a signé un budget annuel » — dis-le-moi et je le remets, c'est plus fort.)
 
 ### Mail 4 · J+5 — breakup 3 raisons
 ```
