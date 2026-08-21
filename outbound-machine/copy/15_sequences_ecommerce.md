@@ -1,73 +1,70 @@
-# 15 — Séquence E-COMMERCE / marques DTC · angle Ventes + GEO shopping
+# 15 — Séquence E-COMMERCE / marques DTC · style UltB (analyse offerte)
 
-> Cible : marques qui vendent en ligne (bijoux, mode, DTC divers), francophones.
-> Audiences Supabase : 8 + 30 (bijoux ~619), 11 (fashion ~181), 18 + 19 + 34 + 37 (e-comm ~154).
-> Filtre à la publication : **francophones** (.fr + .com FR) ; **exclure le bruit** (agences, avocats,
-> "informatique", "advertising", "consulting" dans le nom).
-> Angle : ils vivent du paid (CAC qui monte) → l'organique + la **visibilité IA** (ChatGPT/Perplexity
-> shopping) = du trafic qu'ils ne repaient pas. Hook = **ventes perdues** faute d'être cités.
-> Variables : `{{firstName}}` + `{{companyName}}` (présents en base). Cadence J0/J+2/J+3/J+5.
-> Signature : Nathan Fenina / Agence Decupler. Esprit UltB : analyse offerte, vous gardez tout.
-> ⚠️ Claim à confirmer VRAI : « on a bossé sur la visibilité organique de Décathlon » (mail 3).
+> Cible : marques qui vendent en ligne (bijoux, mode, DTC divers). **1 seule campagne, tout l'e-comm.**
+> Audiences Supabase : 8 + 30 (bijoux), 11 (fashion), 18 + 19 + 34 + 37 (e-comm) — celles avec email.
+> Filtre : francophones (.fr + .com FR) ; on écarte le petit bruit (avocats/agences/IT glissés dedans)
+> et les TLD clairement étrangers (.us/.de/.es/.it/.co.uk/.sa).
+> Style : **UltB pur** — on offre l'analyse, elle vous appartient, « no biz » si pas pour vous.
+> Variables : `{{firstName}}` + `{{companyName}}`. Cadence J0/J+2/J+3/J+5. Signature Nathan Fenina / Agence Decupler.
+> Claim confirmé par Nathan : « on a bossé pour Décathlon ».
 
 ---
 
-### Mail 1 · J0 — les ventes invisibles
+### Mail 1 · J0 — j'ai pris les devants (analyse offerte)
 ```
-Objet : les ventes que {{companyName}} ne voit pas
-{{firstName}}, vos clients cherchent vos produits sur Google — mais aussi, de plus en plus, dans les
-IA : ils demandent à ChatGPT ou Perplexity « quel [produit] acheter ». si votre marque n'est pas
-citée, la vente part chez un concurrent.
-j'ai préparé une analyse pour {{companyName}} : sur une série de recherches produits + de prompts
-d'achat IA, où vous ressortez, où vous êtes absent, et une projection de ventes récupérables.
-je vous la partage en 10 min ?
+Objet : j'ai pris les devants
+hello {{firstName}}, je cherche des marques e-commerce qui veulent augmenter leurs ventes sur Google
+et les IA (ChatGPT, Perplexity).
+j'ai vu ce que vous faites chez {{companyName}} et j'ai pris les devants : je vous ai préparé une
+analyse de votre visibilité, avec les endroits où vous perdez des ventes.
+seriez-vous contre un échange de 15 min jeudi prochain ?
 Nathan Fenina
 Agence Decupler
-PS : l'analyse est à vous, que vous travailliez avec nous ou pas.
+PS : je vous offre l'analyse, elle vous appartient et ne vous engage à rien — juste pour vous montrer
+la qualité de notre travail et comment choper plus de ventes.
+PPS : si c'est pas pour vous, dites « no biz » et je ne vous embête plus.
 ```
 
-### Mail 2 · J+2 — l'offre (audit produit phare, offert)
+### Mail 2 · J+2 — c'est vous ou c'est pas vous ?
 ```
-Objet : re: les ventes que {{companyName}} ne voit pas
-{{firstName}}, pour vous montrer concret plutôt que d'en parler dans le vide :
-choisissez votre produit phare, et on vous sort son audit de visibilité — sur Google (Shopping +
-organique) ET dans les IA — offert.
-vous voyez noir sur blanc où il est invisible et ce qui le fait remonter. si ça vous parle on
-continue ; sinon vous gardez l'audit, vous ne perdez rien.
-15 min pour que vous me donniez le produit ?
+Objet : re: j'ai pris les devants
+{{firstName}}, je pense que vous êtes occupé — juste pour savoir : c'est vous qui gérez l'acquisition
+chez {{companyName}}, ou pas ?
+si c'est vous, je vous envoie la petite analyse et vous la regardez tranquillement quand vous voulez.
+un « oui je veux bien » et je vous l'envoie.
 Nathan Fenina
 Agence Decupler
+PS : on a bossé pour Décathlon également.
 ```
 
-### Mail 3 · J+3 — mécanisme (moins de paid) + preuve
+### Mail 3 · J+3 — une version 0, offerte
 ```
-Objet : du trafic que vous ne repayez pas
-{{firstName}}, le paid vous coûte de plus en plus cher, et vous repayez chaque clic. l'organique et
-la visibilité IA, non : on structure vos pages produits et vos contenus pour que Google ET les IA
-citent {{companyName}} quand quelqu'un cherche à acheter.
-on regarde ce que ça peut donner pour vous ?
+Objet : je vous fais une version 0 ?
+{{firstName}}, je veux vraiment vous aider. si l'analyse ne vous parle pas, dites-moi juste ce qui
+vous embête le plus en ce moment sur l'acquisition.
+je suis prêt à vous créer un prototype — une version 0 de comment on vous aiderait, offerte, sans
+engagement. histoire de vous montrer concrètement comment on peut vous trouver plus de ventes (ou
+économiser) avec l'IA.
 Nathan Fenina
 Agence Decupler
-PS : on a travaillé sur la visibilité organique de marques comme Décathlon.
 ```
 
 ### Mail 4 · J+5 — breakup 3 raisons
 ```
 Objet : je clôture, {{firstName}} ?
 {{firstName}}, sans réponse je pars du principe que :
-1. vous êtes déjà au max côté organique/IA (top, je vous laisse),
-2. ce n'est pas le moment (on en reparle plus tard ?),
-3. ce n'est pas vous qui gérez l'acquisition (vers qui me tourner ?).
+1. ce n'est pas vous qui gérez l'acquisition (vers qui me tourner ?),
+2. vous êtes déjà au max côté Google et IA (top, je vous laisse),
+3. ce n'est pas le moment (on en reparle plus tard ?).
 un mot et j'arrête. l'analyse pour {{companyName}} reste à vous si vous la voulez.
 Nathan Fenina
 Agence Decupler
-PPS : un « stop » et je vous laisse tranquille.
+PPS : un « no biz » et je vous laisse tranquille.
 ```
 
 ---
 
-## Avant de publier
-- 1 campagne : `Decupler · E-commerce · Ventes+GEO (FR)` (ou séparer Bijoux vs DTC pour A/B).
-- Filtre FR + anti-bruit (exclure avocats/agences/IT glissés dedans).
+## Publication
+- 1 campagne : `Decupler · E-commerce · Ventes+GEO (FR)`.
+- Tout l'e-comm (bijoux + fashion + DTC) dans la même campagne.
 - Variables déjà en base → aucune prépa.
-- Option : variante **Bijoux** (« quel bijou offrir », recherches cadeaux) — segment le plus gros et homogène.
