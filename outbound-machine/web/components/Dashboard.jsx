@@ -144,7 +144,7 @@ function ProspectTable({ rows, isEmail }) {
     return (
       <div className="card">
         <div className="tablewrap tallscroll">
-          <table>
+          <table className="crm">
             <thead>
               <tr>
                 <th>Entreprise</th>

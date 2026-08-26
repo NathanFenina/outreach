@@ -90,3 +90,29 @@ td .muted{color:var(--muted)}
 .savemark{margin-left:6px;font-size:12px;color:var(--ultra)}
 footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
 .err{background:var(--prob-bg);color:var(--prob);border:1px solid var(--line);border-radius:var(--radius);padding:18px;font-size:13.5px}
+
+/* ============ MOBILE (cold call au téléphone) ============ */
+@media (max-width:640px){
+  .wrap{padding:16px 12px 60px}
+  .top{flex-direction:column;align-items:flex-start;gap:4px}
+  .aud-grid{grid-template-columns:1fr}
+  .aud .n{font-size:22px}
+  .tabs{width:100%;justify-content:center}
+  .tallscroll{max-height:none;overflow:visible}
+  .cellclip{max-width:62vw}
+
+  /* Table CRM cold-call -> cartes empilées, gros boutons tactiles */
+  .crm thead{display:none}
+  .crm, .crm tbody, .crm tr, .crm td{display:block;width:100%}
+  .crm tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:var(--surface);box-shadow:var(--shadow)}
+  .crm tr:first-child{border-top:1px solid var(--line)}
+  .crm td{white-space:normal;border:0;border-top:1px solid var(--line);padding:11px 14px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+  .crm tr td:first-child{border-top:0}
+  .crm td::before{content:attr(data-label);flex:0 0 84px;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);font-weight:680}
+  .crm td .name{font-weight:680;font-size:15px}
+  .crm .lnk{font-size:15px;padding:4px 0}
+  .crm .statusSel{flex:1;min-height:44px;font-size:15px}
+  .crm .noteCell{min-width:0}
+  .crm .noteInput{flex:1;width:auto;min-height:44px;font-size:15px}
+  .crm td:empty, .crm td[data-label]:has(> :only-child:empty){display:none}
+}

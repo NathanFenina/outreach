@@ -56,12 +56,12 @@ export default function CallRow({ p }) {
 
   return (
     <tr>
-      <td>
+      <td data-label="Entreprise">
         <span className="name cellclip" title={p.company || p.full_name || ""}>
           {p.company || p.full_name || "—"}
         </span>
       </td>
-      <td className="muted">
+      <td className="muted" data-label="Téléphone">
         {telHref ? (
           <a className="lnk" href={telHref} title="Appeler">
             {p.phone}
@@ -70,7 +70,7 @@ export default function CallRow({ p }) {
           "—"
         )}
       </td>
-      <td className="muted">
+      <td className="muted" data-label="Note">
         {perso.rating ? (
           <span>
             ⭐ {perso.rating}
@@ -80,7 +80,7 @@ export default function CallRow({ p }) {
           "—"
         )}
       </td>
-      <td>
+      <td data-label="Liens">
         {perso.website ? (
           <a className="lnk" href={perso.website} target="_blank" rel="noreferrer">
             site
@@ -119,7 +119,7 @@ export default function CallRow({ p }) {
           </>
         )}
       </td>
-      <td>
+      <td data-label="Statut">
         <select
           className={"statusSel " + (STATUS_CLASS[status] || "")}
           value={status}
@@ -135,7 +135,7 @@ export default function CallRow({ p }) {
           ))}
         </select>
       </td>
-      <td className="noteCell">
+      <td className="noteCell" data-label="Remarque">
         <input
           className="noteInput"
           defaultValue={notes}
