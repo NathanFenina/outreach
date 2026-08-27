@@ -31,20 +31,29 @@ SIG = ["Nathan Fenina", "Agence Decupler"]
 SIG_TU = ["Nathan", "Decupler"]
 DELAYS = [0, 3, 4, 5]
 
+# Immo v2 (validée Nathan) : liste concrète + {{avisphrase}} (fiche Google) + agents IA "à votre taille"
 IMMO = [
- ("automatiser {{companyName}} ?",
-  ["bonjour {{firstName}}, je bosse avec des agences immo qui veulent gagner du temps sur les tâches répétitives : relance des leads, rédaction d'annonces, qualification des acheteurs.","",
-   "j'ai regardé {{companyName}} et je me suis permis de préparer un exemple d'agent IA qui relance vos leads à votre place — je vous le montre en 15 min ? vous le gardez.","",*SIG,"",
-   "PS : au passage, qu'est-ce qui vous prend le plus de temps aujourd'hui qu'on pourrait automatiser ?"]),
- ("re: automatiser {{companyName}} ?",
-  ["{{firstName}}, par curiosité : c'est quoi le plus gros défi de {{companyName}} en ce moment sur la génération de mandats ou le suivi des leads ?","",
-   "je pose la question parce que ça revient souvent chez les agences que j'accompagne — et selon votre réponse, je vous prépare un agent sur-mesure (offert) pour vous montrer.","",*SIG]),
- ("je vous fais une démo ?",
-  ["{{firstName}}, concrètement : dites-moi une tâche chronophage (relance, annonces, tri des demandes) et je vous construis une version 0 de l'agent qui la fait — gratuite, sans engagement.","",
+ ("des agents IA pour {{companyName}} ?",
+  ["bonjour,",
+   "on aide des agences immo à automatiser ce qui bouffe du temps :",
+   "— rédiger des annonces qui donnent envie de visiter,",
+   "— répondre aux leads en quelques secondes, même la nuit,",
+   "— qualifier les acheteurs avant de perdre du temps en visite,",
+   "— récupérer plus d'avis sur Maps pour améliorer votre référencement.","",
+   "{{avisphrase}}",
+   "alors je me permets de vous présenter les agents IA qu'on construit pour les agences immo à votre taille.","",
+   "seriez-vous contre un échange de 15 min pour vous montrer tout ce qu'on peut créer pour vous ?","",*SIG,"",
+   "PS : qu'est-ce qui vous prend le plus de temps aujourd'hui — les annonces, les relances, ou le tri des demandes ?"]),
+ ("re: des agents IA pour {{companyName}} ?",
+  ["une question simple : aujourd'hui, qui répond à vos leads le soir et le week-end ?","",
+   "beaucoup d'agences perdent des acheteurs juste parce que la réponse arrive trop tard. nos agents répondent en quelques secondes, 24/7, et qualifient l'acheteur avant la visite.","",
+   "je vous montre comment ça tournerait chez {{companyName}} en 15 min ?","",*SIG]),
+ ("je vous fais une version 0 ?",
+  ["dites-moi juste la tâche qui vous prend le plus de temps (annonces, relances, tri des demandes) et je vous construis une version 0 de l'agent qui la fait — offerte, sans engagement.","",
    "vous le voyez tourner sur VOTRE cas, et vous le gardez.","",*SIG]),
  ("je clôture, {{companyName}} ?",
-  ["{{firstName}}, sans réponse je pars du principe que :","1. ce n'est pas le moment (on en reparle ?),","2. vous automatisez déjà en interne (top),","3. ce n'est pas vous qui gérez ça (vers qui me tourner ?).","",
-   "un mot et j'arrête. l'exemple d'agent pour {{companyName}} reste à votre dispo.","",*SIG,"",
+  ["sans réponse je pars du principe que : 1. ce n'est pas le moment ; 2. vous gérez déjà ça en interne ; 3. ce n'est pas vous qui vous en occupez. un mot et j'arrête.","",
+   "les agences immo qui surfent sur le digital vont plus vite et signent plus — c'est maintenant. la démo pour {{companyName}} reste à votre dispo.","",*SIG,"",
    "PPS : un « no biz » et je vous laisse tranquille."]),
 ]
 
