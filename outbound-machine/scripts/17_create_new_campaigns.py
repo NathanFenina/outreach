@@ -34,15 +34,14 @@ DELAYS = [0, 3, 4, 5]
 # Immo v2 (validée Nathan) : liste concrète + {{avisphrase}} (fiche Google) + agents IA "à votre taille"
 IMMO = [
  ("des agents IA pour {{companyName}} ?",
-  ["bonjour,",
-   "on aide des agences immo à automatiser ce qui bouffe du temps :",
+  ["bonjour,","",
+   "{{avisphrase}}","",  # = "je vous contacte depuis votre fiche Google, d'ailleurs bravo pour les {{avis}} avis positifs." (fallback si 0 avis)
+   "on aide des agences immo de votre taille à automatiser ce qui bouffe du temps :",
    "— rédiger des annonces qui donnent envie de visiter,",
    "— répondre aux leads en quelques secondes, même la nuit,",
    "— qualifier les acheteurs avant de perdre du temps en visite,",
    "— récupérer plus d'avis sur Maps pour améliorer votre référencement.","",
-   "{{avisphrase}}",
-   "alors je me permets de vous présenter les agents IA qu'on construit pour les agences immo à votre taille.","",
-   "seriez-vous contre un échange de 15 min pour vous montrer tout ce qu'on peut créer pour vous ?","",*SIG,"",
+   "seriez-vous contre un échange de 15 min pour vous montrer les agents IA qu'on peut créer pour vous ?","",*SIG,"",
    "PS : qu'est-ce qui vous prend le plus de temps aujourd'hui — les annonces, les relances, ou le tri des demandes ?"]),
  ("re: des agents IA pour {{companyName}} ?",
   ["une question simple : aujourd'hui, qui répond à vos leads le soir et le week-end ?","",
