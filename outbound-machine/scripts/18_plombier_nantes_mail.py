@@ -19,22 +19,25 @@ def find(name):
 
 SIG=["Nathan Fenina","Agence Decupler"]; DELAYS=[0,3,4,5]
 NAME="Decupler · Plombier Nantes · Site offert (mail)"
+# Version live (validée Nathan) : site moderne OFFERT + offre 30 premiers + J7 en demande de référence
 STEPS=[
- ("un site moderne pour {{companyName}} ?",
+ ("un site moderne offert pour {{companyName}} ?",
   ["bonjour,","",
    "{{avisphrase}}","",
-   "je vous ai préparé une maquette d'un site moderne pour {{companyName}} — pensé pour vous faire signer plus de chantiers : demande de devis en ligne, avis Google mis en avant, rapide et impeccable sur mobile.","",
-   "seriez-vous contre que je vous l'envoie ? si elle vous plaît, on vous l'installe — vous ne touchez à rien.","",*SIG,"",
-   "PS : c'est juste une maquette, ça ne vous engage à rien."]),
- ("re: un site moderne pour {{companyName}} ?",
-  ["petite question : aujourd'hui, quand quelqu'un cherche un plombier à {{ville}} et tombe sur votre site, il vous appelle direct… ou il va voir ailleurs ?","",
-   "c'est souvent là qu'on perd des chantiers. la maquette que j'ai préparée pour {{companyName}} corrige ça — je vous l'envoie ?","",*SIG]),
- ("je vous montre en 10 min ?",
-  ["si c'est plus simple, je vous fais un tour de la maquette en 10 min à l'écran — vous voyez le rendu sur {{companyName}} et vous décidez après.","",
-   "ça vous irait cette semaine ?","",*SIG]),
+   "je vous ai préparé un site moderne pour {{companyName}} — pensé pour signer plus de devis : demande de devis en ligne, avis Google mis en avant, rapide et impeccable sur mobile.","",
+   "on l'offre en ce moment aux 30 premiers artisans de la région — une offre de lancement.","",
+   "seriez-vous contre un échange de 15 min pour que je vous le partage ?","",*SIG,"",
+   "PS : aucun engagement — si ça ne vous parle pas, un mot et j'arrête."]),
+ ("re: un site moderne offert pour {{companyName}} ?",
+  ["on cherche 30 artisans à qui offrir un site moderne ce mois-ci — et on en a déjà aidé plusieurs à décrocher plus de chantiers.","",
+   "ça ne vous engage à rien : 15 min, je vous montre le site pour {{companyName}} à l'écran. s'il vous plaît, vous le gardez.","",*SIG]),
+ ("pas pour vous, {{companyName}} ?",
+  ["si ce n'est pas le bon moment pour {{companyName}}, aucun souci.","",
+   "par contre — connaissez-vous un artisan (plombier, élec, couvreur…) à qui ça rendrait service ? je lui prépare son site aussi.","",
+   "un prénom + un numéro et je m'occupe du reste.","",*SIG]),
  ("je clôture, {{companyName}} ?",
   ["sans réponse je pars du principe que : 1. ce n'est pas le moment ; 2. votre site vous convient déjà ; 3. ce n'est pas vous qui gérez ça. un mot et j'arrête.","",
-   "la maquette pour {{companyName}} reste à votre dispo si vous voulez la voir.","",*SIG,"",
+   "le site pour {{companyName}} reste offert pour les 30 premiers si vous voulez le voir.","",*SIG,"",
    "PPS : un « no biz » et je vous laisse tranquille."]),
 ]
 
