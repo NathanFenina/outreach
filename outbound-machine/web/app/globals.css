@@ -86,6 +86,16 @@ td .muted{color:var(--muted)}
 .statusSel.st-win{background:var(--ultra-bg);color:var(--ultra);border-color:var(--ultra)}
 .statusSel.st-warn{background:var(--prob-bg);color:var(--prob);border-color:var(--prob)}
 .statusSel.st-dead{color:var(--faint);text-decoration:line-through}
+/* couleurs distinctes par statut (cold call) */
+.statusSel.st-recall{background:#e6efff;color:#1c5fb8;border-color:#a9cbff}      /* Rappeler — bleu */
+.statusSel.st-vm{background:#fff1db;color:#a85800;border-color:#ffce8f}          /* Répondeur — orange */
+.statusSel.st-reply{background:#f2e9ff;color:#6b2fce;border-color:#d5c0ff}       /* Répondu — violet */
+.statusSel.st-rdv{background:#c9ecd6;color:#14532d;border-color:#7fc79b;font-weight:750} /* RDV — vert fort */
+.statusSel.st-sms-todo{background:#fde3f0;color:#b8146b;border-color:#f4b6d5}    /* SMS à envoyer — rose */
+.statusSel.st-sms-done{background:#dcf3f1;color:#0a7d76;border-color:#93ddd7}    /* SMS envoyé — teal */
+.statusSel.st-wa-todo{background:#e9fbe6;color:#2f7d16;border-color:#b6e6a9}     /* WhatsApp à envoyer — vert clair */
+.statusSel.st-wa-done{background:#d1f6db;color:#0f8a3c;border-color:#84d9a0}     /* WhatsApp envoyé — vert WA */
+.statusSel.st-nc{color:#8a919b;text-decoration:line-through}                     /* Ne pas contacter */
 .noteCell{min-width:240px}
 .noteInput{width:220px;font-size:12.5px;padding:6px 9px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink)}
 .noteInput:focus{outline:2px solid var(--accent);outline-offset:1px;background:var(--surface)}

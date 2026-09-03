@@ -4,15 +4,14 @@ import { updateLeadCrm } from "../app/actions";
 
 const STATUSES = [
   "À appeler",
-  "Appelé",
-  "Répondu",
-  "RDV",
   "Rappeler",
   "Répondeur",
-  "WhatsApp à envoyer",
-  "WhatsApp envoyé",
+  "Répondu",
+  "RDV",
   "SMS à envoyer",
   "SMS envoyé",
+  "WhatsApp à envoyer",
+  "WhatsApp envoyé",
   "Pas intéressé",
   "Mauvais numéro",
   "Ne pas contacter",
@@ -20,18 +19,17 @@ const STATUSES = [
 
 const STATUS_CLASS = {
   "À appeler": "st-todo",
-  Appelé: "st-done",
-  Répondu: "st-win",
-  RDV: "st-win",
-  Rappeler: "st-warn",
-  "Répondeur": "st-warn",
-  "WhatsApp à envoyer": "st-warn",
-  "WhatsApp envoyé": "st-done",
-  "SMS à envoyer": "st-warn",
-  "SMS envoyé": "st-done",
+  Rappeler: "st-recall",
+  "Répondeur": "st-vm",
+  Répondu: "st-reply",
+  RDV: "st-rdv",
+  "SMS à envoyer": "st-sms-todo",
+  "SMS envoyé": "st-sms-done",
+  "WhatsApp à envoyer": "st-wa-todo",
+  "WhatsApp envoyé": "st-wa-done",
   "Pas intéressé": "st-dead",
   "Mauvais numéro": "st-dead",
-  "Ne pas contacter": "st-dead",
+  "Ne pas contacter": "st-nc",
 };
 
 export default function CallRow({ p }) {
