@@ -7,6 +7,7 @@ export default function Tabs() {
   const items = [
     { href: "/cold-mail", label: "Cold Mail" },
     { href: "/cold-call", label: "Cold Call" },
+    { href: "/a-presenter", label: "À présenter" },
   ];
   return (
     <nav className="tabs">

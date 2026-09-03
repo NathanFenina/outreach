@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Tabs from "./Tabs";
 import CallRow from "./CallRow";
+import PresentRow from "./PresentRow";
 import {
   getAudiences,
   getProspects,
@@ -26,8 +27,9 @@ function StatusBadge({ s }) {
 
 export default async function Dashboard({ channel, audienceId }) {
   const isEmail = channel === "email";
-  const base = isEmail ? "/cold-mail" : "/cold-call";
-  let totals = { email: 0, call: 0 },
+  const isPresent = channel === "present";
+  const base = isEmail ? "/cold-mail" : isPresent ? "/a-presenter" : "/cold-call";
+  let totals = { email: 0, call: 0, present: 0 },
     error = null;
 
   try {
@@ -50,7 +52,7 @@ export default async function Dashboard({ channel, audienceId }) {
               {prospects.length >= 500 ? " (500 premiers)" : ""}
             </span>
           </div>
-          <ProspectTable rows={prospects} isEmail={isEmail} />
+          <ProspectTable rows={prospects} isEmail={isEmail} channel={channel} />
         </Shell>
       );
     }
@@ -60,7 +62,7 @@ export default async function Dashboard({ channel, audienceId }) {
     return (
       <Shell channel={channel} totals={totals}>
         <div className="sec-h">
-          <h2>Audiences {isEmail ? "email" : "call"}</h2>
+          <h2>{isPresent ? "Sites prêts à présenter" : `Audiences ${isEmail ? "email" : "call"}`}</h2>
           <span className="hint">
             {audiences.length} audience{audiences.length > 1 ? "s" : ""} · clique pour voir les prospects
           </span>
@@ -127,6 +129,10 @@ function Shell({ channel, totals, children }) {
           <span>
             Cold call <b>{totals.call.toLocaleString("fr-FR")}</b>
           </span>
+          <span>·</span>
+          <span>
+            À présenter <b>{(totals.present || 0).toLocaleString("fr-FR")}</b>
+          </span>
         </div>
       </div>
       <Tabs />
@@ -138,7 +144,39 @@ function Shell({ channel, totals, children }) {
   );
 }
 
-function ProspectTable({ rows, isEmail }) {
+function ProspectTable({ rows, isEmail, channel }) {
+  if (channel === "present") {
+    return (
+      <div className="card">
+        <div className="tablewrap tallscroll">
+          <table className="crm">
+            <thead>
+              <tr>
+                <th>Entreprise</th>
+                <th>Téléphone</th>
+                <th>Site à présenter</th>
+                <th>Rappel</th>
+                <th>Statut</th>
+                <th>Remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((p) => (
+                <PresentRow key={p.id} p={p} />
+              ))}
+              {rows.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="empty">
+                    Aucun site en attente de présentation.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
   if (!isEmail) {
     // Cold call : CRM éditable (statut + remarque)
     return (

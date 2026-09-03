@@ -30,7 +30,7 @@ export async function getProspects(channel, { audienceId = null, limit = 500 } =
   let q = sb
     .from("outbound_leads")
     .select(
-      "id,full_name,email,phone,job_title,company,persona,segment,email_certainty,location,company_size,lemlist_status,call_status,notes,industry,personalization"
+      "id,full_name,email,phone,job_title,company,persona,segment,email_certainty,location,company_size,lemlist_status,call_status,notes,industry,personalization,demo_url"
     )
     .eq("channel", channel);
   if (audienceId) q = q.eq("audience_id", audienceId);
@@ -62,6 +62,6 @@ export async function getTotals() {
       .from("outbound_leads")
       .select("id", { count: "exact", head: true })
       .eq("channel", channel);
-  const [email, call] = await Promise.all([q("email"), q("call")]);
-  return { email: email.count || 0, call: call.count || 0 };
+  const [email, call, present] = await Promise.all([q("email"), q("call"), q("present")]);
+  return { email: email.count || 0, call: call.count || 0, present: present.count || 0 };
 }
