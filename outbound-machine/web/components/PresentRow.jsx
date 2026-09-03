@@ -5,16 +5,22 @@ import { updateLeadCrm } from "../app/actions";
 const STATUSES = [
   "À présenter",
   "RDV pris",
+  "Vidéo envoyée",
   "Présenté",
+  "Intéressé",
+  "À relancer",
   "Signé",
   "Perdu",
 ];
 
 const STATUS_CLASS = {
   "À présenter": "st-todo",
-  "RDV pris": "st-warn",
-  "Présenté": "st-done",
-  "Signé": "st-win",
+  "RDV pris": "st-recall",
+  "Vidéo envoyée": "st-reply",
+  "Présenté": "st-sms-done",
+  "Intéressé": "st-hot",
+  "À relancer": "st-vm",
+  "Signé": "st-rdv",
   "Perdu": "st-dead",
 };
 
