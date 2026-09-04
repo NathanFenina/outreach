@@ -62,6 +62,16 @@ export async function getTotals() {
       .from("outbound_leads")
       .select("id", { count: "exact", head: true })
       .eq("channel", channel);
-  const [email, call, present] = await Promise.all([q("email"), q("call"), q("present")]);
-  return { email: email.count || 0, call: call.count || 0, present: present.count || 0 };
+  const [email, call, present, batimat] = await Promise.all([
+    q("email"),
+    q("call"),
+    q("present"),
+    q("batimat"),
+  ]);
+  return {
+    email: email.count || 0,
+    call: call.count || 0,
+    present: present.count || 0,
+    batimat: batimat.count || 0,
+  };
 }

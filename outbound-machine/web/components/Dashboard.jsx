@@ -2,6 +2,7 @@ import Link from "next/link";
 import Tabs from "./Tabs";
 import CallRow from "./CallRow";
 import PresentRow from "./PresentRow";
+import BatimatRow from "./BatimatRow";
 import {
   getAudiences,
   getProspects,
@@ -28,8 +29,9 @@ function StatusBadge({ s }) {
 export default async function Dashboard({ channel, audienceId }) {
   const isEmail = channel === "email";
   const isPresent = channel === "present";
-  const base = isEmail ? "/cold-mail" : isPresent ? "/a-presenter" : "/cold-call";
-  let totals = { email: 0, call: 0, present: 0 },
+  const isBatimat = channel === "batimat";
+  const base = isEmail ? "/cold-mail" : isPresent ? "/a-presenter" : isBatimat ? "/batimat" : "/cold-call";
+  let totals = { email: 0, call: 0, present: 0, batimat: 0 },
     error = null;
 
   try {
@@ -62,7 +64,7 @@ export default async function Dashboard({ channel, audienceId }) {
     return (
       <Shell channel={channel} totals={totals}>
         <div className="sec-h">
-          <h2>{isPresent ? "Sites prêts à présenter" : `Audiences ${isEmail ? "email" : "call"}`}</h2>
+          <h2>{isPresent ? "Sites prêts à présenter" : isBatimat ? "Batimat · exposants" : `Audiences ${isEmail ? "email" : "call"}`}</h2>
           <span className="hint">
             {audiences.length} audience{audiences.length > 1 ? "s" : ""} · clique pour voir les prospects
           </span>
@@ -78,7 +80,7 @@ export default async function Dashboard({ channel, audienceId }) {
                 <div className="nm">{a.name}</div>
                 <div className="n">{Number(a.nb_leads).toLocaleString("fr-FR")}</div>
                 <div className="sub">
-                  {isEmail
+                  {isEmail || isBatimat
                     ? `${Number(a.nb_email).toLocaleString("fr-FR")} avec email`
                     : `${Number(a.nb_phone).toLocaleString("fr-FR")} avec téléphone`}
                 </div>
@@ -133,6 +135,10 @@ function Shell({ channel, totals, children }) {
           <span>
             À présenter <b>{(totals.present || 0).toLocaleString("fr-FR")}</b>
           </span>
+          <span>·</span>
+          <span>
+            Batimat <b>{(totals.batimat || 0).toLocaleString("fr-FR")}</b>
+          </span>
         </div>
       </div>
       <Tabs />
@@ -145,6 +151,38 @@ function Shell({ channel, totals, children }) {
 }
 
 function ProspectTable({ rows, isEmail, channel }) {
+  if (channel === "batimat") {
+    return (
+      <div className="card">
+        <div className="tablewrap tallscroll">
+          <table className="crm">
+            <thead>
+              <tr>
+                <th>Société</th>
+                <th>Site</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Statut</th>
+                <th>Remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((p) => (
+                <BatimatRow key={p.id} p={p} />
+              ))}
+              {rows.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="empty">
+                    Aucun exposant.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
   if (channel === "present") {
     return (
       <div className="card">
