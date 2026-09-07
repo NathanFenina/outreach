@@ -9,6 +9,7 @@ export default function Tabs() {
     { href: "/cold-call", label: "Cold Call" },
     { href: "/a-presenter", label: "À présenter" },
     { href: "/batimat", label: "Batimat" },
+    { href: "/taches", label: "Tâches" },
   ];
   return (
     <nav className="tabs">

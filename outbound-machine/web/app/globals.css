@@ -98,6 +98,13 @@ td .muted{color:var(--muted)}
 .statusSel.st-nc{color:#8a919b;text-decoration:line-through}                     /* Ne pas contacter */
 .statusSel.st-hot{background:#fff6cc;color:#8a6d00;border-color:#f0dd7a}         /* Intéressé — or/jaune */
 .noteCell{min-width:240px}
+.tasktitle{font-weight:600}
+.tasktitle.taskdone{color:var(--faint);text-decoration:line-through}
+.chip-cat{margin-left:8px;font-size:10px;background:var(--none-bg);color:var(--none)}
+.noteInput-wide{width:360px;max-width:52vw}
+.addtask{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.addbtn{font-size:13px;font-weight:650;padding:7px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--accent-bg);color:var(--accent-ink);cursor:pointer}
+.addbtn:disabled{opacity:.5;cursor:default}
 .noteInput{width:220px;font-size:12.5px;padding:6px 9px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink)}
 .noteInput:focus{outline:2px solid var(--accent);outline-offset:1px;background:var(--surface)}
 .savemark{margin-left:6px;font-size:12px;color:var(--ultra)}

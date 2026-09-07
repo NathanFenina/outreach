@@ -55,6 +55,17 @@ export async function getAudienceById(id) {
   return data;
 }
 
+export async function getTasks() {
+  const sb = db();
+  const { data, error } = await sb
+    .from("outbound_tasks")
+    .select("id,title,category,status,priority,notes,sort_order,updated_at")
+    .order("sort_order", { ascending: true })
+    .limit(500);
+  if (error) throw error;
+  return data || [];
+}
+
 export async function getTotals() {
   const sb = db();
   const q = (channel) =>
