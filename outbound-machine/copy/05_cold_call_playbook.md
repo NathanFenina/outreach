@@ -116,3 +116,36 @@ autour de {ville} où vous pouvez récupérer des demandes de devis. Je vous par
 **Recommandation nette : garder le bouton WhatsApp manuel (gratuit, déjà là), tracker via les
 statuts « SMS à envoyer / envoyé », et ne connecter un provider SMS payant que si le volume le
 justifie. Simple, pertinent, pas cher.**
+
+---
+
+## Retour terrain : 1er batch SMS réel (plombiers Nantes — 08/09/2026)
+
+Envoi manuel via **Onoff** sur la liste des 70 mobiles de l'audience 45 (statuts ouverts :
+Répondeur / À appeler / Rappeler). Batch arrêté après « Technic'eau » : **64 SMS envoyés**.
+
+### Chiffres
+| Résultat | Nb | Statut CRM posé |
+|---|---|---|
+| Envoyés, pas de réponse à ce jour | 60 | SMS envoyé |
+| STOP / réponse négative | 5 | Ne pas contacter |
+| Réponse positive (Qualidro, déjà chaud au tel) | 1 | Répondu |
+| Pas encore envoyés (fin de liste) | 4 | SMS à envoyer |
+
+**~8 % de STOP explicites en une matinée.** C'est le vrai coût du canal : à chaque STOP, le
+lead est mort pour tous les canaux, pas juste pour le SMS. À mettre en face du taux de réponse
+positive avant d'industrialiser.
+
+### Alerte anti-spam Onoff (à connaître avant le prochain batch)
+Vers le **50e envoi**, Onoff a déclenché une alerte interne (« Onoff Service ») sur la
+**ressemblance des messages**. Contournement appliqué en cours de batch : alterner deux
+formulations différentes (variantes B et C) — plus d'alerte ensuite.
+
+**Règles pour le prochain batch :**
+- Préparer **3 variantes** de message dès le départ et les alterner, pas une seule.
+- Ne pas dépasser **~40-50 envois** d'affilée sur un même numéro émetteur ; fractionner sur
+  plusieurs demi-journées.
+- Toujours **mention STOP** et traitement immédiat des STOP dans le CRM (statut
+  « Ne pas contacter »), c'est une obligation, pas une option.
+- Les **numéros fixes ne reçoivent pas de SMS** : filtrer sur mobile (`+336` / `+337`) avant
+  envoi — cf. `scripts/20_export_sms_plombier.py` qui sort la colonne `type_tel`.
