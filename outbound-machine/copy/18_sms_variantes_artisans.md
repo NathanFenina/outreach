@@ -69,3 +69,41 @@ Vérifiées à 153 / 153 / 146 caractères = **1 segment chacune**.
 - Mobiles uniquement (`+336` / `+337`) — un fixe ne reçoit pas de SMS.
 - Dédoublonner sur le numéro, pas sur le nom : deux fiches peuvent partager une ligne.
 - Tout STOP → statut CRM « Ne pas contacter », immédiatement, tous canaux confondus.
+
+---
+
+## Version Calendly (retenue pour Brevo — paysagistes 09/2026)
+
+Changement de logique : on ne pose plus de question ouverte (« ça vous intéresse ? »), on donne
+**un seul CTA cliquable**. Ça résout le problème de fond de Brevo : l'expéditeur alphanumérique
+(« Nathan Feni ») est unidirectionnel, le prospect ne peut PAS répondre au SMS. Sans lien, le
+message demande une réponse impossible à donner.
+
+> **A** — Bonjour, Nathan de Decupler. Je vous ai préparé un site moderne, offert aux 30 premiers
+> artisans, pour signer plus de devis. Je vous le montre en 15 min : calendly.com/xxx/15min
+> STOP au [STOP_CODE]
+
+> **B** — Bonjour, Nathan de Decupler. Partenaires des artisans, je vous ai créé un site moderne :
+> si vous l'aimez, vous le gardez. Je vous le montre en 15 min : calendly.com/xxx/15min
+> STOP au [STOP_CODE]
+
+> **C** — Bonjour, Nathan de Decupler. J'ai préparé un site internet moderne pour votre entreprise,
+> offert aux 30 premiers artisans. Je vous le montre en 15 min : calendly.com/xxx/15min
+> STOP au [STOP_CODE]
+
+**~195 caractères = 2 segments** (avec un slug Calendly de 27 caractères et un code STOP à
+5 chiffres). Assumé : le lien vaut largement les 0,045 € de plus par contact. Repasser sous
+160 obligerait à couper l'offre ou le lien.
+
+### Réglages Brevo
+- **Options → raccourcir automatiquement les liens** : à activer. C'est ce qui donne le
+  **suivi des clics** de la campagne — sinon aucune stat, et le lien reste long.
+- Ne pas utiliser de raccourcisseur public (bit.ly…) : mauvais pour la délivrabilité SMS.
+- `[STOP_CODE]` se laisse tel quel, Brevo le remplace à l'envoi. Sans lui, la campagne est
+  refusée (obligation légale FR).
+- Créer un **événement Calendly dédié au SMS** plutôt que de bricoler des UTM : l'attribution
+  est automatique, chaque RDV pris dessus vient du SMS.
+
+### Ce que ça change côté mesure
+Le SMS n'a plus de « réponse » à compter. Les deux seuls indicateurs deviennent le **taux de clic**
+(Brevo) et le **nombre de RDV pris** (Calendly). Un STOP reste un STOP → statut « Ne pas contacter ».
