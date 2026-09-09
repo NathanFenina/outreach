@@ -3,6 +3,7 @@ import Tabs from "./Tabs";
 import CallRow from "./CallRow";
 import PresentRow from "./PresentRow";
 import BatimatRow from "./BatimatRow";
+import FacebookRow from "./FacebookRow";
 import {
   getAudiences,
   getProspects,
@@ -30,11 +31,31 @@ export default async function Dashboard({ channel, audienceId }) {
   const isEmail = channel === "email";
   const isPresent = channel === "present";
   const isBatimat = channel === "batimat";
-  const base = isEmail ? "/cold-mail" : isPresent ? "/a-presenter" : isBatimat ? "/batimat" : "/cold-call";
-  let totals = { email: 0, call: 0, present: 0, batimat: 0 },
+  const isFacebook = channel === "facebook";
+  const base = isEmail ? "/cold-mail" : isPresent ? "/a-presenter" : isBatimat ? "/batimat" : isFacebook ? "/facebook" : "/cold-call";
+  let totals = { email: 0, call: 0, present: 0, batimat: 0, facebook: 0 },
     error = null;
 
   try {
+    if (isFacebook) {
+      // Board plat : tous les leads scrapés des groupes FB, sans couche audience.
+      const [prospects, t] = await Promise.all([
+        getProspects("facebook", { limit: 1000 }),
+        getTotals(),
+      ]);
+      totals = t;
+      return (
+        <Shell channel={channel} totals={totals}>
+          <div className="sec-h">
+            <h2>Artisans BTP · groupes Facebook</h2>
+            <span className="hint">
+              {prospects.length} lead{prospects.length > 1 ? "s" : ""} scrapé{prospects.length > 1 ? "s" : ""}
+            </span>
+          </div>
+          <ProspectTable rows={prospects} isEmail={false} channel="facebook" />
+        </Shell>
+      );
+    }
     if (audienceId) {
       const [audience, prospects, t] = await Promise.all([
         getAudienceById(audienceId),
@@ -139,6 +160,10 @@ function Shell({ channel, totals, children }) {
           <span>
             Batimat <b>{(totals.batimat || 0).toLocaleString("fr-FR")}</b>
           </span>
+          <span>·</span>
+          <span>
+            Facebook <b>{(totals.facebook || 0).toLocaleString("fr-FR")}</b>
+          </span>
         </div>
       </div>
       <Tabs />
@@ -151,6 +176,40 @@ function Shell({ channel, totals, children }) {
 }
 
 function ProspectTable({ rows, isEmail, channel }) {
+  if (channel === "facebook") {
+    return (
+      <div className="card">
+        <div className="tablewrap tallscroll">
+          <table className="crm">
+            <thead>
+              <tr>
+                <th>Artisan</th>
+                <th>Zone</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Contexte</th>
+                <th>Post</th>
+                <th>Statut</th>
+                <th>Remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((p) => (
+                <FacebookRow key={p.id} p={p} />
+              ))}
+              {rows.length === 0 && (
+                <tr>
+                  <td colSpan={8} className="empty">
+                    Aucun lead Facebook.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
   if (channel === "batimat") {
     return (
       <div className="card">
