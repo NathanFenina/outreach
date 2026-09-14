@@ -283,6 +283,7 @@ function ProspectTable({ rows, isEmail, channel }) {
             <thead>
               <tr>
                 <th>Entreprise</th>
+                <th>Contact</th>
                 <th>Téléphone</th>
                 <th>Note Google</th>
                 <th>Liens</th>
@@ -296,7 +297,7 @@ function ProspectTable({ rows, isEmail, channel }) {
               ))}
               {rows.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="empty">
+                  <td colSpan={7} className="empty">
                     Aucun prospect dans cette audience.
                   </td>
                 </tr>

@@ -61,6 +61,20 @@ export default function CallRow({ p }) {
           {p.company || p.full_name || "—"}
         </span>
       </td>
+      <td data-label="Contact">
+        {p.full_name ? (
+          <span className="name cellclip" title={p.full_name}>
+            {p.full_name}
+          </span>
+        ) : (
+          <span className="muted">—</span>
+        )}
+        {p.job_title && (
+          <div className="small cellclip" title={p.job_title}>
+            {p.job_title}
+          </div>
+        )}
+      </td>
       <td className="muted" data-label="Téléphone">
         {telHref ? (
           <a className="lnk" href={telHref} title="Appeler">
