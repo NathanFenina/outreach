@@ -67,24 +67,19 @@ export async function getTasks() {
 }
 
 export async function getTotals() {
-  const sb = db();
-  const q = (channel) =>
-    sb
-      .from("outbound_leads")
-      .select("id", { count: "exact", head: true })
-      .eq("channel", channel);
-  const [email, call, present, batimat, facebook] = await Promise.all([
-    q("email"),
-    q("call"),
-    q("present"),
-    q("batimat"),
-    q("facebook"),
-  ]);
-  return {
-    email: email.count || 0,
-    call: call.count || 0,
-    present: present.count || 0,
-    batimat: batimat.count || 0,
-    facebook: facebook.count || 0,
-  };
+  const zero = { email: 0, call: 0, present: 0, batimat: 0, facebook: 0 };
+  // Une seule requête (vue agrégée) au lieu de 5 count() -> évite les timeouts.
+  // Résilient : si la barre de totaux échoue, on renvoie 0 sans casser la page.
+  try {
+    const sb = db();
+    const { data, error } = await sb.from("outbound_channel_counts").select("channel,n");
+    if (error || !data) return zero;
+    const out = { ...zero };
+    for (const r of data) {
+      if (r.channel in out) out[r.channel] = r.n || 0;
+    }
+    return out;
+  } catch {
+    return zero;
+  }
 }
