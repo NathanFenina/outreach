@@ -8,12 +8,19 @@ export const fetchCache = "force-no-store";
 export const revalidate = 0;
 
 const CAT_ORDER = [
+  // Les 5 "Types" du board de prospection en premier
+  "Prospection",
+  "Contenu",
+  "Stratégie",
+  "Reliquat",
+  "Sécurité",
+  // Le reste (suivi détaillé) ensuite
+  "à lancer",
+  "Campagnes",
   "CMO",
   "Batimat",
-  "Campagnes",
   "À présenter",
   "SMS/Appels",
-  "Prospection",
   "Data",
   "App",
   "Délivrabilité",
