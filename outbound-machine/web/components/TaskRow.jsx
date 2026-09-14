@@ -11,8 +11,19 @@ const STATUS_CLASS = {
   "Abandonné": "st-nc",
 };
 
+const TYPES = ["Prospection", "Contenu", "Stratégie", "Reliquat", "Sécurité", "Campagnes", "App", "Data"];
+const CANAUX = ["—", "Cold mail", "SMS", "Appel", "LinkedIn", "App"];
+const PRIOS = [
+  { v: 1, label: "Haute" },
+  { v: 2, label: "Medium" },
+  { v: 3, label: "Basse" },
+];
+
 export default function TaskRow({ t }) {
   const [status, setStatus] = useState(t.status || "À faire");
+  const [type, setType] = useState(t.category || "Prospection");
+  const [canal, setCanal] = useState(t.channel || "—");
+  const [prio, setPrio] = useState(t.priority || 2);
   const [notes, setNotes] = useState(t.notes || "");
   const [pending, start] = useTransition();
   const [flash, setFlash] = useState("");
@@ -26,12 +37,55 @@ export default function TaskRow({ t }) {
   }
 
   const done = status === "Fait" || status === "Abandonné";
+  const typeOpts = TYPES.includes(type) ? TYPES : [type, ...TYPES];
 
   return (
     <tr>
       <td data-label="Tâche">
         <span className={"tasktitle" + (done ? " taskdone" : "")}>{t.title}</span>
-        {t.category && <span className="chip chip-cat">{t.category}</span>}
+      </td>
+      <td data-label="Type">
+        <select
+          className="statusSel"
+          value={type}
+          onChange={(e) => {
+            setType(e.target.value);
+            save({ category: e.target.value });
+          }}
+        >
+          {typeOpts.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+      </td>
+      <td data-label="Canal">
+        <select
+          className="statusSel"
+          value={canal}
+          onChange={(e) => {
+            setCanal(e.target.value);
+            save({ channel: e.target.value === "—" ? "" : e.target.value });
+          }}
+        >
+          {CANAUX.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+      </td>
+      <td data-label="Prio">
+        <select
+          className={"statusSel " + (prio === 1 ? "st-hot" : "")}
+          value={prio}
+          onChange={(e) => {
+            const v = Number(e.target.value);
+            setPrio(v);
+            save({ priority: v });
+          }}
+        >
+          {PRIOS.map((p) => (
+            <option key={p.v} value={p.v}>{p.label}</option>
+          ))}
+        </select>
       </td>
       <td data-label="Statut">
         <select
@@ -43,9 +97,7 @@ export default function TaskRow({ t }) {
           }}
         >
           {STATUSES.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
+            <option key={s} value={s}>{s}</option>
           ))}
         </select>
       </td>

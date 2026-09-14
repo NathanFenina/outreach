@@ -91,7 +91,7 @@ export async function getTasks() {
   const sb = db();
   const { data, error } = await sb
     .from("outbound_tasks")
-    .select("id,title,category,status,priority,notes,sort_order,updated_at")
+    .select("id,title,category,channel,status,priority,notes,sort_order,updated_at")
     .order("sort_order", { ascending: true })
     .limit(500);
   if (error) throw error;

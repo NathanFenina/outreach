@@ -26,6 +26,7 @@ export async function updateTask(taskId, patch) {
   if (typeof patch.notes === "string") allowed.notes = patch.notes;
   if (typeof patch.title === "string") allowed.title = patch.title;
   if (typeof patch.category === "string") allowed.category = patch.category;
+  if (typeof patch.channel === "string") allowed.channel = patch.channel;
   if (Number.isFinite(patch.priority)) allowed.priority = patch.priority;
   if (Object.keys(allowed).length === 0) return { ok: false, error: "rien à mettre à jour" };
   allowed.updated_at = new Date().toISOString();

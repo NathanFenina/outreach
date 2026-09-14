@@ -1,31 +1,11 @@
 import Tabs from "../../components/Tabs";
-import TaskRow from "../../components/TaskRow";
+import TasksBoard from "../../components/TasksBoard";
 import AddTask from "../../components/AddTask";
 import { getTasks } from "../../lib/supabase";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 export const revalidate = 0;
-
-const CAT_ORDER = [
-  // Les 5 "Types" du board de prospection en premier
-  "Prospection",
-  "Contenu",
-  "Stratégie",
-  "Reliquat",
-  "Sécurité",
-  // Le reste (suivi détaillé) ensuite
-  "à lancer",
-  "Campagnes",
-  "CMO",
-  "Batimat",
-  "À présenter",
-  "SMS/Appels",
-  "Data",
-  "App",
-  "Délivrabilité",
-  "Backlinks",
-];
 
 export default async function Taches() {
   let tasks = [];
@@ -40,12 +20,6 @@ export default async function Taches() {
   const blocked = tasks.filter((t) => t.status === "Bloqué").length;
   const doing = tasks.filter((t) => t.status === "En cours").length;
   const todo = tasks.filter((t) => t.status === "À faire").length;
-
-  const cats = [...new Set(tasks.map((t) => t.category || "Divers"))].sort((a, b) => {
-    const ia = CAT_ORDER.indexOf(a);
-    const ib = CAT_ORDER.indexOf(b);
-    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
-  });
 
   return (
     <div className="wrap">
@@ -73,37 +47,7 @@ export default async function Taches() {
             <div className="card" style={{ marginBottom: 16, padding: 14 }}>
               <AddTask />
             </div>
-            {cats.map((cat) => {
-              const rows = tasks.filter((t) => (t.category || "Divers") === cat);
-              return (
-                <div key={cat} style={{ marginBottom: 22 }}>
-                  <div className="sec-h">
-                    <h2>{cat}</h2>
-                    <span className="hint">
-                      {rows.filter((r) => r.status === "Fait").length}/{rows.length} fait
-                    </span>
-                  </div>
-                  <div className="card">
-                    <div className="tablewrap">
-                      <table className="crm">
-                        <thead>
-                          <tr>
-                            <th>Tâche</th>
-                            <th>Statut</th>
-                            <th>Remarque</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {rows.map((t) => (
-                            <TaskRow key={t.id} t={t} />
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            <TasksBoard tasks={tasks} />
           </>
         )}
       </section>
