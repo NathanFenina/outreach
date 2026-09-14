@@ -44,6 +44,38 @@ export async function getProspects(channel, { audienceId = null, limit = 500 } =
   return rows;
 }
 
+const HOT_STATUSES = [
+  "RDV pris",
+  "RDV",
+  "Signé",
+  "Vidéo envoyée",
+  "Présenté",
+  "Intéressé",
+  "Répondu",
+  "Rappeler",
+  "À relancer",
+];
+const HOT_ORDER = Object.fromEntries(HOT_STATUSES.map((s, i) => [s, i]));
+
+// CRM combiné : tous les leads chauds, tous canaux confondus.
+export async function getHotLeads({ limit = 500 } = {}) {
+  const sb = db();
+  const { data, error } = await sb
+    .from("outbound_leads")
+    .select(
+      "id,full_name,first_name,email,phone,job_title,company,channel,segment,location,call_status,notes,personalization,demo_url"
+    )
+    .in("call_status", HOT_STATUSES)
+    .limit(limit);
+  if (error) throw error;
+  const rows = data || [];
+  rows.sort(
+    (a, b) =>
+      (HOT_ORDER[a.call_status] ?? 99) - (HOT_ORDER[b.call_status] ?? 99)
+  );
+  return rows;
+}
+
 export async function getAudienceById(id) {
   const sb = db();
   const { data, error } = await sb

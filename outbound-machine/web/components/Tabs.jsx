@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function Tabs() {
   const path = usePathname();
   const items = [
+    { href: "/chauds", label: "🔥 Chauds" },
     { href: "/cold-mail", label: "Cold Mail" },
     { href: "/cold-call", label: "Cold Call" },
     { href: "/a-presenter", label: "À présenter" },

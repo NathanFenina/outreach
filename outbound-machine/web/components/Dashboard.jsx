@@ -4,11 +4,13 @@ import CallRow from "./CallRow";
 import PresentRow from "./PresentRow";
 import BatimatRow from "./BatimatRow";
 import FacebookRow from "./FacebookRow";
+import HotRow from "./HotRow";
 import {
   getAudiences,
   getProspects,
   getTotals,
   getAudienceById,
+  getHotLeads,
 } from "../lib/supabase";
 
 function CertBadge({ c }) {
@@ -32,11 +34,28 @@ export default async function Dashboard({ channel, audienceId }) {
   const isPresent = channel === "present";
   const isBatimat = channel === "batimat";
   const isFacebook = channel === "facebook";
+  const isHot = channel === "hot";
   const base = isEmail ? "/cold-mail" : isPresent ? "/a-presenter" : isBatimat ? "/batimat" : isFacebook ? "/facebook" : "/cold-call";
   let totals = { email: 0, call: 0, present: 0, batimat: 0, facebook: 0 },
     error = null;
 
   try {
+    if (isHot) {
+      // CRM combiné : tous les leads chauds, tous canaux confondus.
+      const [hot, t] = await Promise.all([getHotLeads(), getTotals()]);
+      totals = t;
+      return (
+        <Shell channel={channel} totals={totals}>
+          <div className="sec-h">
+            <h2>🔥 Leads chauds · tous canaux</h2>
+            <span className="hint">
+              {hot.length} lead{hot.length > 1 ? "s" : ""} en cours (RDV, intéressés, à rappeler, à relancer…)
+            </span>
+          </div>
+          <ProspectTable rows={hot} isEmail={false} channel="hot" />
+        </Shell>
+      );
+    }
     if (isFacebook) {
       // Board plat : tous les leads scrapés des groupes FB, sans couche audience.
       const [prospects, t] = await Promise.all([
@@ -176,6 +195,38 @@ function Shell({ channel, totals, children }) {
 }
 
 function ProspectTable({ rows, isEmail, channel }) {
+  if (channel === "hot") {
+    return (
+      <div className="card">
+        <div className="tablewrap tallscroll">
+          <table className="crm">
+            <thead>
+              <tr>
+                <th>Lead</th>
+                <th>Canal</th>
+                <th>Téléphone</th>
+                <th>Site</th>
+                <th>Statut</th>
+                <th>Remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((p) => (
+                <HotRow key={p.id} p={p} />
+              ))}
+              {rows.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="empty">
+                    Aucun lead chaud pour l'instant.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
   if (channel === "facebook") {
     return (
       <div className="card">
