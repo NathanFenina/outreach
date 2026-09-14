@@ -98,6 +98,18 @@ td .muted{color:var(--muted)}
 .statusSel.st-nc{color:#8a919b;text-decoration:line-through}                     /* Ne pas contacter */
 .statusSel.st-hot{background:#fff6cc;color:#8a6d00;border-color:#f0dd7a}         /* Intéressé — or/jaune */
 .noteCell{min-width:240px}
+/* Tableau Tâches : largeur fixe qui rentre dans l'écran, titre qui passe à la ligne */
+.tasks{table-layout:fixed;width:100%}
+.tasks th,.tasks td{white-space:normal;vertical-align:top;padding:9px 10px}
+.tasks th:nth-child(1),.tasks td:nth-child(1){width:38%}
+.tasks th:nth-child(2),.tasks td:nth-child(2){width:12%}
+.tasks th:nth-child(3),.tasks td:nth-child(3){width:11%}
+.tasks th:nth-child(4),.tasks td:nth-child(4){width:10%}
+.tasks th:nth-child(5),.tasks td:nth-child(5){width:13%}
+.tasks th:nth-child(6),.tasks td:nth-child(6){width:16%}
+.tasks .statusSel{width:100%;padding:5px 6px;font-size:12px;min-width:0}
+.tasks .noteInput,.tasks .noteInput-wide{width:100%;max-width:none;min-width:0}
+.tasks .tasktitle{white-space:normal;font-size:13px}
 .tasktitle{font-weight:600}
 .tasktitle.taskdone{color:var(--faint);text-decoration:line-through}
 .chip-cat{margin-left:8px;font-size:10px;background:var(--none-bg);color:var(--none)}

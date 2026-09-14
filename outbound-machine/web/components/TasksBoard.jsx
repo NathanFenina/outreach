@@ -75,7 +75,7 @@ export default function TasksBoard({ tasks }) {
 
       <div className="card">
         <div className="tablewrap tallscroll">
-          <table className="crm">
+          <table className="crm tasks">
             <thead>
               <tr>
                 <th>Tâche</th>
