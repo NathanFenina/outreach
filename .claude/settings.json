@@ -26,7 +26,16 @@
       "mcp__Google_Drive__read_file_content",
       "mcp__Google_Drive__search_files",
       "mcp__Google_Drive__copy_file",
-      "mcp__Google_Drive__get_file_metadata"
+      "mcp__Google_Drive__get_file_metadata",
+      "mcp__Supabase",
+      "mcp__FullEnrich",
+      "mcp__firecrawl",
+      "mcp__Clay",
+      "mcp__Claude_Code_Remote",
+      "mcp__Google_Drive",
+      "Agent",
+      "Skill",
+      "ToolSearch"
     ]
   }
 }
