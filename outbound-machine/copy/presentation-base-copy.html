@@ -186,6 +186,42 @@ footer .mono{font-family:var(--mono);color:var(--faint)}
 .lvl .nm{font-size:13px;font-weight:680;margin:6px 0 4px;text-transform:uppercase;letter-spacing:.05em;
   font-family:var(--mono);color:var(--accent-ink)}
 .lvl p{font-size:13.3px;color:var(--muted);margin:0}
+
+/* ===== mise à jour 29 sept. (préfixe n-) ===== */
+.n-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.n-lede{color:var(--muted);max-width:68ch;margin:0}
+.n-sec-head{display:grid;gap:4px;margin-bottom:14px}
+.n-sec-head h2{margin:.1em 0}
+.n-rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.n-rule{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+.n-rule b{display:block;margin-bottom:2px}
+.n-do b{color:var(--keep)} .n-dont b{color:var(--drop)}
+.n-hooks{display:grid;gap:14px}
+section .n-hook{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:10px;margin-top:14px}
+.n-hook-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}
+.n-hook-top h3{margin:0;font-size:16.5px}
+.n-id{font-family:var(--mono);font-size:12px;color:var(--accent-ink);font-weight:600}
+.n-chips{display:flex;flex-wrap:wrap;gap:6px}
+.n-chip{font-size:12px;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+.n-chip.n-warn{background:var(--warn-soft);color:var(--warn)}
+.n-mail{border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:12px 14px;white-space:pre-wrap;font-size:14px;max-width:72ch}
+.n-subj{font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:6px;display:block}
+.n-note{font-size:13.5px;color:var(--muted);margin:0}
+.n-note.n-warn{color:var(--warn)}
+.n-copy{justify-self:start;font:500 12.5px var(--sans);padding:6px 12px;border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.n-copy:hover,.n-copy:focus-visible{border-color:var(--accent);outline:none}
+.n-tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-top:12px}
+.n-tablewrap table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+.n-tablewrap th,.n-tablewrap td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.n-tablewrap th{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.n-tablewrap tr:last-child td{border-bottom:0}
+.n-pill{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;font-weight:600}
+.n-p-go{background:var(--keep-soft);color:var(--keep)} .n-p-wait{background:var(--warn-soft);color:var(--warn)} .n-p-val{background:var(--accent-soft);color:var(--accent-ink)}
+.n-ba{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.n-ba > div{display:grid;gap:6px;align-content:start}
+.n-before .n-mail{border-color:var(--drop-soft)} .n-after .n-mail{border-color:var(--accent)}
+@media (max-width:640px){.n-ba{grid-template-columns:1fr}}
+.n-checks{margin:0;padding-left:20px;display:grid;gap:6px;max-width:72ch}
 </style>
 
 <header class="hero">
@@ -197,7 +233,7 @@ footer .mono{font-family:var(--mono);color:var(--faint)}
       <span>Segment pilote <b>SaaS / Fintech · CEO-CMO</b></span>
       <span>Canaux <b>Cold mail · Cold call · WhatsApp</b></span>
       <span>Outils <b>Supabase · Lemlist</b></span>
-      <span>MàJ <b>13 août 2026</b></span>
+      <span>MàJ <b>29 sept. 2026</b></span>
     </div>
   </div>
 </header>
@@ -221,6 +257,13 @@ footer .mono{font-family:var(--mono);color:var(--faint)}
       <li><a href="#btp">Campagne BTP</a></li>
       <li><a href="#coach">Retours du coach</a></li>
       <li><a href="#econ">Économie de l'analyse</a></li>
+      <li><a href="#livrables">Livrables à offrir (&gt; 400 €) · 29/09</a></li>
+      <li><a href="#premiers">Premier message par audience · 29/09</a></li>
+      <li><a href="#regles">Règles tirées des 123 réponses · 29/09</a></li>
+      <li><a href="#hooks">Hooks H1 à H10 · 29/09</a></li>
+      <li><a href="#affectation">Batchs de 400 · 29/09</a></li>
+      <li><a href="#relances">Relances R1 à R4 (poussées) · 29/09</a></li>
+      <li><a href="#ciblage">Check ciblage · 29/09</a></li>
     </ol>
   </nav>
 
@@ -648,6 +691,290 @@ Nathan, Décupler</div>
       </div>
       <p class="hr-note">Expansion prévue : France d'abord, puis Afrique subsaharienne (FR/EN, angle « prenez l'avance sur la visibilité IA ») et Middle East (EN, angle premium/marque).</p>
     </section>
+    <section id="livrables">
+      <div class="eyebrow">Mise à jour du 29 sept. · la règle qui fait répondre</div>
+      <h2>Offrir un livrable qui vaut plus de 400 €</h2>
+      <p class="sub">Les 12 réponses positives de septembre ont un point commun : on proposait un livrable déjà prêt (analyse, vidéo) et il suffisait de dire « oui ». Chaque mail 1 annonce désormais un de ces livrables, que Nathan aurait du mal à donner gratuitement, et qu'il donne quand même.</p>
+      <div class="n-tablewrap"><table>
+        <thead><tr><th>Livrable offert</th><th>Valeur perçue</th><th>Production</th><th>Pour qui</th></tr></thead>
+        <tbody>
+          <tr><td>Vidéo de 3 min : « 7 opportunités que vous n'exploitez pas »</td><td class="mono">≈ 600 €</td><td>Loom par lead, 15 min</td><td>CMO / dirigeants ayant levé (top 50)</td></tr>
+          <tr><td>Les 10 prompts où vous devriez sortir + 3 quick wins</td><td class="mono">≈ 450 €</td><td>Radar Visibilité IA, 10 min</td><td>Dirigeants B2B, ESN, éditeurs</td></tr>
+          <tr><td>Une page optimisée GEO-ready (outil GEO Ready)</td><td class="mono">≈ 500 €</td><td>Outil GEO Ready, 20 min</td><td>CMO SaaS, marketing structuré</td></tr>
+          <tr><td>Cartographie d'idées de contenus, formats et prompts</td><td class="mono">≈ 800 €</td><td>Carte topique, 30 min</td><td>Levée + marketing, e-commerce structuré</td></tr>
+          <tr><td>Liste des actions GEO non exploitées qui génèrent du cash</td><td class="mono">≈ 400 €</td><td>skill decupler-seo-geo-score</td><td>Toutes cibles B2B</td></tr>
+          <tr><td>Démo vidéo d'un agent IA construit sur leur cas</td><td class="mono">≈ 1 000 €</td><td>Démo agent + vidéo, 30 min</td><td>Test « agents IA » : BTP, immo, services</td></tr>
+          <tr><td>Maquette de site offerte</td><td class="mono">≈ 500 €</td><td>Modèle site offert</td><td>Commerces locaux (appel / SMS)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="hr-note">Règle : on annonce le livrable dans le mail 1, on le produit seulement quand le lead dit « oui ». Le coût réel ne tombe que sur les leads chauds.</p>
+    </section>
+
+    <section id="premiers">
+      <div class="eyebrow">Mise à jour du 29 sept.</div>
+      <h2>Premier message par audience</h2>
+      <p class="sub">Un seul angle par batch, pour pouvoir comparer. Les hooks H1 à H10 sont détaillés plus bas.</p>
+      <div class="n-hooks">
+        <article class="n-hook"><div class="n-hook-top"><span class="n-id">A1</span><h3>ESN + éditeurs IT · « 10 prompts offerts »</h3></div>
+          <div class="n-chips"><span class="n-chip">91 emails vérifiés, prêts</span><span class="n-chip">campagne ESN existante</span></div>
+          <div class="n-mail" id="a1"><span class="n-subj">Objet : 10 prompts où {{companyName}} devrait sortir</span>Bonjour {{firstName}},
+
+quand un client cherche une ESN ou un éditeur comme {{companyName}}, il demande de plus en plus à ChatGPT. J'ai listé les 10 questions qu'il pose, et regardé qui sort à votre place.
+
+Je vous l'envoie, avec 3 actions rapides pour y apparaître ? Un « oui » suffit.
+
+Nathan</div>
+          <button class="n-copy" data-target="a1" type="button">Copier</button></article>
+
+        <article class="n-hook"><div class="n-hook-top"><span class="n-id">A2</span><h3>Batimat · « êtes-vous la bonne personne ? » + démo agent</h3></div>
+          <div class="n-chips"><span class="n-chip">493 emails existants, à valider (≈ 2 €)</span><span class="n-chip n-warn">test agents IA</span></div>
+          <div class="n-mail" id="a2"><span class="n-subj">Objet : agents IA pour {{companyName}}</span>Bonjour,
+
+je ne sais pas si je m'adresse à la bonne personne, merci de transférer à la direction si besoin.
+
+On a construit pour des entreprises du bâtiment un agent IA qui prépare les devis et relance les clients automatiquement. J'ai enregistré une démo de 2 minutes sur un cas comme celui de {{companyName}}.
+
+Je vous l'envoie ? Un « oui » suffit.
+
+Nathan</div>
+          <button class="n-copy" data-target="a2" type="button">Copier</button></article>
+
+        <article class="n-hook"><div class="n-hook-top"><span class="n-id">A3</span><h3>Levée + marketing structuré · « vidéo 7 opportunités »</h3></div>
+          <div class="n-chips"><span class="n-chip">à sourcer (400)</span><span class="n-chip n-warn">Loom réservé aux 50 meilleurs</span></div>
+          <div class="n-mail" id="a3"><span class="n-subj">Objet : 7 opportunités pour {{companyName}}</span>Bonjour {{firstName}},
+
+félicitations pour la levée. Je ne vais pas vous proposer un énième audit SEO. J'ai analysé {{domain}} et relevé 7 opportunités de trafic et de leads activables en 30 jours.
+
+Je vous ai enregistré une vidéo de 3 minutes qui montre comment les mettre en place vous-même. Je vous l'envoie ?
+
+Nathan</div>
+          <button class="n-copy" data-target="a3" type="button">Copier</button></article>
+
+        <article class="n-hook"><div class="n-hook-top"><span class="n-id">A4</span><h3>Saudi · funded / hiring · AI build demo</h3></div>
+          <div class="n-chips"><span class="n-chip">286 boîtes sourcées</span><span class="n-chip">3 campagnes créées</span></div>
+          <div class="n-mail" id="a4"><span class="n-subj">Objet : AI at {{companyName}}</span>Hi {{firstName}},
+
+congrats on the raise. I build AI agents and automations for companies scaling like {{companyName}}.
+
+I recorded a 2-minute demo of an agent built for a company similar to yours: it handles the repetitive ops your team is about to hire for.
+
+Want me to send it? A simple "yes" works.
+
+Nathan</div>
+          <button class="n-copy" data-target="a4" type="button">Copier</button></article>
+      </div>
+    </section>
+
+<section id="regles">
+    <div class="n-sec-head"><div class="n-label">1 · Règles tirées des 123 réponses reçues</div><h2>Ce qui marche, ce qui fait perdre</h2></div>
+    <div class="n-rules">
+      <div class="n-rule n-do"><b>CTA « un oui et je vous l'envoie »</b>La quasi-totalité des « oui » vient de cette formule (Hôtellerie, ATLAS, Kerbot, Carnac Lodge).</div>
+      <div class="n-rule n-do"><b>Breakup à choix numérotés</b>« 1. pas vous · 2. déjà géré · 3. pas le moment ». Les gens répondent juste « 2 » ou « 3 » : BMG, Pôle Plume.</div>
+      <div class="n-rule n-do"><b>Preuve précise dès le mail 1</b>« Sur ChatGPT c'est Zenika qui sort, pas theTribe » a fait réagir Claire Michard. Un nom, un chiffre, une capture.</div>
+      <div class="n-rule n-do"><b>Proposer la vidéo, pas le RDV</b>Miz Partners a répondu « Prix » après la vidéo. La vidéo qualifie, le RDV fait fuir.</div>
+      <div class="n-rule n-dont"><b>Tutoiement</b>Linxo a exigé la suppression de ses données à cause du « si tu veux ». Vouvoiement partout.</div>
+      <div class="n-rule n-dont"><b>Ton suppliant</b>« Je veux vraiment vous aider », « version 0 » : réponses sèches (Pêle-Mêle, EdBuild). Supprimé partout.</div>
+      <div class="n-rule n-dont"><b>Promesse vague</b>Eliadis : « c'est un peu vague, quels mots-clés ? ». Toujours un exemple chiffré.</div>
+      <div class="n-rule n-dont"><b>Mauvais ciblage</b>Rosad n'est pas une agence immo, Amalphy pas un e-commerce. Voir le check de la section 5.</div>
+    </div>
+  </section>
+
+  <section id="hooks">
+    <div class="n-sec-head"><div class="n-label">2 · Hooks</div><h2>Tes angles, réécrits et prêts à coller</h2>
+      <p class="n-lede">Les variables entre accolades sont celles de Lemlist. Chaque carte indique la cible et la campagne de test prévue.</p></div>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H1</span><h3>Rendez-vous B2B organiques</h3></div>
+      <div class="n-chips"><span class="n-chip">ESN et éditeurs IT</span><span class="n-chip">Batch « IT · RDV organiques »</span></div>
+      <div class="n-mail" id="h1"><span class="n-subj">Objet : des rendez-vous B2B pour {{companyName}} ?</span>Bonjour {{firstName}},
+
+si nous pouvions vous apporter des rendez-vous B2B pour votre activité IT, de manière organique sur Google et ChatGPT, seriez-vous ouvert à en discuter ?
+
+PS : ça ne vous engage à rien. Je peux vous sortir un premier audit offert : les requêtes où {{companyName}} est absent, et les recommandations pour y remédier.
+
+Nathan</div>
+      <button class="n-copy" data-target="h1" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H2</span><h3>Première marque recommandée par ChatGPT</h3></div>
+      <div class="n-chips"><span class="n-chip">ESN et éditeurs IT</span><span class="n-chip">Relance n°2 du batch H1</span></div>
+      <div class="n-mail" id="h2"><span class="n-subj">Objet : {{companyName}}, recommandée par ChatGPT ?</span>Bonjour {{firstName}},
+
+et si {{companyName}} devenait la première marque que ChatGPT recommande quand un client cherche {{categorie}} ?
+
+Seriez-vous contre un court échange ?
+
+Si la visibilité n'est pas un sujet pour vous, dites-le-moi et je ne vous dérangerai plus.
+
+Nathan</div>
+      <p class="n-note">Il faut remplir {{categorie}} par ligne (ex. « une ESN à Lyon », « un logiciel de paie »). Sans elle, le mail perd tout son intérêt.</p>
+      <button class="n-copy" data-target="h2" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H3</span><h3>7 opportunités actionnables, en vidéo</h3></div>
+      <div class="n-chips"><span class="n-chip">CMO / Head of Growth SaaS ayant levé</span><span class="n-chip">Batch « Levée · vidéo 7 opportunités »</span><span class="n-chip n-warn">1 Loom par lead</span></div>
+      <div class="n-mail" id="h3"><span class="n-subj">Objet : 7 opportunités pour {{companyName}}</span>Bonjour {{firstName}},
+
+je ne vais pas vous proposer un énième audit SEO générique. J'ai analysé le site de {{companyName}} et j'ai relevé 7 opportunités de trafic et de leads que vous pouvez activer d'ici 30 jours.
+
+Je vous ai enregistré une vidéo de 3 minutes qui montre exactement comment les mettre en place vous-même, gratuitement : {{lienVideo}}
+
+Si vous voulez qu'on le fasse pour vous ensuite, on en discutera.
+
+Nathan</div>
+      <p class="n-note n-warn">À réserver aux 50 meilleurs leads du batch : chaque mail demande une vraie vidéo. N'annonce « 7 » que si tu les as vraiment trouvées.</p>
+      <button class="n-copy" data-target="h3" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H4</span><h3>R&amp;D : 5 entreprises test</h3></div>
+      <div class="n-chips"><span class="n-chip">Éditeurs SaaS, e-commerce structuré</span><span class="n-chip">Batch « Test gratuit maillage IA »</span></div>
+      <div class="n-mail" id="h4"><span class="n-subj">Objet : 1 des 5 places, {{companyName}} ?</span>Bonjour {{firstName}},
+
+ce mois-ci, je consacre un budget R&amp;D avec mon équipe pour automatiser le maillage interne par l'IA sur le marché {{secteur}}.
+
+Je cherche 5 entreprises pour tester ce système gratuitement. Vous gardez 100 % des résultats SEO obtenus ; je vous demande seulement un témoignage vidéo si votre trafic double.
+
+Êtes-vous partant pour être l'une des 5 ?
+
+Nathan</div>
+      <p class="n-note n-warn">Ne l'envoie que si tu es prêt à livrer gratuitement à 5 entreprises. Le chiffre du budget est retiré : ne le remets que s'il est réel.</p>
+      <button class="n-copy" data-target="h4" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H5</span><h3>Montée en gamme (plus de 5 M€ de CA)</h3></div>
+      <div class="n-chips"><span class="n-chip">Entreprises de plus de 5 M€ avec équipe commerciale</span><span class="n-chip">Batch « Up-market »</span></div>
+      <div class="n-mail" id="h5"><span class="n-subj">Objet : {{companyName}} peut-elle absorber {{volumeLeads}} leads de plus ?</span>Bonjour {{firstName}},
+
+nous ne travaillons qu'avec des entreprises de plus de 5 M€ de chiffre d'affaires : nos systèmes d'acquisition génèrent un volume que seules des équipes commerciales structurées peuvent absorber.
+
+D'après mes recherches, {{companyName}} a l'infrastructure pour encaisser {{volumeLeads}} nouveaux leads SEO par mois.
+
+Seriez-vous ouvert à ce que je vous montre comment notre architecture fonctionne ?
+
+Nathan</div>
+      <p class="n-note n-warn">Positionnement fort : à n'utiliser que sur une liste filtrée par chiffre d'affaires, et si tu assumes de refuser les plus petits.</p>
+      <button class="n-copy" data-target="h5" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H6</span><h3>Réduire le coût du SEO avec l'IA (AEO)</h3></div>
+      <div class="n-chips"><span class="n-chip">Head of Marketing, 20-200 salariés</span><span class="n-chip">Batch « Levée + marketing structuré »</span></div>
+      <div class="n-mail" id="h6"><span class="n-subj">Objet : le travail de 3 référenceurs, pour le prix d'un logiciel</span>Bonjour {{firstName}},
+
+plusieurs de vos concurrents automatisent déjà une grande partie de leur SEO avec l'IA (on parle d'AEO) et réduisent fortement leurs coûts marketing.
+
+Nous avons construit l'infrastructure qui fait le travail de 3 référenceurs seniors pour le prix d'un logiciel.
+
+Puis-je vous envoyer une courte démonstration de la machine en action ?
+
+Nathan</div>
+      <p class="n-note">J'ai retiré « diviser leur masse salariale par deux » : c'est invérifiable et ça braque un Head of Marketing, qui y lit son propre poste.</p>
+      <button class="n-copy" data-target="h6" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H7</span><h3>Une page GEO-ready offerte</h3></div>
+      <div class="n-chips"><span class="n-chip">CMO SaaS (campagnes en cours)</span><span class="n-chip">Remplace l'étape 3 de CMO Pré-audit</span></div>
+      <div class="n-mail" id="h7"><span class="n-subj">Objet : une page de {{companyName}}, rendue GEO-ready ?</span>Bonjour {{firstName}},
+
+j'ai créé un outil qui transforme une page SEO en page « GEO-ready », c'est-à-dire lisible et citable par ChatGPT et Perplexity.
+
+Envoyez-moi l'URL d'une de vos pages : je vous l'optimise gratuitement et vous voyez le résultat avant de décider quoi que ce soit.
+
+Nathan</div>
+      <button class="n-copy" data-target="h7" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H8</span><h3>Données structurées et entités</h3></div>
+      <div class="n-chips"><span class="n-chip">Profils SEO / marketing technique</span><span class="n-chip">Relance du batch H6</span></div>
+      <div class="n-mail" id="h8"><span class="n-subj">Objet : les entités de {{companyName}}</span>Bonjour {{firstName}},
+
+en regardant {{domain}}, j'ai remarqué que vos données structurées et vos entités ne sont pas reliées entre elles. Or c'est ce triplet (entité, relation, attribut) que les IA utilisent pour savoir qui vous êtes et quand vous citer.
+
+Je vous montre les 3 corrections prioritaires ?
+
+Nathan</div>
+      <p class="n-note n-warn">À n'envoyer qu'après avoir vérifié le site : si le balisage est correct, le mail vous décrédibilise.</p>
+      <button class="n-copy" data-target="h8" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H9</span><h3>10 prompts et 3 quick wins</h3></div>
+      <div class="n-chips"><span class="n-chip">Dirigeants B2B</span><span class="n-chip">Remplace « version 0 » de B2B Dirigeants</span></div>
+      <div class="n-mail" id="h9"><span class="n-subj">Objet : 10 prompts où {{companyName}} devrait sortir</span>{{firstName}},
+
+j'ai listé les 10 questions que vos clients posent à ChatGPT avant d'acheter, et 3 actions rapides pour que {{companyName}} y apparaisse.
+
+Un « oui » et je vous l'envoie.
+
+Nathan</div>
+      <button class="n-copy" data-target="h9" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">H10</span><h3>Site offert pour les commerces locaux</h3></div>
+      <div class="n-chips"><span class="n-chip">Artisans, commerces locaux</span><span class="n-chip n-warn">Appel et SMS uniquement, pas de cold mail</span></div>
+      <div class="n-mail" id="h10"><span class="n-subj">Script appel / SMS</span>Bonjour, je vous ai préparé une maquette de site pour {{companyName}}, offerte. Je peux vous l'envoyer par SMS pour que vous y jetiez un œil ?</div>
+      <p class="n-note">Les listes locales sont scrapées et bouncent à 10-24 % : ce hook passe par le téléphone, comme pour Couvreurs et Étanchéité.</p>
+      <button class="n-copy" data-target="h10" type="button">Copier</button></article>
+  </section>
+
+  <section id="affectation">
+    <div class="n-sec-head"><div class="n-label">3 · Où les mettre</div><h2>Un angle par batch de 400, pour pouvoir conclure</h2>
+      <p class="n-lede">Chaque batch teste un seul angle sur une seule cible. À 400 envois, 2 % de réponse représentent 8 conversations : assez pour comparer les angles.</p></div>
+    <div class="n-tablewrap"><table>
+      <thead><tr><th>Batch</th><th>Cible (source)</th><th>Mail 1</th><th>Relances</th><th>Contacts</th><th>État</th></tr></thead>
+      <tbody>
+        <tr><td>IT · RDV organiques</td><td>ESN + éditeurs FR 11-50 (FullEnrich)</td><td>H1</td><td>H2, breakup numéroté</td><td class="mono">122 en cours → 400</td><td><span class="n-pill n-p-wait">enrichissement</span></td></tr>
+        <tr><td>ESN · Renfort IA</td><td>ESN FR (même export, autre moitié)</td><td>Copie ESN existante</td><td>existantes</td><td class="mono">→ 400</td><td><span class="n-pill n-p-wait">à sourcer</span></td></tr>
+        <tr><td>Levée + marketing</td><td>CMO / Head of Growth, SaaS 20-200 ayant levé</td><td>H6</td><td>H8, H9</td><td class="mono">→ 400</td><td><span class="n-pill n-p-wait">à sourcer</span></td></tr>
+        <tr><td>Levée · vidéo 7 opportunités</td><td>Top 50 du batch précédent</td><td>H3</td><td>breakup numéroté</td><td class="mono">50</td><td><span class="n-pill n-p-wait">après le batch</span></td></tr>
+        <tr><td>Test gratuit maillage IA</td><td>Éditeurs SaaS / e-commerce structuré</td><td>H4</td><td>H7</td><td class="mono">→ 400</td><td><span class="n-pill n-p-wait">à sourcer</span></td></tr>
+        <tr><td>Up-market</td><td>Entreprises &gt; 5 M€ avec équipe commerciale</td><td>H5</td><td>H9</td><td class="mono">→ 400</td><td><span class="n-pill n-p-wait">à sourcer</span></td></tr>
+        <tr><td>CMO SaaS (en cours)</td><td>Liste existante</td><td>inchangé</td><td>R1 ci-dessous</td><td class="mono">148</td><td><span class="n-pill n-p-go">poussé</span></td></tr>
+        <tr><td>B2B Dirigeants (relance)</td><td>90 leads en file, à revérifier</td><td>inchangé</td><td>R2 ci-dessous</td><td class="mono">90</td><td><span class="n-pill n-p-go">poussé</span></td></tr>
+        <tr><td>Immo (en cours)</td><td>Listes existantes</td><td>inchangé</td><td>R3 ci-dessous</td><td class="mono">—</td><td><span class="n-pill n-p-go">poussé</span></td></tr>
+        <tr><td>Commerces locaux</td><td>Scrapes Outscraper</td><td colspan="2">H10 au téléphone</td><td class="mono">—</td><td><span class="n-pill n-p-go">appel / SMS</span></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="relances">
+    <div class="n-sec-head"><div class="n-label">Relances R1 à R4 · poussées dans Lemlist le 29 sept.</div><h2>Modifications proposées sur les campagnes actives</h2>
+      <p class="n-lede">Même angle que la campagne, donc on corrige sans changer de cible. Validées par Nathan et poussées le 29 sept. 2026.</p></div>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">R1</span><h3>CMO SaaS · Pré-audit : passer au vouvoiement et remplacer l'étape 3 par H7</h3></div>
+      <p class="n-note">Les 4 étapes tutoient (« Toi, pas », « si tu veux », « à ta dispo »). C'est cette campagne qui a provoqué la plainte de Linxo. Je passe les 4 étapes au vous et je remplace l'étape 3.</p>
+      <div class="n-ba"><div class="n-before"><div class="n-label">Avant · étape 3</div><div class="n-mail"><span class="n-subj">je te crée une page test ?</span>{{firstName}}, si tu veux juger sur pièce : je te crée une page SEO test (template) sur un de tes mots-clés, offerte…</div></div>
+      <div class="n-after"><div class="n-label">Après · étape 3</div><div class="n-mail"><span class="n-subj">une page de {{companyName}}, rendue GEO-ready ?</span>Hook H7, au vouvoiement.</div></div></div></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">R2</span><h3>B2B Dirigeants : remplacer « version 0 » par H9</h3></div>
+      <div class="n-ba"><div class="n-before"><div class="n-label">Avant · étape 3</div><div class="n-mail"><span class="n-subj">je vous fais une version 0 ?</span>{{firstName}}, je veux vraiment vous aider. si l'analyse ne vous parle pas, dites-moi juste ce qui vous embête le plus…</div></div>
+      <div class="n-after"><div class="n-label">Après · étape 3</div><div class="n-mail"><span class="n-subj">10 prompts où {{companyName}} devrait sortir</span>Hook H9 : 10 prompts, 3 quick wins, « un oui et je vous l'envoie ».</div></div></div></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">R3</span><h3>Immo Automatisation : remplacer « version 0 » par la vidéo</h3></div>
+      <div class="n-ba"><div class="n-before"><div class="n-label">Avant · étape 3</div><div class="n-mail"><span class="n-subj">je vous fais une version 0 ?</span>dites-moi juste la tâche qui vous prend le plus de temps… et je vous construis une version 0…</div></div>
+      <div class="n-after"><div class="n-label">Après · étape 3</div><div class="n-mail" id="r3"><span class="n-subj">la vidéo pour {{companyName}}</span>Bonjour,
+
+plutôt que de vous expliquer, je vous montre : une vidéo de 2 minutes où l'on voit un bien d'agence transformé (photo → vidéo) et un agent IA qui répond à un acheteur un dimanche soir.
+
+Un « oui » et je vous l'envoie.
+
+Nathan</div></div></div>
+      <button class="n-copy" data-target="r3" type="button">Copier</button></article>
+
+    <article class="n-hook"><div class="n-hook-top"><span class="n-id">R4</span><h3>CMO SaaS · KPI : breakup à choix numérotés</h3></div>
+      <div class="n-ba"><div class="n-before"><div class="n-label">Avant · étape 3</div><div class="n-mail">sans réponse je pars du principe que ce n'est pas le moment, ou que ce n'est pas vous qui gérez ça. un mot et j'arrête…</div></div>
+      <div class="n-after"><div class="n-label">Après · étape 3</div><div class="n-mail" id="r4"><span class="n-subj">je clôture, {{firstName}} ?</span>Bonjour {{firstName}},
+
+sans réponse, pourriez-vous me dire en un chiffre :
+1. ce n'est pas vous qui gérez la visibilité (vers qui me tourner ?)
+2. c'est déjà géré en interne
+3. ce n'est pas le moment
+
+L'analyse de {{company}} reste à vous si vous la voulez.
+
+Nathan</div></div></div>
+      <button class="n-copy" data-target="r4" type="button">Copier</button></article>
+  </section>
+
+  <section id="ciblage">
+    <div class="n-sec-head"><div class="n-label">5 · Check ciblage, appliqué avant chaque chargement</div><h2>Ce que je vérifie sur chaque lead</h2></div>
+    <ol class="n-checks">
+      <li><b>Email vérifié par FullEnrich</b> uniquement. Tout le reste sort de la liste.</li>
+      <li><b>Secteur confirmé</b> par l'industrie FullEnrich ou LinkedIn, et non par un mot-clé Google Maps. C'est ce qui aurait écarté Rosad et Amalphy.</li>
+      <li><b>Titre de décideur</b> (fondateur, CEO, DG, gérant, président, associé). Les responsables communication, VP et chefs de projet sortent.</li>
+      <li><b>Une personne par entreprise</b>, et aucune entreprise déjà contactée ou ayant dit « stop » (liste de blocage par domaine, par exemple societe.com).</li>
+      <li><b>Pas d'adresse générique</b> (info@, contact@, dpo@, recrutement@, sav@).</li>
+      <li><b>Variables remplies à 100 %</b> avant lancement, sinon la ligne sort.</li>
+    </ol>
+  </section>
   </main>
 </div>
 </div>
@@ -658,3 +985,6 @@ Nathan, Décupler</div>
     <span class="mono">Doctrine → frameworks → A/B test → scale</span>
   </div>
 </footer>
+<script>
+document.querySelectorAll('.n-copy').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.target);var t=el.innerText;var done=function(){b.textContent='Copié';setTimeout(function(){b.textContent='Copier'},1500)};function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,sel);}else{sel();}});});
+</script>
