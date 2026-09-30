@@ -51,4 +51,5 @@
 2. **Jamais contacté** : avant tout chargement dans Lemlist, passer la liste dans `scripts/check_deja_contacte.py` (registre de toutes les campagnes, archivées comprises, + liste noire). On exclut l'email déjà contacté ET le domaine déjà contacté.
 3. **Priorité France** pour le sourcing et l'enrichissement.
 4. **Rien ne part sans le GO de Nathan** : les campagnes sont chargées en pause, il valide listes et copy.
-5. Les profils exportés non enrichis sont gardés (fichier LinkedIn) pour la prospection LinkedIn.
+5. **Taille minimale** : jamais de campagne sous 100 leads (cible 400). Un petit segment est fusionné dans la campagne la plus proche, pas lancé seul.
+6. Les profils exportés non enrichis sont gardés (fichier LinkedIn) pour la prospection LinkedIn.
