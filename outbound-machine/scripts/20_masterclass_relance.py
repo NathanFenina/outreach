@@ -27,31 +27,46 @@ def html(lines): return "".join("<div><br></div>" if l == "" else f"<div>{l}</di
 STEPS = [
  ("masterclass", 0, [
   "salut {{firstName}},", "",
-  "tu t'étais inscrit à ma masterclass claude code seo du 8 octobre.", "",
-  "je devais fermer l'accompagnement hier soir. on m'a demandé d'en parler de vive voix avant de se décider, alors je le laisse ouvert jusqu'à lundi 19 octobre, 20h.", "",
-  "le résultat visé : ton seo qui tourne en pilote automatique, installé sur ton projet en 4 sessions. sur un site b2b que j'accompagne avec ce moteur, on est passés de 0 à 200 clics par jour en 12 mois.", "",
+  "merci à ceux qui ont déjà levé la main après la masterclass claude code seo. vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plus de temps pour réfléchir.", "",
+  "alors exceptionnellement, je laisse l'accompagnement ouvert jusqu'à lundi 19 octobre, 20h. le temps de s'assurer ensemble que ça marchera pour toi et que c'est le bon fit.", "",
+  "je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. comme vu pendant le workshop, on est partis de 0 à 200 clics par jour en 12 mois grâce à cette méthode.", "",
   "serais-tu contre un appel de 15 min pour voir si c'est adapté à ton cas ?", "",
-  "nathan", "",
+  "Nathan", "",
   "ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne. et si tu t'inscris après notre appel, une session 1:1 en plus avec moi.",
   "pps : si ce n'est pas pour toi, réponds « stop » et je ne t'écris plus."]),
- ("", 2, ["{{firstName}}, une idée sur mon dernier message ?", "", "nathan"]),
+ ("", 2, ["{{firstName}}, une idée sur mon dernier message ?", "", "Nathan"]),
  ("accès", 1, [
-  "{{firstName}}, le repo que j'ai partagé jeudi est gratuit : tu peux tout faire seul.", "",
-  "l'accompagnement sert à une seule chose : que le moteur tourne vraiment sur ton projet, avec moi à côté quand ça bloque. 990 € ht, ou 2 × 495 €. le groupe suivant sera à 1 490 €.", "",
-  "si tu as testé le repo et que tu as bloqué quelque part, dis-moi où, je te réponds même si tu ne prends pas l'accompagnement.", "",
-  "nathan"]),
+  "{{firstName}}, les personnes que j'accompagne n'en croient pas leurs yeux. chez un client, on a corrigé toutes les données structurées du site : c'était estimé à 7 jours de travail, c'était fait en 30 minutes.", "",
+  "le repo partagé pendant la masterclass est gratuit, tu peux tout faire seul. l'accompagnement sert à ce que ça tourne vraiment sur ton projet, avec moi à côté quand ça bloque. 990 € ht, ou 2 × 495 €. le groupe suivant sera à 1 490 €, puis 2 590 €.", "",
+  "Nathan", "",
+  "ps : pour s'assurer que c'est le bon fit et que ça te correspond, je t'offre un appel rapide, si tu veux."]),
  ("", 3, [
   "{{firstName}}, je t'ai écrit plusieurs fois sans réponse. d'habitude, ça veut dire une de ces 3 choses :", "",
   "1. ton site est déjà premier sur google et cité par chatgpt sur tous tes mots-clés ;",
   "2. ce n'est pas le moment, ou pas pour toi ;",
   "3. claude code a pris le contrôle de ton ordi et t'empêche de répondre.", "",
   "réponds juste 1, 2 ou 3 pour que je sache quoi faire. je ferme ce soir à 20h.", "",
-  "nathan"]),
+  "Nathan"]),
 ]
 
+def update(cid):
+    seqs = api("GET", f"https://api.lemlist.com/api/campaigns/{cid}/sequences")
+    seqid, seq = next(iter(seqs.items()))
+    for st in seq["steps"]:
+        subj, delay, lines = STEPS[st["index"] - 1]
+        body = {"type": "email", "message": html(lines), "delay": delay}
+        if subj: body["subject"] = subj
+        api("PATCH", f"https://api.lemlist.com/api/sequences/{seqid}/steps/{st['_id']}", body); time.sleep(0.4)
+    print("MAJ", cid)
+
 if __name__ == "__main__":
-    if any(c.get("name") == NAME for c in api("GET", "https://api.lemlist.com/api/campaigns?limit=200")):
-        raise SystemExit("existe déjà : " + NAME)
+    camps, off = [], 0
+    while True:
+        page = api("GET", f"https://api.lemlist.com/api/campaigns?limit=100&offset={off}") or []
+        camps += page; off += 100
+        if len(page) < 100: break
+    found = [c for c in camps if c.get("name") == NAME and not c.get("archived")]
+    if found: update(found[0]["_id"]); raise SystemExit(0)
     camp = api("POST", "https://api.lemlist.com/api/campaigns", {"name": NAME})
     cid = camp.get("_id") or camp.get("id"); time.sleep(1)
     seqid = next(iter(api("GET", f"https://api.lemlist.com/api/campaigns/{cid}/sequences")))
