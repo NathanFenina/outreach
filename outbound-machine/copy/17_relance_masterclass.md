@@ -29,11 +29,11 @@ résultat vendu (pas la méthode), garantie et sortie en PS, mails 1+2 et 3+4 da
 ### Mail 1 · J0 · objet : `masterclass`
 salut {{firstName}},
 
-merci à ceux qui ont déjà levé la main après la masterclass claude code seo. vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plus de temps pour réfléchir.
+merci de t'être inscrit à la masterclass claude code seo, et merci à ceux qui ont déjà levé la main pour le programme.
 
-alors exceptionnellement, je laisse l'accompagnement ouvert jusqu'à lundi 19 octobre, 20h. le temps de s'assurer ensemble que ça marchera pour toi et que c'est le bon fit.
+vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plus de temps pour réfléchir. alors exceptionnellement, je laisse l'accompagnement ouvert jusqu'à lundi 19 octobre, 20h, le temps de vérifier ensemble que c'est le bon fit pour toi.
 
-je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. comme vu pendant le workshop, on est partis de 0 à 200 clics par jour en 12 mois grâce à cette méthode.
+je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. avec cette méthode, on est partis de 0 à 200 clics par jour en 12 mois.
 
 serais-tu contre un appel de 15 min pour voir si c'est adapté à ton cas ?
 
@@ -66,6 +66,9 @@ ps : pour s'assurer que c'est le bon fit et que ça te correspond, je t'offre un
 réponds juste 1, 2 ou 3 pour que je sache quoi faire. je ferme lundi 19 octobre à 20h.
 
 Nathan
+
+## Liste (13/10)
+Source : export du formulaire de l'événement LinkedIn (180 inscrits, 179 emails uniques). Exclus : Julien Godin, Salim Raouak (équipe). Importés : 41 ayant coché le consentement + 43 adresses pro sans consentement (règle B2B, opt-out par « stop ») → 74 ajoutés, 10 déjà présents dans d'autres campagnes Lemlist. Non importés : 93 adresses personnelles sans consentement (gmail…) → LinkedIn uniquement. Envoi depuis les boîtes cold (choix de Nathan). Les 6 désinscrits Brevo sont à retirer dès que Brevo est accessible.
 
 ## Calendrier
 Lancement mardi 13 ou mercredi 14 : mails à J0, J+1, J+2, puis J+5 (le week-end est sauté, le mail 4 tombe le lundi 19). Planning 9h-18h, lun-ven, 3 min entre deux envois (≈ 180 mails/jour sur une seule boîte).

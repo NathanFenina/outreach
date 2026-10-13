@@ -3,7 +3,7 @@
 Copy : copy/17_relance_masterclass.md. Mails 2 et 4 sans objet = envoyés dans le fil du mail précédent.
 Usage: LEMLIST_API=... python3 20_masterclass_relance.py
 """
-import os, json, base64, time, urllib.request, urllib.error
+import os, sys, csv, json, base64, time, urllib.parse, urllib.request, urllib.error
 
 KEY = os.environ.get("LEMLIST_API_KEY") or os.environ["LEMLIST_API"]
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
@@ -27,9 +27,9 @@ def html(lines): return "".join("<div><br></div>" if l == "" else f"<div>{l}</di
 STEPS = [
  ("masterclass", 0, [
   "salut {{firstName}},", "",
-  "merci à ceux qui ont déjà levé la main après la masterclass claude code seo. vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plus de temps pour réfléchir.", "",
-  "alors exceptionnellement, je laisse l'accompagnement ouvert jusqu'à lundi 19 octobre, 20h. le temps de s'assurer ensemble que ça marchera pour toi et que c'est le bon fit.", "",
-  "je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. comme vu pendant le workshop, on est partis de 0 à 200 clics par jour en 12 mois grâce à cette méthode.", "",
+  "merci de t'être inscrit à la masterclass claude code seo, et merci à ceux qui ont déjà levé la main pour le programme.", "",
+  "vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plus de temps pour réfléchir. alors exceptionnellement, je laisse l'accompagnement ouvert jusqu'à lundi 19 octobre, 20h, le temps de vérifier ensemble que c'est le bon fit pour toi.", "",
+  "je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. avec cette méthode, on est partis de 0 à 200 clics par jour en 12 mois.", "",
   "serais-tu contre un appel de 15 min pour voir si c'est adapté à ton cas ?", "",
   "Nathan", "",
   "ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne. et si tu t'inscris après notre appel, une session 1:1 en plus avec moi.",
@@ -59,6 +59,18 @@ def update(cid):
         api("PATCH", f"https://api.lemlist.com/api/sequences/{seqid}/steps/{st['_id']}", body); time.sleep(0.4)
     print("MAJ", cid)
 
+def import_leads(cid, path):
+    ok = skip = 0
+    for r in csv.DictReader(open(path, encoding="utf-8")):
+        body = {k: r[k] for k in ("firstName", "lastName", "companyName") if r.get(k)}
+        url = f"https://api.lemlist.com/api/campaigns/{cid}/leads/{urllib.parse.quote(r['email'])}?deduplicate=true"
+        try:
+            api("POST", url, body); ok += 1
+        except SystemExit as e:
+            skip += 1; print("skip", r["email"], str(e)[:120])
+        time.sleep(0.3)
+    print(f"import {path}: {ok} ajoutés, {skip} ignorés")
+
 if __name__ == "__main__":
     camps, off = [], 0
     while True:
@@ -66,7 +78,10 @@ if __name__ == "__main__":
         camps += page; off += 100
         if len(page) < 100: break
     found = [c for c in camps if c.get("name") == NAME and not c.get("archived")]
-    if found: update(found[0]["_id"]); raise SystemExit(0)
+    if found:
+        update(found[0]["_id"])
+        for path in sys.argv[1:]: import_leads(found[0]["_id"], path)
+        raise SystemExit(0)
     camp = api("POST", "https://api.lemlist.com/api/campaigns", {"name": NAME})
     cid = camp.get("_id") or camp.get("id"); time.sleep(1)
     seqid = next(iter(api("GET", f"https://api.lemlist.com/api/campaigns/{cid}/sequences")))
