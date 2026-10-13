@@ -30,9 +30,10 @@ STEPS = [
   "merci de t'être inscrit à la masterclass claude code seo, et merci à ceux qui ont déjà levé la main pour le programme.", "",
   "vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plus de temps pour réfléchir. alors exceptionnellement, je laisse l'accompagnement ouvert jusqu'à lundi 19 octobre, 20h, le temps de vérifier ensemble que c'est le bon fit pour toi.", "",
   "je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. avec cette méthode, on est partis de 0 à 200 clics par jour en 12 mois.", "",
+  "et comme tu étais inscrit à la masterclass, je t'offre une session 1:1 avec moi en plus.", "",
   "serais-tu contre un appel de 15 min pour voir si c'est adapté à ton cas ?", "",
   "Nathan", "",
-  "ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne. et si tu t'inscris après notre appel, une session 1:1 en plus avec moi.",
+  "ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne.",
   "pps : si ce n'est pas pour toi, réponds « stop » et je ne t'écris plus."]),
  ("", 1, ["{{firstName}}, une idée sur mon dernier message ?", "", "Nathan"]),
  ("accès", 1, [

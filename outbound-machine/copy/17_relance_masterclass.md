@@ -35,11 +35,13 @@ vous êtes plusieurs à m'avoir demandé d'en parler de vive voix et d'avoir plu
 
 je t'accompagne main dans la main pour que ton seo tourne en pilote automatique, installé sur ton projet en 4 sessions. avec cette méthode, on est partis de 0 à 200 clics par jour en 12 mois.
 
+et comme tu étais inscrit à la masterclass, je t'offre une session 1:1 avec moi en plus.
+
 serais-tu contre un appel de 15 min pour voir si c'est adapté à ton cas ?
 
 Nathan
 
-ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne. et si tu t'inscris après notre appel, une session 1:1 en plus avec moi.
+ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne.
 pps : si ce n'est pas pour toi, réponds « stop » et je ne t'écris plus.
 
 ### Mail 2 · J+1 · même fil
@@ -68,7 +70,7 @@ réponds juste 1, 2 ou 3 pour que je sache quoi faire. je ferme lundi 19 octobre
 Nathan
 
 ## Liste (13/10)
-Source : export du formulaire de l'événement LinkedIn (180 inscrits, 179 emails uniques). Exclus : Julien Godin, Salim Raouak (équipe). Importés : 41 ayant coché le consentement + 43 adresses pro sans consentement (règle B2B, opt-out par « stop ») → 74 ajoutés, 10 déjà présents dans d'autres campagnes Lemlist. Non importés : 93 adresses personnelles sans consentement (gmail…) → LinkedIn uniquement. Envoi depuis les boîtes cold (choix de Nathan). Les 6 désinscrits Brevo sont à retirer dès que Brevo est accessible.
+Source : export du formulaire de l'événement LinkedIn (180 inscrits, 179 emails uniques). Exclus : Julien Godin, Salim Raouak (équipe). Importés : 41 ayant coché le consentement + 43 adresses pro sans consentement (règle B2B, opt-out par « stop ») → 74 ajoutés, 10 déjà présents dans d'autres campagnes Lemlist. Non importés : 93 adresses personnelles sans consentement (gmail…) → LinkedIn uniquement. Envoi depuis les boîtes cold (choix de Nathan). Les 6 désinscrits Brevo (liste du 13/10) ont été retirés de la campagne.
 
 ## Calendrier
 Lancement mardi 13 ou mercredi 14 : mails à J0, J+1, J+2, puis J+5 (le week-end est sauté, le mail 4 tombe le lundi 19). Planning 9h-18h, lun-ven, 3 min entre deux envois (≈ 180 mails/jour sur une seule boîte).
@@ -81,7 +83,7 @@ Réponse manuelle : « top, voici mon agenda : https://calendly.com/fenina-natha
 ## Prompt pour la campagne DM LinkedIn (à coller dans le projet LinkedIn)
 
 ```
-Contexte : je suis Nathan Fenina (Décupler). Le 8 octobre j'ai donné une masterclass « Comment produire 10x plus vite en SEO/GEO avec Claude Code » : 150 inscrits, environ 50 présents. À la fin, j'ai présenté un accompagnement : 4 sessions en petit groupe (12 places max) pour installer sur le projet de chacun le moteur SEO/GEO montré en live. 990 € HT, ou 2 × 495 € HT ; le groupe suivant sera à 1 490 € HT, puis 2 590 € HT. Garantie : si à la fin des 4 sessions le moteur ne tourne pas sur leur projet, je continue en 1:1 gratuitement jusqu'à ce qu'il tourne. Bonus pour ceux qui s'inscrivent après un appel avec moi : une session 1:1 en plus. Plusieurs inscrits m'ont demandé d'en parler de vive voix et d'avoir plus de temps : exceptionnellement, les inscriptions restent ouvertes jusqu'au lundi 19 octobre, 20h.
+Contexte : je suis Nathan Fenina (Décupler). Le 8 octobre j'ai donné une masterclass « Comment produire 10x plus vite en SEO/GEO avec Claude Code » : 150 inscrits, environ 50 présents. À la fin, j'ai présenté un accompagnement : 4 sessions en petit groupe (12 places max) pour installer sur le projet de chacun le moteur SEO/GEO montré en live. 990 € HT, ou 2 × 495 € HT ; le groupe suivant sera à 1 490 € HT, puis 2 590 € HT. Garantie : si à la fin des 4 sessions le moteur ne tourne pas sur leur projet, je continue en 1:1 gratuitement jusqu'à ce qu'il tourne. Bonus réservé aux inscrits de la masterclass : une session 1:1 avec moi en plus. Plusieurs inscrits m'ont demandé d'en parler de vive voix et d'avoir plus de temps : exceptionnellement, les inscriptions restent ouvertes jusqu'au lundi 19 octobre, 20h.
 
 Objectif : une séquence de 3 messages LinkedIn maximum vers les inscrits avec qui je suis connecté au 1er degré, pour obtenir un appel de 15 min. 25 à 30 messages par jour, à partir de mardi 13 octobre, pour avoir touché tout le monde au moins une fois avant vendredi.
 
