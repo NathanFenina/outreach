@@ -42,12 +42,12 @@ Nathan
 ps : si à la fin des 4 sessions ton moteur ne tourne pas sur ton projet, je continue avec toi en 1:1, gratuitement, jusqu'à ce qu'il tourne. et si tu t'inscris après notre appel, une session 1:1 en plus avec moi.
 pps : si ce n'est pas pour toi, réponds « stop » et je ne t'écris plus.
 
-### Mail 2 · J+2 · même fil
+### Mail 2 · J+1 · même fil
 {{firstName}}, une idée sur mon dernier message ?
 
 Nathan
 
-### Mail 3 · J+3 · objet : `accès`
+### Mail 3 · J+2 · objet : `accès`
 {{firstName}}, les personnes que j'accompagne n'en croient pas leurs yeux. chez un client, on a corrigé toutes les données structurées du site : c'était estimé à 7 jours de travail, c'était fait en 30 minutes.
 
 le repo partagé pendant la masterclass est gratuit, tu peux tout faire seul. l'accompagnement sert à ce que ça tourne vraiment sur ton projet, avec moi à côté quand ça bloque. 990 € ht, ou 2 × 495 €. le groupe suivant sera à 1 490 €, puis 2 590 €.
@@ -56,16 +56,19 @@ Nathan
 
 ps : pour s'assurer que c'est le bon fit et que ça te correspond, je t'offre un appel rapide, si tu veux.
 
-### Mail 4 · lundi 19 · même fil que le mail 3
+### Mail 4 · J+5 (lundi 19) · même fil que le mail 3
 {{firstName}}, je t'ai écrit plusieurs fois sans réponse. d'habitude, ça veut dire une de ces 3 choses :
 
 1. ton site est déjà premier sur google et cité par chatgpt sur tous tes mots-clés ;
 2. ce n'est pas le moment, ou pas pour toi ;
 3. claude code a pris le contrôle de ton ordi et t'empêche de répondre.
 
-réponds juste 1, 2 ou 3 pour que je sache quoi faire. je ferme ce soir à 20h.
+réponds juste 1, 2 ou 3 pour que je sache quoi faire. je ferme lundi 19 octobre à 20h.
 
 Nathan
+
+## Calendrier
+Lancement mardi 13 ou mercredi 14 : mails à J0, J+1, J+2, puis J+5 (le week-end est sauté, le mail 4 tombe le lundi 19). Planning 9h-18h, lun-ven, 3 min entre deux envois (≈ 180 mails/jour sur une seule boîte).
 
 ## Après un « oui »
 Réponse manuelle : « top, voici mon agenda : https://calendly.com/fenina-nathan/echange-30-min-avec-nathan (prends 15 min, je garde le créneau court) ». Le lien n'arrive qu'après la permission.
