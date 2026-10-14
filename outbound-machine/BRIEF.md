@@ -53,3 +53,4 @@
 4. **Rien ne part sans le GO de Nathan** : les campagnes sont chargées en pause, il valide listes et copy.
 5. **Taille minimale** : jamais de campagne sous 100 leads (cible 400). Un petit segment est fusionné dans la campagne la plus proche, pas lancé seul.
 6. Les profils exportés non enrichis sont gardés (fichier LinkedIn) pour la prospection LinkedIn.
+7. **Doctrine cold mail = coach Igor** (`copy/17_coach_igor_frameworks.md`) : texte brut, aucun lien dans le 1er mail, CTA de permission orienté « non », désinscription en PS, mesure en prospects et en réponses humaines, tests de placement GlockApps.
