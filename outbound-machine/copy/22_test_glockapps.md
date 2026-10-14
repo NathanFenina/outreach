@@ -1,4 +1,4 @@
-# 19 · Test de délivrabilité GlockApps (devoir Igor : 3 tests)
+# 22 · Test de délivrabilité GlockApps (devoir Igor : 3 tests)
 
 > But : savoir **où arrivent vraiment nos mails** (boîte principale, onglet Promotions, spam) chez
 > Google, Outlook et les serveurs privés, au lieu de deviner. Igor : « GlockApps est le seul fournisseur

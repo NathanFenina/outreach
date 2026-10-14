@@ -7,8 +7,8 @@ description: Écrire, revoir ou piloter une campagne cold mail Décupler (Lemlis
 
 Lire d'abord, dans `outbound-machine/` :
 1. `BRIEF.md` → **Règles permanentes** (crédits annoncés, check « jamais contacté », France d'abord, rien sans le GO de Nathan, minimum 100 leads / cible 400, ne jamais modifier une campagne sans son accord).
-2. `copy/17_coach_igor_frameworks.md` → la méthode de référence.
-3. `copy/18_icp_vp.md` → segment, ICP, VP, preuves, hypothèse à tester.
+2. `copy/20_coach_igor_frameworks.md` → la méthode de référence.
+3. `copy/21_icp_vp.md` → segment, ICP, VP, preuves, hypothèse à tester.
 
 ## Checklist avant de proposer une séquence
 - [ ] 1 segment, 1 problème, 1 offre. Hypothèse écrite **avec un critère de succès chiffré**.
@@ -16,7 +16,7 @@ Lire d'abord, dans `outbound-machine/` :
 - [ ] VP en R.E.P.L.Y. ou AAA, **≤ 80 mots**, lecture < 20 s, une phrase par ligne, You > We.
 - [ ] Objet < 5 mots, minuscule : général (`intro: {{companyName}} x Décupler`), hyper-ciblé, ou camouflage interne (1 mot).
 - [ ] CTA de permission orienté « non » (« seriez-vous contre… ? ») ; **aucun lien dans le 1er mail** ; jamais de demande de call dans le 1er mail.
-- [ ] 1 seule preuve chiffrée réelle (banque de preuves dans `18_icp_vp.md`) ; ne jamais inventer un cas.
+- [ ] 1 seule preuve chiffrée réelle (banque de preuves dans `21_icp_vp.md`) ; ne jamais inventer un cas.
 - [ ] PS = VP ou garantie ; **désinscription en PS** (« répondez "stop" ») ; vouvoiement.
 - [ ] FU courts (« des nouvelles de mon dernier message ? ») ; 2e paire : tactique 1-2-3 avec humour métier.
 - [ ] Texte brut, tracking désactivé, variables vérifiées (une variable vide = plainte « automatisation mal réglée »).
@@ -27,7 +27,7 @@ Intéressé → vidéo 3 min + Calendly, relance LinkedIn après 2 jours ouvrés
 
 ## Mesure et délivrabilité
 - Mesurer en **prospects** et en **réponses humaines** (hors auto-réponses), puis positives, puis RDV.
-- Le score de délivrabilité Lemlist n'est pas fiable ; tester le placement avec GlockApps (`copy/19_test_glockapps.md`).
+- Le score de délivrabilité Lemlist n'est pas fiable ; tester le placement avec GlockApps (`copy/22_test_glockapps.md`).
 - Rampup par boîte : 5 → 15 → 25 → 35 (→ 50) emails/jour, revue tous les 2-3 jours.
 
 Toujours répondre à Nathan en français, en points numérotés et titrés, avec nom de campagne, objet, copy et cibles.

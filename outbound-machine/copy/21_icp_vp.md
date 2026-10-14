@@ -1,4 +1,4 @@
-# 18 · ICP / VP : devoir pour Igor (onglet « 2. ICP / VP »)
+# 21 · ICP / VP : devoir pour Igor (onglet « 2. ICP / VP »)
 
 > Format repris de l'exemple qu'Igor a partagé (doc Semiflat) : segment → ICP → personnalisation →
 > état actuel → état désiré → VP → USP → émotions → cas clients → lead magnet → hypothèse à tester.

@@ -1,4 +1,4 @@
-# 17 · Coaching Igor Shapiro (UltB) : frameworks cold mail + conseils business
+# 20 · Coaching Igor Shapiro (UltB) : frameworks cold mail + conseils business
 
 > Source : sessions avec Igor Shapiro (fondateur UltB, coach cold mail de Nathan depuis oct. 2026),
 > ses docs partagés (R.E.P.L.Y. Method, All templates_Ultb, AAA-Method, Video Case Study Structure,
@@ -14,7 +14,7 @@
 2. **Liste / audience** : ICP + signaux d'intention (recrutement, techno, levée de fonds).
 3. **Contenu** : VP, lead magnet, CTA, séquence.
 
-Groundwork avant d'écrire : **ICP, VP, USP, cas clients (Transformation theory)**. Voir `18_icp_vp.md`.
+Groundwork avant d'écrire : **ICP, VP, USP, cas clients (Transformation theory)**. Voir `21_icp_vp.md`.
 Transformation theory = état actuel → état désiré → ce qui bloque → mines (landmines).
 Offre « killer » = valeur + USP + preuve sociale + garantie.
 Cycles **HADI** : Hypothèse → Action → Data → Insight.
@@ -178,9 +178,9 @@ en cold B2B FR, la phrase courte + « répondez "stop" » en PS suffit et protè
 14. **BAMFAM** (Book A Meeting From A Meeting) : toujours fixer le prochain RDV pendant le RDV.
 15. Donner de la valeur dans chaque conversation de vente, comme Igor le fait.
 
-## 15. Engagements en cours (1re session de coaching, oct. 2026)
-- [ ] Webinar Claude Code SEO : séquence email texte brut (Lemlist) **+** séquence LinkedIn (Expandi) sur les ~150 inscrits, lancées le jour même, avec offre reformulée (résultat, cas, garantie, bonus 1:1, prolongation 2 jours).
-- [ ] Remplir l'onglet **« 2. ICP / VP »** du sheet d'Igor (deadline : vendredi ou dimanche). Brouillon : `18_icp_vp.md`.
-- [ ] **GlockApps** : 3 tests de placement (même échéance). Plan : `19_test_glockapps.md`.
+## 15. Engagements en cours (session du 12/10/2026)
+- [ ] Webinar Claude Code SEO : séquence email texte brut (Lemlist) **+** séquence LinkedIn (Expandi) sur les ~150 inscrits, lancées le jour même, avec offre reformulée (résultat, cas, garantie, bonus 1:1, prolongation 2 jours). → en cours : `17_relance_masterclass.md` + `scripts/20_masterclass_relance.py`.
+- [ ] Remplir l'onglet **« 2. ICP / VP »** du sheet d'Igor (deadline : vendredi ou dimanche). Brouillon : `21_icp_vp.md`.
+- [ ] **GlockApps** : 3 tests de placement (même échéance). Plan : `22_test_glockapps.md`.
 - [ ] Mail d'engagement à Igor.
 - Prochaine session : **16h30, « lundi le 20 »** (BAMFAM fait). ⚠️ Le lundi est le 19/10 et le 20/10 est un mardi : à confirmer avec Igor. Support rapide : WhatsApp.

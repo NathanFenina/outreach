@@ -1,5 +1,7 @@
 # 18 — Frameworks d'Igor Shapiro (UltB) · session du 12/10/2026
 
+> Version complète (templates, réponses, rampup, conseils business, RGPD) : `20_coach_igor_frameworks.md`.
+
 Source : document de travail partagé par Igor (« Session on Sequences ») + transcript Fireflies.
 Base de toutes les séquences à venir. On l'itère toutes les 2 semaines.
 
