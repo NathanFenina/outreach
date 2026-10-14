@@ -1,5 +1,7 @@
 # 21 · ICP / VP : devoir pour Igor (onglet « 2. ICP / VP »)
 
+> Le travail ICP / VP se fait dans l'artifact partagé (onglet « ICP / VP ») : https://claude.ai/artifact/G6GFRkatP6ZjJhJ1TaWXi4. Ce fichier est le brouillon d'origine.
+
 > Format repris de l'exemple qu'Igor a partagé (doc Semiflat) : segment → ICP → personnalisation →
 > état actuel → état désiré → VP → USP → émotions → cas clients → lead magnet → hypothèse à tester.
 > **Document vivant** : itération toutes les 2 semaines. Chiffres « observé » = Lemlist, 14/09 → 12/10/2026.

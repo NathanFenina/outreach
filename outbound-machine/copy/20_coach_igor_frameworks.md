@@ -183,4 +183,4 @@ en cold B2B FR, la phrase courte + « répondez "stop" » en PS suffit et protè
 - [ ] Remplir l'onglet **« 2. ICP / VP »** du sheet d'Igor (deadline : vendredi ou dimanche). Brouillon : `21_icp_vp.md`.
 - [ ] **GlockApps** : 3 tests de placement (même échéance). Plan : `22_test_glockapps.md`.
 - [ ] Mail d'engagement à Igor.
-- Prochaine session : **16h30, « lundi le 20 »** (BAMFAM fait). ⚠️ Le lundi est le 19/10 et le 20/10 est un mardi : à confirmer avec Igor. Support rapide : WhatsApp.
+- Prochaine session : **mardi 20/10, 16h30** (BAMFAM fait). Support rapide : WhatsApp.
