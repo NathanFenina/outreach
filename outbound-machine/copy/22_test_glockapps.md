@@ -41,3 +41,12 @@ Les 10 domaines d'envoi sont sur SURBL : si les 3 tests sont mauvais partout, c'
 - **~50 % = on est en spam** → on corrige avant de renvoyer du volume.
 - **Outlook mauvais = acceptable** : on peut exclure Outlook / Microsoft 365 du cold.
 - En continu : **le taux de réponse humaine** est la métrique de suivi (s'il chute, c'est un signe de spam).
+
+## Résultats du 14/10/2026 (même mail Conseil sur les 2 boîtes)
+| Test | Boîte | Inbox | Spam | Manquants | Google | Microsoft EOP | Proofpoint | SpamAssassin | Domaine | IP |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | nathan@decupler-agency.com | 62,4 % | 35,8 % | 1,8 % | pas spam | spam | spam | 1,8 | listé | 1 liste (IP Google partagée) |
+| 2 | nathan.fenina@decupler-seo.com | 62,4 % | 33,0 % | 4,6 % | pas spam | pas spam | pas spam | 1,8 | listé | propre |
+
+Spam par zone (test 1 / test 2) : messageries grand public US 51 % / 49 % · entreprises US 32 % / 26 % · France 33 % / 33 % (3 adresses) · Allemagne 8 % / 8 %.
+Lecture : contenu sain (SpamAssassin 1,8, Barracuda 0,5) ; résultat identique sur 2 domaines → problème commun à nos domaines (réputation, liste SURBL), pas à une boîte ; le spam se concentre sur les messageries grand public. À vérifier : la vue par fournisseur (Google Workspace, Office 365) pour le B2B.
