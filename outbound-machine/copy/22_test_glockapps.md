@@ -50,3 +50,18 @@ Les 10 domaines d'envoi sont sur SURBL : si les 3 tests sont mauvais partout, c'
 
 Spam par zone (test 1 / test 2) : messageries grand public US 51 % / 49 % · entreprises US 32 % / 26 % · France 33 % / 33 % (3 adresses) · Allemagne 8 % / 8 %.
 Lecture : contenu sain (SpamAssassin 1,8, Barracuda 0,5) ; résultat identique sur 2 domaines → problème commun à nos domaines (réputation, liste SURBL), pas à une boîte ; le spam se concentre sur les messageries grand public. À vérifier : la vue par fournisseur (Google Workspace, Office 365) pour le B2B.
+
+### Détail par fournisseur (rapports partagés GlockApps, lus via l'API)
+| Fournisseur | Test 1 (agency) | Test 2 (seo) |
+|---|---|---|
+| Gmail (perso) | 22/22 boîte principale | 22/22 boîte principale |
+| Google Workspace (entreprises) | 5/5 inbox | 5/5 inbox |
+| Exchange / Office 365 (entreprises) | 2/2 spam | 2/2 inbox |
+| Outlook / Hotmail (perso, tous pays) | 15/15 spam | 15/15 spam |
+| Yahoo | 7/8 spam | 8/8 spam |
+| Laposte.net | 2/2 inbox | 2/2 inbox |
+Les deux domaines sont listés SURBL (abuse, 127.0.0.64).
+
+### Messagerie de nos prospects (MX de 1 261 domaines, 7 campagnes actives, 14/10/2026)
+Microsoft 365 42 % · Google 33 % · autres 14 % · passerelles de sécurité (Mimecast, Proofpoint…) 7 % · OVH 4 %.
+→ Google : sain. Microsoft 365 (42 % de nos prospects) : instable, spam dans 1 test sur 2. Passerelles (7 %) : Proofpoint a classé spam au test 1.
