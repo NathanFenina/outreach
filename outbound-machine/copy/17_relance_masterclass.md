@@ -125,3 +125,15 @@ Here is the summary of my current Lemlist campaigns: [LIEN DE L'ARTIFACT PARTAG�
 See you at our next session.
 
 Nathan
+
+## Résultats (13 → 19/10/2026)
+| Canal | Contactés | Réponses | Partants pour un appel | Stop |
+|---|---|---|---|---|
+| Email Lemlist (3 mails, texte brut) | 171 | 19 (11 %) | 6 (3,5 %) | 5 |
+| LinkedIn 1er degré (message direct) | 105 | 7 (7 %) | 3 au total LinkedIn | — |
+| LinkedIn 2e degré (invitation puis message) | 15 | 7 (47 %) | | — |
+| LinkedIn prolongation | 5 | 0 | | — |
+Mail 2 (cas chiffré « 7 jours → 30 min » + prix) = 11 réponses, mail 1 = 7. Objection n°1 : « je veux le faire moi-même » ; puis budget et manque de temps (fenêtre de 6 jours trop courte).
+Comparaison cold mail 4 semaines : 0,7 % de réponses, 0,13 % de positifs.
+Prochaine fois : qualifier à l'inscription, offre « je fais moi-même » à 200-300 €, 2 semaines pour les appels, LinkedIn en invitation puis message, relancer les « plus tard » sous 3-4 semaines.
+RDV et ventes : à compléter par Nathan.
