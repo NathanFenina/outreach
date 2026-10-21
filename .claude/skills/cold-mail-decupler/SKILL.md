@@ -9,6 +9,7 @@ Lire d'abord, dans `outbound-machine/` :
 1. `BRIEF.md` → **Règles permanentes** (crédits annoncés, check « jamais contacté », France d'abord, rien sans le GO de Nathan, minimum 100 leads / cible 400, ne jamais modifier une campagne sans son accord).
 2. `copy/20_coach_igor_frameworks.md` → la méthode de référence.
 3. `copy/21_icp_vp.md` → segment, ICP, VP, preuves, hypothèse à tester.
+4. `copy/23_idees_swokei.md` → ouverture « comment je vous ai trouvé » (vraie), compliment précis + UN problème réel, note /10, seuil qualité.
 
 ## Checklist avant de proposer une séquence
 - [ ] 1 segment, 1 problème, 1 offre. Hypothèse écrite **avec un critère de succès chiffré**.
