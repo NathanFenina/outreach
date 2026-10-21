@@ -184,3 +184,28 @@ en cold B2B FR, la phrase courte + « répondez "stop" » en PS suffit et protè
 - [ ] **GlockApps** : 3 tests de placement (même échéance). Plan : `22_test_glockapps.md`.
 - [ ] Mail d'engagement à Igor.
 - Prochaine session : **mardi 20/10, 16h30** (BAMFAM fait). Support rapide : WhatsApp.
+
+## 16. Session 2 (20/10/2026) : décisions et devoirs
+**Infrastructure**
+- Tester chaque domaine dans GlockApps (1 boîte par domaine), pas seulement 2. Lire par fournisseur : Google / Outlook-Microsoft / autres.
+- Groupe A = infra actuelle (verte chez Google) → uniquement les prospects Google. Groupe B = nouvelle infra (Zapmail, Google Workspace) → les prospects « autres » (ni Google, ni Microsoft).
+- Exclure Microsoft / Outlook, Mimecast et Proofpoint (souvent des sous-catégories d'Outlook). Microsoft = infra dédiée (Hypertide / Entra) plus tard, pas prioritaire.
+- Doubler l'infra maintenant : 10 nouveaux domaines × 2 à 4 boîtes (Zapmail, intégration native Lemlist). Domaines « burner » : on remplace le lot tous les 3 à 9 mois. Ne pas ajouter de boîtes d'un autre fournisseur sur les anciens domaines.
+- decuplersystems.com : bloqué par Google, ne plus l'utiliser. Signal que d'autres domaines pourraient suivre → hygiène d'envoi.
+- Pas besoin d'attendre la chauffe : on continue sur les prospects Google avec l'infra actuelle.
+
+**Campagnes**
+- Chaque campagne en 2 lots : Google et autres ESP. Numérotation : n° de campagne + lot + n° d'hypothèse / framework (ex. 216-G-2, 216-O-2), avec une bibliothèque de ce que signifie chaque numéro.
+- Plus tard : séparer aussi France (FR) / hors France (EN).
+
+**Leads**
+- Pyramide : 1) recrute ET a levé → 2) recrute → 3) marché principal (filtré par pain, mots-clés, observation réelle).
+- Sources : dataset fourni par UltB (filtré Google / non Google, sans catch-all) ; Apify (scrapers LinkedIn / Indeed, ~16 $ pour des milliers d'entreprises) ; puis recherche d'entreprises (SuperSearch Instantly ou équivalent Lemlist) ; MX pour classer l'ESP.
+
+**Métriques** : réponses réelles / prospects uniques, positifs / réponses. Ordre de grandeur Igor : 2,7 % de réponses, 20 % de positifs → il faut 10× le volume.
+
+**ICP / VP (fondation, prioritaire)** : 2 ICP (B2B, BTP). Les pains doivent porter sur ce que Décupler résout (visibilité, leads), le recrutement n'est qu'un signal (« vous recrutez en marketing/SEO → objectifs de croissance ; une fraction du coût d'un recrutement »). 1 cas client par ICP (partir des cas publiés sur decupler.com). Lead magnets : vidéo 3 min, top 10 mots-clés qui font perdre de l'argent, concurrent qui se classe sur le mot principal (aussi en objet).
+
+**Ventes** : envoyer à Igor les transcriptions complètes des appels de vente (pas de résumé). Guide d'appel de vente en 8 étapes partagé. Vidéo avant l'appel.
+
+**Prochaine session** : mardi 27/10, 17h. Envoyer le mail de devoirs.
