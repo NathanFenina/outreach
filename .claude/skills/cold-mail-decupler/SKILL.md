@@ -10,6 +10,9 @@ Lire d'abord, dans `outbound-machine/` :
 2. `copy/20_coach_igor_frameworks.md` → la méthode de référence.
 3. `copy/21_icp_vp.md` → segment, ICP, VP, preuves, hypothèse à tester.
 4. `copy/23_idees_swokei.md` → ouverture « comment je vous ai trouvé » (vraie), compliment précis + UN problème réel, note /10, seuil qualité.
+5. `copy/24_scalezia_offre_voc.md` → offre OVI (parler pipeline, pas trafic), Opportunity Map (montrer 3 lignes, vendre 200), green/red flags, décideur vs champion, verbatims clients (preuve A+B, Ads trop chères, fondateur, délégation complète).
+
+La grille ICP/VP de travail est dans l'artifact « CR Igor » (onglet ICP/VP) : https://claude.ai/artifact/G6GFRkatP6ZjJhJ1TaWXi4. Ce qui est en gris n'est pas validé.
 
 ## Checklist avant de proposer une séquence
 - [ ] 1 segment, 1 problème, 1 offre. Hypothèse écrite **avec un critère de succès chiffré**.

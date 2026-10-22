@@ -11,6 +11,8 @@ Tout ce qui concerne la copy et la stratégie outbound. **Versionné = jamais pe
 | `20_coach_igor_frameworks.md` | **Référence actuelle** (coach Igor, UltB) : séquence 6 étapes, R.E.P.L.Y., AAA, objets, CTA, 1-2-3, réponses, délivrabilité, rampup, conseils business. Prime sur les doctrines plus anciennes. |
 | `21_icp_vp.md` | ICP / VP par segment (devoir Igor, document vivant). |
 | `22_test_glockapps.md` | Protocole des 3 tests de placement GlockApps + tableau de résultats. |
+| `23_idees_swokei.md` | Idées d'écriture et de lead magnets inspirées de Swokei. |
+| `24_scalezia_offre_voc.md` | Travail Scalezia : offre OVI / Opportunity Map, filtre ICP, personas, verbatims clients, brief outbound. Points à réconcilier. |
 
 ## TL;DR de la doctrine
 1. Le mail **qualifie**, il ne vend pas. But = permission de livrer un **actif tangible gratuit**.
