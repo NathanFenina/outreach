@@ -65,3 +65,12 @@ Les deux domaines sont listés SURBL (abuse, 127.0.0.64).
 ### Messagerie de nos prospects (MX de 1 261 domaines, 7 campagnes actives, 14/10/2026)
 Microsoft 365 42 % · Google 33 % · autres 14 % · passerelles de sécurité (Mimecast, Proofpoint…) 7 % · OVH 4 %.
 → Google : sain. Microsoft 365 (42 % de nos prospects) : instable, spam dans 1 test sur 2. Passerelles (7 %) : Proofpoint a classé spam au test 1.
+
+## Test 3 · 22/10 · nathan@decuplerdigital.com (contenu « 10 prompts où … devrait sortir »)
+- Global : 37 % inbox, 31,5 % spam, 31,5 % manquants (22 % d'envois échoués à cause des limites SMTP de la boîte).
+- **Google : 100 % des mails reçus en inbox / Primary** (Gmail 15/15, Workspace 4/4, filtre Google 1/1 ; 7 non reçus = envois échoués).
+- Spam : Yahoo (9), AOL (6), Outlook / Hotmail (11), Zoho, Onet, Amazon WorkMail.
+- Authentification : SPF, DKIM et DMARC OK. IP Google non listées.
+- **Domaine listé : Spamhaus DBL + SURBL (abuse).**
+- Contrôle SURBL du 22/10 : les 9 anciens domaines PremiumInboxes sont tous listés (127.0.0.64). Les 5 nouveaux Zapmail (decuplerapp, decuplerlabs, getdecupler, godecupler, mydecupler) et decupler.com / decupler.fr sont propres.
+- Conclusion : infra actuelle = Google uniquement (confirmé). Les autres messageries passent sur Zapmail.
