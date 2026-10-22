@@ -13,6 +13,7 @@ Tout ce qui concerne la copy et la stratégie outbound. **Versionné = jamais pe
 | `22_test_glockapps.md` | Protocole des 3 tests de placement GlockApps + tableau de résultats. |
 | `23_idees_swokei.md` | Idées d'écriture et de lead magnets inspirées de Swokei. |
 | `24_scalezia_offre_voc.md` | Travail Scalezia : offre OVI / Opportunity Map, filtre ICP, personas, verbatims clients, brief outbound. Points à réconcilier. |
+| `25_convention_campagnes.md` | Nommage des campagnes (N°-LOT-H) et bibliothèque d'hypothèses. |
 
 ## TL;DR de la doctrine
 1. Le mail **qualifie**, il ne vend pas. But = permission de livrer un **actif tangible gratuit**.
