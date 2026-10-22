@@ -95,6 +95,8 @@ Constat : pas de problème de qualité perçue. Le problème est l'écart entre 
 
 ## 6. À réconcilier
 
+**Tranché par Nathan le 22/10 :** ICP 1 = CA > 1 M€ (selon ce que permettent les outils) · formule 2 000 € = « mentions / autorité », plus le mot backlinks · BT Blue = +10 % de leads · garantie sur le livrable, OK. Les points 1 à 4 ci-dessous sont donc réglés ; le 5 reste ouvert.
+
 1. **Seuil de taille** : Scalezia CA > 1 M€ et 10+ salariés ; grille actuelle CA ≥ 0,5 M€ ou ≥ 5 salariés.
 2. **Backlinks** : la formule 2 000 € « inclut un peu de backlinks » alors que la liste « jamais » exclut les packs de backlinks → parler de « mentions / autorité off-site ».
 3. **Preuves en trafic** (BT Blue +10 % de trafic) : l'OVI dit de vendre des leads, pas du trafic. À garder en 2e preuve, derrière une preuve en clients / leads.
