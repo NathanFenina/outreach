@@ -18,3 +18,16 @@ Exemple : `101-G-1 · ICP1 · levée+recrute · Opportunity Map`, avec son jumea
 | 5 | ICP 2 · site offert + 97 €/mois |
 
 Critère de succès proposé (à fixer avec Igor) : ≥ 3 % de réponses humaines / prospects uniques et ≥ 20 % de positives / réponses, mesuré sur au moins 100 prospects.
+
+## Nouveaux angles proposés par Nathan (24/10), à soumettre à Igor le 27/10
+Rédigés en entier dans l'artifact CR Igor, onglet « Session 3 » : https://claude.ai/artifact/G6GFRkatP6ZjJhJ1TaWXi4
+
+| Angle | Hypothèse |
+|---|---|
+| A · BTP | « ouvert à 15 chantiers de plus ? » + partenariat à la performance (H4) ; relance « avez-vous l'équipe pour ? » |
+| B · B2B | un fait vrai (levée, recrutement, actualité) + le concurrent que ChatGPT cite à leur place (H1) |
+| C · B2B | volume d'un mot-clé où ils sont absents + liste des 10 recherches (H2) |
+| D · B2B | une page rendue « GEO ready » offerte ; variantes : roadmap de 10 contenus, balisage entités / données structurées, feuille de route mot-clé |
+| E · BTP | résultat + délai + paiement au résultat + vidéo d'audit 3 piliers (site, fiche Google, avis), d'après la vidéo Netswick |
+
+Sources : vidéo « This SEO Agency Closed $30K+ Using Cold Email » (Netswick). Le post Reddit « How I sold 200 websites in 12 months » n'a pas pu être lu (Reddit bloque l'accès) ; le short « Cold Calling Script That Makes Prospects Pitch Themselves » n'a pas de transcription accessible.
