@@ -30,4 +30,7 @@ Rédigés en entier dans l'artifact CR Igor, onglet « Session 3 » : https://cl
 | D · B2B | une page rendue « GEO ready » offerte ; variantes : roadmap de 10 contenus, balisage entités / données structurées, feuille de route mot-clé |
 | E · BTP | résultat + délai + paiement au résultat + vidéo d'audit 3 piliers (site, fiche Google, avis), d'après la vidéo Netswick |
 
-Sources : vidéo « This SEO Agency Closed $30K+ Using Cold Email » (Netswick). Le post Reddit « How I sold 200 websites in 12 months » n'a pas pu être lu (Reddit bloque l'accès) ; le short « Cold Calling Script That Makes Prospects Pitch Themselves » n'a pas de transcription accessible.
+Sources, vidéos lues avec Gemini le 24/10 :
+- **Netswick, « This SEO Agency Closed $30K+ Using Cold Email »** : artisans / services à domicile ; 13 946 contacts, 585 réponses, 78 positives en un mois (1 pour 178). Mail : « [raison pertinente]. We can get you [résultat] in [délai] or you get a full refund. Can I share a quick 2-min video explaining how it works? ». Résultat dit avec les mots du métier. Aux répondants : vidéo d'audit 3 piliers (site, fiche Google, avis) qui montre le problème sans la solution (outil Tella).
+- **ItsKeaton, « The Cold Calling Script That Makes Prospects Pitch Themselves »** : « vous pouvez prendre 3 ou 5 chantiers de plus, ou vous êtes complets ? » → « vous êtes sûr ? si je vous en donne 7 demain, il faut embaucher ? » (le prospect se vend) → « pas des leads, des rendez-vous qualifiés » → closing assumé « demain matin ou demain soir ? ».
+- Le post Reddit « How I sold 200 websites in 12 months » n'a pas pu être lu (Reddit bloque l'accès).

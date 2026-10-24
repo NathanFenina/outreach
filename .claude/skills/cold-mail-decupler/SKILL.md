@@ -14,6 +14,10 @@ Lire d'abord, dans `outbound-machine/` :
 
 La grille ICP/VP de travail est dans l'artifact « CR Igor » (onglet ICP/VP) : https://claude.ai/artifact/G6GFRkatP6ZjJhJ1TaWXi4. Ce qui est en gris n'est pas validé.
 
+## Outils
+- Vidéos YouTube : les faire lire par l'API Gemini (variable `GEMINI_API_KEY`, `file_data.file_uri` = URL YouTube).
+- Scraping d'entreprises (offres d'emploi LinkedIn / Indeed) : Apify (variable `APIFY_TOKEN`). Annoncer le coût avant chaque run.
+
 ## Checklist avant de proposer une séquence
 - [ ] 1 segment, 1 problème, 1 offre. Hypothèse écrite **avec un critère de succès chiffré**.
 - [ ] Structure (VP + FU) × 3, espacement (0,3) (5,3) (10,3) ; VP1+FU1 dans le même fil.
