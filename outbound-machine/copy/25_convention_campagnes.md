@@ -34,3 +34,14 @@ Sources, vidéos lues avec Gemini le 24/10 :
 - **Netswick, « This SEO Agency Closed $30K+ Using Cold Email »** : artisans / services à domicile ; 13 946 contacts, 585 réponses, 78 positives en un mois (1 pour 178). Mail : « [raison pertinente]. We can get you [résultat] in [délai] or you get a full refund. Can I share a quick 2-min video explaining how it works? ». Résultat dit avec les mots du métier. Aux répondants : vidéo d'audit 3 piliers (site, fiche Google, avis) qui montre le problème sans la solution (outil Tella).
 - **ItsKeaton, « The Cold Calling Script That Makes Prospects Pitch Themselves »** : « vous pouvez prendre 3 ou 5 chantiers de plus, ou vous êtes complets ? » → « vous êtes sûr ? si je vous en donne 7 demain, il faut embaucher ? » (le prospect se vend) → « pas des leads, des rendez-vous qualifiés » → closing assumé « demain matin ou demain soir ? ».
 - Le post Reddit « How I sold 200 websites in 12 months » n'a pas pu être lu (Reddit bloque l'accès).
+
+## Inspiration Northwood Growth Partners (a prospecté Nathan, 16-24/10)
+- Mail 1 en 2 lignes : « If you've got room for a few more clients, we help AI SEO agencies book meetings with businesses that aren't showing up in ChatGPT yet. Happy to send over a few details if you're keen. » → question de capacité, aucune promesse, aucun lien.
+- Relance J+7 : « Wanted to bump this up. » + l'idée reformulée + « Would it be useful if I sent over an example campaign? »
+- Leur modèle client : « Just typed 'best {{type}} in {{city}}' into ChatGPT and {{company}} didn't come up. Want to … show up first in your area? Asking because we've helped {{client}} generate {{result}} last month… Can I send over how we'd approach this for {{company}}? »
+- Adaptés en N6 et N7 dans la Base Copy (https://claude.ai/artifact/Tnfz61qnYrMkJdqLtHCF4g).
+
+## Sourcing : ce que Lemlist sait faire (vérifié le 25/10)
+- La base « People database » de Lemlist (API `POST /api/database/people`) filtre par site d'entreprise (`currentCompanyWebsiteUrl`), titre, séniorité, pays, et a aussi des filtres natifs « offres d'emploi des 6 derniers mois » (`jobPostingTitle`, `jobPostingDate`) et « date de dernière levée » (`currentCompanyLastFundingRoundAt`).
+- La recherche est gratuite ; trouver un email vérifié coûte 5 crédits (≈ 0,05 $). Solde au 25/10 : 180 crédits (= 36 emails).
+- Test sur la liste ICP 1 v1 (136 entreprises) : 125 ont au moins un décideur dans Lemlist (110 sur les 121 sans alerte, 487 décideurs au total).
