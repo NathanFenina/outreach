@@ -9,3 +9,6 @@ data/*.csv
 # garde les dossiers versionnés (structure) sans leur contenu
 !data/00_raw/.gitkeep
 !data/01_clean/.gitkeep
+
+# listes de campagne, logs, cache de qualification (PII)
+data/campaigns/

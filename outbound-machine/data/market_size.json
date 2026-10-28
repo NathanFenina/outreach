@@ -1,0 +1,270 @@
+{
+ "1.1": {
+  "FR 11+": 1186,
+  "FR 1-10": 2948,
+  "francophone 11+": 482,
+  "francophone 1-10": 1300,
+  "anglophone 11+": 12911,
+  "anglophone 1-10": 23947
+ },
+ "1.2": {
+  "FR 11+": 6775,
+  "FR 1-10": 14471,
+  "francophone 11+": 6708,
+  "francophone 1-10": 14545,
+  "anglophone 11+": 177856,
+  "anglophone 1-10": 302875
+ },
+ "1.3": {
+  "FR 11+": 2806,
+  "FR 1-10": 4069,
+  "francophone 11+": 3368,
+  "francophone 1-10": 5493,
+  "anglophone 11+": 106892,
+  "anglophone 1-10": 137037
+ },
+ "1.4": {
+  "FR 11+": 1827,
+  "FR 1-10": 3458,
+  "francophone 11+": 887,
+  "francophone 1-10": 1574,
+  "anglophone 11+": 15526,
+  "anglophone 1-10": 20251
+ },
+ "1.5": {
+  "FR 11+": 4912,
+  "FR 1-10": 17837,
+  "francophone 11+": 2184,
+  "francophone 1-10": 6946,
+  "anglophone 11+": 36851,
+  "anglophone 1-10": 94273
+ },
+ "1.6": {
+  "FR 11+": 1207,
+  "FR 1-10": 2556,
+  "francophone 11+": 568,
+  "francophone 1-10": 1349,
+  "anglophone 11+": 15613,
+  "anglophone 1-10": 34092
+ },
+ "1.7": {
+  "FR 11+": 1585,
+  "FR 1-10": 2540,
+  "francophone 11+": 726,
+  "francophone 1-10": 1289
+ },
+ "1.8": {
+  "FR 11+": 1501,
+  "FR 1-10": 4107,
+  "francophone 11+": 906,
+  "francophone 1-10": 1568,
+  "anglophone 11+": 941,
+  "anglophone 1-10": 762
+ },
+ "1.9": {
+  "FR 11+": 2020,
+  "FR 1-10": 13161,
+  "francophone 11+": 1034,
+  "francophone 1-10": 4444,
+  "anglophone 11+": 17291,
+  "anglophone 1-10": 40302
+ },
+ "1.10": {
+  "FR 11+": 1010,
+  "FR 1-10": 3837,
+  "francophone 11+": 546,
+  "francophone 1-10": 1450,
+  "anglophone 11+": 13706,
+  "anglophone 1-10": 28854
+ },
+ "1.11": {
+  "FR 11+": 1207,
+  "FR 1-10": 4623,
+  "francophone 11+": 486,
+  "francophone 1-10": 1583,
+  "anglophone 11+": 10587,
+  "anglophone 1-10": 25674
+ },
+ "1.12": {
+  "FR 11+": 4297,
+  "FR 1-10": 10629,
+  "francophone 11+": 1382,
+  "francophone 1-10": 2336
+ },
+ "1.13": {
+  "FR 11+": 477,
+  "FR 1-10": 1431,
+  "francophone 11+": 459,
+  "francophone 1-10": 779,
+  "anglophone 11+": 595,
+  "anglophone 1-10": 362
+ },
+ "2.1": {
+  "FR 11+": 4250,
+  "FR 1-10": 9707,
+  "francophone 11+": 910,
+  "francophone 1-10": 1505,
+  "anglophone 11+": 7646,
+  "anglophone 1-10": 5720
+ },
+ "2.2": {
+  "FR 11+": 1832,
+  "FR 1-10": 2554,
+  "francophone 11+": 759,
+  "francophone 1-10": 744,
+  "anglophone 11+": 14787,
+  "anglophone 1-10": 11572
+ },
+ "2.3": {
+  "FR 11+": 795,
+  "FR 1-10": 1316,
+  "francophone 11+": 310,
+  "francophone 1-10": 425,
+  "anglophone 11+": 920,
+  "anglophone 1-10": 804
+ },
+ "2.4": {
+  "FR 11+": 24,
+  "FR 1-10": 28,
+  "francophone 11+": 14,
+  "francophone 1-10": 3
+ },
+ "2.5": {
+  "FR 11+": 38,
+  "FR 1-10": 113,
+  "francophone 11+": 6,
+  "francophone 1-10": 14,
+  "anglophone 11+": 597,
+  "anglophone 1-10": 786
+ },
+ "2.6": {
+  "FR 11+": 108,
+  "FR 1-10": 204,
+  "francophone 11+": 8,
+  "francophone 1-10": 32
+ },
+ "2.7": {
+  "FR 11+": 868,
+  "FR 1-10": 1347,
+  "francophone 11+": 371,
+  "francophone 1-10": 374,
+  "anglophone 11+": 8158,
+  "anglophone 1-10": 6270
+ },
+ "2.8": {
+  "FR 11+": 1864,
+  "FR 1-10": 2413,
+  "francophone 11+": 532,
+  "francophone 1-10": 495,
+  "anglophone 11+": 3652,
+  "anglophone 1-10": 3151
+ },
+ "2.9": {
+  "FR 11+": 2381,
+  "FR 1-10": 3449,
+  "francophone 11+": 688,
+  "francophone 1-10": 726,
+  "anglophone 11+": 15145,
+  "anglophone 1-10": 16136
+ },
+ "2.10": {
+  "FR 11+": 961,
+  "FR 1-10": 1509,
+  "francophone 11+": 212,
+  "francophone 1-10": 165,
+  "anglophone 11+": 69,
+  "anglophone 1-10": 49
+ },
+ "2.11": {
+  "FR 11+": 928,
+  "FR 1-10": 1608,
+  "francophone 11+": 670,
+  "francophone 1-10": 863,
+  "anglophone 11+": 17067,
+  "anglophone 1-10": 17403
+ },
+ "2.12": {
+  "FR 11+": 183,
+  "FR 1-10": 532,
+  "francophone 11+": 118,
+  "francophone 1-10": 148,
+  "anglophone 11+": 2822,
+  "anglophone 1-10": 4391
+ },
+ "2.13": {
+  "FR 11+": 393,
+  "FR 1-10": 772,
+  "francophone 11+": 213,
+  "francophone 1-10": 269,
+  "anglophone 11+": 5431,
+  "anglophone 1-10": 6513
+ },
+ "2.14": {
+  "FR 11+": 340,
+  "FR 1-10": 665,
+  "francophone 11+": 105,
+  "francophone 1-10": 161
+ },
+ "3.1": {
+  "FR 11+": 7,
+  "FR 1-10": 22,
+  "francophone 11+": 7,
+  "francophone 1-10": 5,
+  "anglophone 11+": 233,
+  "anglophone 1-10": 95
+ },
+ "3.2": {
+  "FR 11+": 64,
+  "FR 1-10": 74,
+  "francophone 11+": 24,
+  "francophone 1-10": 25,
+  "anglophone 11+": 591,
+  "anglophone 1-10": 279
+ },
+ "3.3": {
+  "FR 11+": 96,
+  "FR 1-10": 197,
+  "francophone 11+": 33,
+  "francophone 1-10": 38,
+  "anglophone 11+": 389,
+  "anglophone 1-10": 172
+ },
+ "3.4": {
+  "FR 11+": 28,
+  "FR 1-10": 27,
+  "francophone 11+": 9,
+  "francophone 1-10": 7,
+  "anglophone 11+": 75,
+  "anglophone 1-10": 39
+ },
+ "4.1": {
+  "FR 11+": 2159,
+  "FR 1-10": 1976,
+  "francophone 11+": 464,
+  "francophone 1-10": 326,
+  "anglophone 11+": 2217,
+  "anglophone 1-10": 1724
+ },
+ "4.2": {
+  "FR 11+": 1371,
+  "FR 1-10": 2064,
+  "francophone 11+": 674,
+  "francophone 1-10": 665,
+  "anglophone 11+": 7147,
+  "anglophone 1-10": 9097
+ },
+ "4.3": {
+  "FR 11+": 291,
+  "FR 1-10": 404,
+  "francophone 11+": 207,
+  "francophone 1-10": 370,
+  "anglophone 11+": 31670,
+  "anglophone 1-10": 28989
+ },
+ "4.4": {
+  "FR 11+": 421,
+  "FR 1-10": 844,
+  "francophone 11+": 71,
+  "francophone 1-10": 150
+ }
+}

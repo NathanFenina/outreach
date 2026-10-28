@@ -43,6 +43,10 @@
 - **K24** decupler.fr est un domaine secondaire : autorisé pour le cold. Interdit : decupler.com (Nathan, 28/10).
 - **K25** Taille de campagne : 100 leads minimum, 300 maximum (Nathan, 28/10).
 - **K26** Prochaine session Igor : mardi 03/11/2026.
+- **K27** Base Lemlist (28/10) : recherche gratuite mais quota de recherches (≈ 2 000, 1 600 restants) ; filtre « levée < 6 mois » vide pour la France ; « recrute en marketing < 90 j » ≈ 230 entreprises B2B FR.
+- **K28** Messagerie des prospects locaux (PAC, solaire, incendie) : ≈ 10 % Google, 45 % autres (OVH…), 45 % Microsoft. → le lot O (Zapmail) porte l'essentiel du volume local.
+- **K29** Qualification avant achat d'emails : ≈ 25 % des entreprises trouvées par mots-clés sont hors cible (concurrents, fonds, médias, sites morts) ; contrôle par IA ≈ 0,02 cent/entreprise.
+- **K30** FullEnrich (28/10) : ≈ 85 % d'emails trouvés sur les dirigeants de TPE/PME FR, dont 60 % « DELIVERABLE ».
 - **K23** Session 3 : 2 accords verbaux sur les ventes (1 confirmé, 1 en suspens pour raisons perso).
 
 ---
@@ -114,7 +118,7 @@
 ### Bloc A · Infra et délivrabilité
 - **C1** ✅ Vérifier dans Lemlist : 21 boîtes Zapmail connectées + lemwarm actif (V5). → Q1
 - **C2** ✅ Annulé : decupler.fr est un domaine secondaire, autorisé (Q2).
-- **C3** ⏸ Redirection 301 des 7 domaines Zapmail vers decupler.com (V3). → Q3
+- **C3** 🟡 Redirection 301 des 7 domaines Zapmail vers decupler.com (V3). → Q3 → activée dans Zapmail + Postmaster validé (Nathan) ; en HTTPS, page « Security check » (hCaptcha) au lieu d'un 301 direct : demander au support Zapmail un 301 simple
 - **C4** ⬜ GlockApps 1 boîte par domaine, 16 domaines (D2) ; Zapmail après la chauffe. → Q4
 - **C5** ⬜ Délistage Spamhaus / SURBL des domaines du groupe A (D3) + question SURBL « domaines sosies ». → Q5
 - **C6** ⬜ Nettoyer les expéditeurs decuplersystems.com des brouillons (V7).
@@ -122,56 +126,65 @@
 - **C8** ⬜ Infra Microsoft (Azure / Hypertide) : étude seulement, plus tard (D4). (N9)
 
 ### Bloc B · Outils (envoi, données, enrichissement)
-- **C9** ⬜ Comparatif outil d'envoi : Lemlist vs Instantly vs PlusVibe (prix réels, base de leads incluse, détection ESP, SuperSearch, blocklist, API / MCP), date de renouvellement Lemlist, recommandation. (N13, N18, N19, N20)
-- **C10** ⬜ Comparatif fournisseurs de données : Moltsets (D13), Monid, Treg, base Instantly, base Lemlist, dataset UltB ; plus le sort de FullEnrich (1 045 crédits) et Outscraper. (N13, N16, N17, N29)
-- **C11** ⬜ Outil MX gratuit pour classer Google / Microsoft / autre (script DNS maison, gratuit) intégré au pipeline (D6). (N9)
-- **C12** ⬜ Coût intention SEO : test DataForSEO baisse de trafic sur 100 entreprises (D18) + API SERP la moins chère pour le « concurrent au-dessus » (D19) + OpenSEO. (N17, N25, N27)
+- **C9** ✅ Comparatif outil d'envoi : Lemlist vs Instantly vs PlusVibe (prix réels, base de leads incluse, détection ESP, SuperSearch, blocklist, API / MCP), date de renouvellement Lemlist, recommandation. (N13, N18, N19, N20) → Comparatif fait (`copy/26_comparatif_outils.md`) : reco Instantly Hypergrowth + crédits SuperSearch, ≈ 320 $/mois contre ≈ 535 $ Lemlist ; décision Nathan avant le 10/11
+- **C10** ✅ Comparatif fournisseurs de données : Moltsets (D13), Monid, Treg, base Instantly, base Lemlist, dataset UltB ; plus le sort de FullEnrich (1 045 crédits) et Outscraper. (N13, N16, N17, N29) → Comparatif données (26) : Moltsets 97 $/mois (couverture non publiée), Monid/Treg = agrégateurs ; FullEnrich gardé en appoint
+- **C11** ✅ Outil MX gratuit pour classer Google / Microsoft / autre (script DNS maison, gratuit) intégré au pipeline (D6). (N9) → `scripts/mx.py` (DNS-over-HTTPS gratuit), utilisé dans 35_build_campaign.py
+- **C12** ✅ Coût intention SEO : test DataForSEO baisse de trafic sur 100 entreprises (D18) + API SERP la moins chère pour le « concurrent au-dessus » (D19) + OpenSEO. (N17, N25, N27) → Coûts : trafic DataForSEO ≈ 0,13 cent/domaine, SERP ≈ 0,06 cent/requête → ≈ 0,3 cent/entreprise ; test réel sur 100 entreprises à lancer (≈ 0,30 $)
 
 ### Bloc C · Base centrale (CRM)
-- **C13** ⬜ Faire du Supabase existant la base centrale : statut par contact (jamais contacté, en campagne, répondu, positif, RDV, client, ne pas contacter), date, campagne, ESP, pays, sous-ICP ; synchro depuis l'outil d'envoi (D15). (N7, N21)
-- **C14** ⬜ Liste noire : clients + tous ceux qui ont répondu + désinscrits + concurrents ; import dans la blocklist de l'outil d'envoi (D14). (N21)
-- **C15** ⬜ Brancher `check_deja_contacte.py` sur la base centrale (aujourd'hui il ne lit que Lemlist).
+- **C13** ✅ Faire du Supabase existant la base centrale : statut par contact (jamais contacté, en campagne, répondu, positif, RDV, client, ne pas contacter), date, campagne, ESP, pays, sous-ICP ; synchro depuis l'outil d'envoi (D15). (N7, N21) → Supabase « Outreach Cold Mail » (projet teuvlvovgjjlbxdnxdtc) : 17 tables + vues, accès script via fonction `ingest` (jeton hors repo)
+- **C14** ✅ Liste noire : clients + tous ceux qui ont répondu + désinscrits + concurrents ; import dans la blocklist de l'outil d'envoi (D14). (N21) → do_not_contact : 8 495 emails et 6 891 domaines contactés (+ désinscrits, répondus) + 11 domaines clients ; à compléter : domaines de Cloudtech, BT Blue, TechMedias, Orators, L'Artisan d'à côté
+- **C15** ✅ Brancher `check_deja_contacte.py` sur la base centrale (aujourd'hui il ne lit que Lemlist). → 42_import_leads.py contrôle email + domaine contre do_not_contact, et Lemlist dédoublonne
 
 ### Bloc D · Tableau ICP segmenté (fondation, prioritaire selon Igor)
-- **C16** ⬜ Grille de nommage ICP granulaire (D8, N11) : ICP 1.x B2B, 2.x services locaux / partenariat à la performance, 3.x santé / tourisme médical, 4.x bien-être / hôtellerie… (proposition en Q10).
-- **C17** ⬜ Pour chaque sous-ICP : mots-clés industrie, effectifs ≥ 5, pays, langue, ESP, titres décideurs / champions (D10), pains liés au service, VP, cas client, lead magnet, signaux, priorité pyramide, volume estimé. (N7, N10, N11)
-- **C18** ⬜ Nouveaux sous-ICP de Nathan : M&A France (N23), cybersécurité (N26), greffe de cheveux / implants dentaires à l'étranger (N22), rideaux métalliques, monte-escaliers, pompes funèbres, panneaux solaires, sécurité incendie (N22), pompes à chaleur / climatisation (N28).
-- **C19** ⬜ Liste des pays par sous-ICP et par langue, pour Igor et pour Apify (D7, N8).
-- **C20** ⬜ Envoyer le tableau à Igor puis lui demander le dataset (D16, N14).
+- **C16** ✅ Grille de nommage ICP granulaire (D8, N11) : ICP 1.x B2B, 2.x services locaux / partenariat à la performance, 3.x santé / tourisme médical, 4.x bien-être / hôtellerie… (proposition en Q10). → 35 sous-ICP codés (1.1 → 4.4) dans `scripts/icp_catalog.py` et Supabase
+- **C17** ✅ Pour chaque sous-ICP : mots-clés industrie, effectifs ≥ 5, pays, langue, ESP, titres décideurs / champions (D10), pains liés au service, VP, cas client, lead magnet, signaux, priorité pyramide, volume estimé. (N7, N10, N11) → Pour chaque sous-ICP : mots-clés FR/EN, pays, pains, preuve, unité, personas, taille de marché (base Lemlist)
+- **C18** ✅ Nouveaux sous-ICP de Nathan : M&A France (N23), cybersécurité (N26), greffe de cheveux / implants dentaires à l'étranger (N22), rideaux métalliques, monte-escaliers, pompes funèbres, panneaux solaires, sécurité incendie (N22), pompes à chaleur / climatisation (N28). → M&A (1.7), cybersécurité (1.4), PAC/clim (2.2), rideaux métalliques (2.4), monte-escaliers (2.5), pompes funèbres (2.6), solaire (2.3), sécurité incendie (2.7), greffe (3.1), dentaire (3.2), maisons de retraite (4.3), spa (4.2)…
+- **C19** ✅ Liste des pays par sous-ICP et par langue, pour Igor et pour Apify (D7, N8). → 27 pays, langue et vague (table countries)
+- **C20** 🟡 Envoyer le tableau à Igor puis lui demander le dataset (D16, N14). → Mail rédigé (`copy/29_mail_igor_28-10.md`), à envoyer par Nathan
 
 ### Bloc E · Sourcing
-- **C21** ⬜ Pyramide par sous-ICP : palier 1 « a levé + recrute », palier 2 « recrute », palier 3 « marché principal » (D12, K17, N12).
+- **C21** ✅ Pyramide par sous-ICP : palier 1 « a levé + recrute », palier 2 « recrute », palier 3 « marché principal » (D12, K17, N12). → Pyramide appliquée : palier 2 « recrute en marketing » (102) + palier 3 ; levées < 6 mois introuvables dans Lemlist pour la France
 - **C22** ⬜ Apify multi-pays (offres d'emploi LinkedIn / Indeed) sur les pays retenus (N8).
 - **C23** ⬜ Levées de fonds hors France (sources gratuites + Apify).
-- **C24** ⬜ Décideurs multiples par entreprise (D11, N15) + emails vérifiés (Lemlist / Instantly / FullEnrich selon C10).
-- **C25** ⬜ Split ESP de chaque liste (C11) puis contrôle « jamais contacté » (C15).
+- **C24** ✅ Décideurs multiples par entreprise (D11, N15) + emails vérifiés (Lemlist / Instantly / FullEnrich selon C10). → 2-3 contacts par entreprise rangés par rôle ; emails FullEnrich (DELIVERABLE / HIGH_PROBABILITY, catch-all exclus)
+- **C25** ✅ Split ESP de chaque liste (C11) puis contrôle « jamais contacté » (C15). → Split MX + liste noire à chaque campagne
 
 ### Bloc F · Copy et lead magnets
-- **C26** ⬜ Une séquence par sous-ICP × groupe (décideur / champion) × langue, dans le format Igor (6 étapes, R.E.P.L.Y./AAA, CTA permission) (D8, D11).
-- **C27** ⬜ Message « partenariat à la performance » pour les services locaux FR et étrangers : « je cherche des partenaires prêts à prendre 10 nouveaux clients / chantiers » (N22).
-- **C28** ⬜ Variable « concurrent au-dessus de vous » en corps et en objet (K16, C12).
-- **C29** ⬜ Tableau des lead magnets : avatar, effort / coût, étape du funnel, étape de séquence, métrique (D21, K19). À envoyer à Igor.
-- **C30** ⬜ Bibliothèque d'hypothèses mise à jour (H par sous-ICP) dans `copy/25`.
+- **C26** ✅ Une séquence par sous-ICP × groupe (décideur / champion) × langue, dans le format Igor (6 étapes, R.E.P.L.Y./AAA, CTA permission) (D8, D11). → H6 (décideur, question ChatGPT), H7 (AAA + vidéo 2 min), H8 (champion), H9 (partenariat performance), H12 (concurrent devant) en FR et EN, 6 étapes
+- **C27** ✅ Message « partenariat à la performance » pour les services locaux FR et étrangers : « je cherche des partenaires prêts à prendre 10 nouveaux clients / chantiers » (N22). → H9 « prêt à prendre 10 [unités] de plus par mois ? » + vidéo 3 min en VP2
+- **C28** ✅ Variable « concurrent au-dessus de vous » en corps et en objet (K16, C12). → H12 rédigée (objet + corps) ; à brancher sur l'API SERP
+- **C29** ✅ Tableau des lead magnets : avatar, effort / coût, étape du funnel, étape de séquence, métrique (D21, K19). À envoyer à Igor. → 13 lead magnets « mail / appel » (table lead_magnets + doc 28)
+- **C30** ✅ Bibliothèque d'hypothèses mise à jour (H par sous-ICP) dans `copy/25`. → Hypothèses H6 à H12 (table hypotheses)
 
 ### Bloc G · Campagnes
-- **C31** ⏸ `101-G-1` (ancienne infra, prospects Google) sur la liste ICP 1 v2 : décideurs Lemlist, 36 emails avec les 180 crédits, séquence (étape 4c du 28/10). → Q18, Q19, Q20
+- **C31** ✅ `101-G-1` (ancienne infra, prospects Google) sur la liste ICP 1 v2 : décideurs Lemlist, 36 emails avec les 180 crédits, séquence (étape 4c du 28/10). → Q18, Q19, Q20 → remplacée par 101 / 102 (liste ICP 1 v2 perdue) : 101-G-9 = 101 leads, 102-G-7 = 135 leads, en brouillon
 - **C32** ⬜ `101-O-1` après la chauffe Zapmail (~6-9/11).
-- **C33** ⬜ Synthèse de toutes les campagnes : prospects uniques, réponses humaines, positives, RDV, et ce qu'on améliore (N24). Lecture Lemlist gratuite.
+- **C33** ✅ Synthèse de toutes les campagnes : prospects uniques, réponses humaines, positives, RDV, et ce qu'on améliore (N24). Lecture Lemlist gratuite. → `copy/27_synthese_campagnes.md`
 
 ### Bloc H · Coaching Igor et suivi
-- **C34** 🟡 Reporter les décisions D1-D27 dans le CR Igor (artifact G6GFRkatP6ZjJhJ1TaWXi4) et dans le point d'étape (étape 4a du 28/10).
-- **C35** ⬜ Mettre à jour la Base Copy (artifact Tnfz61qnYrMkJdqLtHCF4g) avec les sous-ICP et les hacks Igor (N5).
-- **C36** 🟡 Mail de devoirs à Igor (D24) : brouillon à préparer.
+- **C34** ✅ Reporter les décisions D1-D27 dans le CR Igor (artifact G6GFRkatP6ZjJhJ1TaWXi4) et dans le point d'étape (étape 4a du 28/10). → CR Igor : tableau des décisions D1-D27 en tête de l'onglet Session 3
+- **C35** ✅ Mettre à jour la Base Copy (artifact Tnfz61qnYrMkJdqLtHCF4g) avec les sous-ICP et les hacks Igor (N5). → section « Machine 28/10 » (#machine2810) : campagnes 101/102, séquences H9 et H7 complètes, hypothèses H6-H12, 35 sous-ICP.
+- **C36** ✅ Mail de devoirs à Igor (D24) : brouillon à préparer. → `copy/29_mail_igor_28-10.md`
 - **C37** ⏸ 2e paiement + preuve (D25) : Nathan.
 - **C38** ⬜ Rapports d'appels de vente d'Igor + guide 8 étapes : à archiver dans le repo (D23).
 
 ---
 
 ### Bloc I · Ajouts du 28/10 (2e retour de Nathan)
-- **C39** ⬜ Suivi de santé gratuit sans GlockApps : taux de réponse humaine par boîte et par domaine (API Lemlist), listes noires par DNS (SURBL, Spamhaus DBL, script), Google Postmaster Tools, score lemwarm. Rapport hebdo.
-- **C40** ⬜ Schéma Supabase « outreach » : entreprises, contacts, sous-ICP, pays, intentions, campagnes, hypothèses, lead magnets, boîtes et domaines, contrôles de santé, liste noire, événements de contact. Tables liées.
-- **C41** ⬜ Lead magnets « en deux temps » : une partie offerte par mail, le reste « je vous le montre en appel » (K19). Chaque lead magnet a sa version mail et sa version appel.
-- **C42** ⬜ Pays riches et peu concurrentiels : Maroc, Tunisie, Arabie saoudite, Émirats, Afrique subsaharienne solvable, US, + pays d'Igor.
+- **C39** ✅ Suivi de santé gratuit sans GlockApps : taux de réponse humaine par boîte et par domaine (API Lemlist), listes noires par DNS (SURBL, Spamhaus DBL, script), Google Postmaster Tools, score lemwarm. Rapport hebdo. → `scripts/37_health.py` (DNS, SURBL, Spamhaus, redirection) → tables sending_domains / health_checks ; Postmaster validé sur les 7 domaines
+- **C40** ✅ Schéma Supabase « outreach » : entreprises, contacts, sous-ICP, pays, intentions, campagnes, hypothèses, lead magnets, boîtes et domaines, contrôles de santé, liste noire, événements de contact. Tables liées. → Schéma créé
+- **C41** ✅ Lead magnets « en deux temps » : une partie offerte par mail, le reste « je vous le montre en appel » (K19). Chaque lead magnet a sa version mail et sa version appel. → Chaque lead magnet a sa partie mail et sa partie appel
+- **C42** ✅ Pays riches et peu concurrentiels : Maroc, Tunisie, Arabie saoudite, Émirats, Afrique subsaharienne solvable, US, + pays d'Igor. → Pays ajoutés (MA, TN, SA, AE, CI, SN, NG, KE, ZA, GH, US)
+
+### Bloc J · Ajouts du 28/10 (phase autonome)
+- **C43** ⬜ Lots O (101-O, 102-O) : envoi après la chauffe Zapmail (~6/11) ; si bascule Instantly le 10/11, réimporter les mêmes leads (emails déjà trouvés).
+- **C44** ⬜ Réglages Lemlist à faire à la main avant le go : expéditeurs (lot G = boîtes PremiumInboxes, lot O = boîtes Zapmail), tracking désactivé, texte brut, envoi lun-ven 7h30-14h, limites de rampup.
+- **C45** ⬜ Enregistrer la vidéo de 2 min (H7) et la vidéo d'audit 3 min (H9, après le « oui ») : prérequis des séquences.
+- **C46** ⬜ Brancher H6 (question ChatGPT par entreprise, API OpenAI ≈ 0,5 cent) et H12 (concurrent devant, API SERP) pour la 2e vague.
+- **C47** ⬜ Niches locales mal couvertes par LinkedIn (rideaux métalliques, pompes funèbres, monte-escaliers) : Google Maps via Outscraper (clé à ajouter dans l'environnement d'une nouvelle session).
+- **C48** ⬜ Campagnes hors France (EN) : sous-ICP 3.x tourisme médical (Turquie, Tunisie, Maroc) et 2.x / 4.x au Royaume-Uni, aux Émirats, aux États-Unis.
+- **C49** ⬜ Brouillons 103-G-7 / 103-O-7 vides (M&A fusionné dans 102) : à réutiliser pour la prochaine campagne ou à archiver.
 
 ## 5. Correspondance avec le message de Nathan du 28/10 (N)
 
@@ -244,9 +257,9 @@ Sans réponse, Claude applique la valeur par défaut indiquée.
 
 | Q | Question | Défaut | Statut |
 |---|---|---|---|
-| Q27 | Enveloppe de dépenses pour la journée | DataForSEO ≤ 10 $, Apify dans les 5 $ gratuits, FullEnrich ≤ 1 000 crédits déjà payés, Lemlist 180 crédits offerts ; 0 € de nouvel abonnement | ❓ |
-| Q28 | Comptes d'essai à créer par Nathan (Instantly, PlusVibe, Moltsets, Monid) + clés API | comparatif sur infos publiques seulement | ❓ |
-| Q29 | Clé API Outscraper (et clé Apify régénérée ?) | pas de scraping Google Maps | ❓ |
-| Q30 | Tables Supabase dans le projet « LinkedIn App », schéma séparé `outreach` | oui | ❓ |
-| Q31 | Campagnes créées en brouillon dans Lemlist (rien lancé) malgré le renouvellement du 10/11 | oui, lots G seulement | ❓ |
-| Q32 | Apify au-delà de 5 $ (plan payant) pour le scrape multi-pays | non | ❓ |
+| Q27 | Enveloppe de dépenses pour la journée | DataForSEO ≤ 10 $, Apify dans les 5 $ gratuits, FullEnrich ≤ 1 000 crédits déjà payés, Lemlist 180 crédits offerts ; 0 € de nouvel abonnement | ✅ DataForSEO ou autre outil moins cher ; estimer le coût d'abord |
+| Q28 | Comptes d'essai à créer par Nathan (Instantly, PlusVibe, Moltsets, Monid) + clés API | comparatif sur infos publiques seulement | ✅ chercher sur le web (pas de comptes d'essai) |
+| Q29 | Clé API Outscraper (et clé Apify régénérée ?) | pas de scraping Google Maps | ✅ OUTSCRAPER_API ajoutée ; garder la clé Apify |
+| Q30 | Tables Supabase dans le projet « LinkedIn App », schéma séparé `outreach` | oui | ✅ nouveau projet Supabase dédié, au même niveau que LinkedIn App |
+| Q31 | Campagnes créées en brouillon dans Lemlist (rien lancé) malgré le renouvellement du 10/11 | oui, lots G seulement | ✅ brouillons Lemlist, toujours scindés par ESP ; remplir le tableau ICP + messages + lead magnets |
+| Q32 | Apify au-delà de 5 $ (plan payant) pour le scrape multi-pays | non | ✅ si ça ne suffit pas, Claude dit quel abonnement et Nathan recharge |
