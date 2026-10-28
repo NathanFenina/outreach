@@ -13,7 +13,7 @@ FREEMAIL = {"gmail.com", "hotmail.com", "hotmail.fr", "yahoo.fr", "yahoo.com", "
 # clients et références (decupler.com + mémoire) : jamais prospectés
 CLIENTS = {"apogea.fr": "Apogea", "betomorrow.com": "BeTomorrow", "reuxtravaux.fr": "Reux Travaux", "gestalt.fr": "École Humaniste de Gestalt",
            "pluxee.fr": "Pluxee", "clim-confort.fr": "Clim Confort", "academiemadelrieux.com": "Académie Madelrieux",
-           "lepoint.fr": "Le Point", "decathlon.fr": "Décathlon", "decathlon.com": "Décathlon", "atoo-energie.fr": "Atoo Énergie"}
+           "lepoint.fr": "Le Point", "decathlon.fr": "Décathlon", "decathlon.com": "Décathlon", "atoo-energie.fr": "Atoo Énergie", "cloudtech.com": "Cloudtech", "bt-blue.com": "BT Blue", "orators.fr": "Orators", "techmedias.fr": "TechMedias"}
 CLIENT_NAMES = ["Cloudtech", "BT Blue", "TechMedias", "Orators", "L'Artisan d'à côté", "Atoo Énergie"]
 
 

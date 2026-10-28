@@ -38,7 +38,7 @@ def classify(d, company, icp, text):
 
 
 todo = {}
-for f in glob.glob("../data/campaigns/final_*.csv"):
+for f in (sys.argv[1:] or glob.glob("../data/campaigns/final_*.csv")):  # ou les fichiers passés en argument (datasets DS-*)
     for r in csv.DictReader(open(f)):
         if r["domain"] not in cache: todo[r["domain"]] = (r["company"], r["icp_code"])
 print("à qualifier :", len(todo))
