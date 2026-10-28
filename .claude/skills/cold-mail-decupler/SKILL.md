@@ -5,7 +5,7 @@ description: Écrire, revoir ou piloter une campagne cold mail Décupler (Lemlis
 
 # Cold mail Décupler
 
-Lire d'abord, dans `outbound-machine/` : le dernier `ETAT_*.md` (point d'étape), puis :
+Lire d'abord, dans `outbound-machine/` : le dernier `ETAT_*.md` (point d'étape) et `REGISTRE.md` (tout est numéroté : K, D, C, Q ; on ajoute, on ne renumérote jamais), puis :
 1. `BRIEF.md` → **Règles permanentes** (crédits annoncés, check « jamais contacté », France d'abord, rien sans le GO de Nathan, minimum 100 leads / cible 400, ne jamais modifier une campagne sans son accord).
 2. `copy/20_coach_igor_frameworks.md` → la méthode de référence.
 3. `copy/21_icp_vp.md` → segment, ICP, VP, preuves, hypothèse à tester.
