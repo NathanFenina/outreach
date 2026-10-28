@@ -157,6 +157,8 @@ SEGMENTS = [
         pains=PAIN_LOCAL, seg_fr="entreprises de déménagement", seg_en="moving companies"),
     seg("2.14", "Paysagistes", ["paysagiste", "aménagement extérieur"], ["landscaping"], LOCAL_FR, 3, "PERF", P_LOCAL, unit=("chantiers", "projects"),
         pains=PAIN_LOCAL, seg_fr="paysagistes", seg_en="landscapers"),
+    seg("2.15", "Travaux publics et génie civil", ["travaux publics", "génie civil", "VRD", "terrassement"], ["civil engineering", "groundworks"], LOCAL_FR, 2, "PERF", P_LOCAL, unit=("marchés", "contracts"),
+        pains=PAIN_LOCAL, industries=["Civil Engineering", "Construction"], seg_fr="entreprises de travaux publics", seg_en="civil engineering firms"),
 
     # ---- ICP 3 : santé, tourisme médical
     seg("3.1", "Greffe de cheveux (patients internationaux)", ["greffe de cheveux", "implant capillaire"], ["hair transplant", "FUE"], MED_COUNTRIES, 1, "PERF", None, unit=("patients internationaux", "international patients"),
@@ -182,6 +184,9 @@ SEGMENTS = [
         industries=["Nursing Homes and Residential Care Facilities"], seg_fr="résidences seniors", seg_en="care homes"),
     seg("4.4", "Campings et résidences de tourisme haut de gamme", ["camping", "résidence de tourisme", "glamping"], ["holiday park", "glamping"], LOCAL_FR, 3, "PERF", None, unit=("réservations directes", "direct bookings"),
         pains=PAIN_HOSP, industries=["Accommodation Services", "Recreational Facilities"], seg_fr="campings et résidences de tourisme", seg_en="holiday parks"),
+    seg("4.5", "Écoles et formations bien-être", ["formation gestalt", "école de sophrologie", "formation naturopathie", "formation coach", "psychopraticien"], ["wellness training"], LOCAL_FR, 2, "PERF", None, unit=("inscrits", "students"),
+        pains=PAIN_HOSP, industries=["Education", "Professional Training and Coaching"], seg_fr="écoles et formations bien-être", seg_en="wellness training schools",
+        notes="Ne pas écrire aux concurrents directs de Gestalt / Madelrieux sans accord de Nathan"),
 ]
 
 # ---------------------------------------------------------------- personas (3 contacts max)
