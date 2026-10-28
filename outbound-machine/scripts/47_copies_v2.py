@@ -3,7 +3,7 @@ puis la suite (FU1 → FU3) par sous-ICP. Sortie : ../data/copies_v2.json (liste
 import json, re
 from copy_v2 import *
 
-PS_LOCAL = "PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone."
+PS_LOCAL = "PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois."
 PS_PERF = "PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas."
 PS_HOSP = "PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble."
 rows = []

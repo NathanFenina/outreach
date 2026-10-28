@@ -20,20 +20,20 @@ Taille = entreprises dans la base Lemlist (recherche gratuite du 28/10), par mot
 | 1.11 | Cabinets RH et recrutement | 3 | OVI (SEO + IA) | 1207 | 4623 | 486 | 10587 | Le Point, Pluxee, Décathlon : +20 % de pipeline organique |
 | 1.12 | Organismes de formation professionnelle | 1 | OVI (SEO + IA) | 4297 | 10629 | 1382 |  | Académie Madelrieux : +46 % de clics Google en 3 mois |
 | 1.13 | Cabinets d'avocats d'affaires | 3 | OVI (SEO + IA) | 477 | 1431 | 459 | 595 | Le Point, Pluxee, Décathlon : +20 % de pipeline organique |
-| 2.1 | Rénovation et entreprise générale | 2 | performance | 4250 | 9707 | 910 | 7646 | L'Artisan d'à côté : +200 nouveaux clients par mois |
+| 2.1 | Rénovation et entreprise générale | 2 | performance | 4250 | 9707 | 910 | 7646 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
 | 2.2 | Pompes à chaleur et climatisation | 1 | performance | 1832 | 2554 | 759 | 14787 | Clim Confort, installateur de clim : 3,7 fois plus de clics Google en un an |
 | 2.3 | Panneaux solaires et photovoltaïque | 1 | performance | 795 | 1316 | 310 | 920 | Clim Confort, installateur de clim : 3,7 fois plus de clics Google en un an |
-| 2.4 | Rideaux métalliques et fermetures commerciales | 2 | performance | 24 | 28 | 14 |  | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.5 | Monte-escaliers et accessibilité | 1 | performance | 38 | 113 | 6 | 597 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.6 | Pompes funèbres | 2 | performance | 108 | 204 | 8 |  | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.7 | Sécurité incendie | 1 | performance | 868 | 1347 | 371 | 8158 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.8 | Menuiseries, fenêtres et vérandas | 2 | performance | 1864 | 2413 | 532 | 3652 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.9 | Toiture, couverture et isolation | 2 | performance | 2381 | 3449 | 688 | 15145 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.10 | Piscines et spas (installateurs) | 2 | performance | 961 | 1509 | 212 | 69 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.11 | Alarme et vidéosurveillance | 2 | performance | 928 | 1608 | 670 | 17067 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.12 | Cuisinistes | 3 | performance | 183 | 532 | 118 | 2822 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.13 | Déménagement | 3 | performance | 393 | 772 | 213 | 5431 | L'Artisan d'à côté : +200 nouveaux clients par mois |
-| 2.14 | Paysagistes | 3 | performance | 340 | 665 | 105 |  | L'Artisan d'à côté : +200 nouveaux clients par mois |
+| 2.4 | Rideaux métalliques et fermetures commerciales | 2 | performance | 24 | 28 | 14 |  | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.5 | Monte-escaliers et accessibilité | 1 | performance | 38 | 113 | 6 | 597 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.6 | Pompes funèbres | 2 | performance | 108 | 204 | 8 |  | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.7 | Sécurité incendie | 1 | performance | 868 | 1347 | 371 | 8158 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.8 | Menuiseries, fenêtres et vérandas | 2 | performance | 1864 | 2413 | 532 | 3652 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.9 | Toiture, couverture et isolation | 2 | performance | 2381 | 3449 | 688 | 15145 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.10 | Piscines et spas (installateurs) | 2 | performance | 961 | 1509 | 212 | 69 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.11 | Alarme et vidéosurveillance | 2 | performance | 928 | 1608 | 670 | 17067 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.12 | Cuisinistes | 3 | performance | 183 | 532 | 118 | 2822 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.13 | Déménagement | 3 | performance | 393 | 772 | 213 | 5431 | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
+| 2.14 | Paysagistes | 3 | performance | 340 | 665 | 105 |  | L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois |
 | 3.1 | Greffe de cheveux (patients internationaux) | 1 | performance | 7 | 22 | 7 | 233 | aucune preuve sectorielle |
 | 3.2 | Implants dentaires et facettes (tourisme dentaire) | 1 | performance | 64 | 74 | 24 | 591 | aucune preuve sectorielle |
 | 3.3 | Chirurgie et médecine esthétique (tourisme médical) | 2 | performance | 96 | 197 | 33 | 389 | aucune preuve sectorielle |

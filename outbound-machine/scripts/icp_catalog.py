@@ -53,8 +53,8 @@ P_TRAIN = ("Académie Madelrieux : +46 % de clics Google en 3 mois",
            "Académie Madelrieux (training): +46% Google clicks in 3 months")
 P_HVAC = ("Clim Confort, installateur de clim : 3,7 fois plus de clics Google en un an",
           "Clim Confort, an HVAC installer: 3.7x more Google clicks in one year")
-P_LOCAL = ("L'Artisan d'à côté : +200 nouveaux clients par mois",
-           "L'Artisan d'à côté: +200 new clients a month")
+P_LOCAL = ("L'Artisan d'à côté (BTP) : +20 nouveaux clients par mois",
+           "L'Artisan d'à côté: +20 new clients a month")
 P_LEADS = ("BT Blue : +10 % de leads", "BT Blue: +10% leads")
 
 # ---------------------------------------------------------------- sous-ICP

@@ -62,7 +62,7 @@ Question directe : si 10 chantiers de plus arrivaient par mois, vous auriez l'é
 
 Je cherche quelques entreprises de rénovation {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les chantiers obtenus, pas avant.
 
-Pour L'Artisan d'à côté, c'est +200 nouveaux clients par mois.
+Pour L'Artisan d'à côté, c'est +20 nouveaux clients par mois.
 
 Seriez-vous contre que je vous explique comment ça marche ?
 

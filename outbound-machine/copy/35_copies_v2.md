@@ -619,7 +619,7 @@ Les IA citent McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur l
 Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-050 · P2 · recrute
@@ -632,7 +632,7 @@ Les IA citent McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur l
 Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-051 · P3a · baisse de trafic (si baisse > 10 %)
@@ -645,7 +645,7 @@ La vraie question, c'est où vos clients posent leurs questions maintenant, et q
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-052 · P3b · concurrent devant sur Google (hack Igor)
@@ -658,7 +658,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-053 · P3c · concurrent cité par ChatGPT
@@ -671,7 +671,7 @@ Les IA citent McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur l
 Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-054 · P4 · marché principal
@@ -684,7 +684,7 @@ C'est là que se fait votre shortlist, souvent un an avant le premier appel.
 Seriez-vous contre que je vous montre les 10 questions de votre spécialité, et qui y est cité ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-055 · Champion (SEO / contenu / marketing)
@@ -697,7 +697,7 @@ Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
 J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-056 · FU1 · J+3 · même fil
@@ -770,7 +770,7 @@ Depuis le 1er septembre 2026, la réception des factures électroniques est obli
 Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-062 · P2 · recrute
@@ -783,7 +783,7 @@ Depuis le 1er septembre 2026, la réception des factures électroniques est obli
 Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-063 · P3a · baisse de trafic (si baisse > 10 %)
@@ -796,7 +796,7 @@ La vraie question, c'est où vos clients posent leurs questions maintenant, et q
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-064 · P3b · concurrent devant sur Google (hack Igor)
@@ -809,7 +809,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-065 · P3c · concurrent cité par ChatGPT
@@ -822,7 +822,7 @@ Depuis le 1er septembre 2026, la réception des factures électroniques est obli
 Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-066 · P4 · marché principal
@@ -835,7 +835,7 @@ Sur « expert-comptable {{ville}} », c'est {{concurrent}} ou un cabinet en lign
 Seriez-vous contre que je vous montre ce qui leur donne cette place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-067 · Champion (SEO / contenu / marketing)
@@ -848,7 +848,7 @@ Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
 J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-068 · FU1 · J+3 · même fil
@@ -917,7 +917,7 @@ Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{post
 Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-074 · P2 · recrute
@@ -930,7 +930,7 @@ J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine q
 Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-075 · P3a · baisse de trafic (si baisse > 10 %)
@@ -943,7 +943,7 @@ La vraie question, c'est où vos clients posent leurs questions maintenant, et q
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-076 · P3b · concurrent devant sur Google (hack Igor)
@@ -956,7 +956,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-077 · P3c · concurrent cité par ChatGPT
@@ -969,7 +969,7 @@ PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-078 · P4 · marché principal
@@ -982,7 +982,7 @@ Ils posent leurs questions à Google et à ChatGPT, et tombent sur les simulateu
 Seriez-vous contre que je vous montre ces questions, et qui y répond aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-079 · Champion (SEO / contenu / marketing)
@@ -995,7 +995,7 @@ Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
 J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-080 · FU1 · J+3 · même fil
@@ -1068,7 +1068,7 @@ Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{post
 Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-086 · P2 · recrute
@@ -1081,7 +1081,7 @@ J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine q
 Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-087 · P3a · baisse de trafic (si baisse > 10 %)
@@ -1094,7 +1094,7 @@ La vraie question, c'est où vos clients posent leurs questions maintenant, et q
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-088 · P3b · concurrent devant sur Google (hack Igor)
@@ -1107,7 +1107,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-089 · P3c · concurrent cité par ChatGPT
@@ -1120,7 +1120,7 @@ PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-090 · P4 · marché principal
@@ -1133,7 +1133,7 @@ Quand on demande à ChatGPT « {{prompt}} », il cite {{concurrent}}, pas {{comp
 Seriez-vous contre que je vous montre pourquoi ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-091 · Champion (SEO / contenu / marketing)
@@ -1146,7 +1146,7 @@ Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
 J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-092 · FU1 · J+3 · même fil
@@ -1517,7 +1517,7 @@ Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabine
 Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-122 · P2 · recrute
@@ -1530,7 +1530,7 @@ Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabine
 Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-123 · P3a · baisse de trafic (si baisse > 10 %)
@@ -1543,7 +1543,7 @@ La vraie question, c'est où vos clients posent leurs questions maintenant, et q
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-124 · P3b · concurrent devant sur Google (hack Igor)
@@ -1556,7 +1556,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-125 · P3c · concurrent cité par ChatGPT
@@ -1569,7 +1569,7 @@ Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabine
 Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-126 · P4 · marché principal
@@ -1582,7 +1582,7 @@ C'est pourtant exactement la demande que vous voulez : un mandat qui arrive sans
 Seriez-vous contre que je vous montre comment la capter ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-127 · Champion (SEO / contenu / marketing)
@@ -1595,7 +1595,7 @@ Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
 J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-128 · FU1 · J+3 · même fil
@@ -1819,7 +1819,7 @@ Les dossiers viennent de la recommandation ; les annuaires et les legaltech capt
 Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-146 · P2 · recrute
@@ -1832,7 +1832,7 @@ Les dossiers viennent de la recommandation ; les annuaires et les legaltech capt
 Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-147 · P3a · baisse de trafic (si baisse > 10 %)
@@ -1845,7 +1845,7 @@ La vraie question, c'est où vos clients posent leurs questions maintenant, et q
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-148 · P3b · concurrent devant sur Google (hack Igor)
@@ -1858,7 +1858,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-149 · P3c · concurrent cité par ChatGPT
@@ -1871,7 +1871,7 @@ Les dossiers viennent de la recommandation ; les annuaires et les legaltech capt
 Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-150 · P4 · marché principal
@@ -1884,7 +1884,7 @@ Dans le respect de vos règles déontologiques, votre expertise peut y apparaît
 Seriez-vous contre que je vous montre où {{companyName}} en est ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-151 · Champion (SEO / contenu / marketing)
@@ -1897,7 +1897,7 @@ Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
 J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
 
 Nathan Fenina, Décupler
-PS : pour Le Point, Pluxee, Décathlon, +20 % de pipeline organique.
+PS : pour [client à confirmer], +17 % de pipeline organique.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
 ### V2-152 · FU1 · J+3 · même fil
@@ -1966,7 +1966,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-158 · P3 · absent de ChatGPT
@@ -1979,7 +1979,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-159 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -1992,7 +1992,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-160 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2078,7 +2078,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-167 · P2 · saison (métiers saisonniers)
@@ -2104,7 +2104,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-169 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2117,7 +2117,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-170 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2216,7 +2216,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-178 · P3 · absent de ChatGPT
@@ -2229,7 +2229,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-179 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2242,7 +2242,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-180 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2341,7 +2341,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-188 · P3 · absent de ChatGPT
@@ -2354,7 +2354,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-189 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2367,7 +2367,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-190 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2453,7 +2453,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-197 · P3 · absent de ChatGPT
@@ -2466,7 +2466,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-198 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2479,7 +2479,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-199 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2669,7 +2669,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-215 · P3 · absent de ChatGPT
@@ -2682,7 +2682,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-216 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2695,7 +2695,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-217 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2781,7 +2781,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-224 · P3 · absent de ChatGPT
@@ -2794,7 +2794,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-225 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2807,7 +2807,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-226 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -2906,7 +2906,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-234 · P2 · saison (métiers saisonniers)
@@ -2932,7 +2932,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-236 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -2945,7 +2945,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-237 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3044,7 +3044,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-245 · P2 · saison (métiers saisonniers)
@@ -3070,7 +3070,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-247 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -3083,7 +3083,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-248 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3169,7 +3169,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-255 · P3 · absent de ChatGPT
@@ -3182,7 +3182,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-256 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -3195,7 +3195,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-257 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3281,7 +3281,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-264 · P3 · absent de ChatGPT
@@ -3294,7 +3294,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-265 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -3307,7 +3307,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-266 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3393,7 +3393,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-273 · P2 · saison (métiers saisonniers)
@@ -3419,7 +3419,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-275 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -3432,7 +3432,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-276 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3518,7 +3518,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-283 · P2 · saison (métiers saisonniers)
@@ -3544,7 +3544,7 @@ De plus en plus de clients posent la question comme ça avant d'appeler.
 Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-285 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
@@ -3557,7 +3557,7 @@ Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et
 Seriez-vous contre que je vous montre comment ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-286 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3643,7 +3643,7 @@ Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour 
 Ça vaut 15 minutes ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-293 · P4 · marché principal B · capacité + performance (validée par Nathan)
@@ -3669,7 +3669,7 @@ Un marché privé qui arrive en direct, c'est un dossier sans mise en concurrenc
 Seriez-vous contre que je vous montre ce qui le place devant {{companyName}} ?
 
 Nathan Fenina, Décupler
-PS : pour un de nos clients, on est allé chercher 20 nouveaux clients par mois. Je vous explique comment au téléphone.
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
 ### V2-295 · FU1 · J+3 · même fil

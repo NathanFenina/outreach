@@ -1,28 +1,56 @@
-# 37 · Mail à Igor (29/10) : point d'étape + demande de datasets
+# 37 · Mail à Igor (29/10) : devoirs de la session 3 + point d'étape + demande de datasets + questions
 
-> Proposition : à envoyer par Nathan depuis sa boîte perso, après relecture. Remplace la partie « datasets » du mail 29.
+> Fusion du brouillon de Nathan (mail 29, jamais envoyé) et du point du 29/10. À envoyer par Nathan depuis sa boîte perso.
 
-**Subject:** datasets + 2 quick questions
+**Subject:** homework + dataset request + 3 questions
 
 Hi Igor,
 
-Quick update before Tuesday, and a request.
+Thanks again for the session. Here is my homework and where I stand. The second payment is done.
 
-**1. Where we are**
-- Copies rewritten with your R.E.P.L.Y. / AAA examples and Elena's emails: one opener per pyramid tier (funded + hiring / hiring / traffic drop / competitor above on Google / competitor cited by ChatGPT / main market), 37 sub-ICPs, PS = proof or risk reversal, PPS = opt-out. I'm validating them this week.
-- Enrichment: we tested Moltsets vs FullEnrich on the same 629 contacts. Moltsets found 61 % (flat price), FullEnrich 85 %. Cascade: Moltsets first, FullEnrich on misses.
-- Sending: moving to Instantly, campaigns built as drafts, launch target Nov 6-9 once the Zapmail inboxes finish warming up.
+**1. Infrastructure**
+- Current inboxes (9 domains): Google prospects only, as agreed. The 21 new Zapmail inboxes (7 domains) are warming up, ready around Nov 6, and will be used for non-Google ESPs.
+- DNS checked on all 7 new domains. I'm requesting delisting from Spamhaus/SURBL for the old ones.
+- Ongoing monitoring: human reply rate per inbox and blacklist checks. GlockApps only when something looks off.
 
-**2. Dataset request (we build the French B2B and local ones ourselves)**
-Could you run your dataset for:
-- ICP 3, medical tourism: hair transplant, dental and cosmetic clinics in Turkey, Hungary and Tunisia that target French-speaking patients;
-- ICP 4, international: independent hotels and spas in Belgium, Switzerland and Morocco;
-- B2B, wave 3 (English): SaaS, IT services and consulting firms in the UK and DACH.
-Please split Google / Others, without catch-all. I'll send the do-not-contact list (≈ 6,900 domains) so you can exclude them.
+**2. Campaign split and naming**
+- Every campaign is split into Google and Others, based on the MX of each domain. Mimecast and Proofpoint are excluded.
+- Naming: number-batch-hypothesis (e.g. 101-G-1 / 101-O-1), with a hypothesis library.
 
-**3. Two questions**
-- You told me to use the Zapmail inboxes (Google Workspace) for non-Google providers. Do you also send to Outlook / Microsoft 365 prospects from them, or do you keep Microsoft separate? I plan a small placement test first.
-- For the traffic-drop opener (tier P3a), do you name the estimated % in the first email, or keep it for the follow-up?
+**3. ICP table: 37 sub-ICPs**
+- ICP 1 B2B (13 sub-ICPs): SaaS, AI startups, IT services and integrators, cybersecurity, consulting, accounting firms, M&A advisors, wealth managers, marketing agencies (white label), event agencies, recruitment firms, training companies, business law firms.
+- ICP 2 construction and local services, performance-based partnership, one niche per sub-ICP (15): renovation, civil engineering, heat pumps, solar, roller shutters, stairlifts, funeral homes, fire safety, windows, roofing, pools, security systems, kitchens, movers, landscapers.
+- ICP 3 medical tourism (4): hair transplant, dental, cosmetic and bariatric clinics abroad.
+- ICP 4 hospitality and wellness (5): independent hotels, spas, senior residences, holiday parks, wellness training schools.
+- Company size: 5+ employees on LinkedIn, no revenue filter. Up to 3 contacts per company: decision-makers (CEO, founder, CMO, sales director) and a champion (head of growth, SEO, communications), each with a different message.
+
+**4. Pyramid and copy**
+- One opener per tier: funded + hiring, hiring, SEO intent (traffic drop / competitor ranking above them on Google / competitor cited by ChatGPT), then main market.
+- Copy rewritten with your R.E.P.L.Y. and AAA examples and Elena's emails: subject under 5 words, interest CTA, PS = one client proof or risk reversal, PPS = opt-out, 1-2-3 follow-up and breakup email. I'm validating them this week.
+- Lead magnets staged: part shared by email (1 ChatGPT question where a competitor is cited, 1 GEO quick win, 1 page optimised for free), the rest walked through on a call.
+
+**5. Countries**
+- French: France, French-speaking Switzerland, Belgium, Morocco, Tunisia.
+- English: UK, US, UAE, Saudi Arabia, Nordics, Benelux, DACH, plus a few solvent Sub-Saharan markets.
+
+**6. Tools and tests**
+- Enrichment: Moltsets vs FullEnrich on the same 629 contacts. Moltsets found 61 % (flat price), FullEnrich 85 %. Cascade: Moltsets first, FullEnrich on misses.
+- SEO intent cost (DataForSEO): ~0.24 cent per domain for the traffic history; 53 of 87 tested domains lost more than 10 % of traffic in a year.
+- Sending: moving to Instantly before my Lemlist renewal on Nov 10. Campaigns built as drafts, launch target Nov 6-9.
+
+**7. Dataset request**
+We build the French B2B and local datasets ourselves. Could you run yours for:
+- B2B, France then UK and DACH: SaaS / AI, consulting, marketing and event agencies;
+- medical tourism: hair transplant, dental and cosmetic clinics in Turkey, Hungary and Tunisia that target French-speaking patients;
+- hospitality abroad: independent hotels and spas in Belgium, Switzerland and Morocco.
+Please split it Google / Others, without catch-all. I'll send my do-not-contact list (≈ 6,900 already-contacted domains and clients) so you can exclude them.
+
+**8. Three questions**
+- You told me to use the Zapmail inboxes (Google Workspace) for non-Google ESPs. Does that include Outlook / Microsoft 365 prospects, or do you keep Microsoft separate? I plan a small placement test first.
+- For the traffic-drop opener, do you give the estimated % in the first email, or keep it for the follow-up?
+- With 39 inboxes today, would you start with fewer sub-ICPs at higher volume, or many sub-ICPs at 100-150 leads each to find the winners faster?
+
+I'll share the full table link as soon as it's final.
 
 See you Tuesday,
 Nathan
