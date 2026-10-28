@@ -290,3 +290,24 @@ Sans réponse, Claude applique la valeur par défaut indiquée.
 **À ne plus refaire** (retour Nathan) : tout mélanger au lieu d'avancer par étapes ; lancer des scrapes sans go ; résumer au lieu de montrer les ICP avec leurs problèmes ; ignorer les stratégies déjà discutées avec Igor ou envoyées par Nathan.
 
 **Dépenses du 28/10 soir, faites avant l'arrêt demandé** : Apify 1,08 $ (sur les 5 $ gratuits ; offres « SEO » UK, CH, BE, AE, SA collectées, non exploitées), DataForSEO 0,34 $ (test baisse de trafic : 53 des 87 domaines avec données sont en baisse de plus de 10 % sur 12 mois, 0,24 cent/domaine ; test SERP coupé). 17 datasets Lemlist DB construits (`data/datasets/`, hors git), 0 crédit.
+
+---
+
+## 8. Round du 28/10 nuit : Sheet d'Igor rempli (étapes 1 à 4 prêtes à valider)
+
+Sheet « UltB Academy_Kickoff_Nathan » :
+- **1b. Infra Décupler** : groupes A (Google) / B (autres ; Outlook à confirmer avec Igor) / C (Microsoft, à créer) ; état des 16 domaines ; calculateur Igor (10 000 prospects/mois → 96 boîtes, 57 à ajouter, 19 domaines) ; actions restantes.
+- **2. ICP / VP** (template Igor) : 4 ICP parents remplis ligne par ligne + paliers, intents, séquences, validation.
+- **2b. Sous-ICP (détail)** : 35 sous-ICP × 21 colonnes (3 problèmes, solutions, preuve, lead magnet mail → appel, séquence, angle et source, hack, mail 1, taille de marché, source, points à valider) + Validation / Commentaires. Généré par `scripts/45_sheet_icp.py` depuis `scripts/icp_sheet.py`.
+- **3. Campaign Management** (template Igor) : 4 brouillons Lemlist + 103 vide + 13 campagnes planifiées (104 à 116).
+- **4. Outils & data** : test Moltsets vs FullEnrich, intents DataForSEO, sources ; comparatif envoi + Microsoft en cours.
+- **5. Datasets & plan campagnes** : méthode en 8 étapes, plan vague 1 (101 à 116) avec estimations G / O / M, 17 datasets construits, partage nous / Igor.
+- **Sales Assets** : 10 études de cas decupler.com + lead magnets.
+
+Renommage : S1 = ex-H6 (question ChatGPT), S2 = ex-H7 (AAA vidéo 2 min), S3 = ex-H8 (champion), S4 = ex-H9 (partenariat performance), S5 = ex-H12 (concurrent devant). H1-H10 restent ceux de la Base Copy du 29/09.
+
+Tests du 28/10 nuit :
+- **Moltsets vs FullEnrich** (100 contacts, 53 tokens gratuits, 0 crédit FullEnrich) : Moltsets retrouve 44 des 60 emails trouvés par FullEnrich (30 identiques, 14 différents), récupère 5 des 30 non trouvés et 4 des 10 catch-all en grade A. → cascade FullEnrich puis Moltsets.
+- **DataForSEO baisse de trafic** (100 domaines, 0,24 $) : 53 des 87 domaines avec données en baisse de plus de 10 % sur 12 mois.
+
+Points ouverts relevés en remplissant le tableau : séquence « marque blanche » à écrire pour 1.9 ; preuves manquantes pour 3.x et 4.x ; Apogea (1.3) et Orators (1.10) ont des études de cas sur decupler.com à utiliser en preuve sectorielle ; « +20 % de pipeline Le Point / Pluxee / Décathlon » et « L'Artisan d'à côté +200 clients/mois » viennent des notes de Nathan (copy/00, Base Copy), pas d'une page publiée ; l'objet « familles en plus » (2.6) est à revoir ; les lots G locaux sont trop petits → à regrouper.
