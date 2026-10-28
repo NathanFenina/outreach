@@ -53,12 +53,13 @@ def add(code, fam, tier, icps, lot, sources, label):
 
 
 for lot in "GO":
-    add(f"120-{lot}-P1", "B2B", "P1", ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"], lot, ["DS-10[46]-*-P1"], "B2B FR · a levé + recrute")
+    # P1 (levée + recrute) : pas de données de levée en France dans la base Lemlist (29/10) → source à trouver
     add(f"121-{lot}-P2", "B2B", "P2", ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"], lot, ["DS-10[46]-*-P2"], "B2B FR · recrute en marketing")
     for icp in ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"]:
         camp = "104" if icp in ("1.1", "1.2") else "106"
         add(f"{camp}-{lot}-P4-{icp}", "B2B", "P4", [icp], lot, [f"DS-{camp}-{icp}-FR-P4"], f"{B2B[icp]['label']} · FR · marché principal")
-    add(f"110-{lot}-P4B", "LOCAL", "P4B", ["2.1", "2.15"], lot, ["DS-110-*-P4"], "BTP · FR · 20 chantiers de plus (performance)")
+    add(f"110-{lot}-P4B-2.1", "LOCAL", "P4B", ["2.1"], lot, ["DS-110-2.1-FR-P4"], "BTP et rénovation · FR · 20 chantiers de plus (performance)")
+    add(f"110-{lot}-P4D-2.15", "LOCAL", "P4D", ["2.15"], lot, ["DS-110-2.15-FR-P4"], "Travaux publics · FR · maîtres d'ouvrage privés")
     for icp in ["4.1", "4.2", "4.4"]:
         add(f"114-{lot}-P4-{icp}", "HOSP", "P4", [icp], lot, [f"DS-114-{icp}-FR-P4"], f"{HOSP[icp]['label']} · FR · marché principal")
 
@@ -80,9 +81,12 @@ def sequence(c):
         if sober:
             suite[2] = ("", "{{firstName}}, une dernière question : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?\n\nUn « oui » ou un « non » me suffit.\n\nNathan")
     elif fam == "LOCAL":
-        d = dict(LOCAL["2.1"], label="entreprises du BTP", unit="chantiers")
-        _, s, b = next(p for p in LOCAL_PALIERS if p[0].startswith("P4 · marché principal B"))
-        first = (fill(s, d), step1(fill(b, d), PS_LOCAL))
+        d = dict(LOCAL[icps[0]], label="entreprises du BTP", unit="chantiers") if icps[0] == "2.1" else LOCAL[icps[0]]
+        if tier == "P4D":
+            first = ("vos marchés privés", step1("{{firstName}}, les marchés publics passent par les plateformes d'appel d'offres. Les maîtres d'ouvrage privés, eux, cherchent sur Google « travaux publics {{zone}} », et ce sont vos concurrents qu'ils trouvent.\n\nUn marché privé qui arrive en direct, c'est un dossier sans mise en concurrence à 10.\n\nSeriez-vous contre que je vous montre comment {{companyName}} peut les recevoir ?", PS_LOCAL))
+        else:
+            _, s, b = next(p for p in LOCAL_PALIERS if p[0].startswith("P4 · marché principal B"))
+            first = (fill(s, d), step1(fill(b, d), PS_LOCAL))
         suite = [(fill(o, d), fill(b, d)) for _, o, b in LOCAL_SUITE]
     else:
         d = HOSP[icps[0]]; sober = d.get("sober")
@@ -101,12 +105,22 @@ def existing():
         if not after: return out
 
 
+_DNC = None
+
+
+def dnc():
+    global _DNC
+    if _DNC is None:
+        _DNC = (set(), set())
+        for r in db.select("do_not_contact", "email,domain,reason"):
+            if r["reason"] in BLOCK:
+                if r["domain"]: _DNC[0].add(r["domain"].lower())
+                if r["email"]: _DNC[1].add(r["email"].lower())
+    return _DNC
+
+
 def leads_for(c):
-    dnc_dom, dnc_mail = set(), set()
-    for r in db.select("do_not_contact", "email,domain,reason"):
-        if r["reason"] in BLOCK:
-            if r["domain"]: dnc_dom.add(r["domain"].lower())
-            if r["email"]: dnc_mail.add(r["email"].lower())
+    dnc_dom, dnc_mail = dnc()
     cache = json.load(open("../data/datasets/enriched_moltsets.json")) if os.path.exists("../data/datasets/enriched_moltsets.json") else {}
     fe = {r["linkedin_url"]: r for r in csv.DictReader(open("../data/campaigns/enriched.csv"))} if os.path.exists("../data/campaigns/enriched.csv") else {}
     out = []
@@ -121,16 +135,19 @@ def leads_for(c):
                     email = fe[r["linkedin_url"]]["email"]
                 if not email or email.lower() in dnc_mail: continue
                 cv = {"pb": B2B[r["icp_code"]]["pb"], "ps": ps_b2b(r["icp_code"])} if c["fam"] == "B2B" else {}
-                cv.update(ville=r.get("city") or "", poste="responsable marketing", tier=r["tier"], dataset=r["dataset"], icp=r["icp_code"])
+                cv.update(ville=r.get("city") or "", zone=f"à {r['city']}" if r.get("city") else "en France", poste="responsable marketing", tier=r["tier"], dataset=r["dataset"], icp=r["icp_code"])
                 out.append(dict(email=email, first_name=r["first_name"], last_name=r["last_name"], company_name=r["company"],
                                 website=r["domain"], personalization="", custom_variables=cv))
     return out
 
 
 mode = sys.argv[1] if len(sys.argv) > 1 else "plan"
+STD = {"firstName", "lastName", "companyName", "pb", "ps", "ville", "zone", "poste"}
 if mode == "plan":
     for k, c in PLAN.items():
-        print(k, "·", c["label"], "· leads prêts :", len(leads_for(c)))
+        txt = json.dumps(sequence(c), ensure_ascii=False)
+        manque = sorted(set(re.findall(r"\{\{(\w+)\}\}", txt)) - STD)
+        print(k, "·", c["label"], "· leads prêts :", len(leads_for(c)), "· variables à remplir :", ", ".join(manque) or "aucune")
 elif mode == "create":
     ids = existing()
     for k, c in PLAN.items():
