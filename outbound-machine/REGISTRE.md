@@ -353,3 +353,13 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - **Pyramide dans la base Lemlist (gratuit)** : filtres `currentCompanyLastFundingRoundAt` (< 6 mois) + `jobPostingDate` (P1), `jobPostingTitle` marketing/SEO/growth + < 90 j (P2). Pas besoin d'Apify pour la France.
 - **Chaîne** : `48_datasets_pyramide.py` (Lemlist + MX + liste noire) → `39_qualify.py <fichiers>` (page d'accueil + gpt-4o-mini, retire hors cible / concurrents / médias / écoles) → `50_enrich_moltsets.py` (Moltsets A/B) → FullEnrich sur `misses.csv` → `51_instantly_drafts.py plan|create|leads`.
 - **Instantly (plan gratuit)** : API v2 OK avec un en-tête User-Agent (sinon Cloudflare 1010) ; fuseau « Europe/Belgrade » (= heure de Paris, « Europe/Paris » refusé) ; corps en `<div>` ; ajout de leads possible sans abonnement ; aucune boîte connectée → rien ne peut partir.
+- **Résultats 29/10** :
+  - 17 datasets FR qualifiés (4 379 contacts : G 765, O 3 614).
+  - 104 enrichi : Moltsets 900 cherchés → 596 A/B (66 %, jetons gratuits épuisés) ; FullEnrich 304 manques → 146 valides + 67 probables, 222 crédits (reste 279,75).
+  - Après contrôles (liste noire, email du même domaine que l'entreprise, dédoublonnage), **655 leads prêts** : 104-G-1.1 165, 104-O-1.1 197, 104-G-1.2 91, 104-O-1.2 113, 121-G-P2 42, 121-O-P2 47.
+  - Fichiers dans `data/campaigns/instantly/` (non commités).
+  - 24 campagnes brouillon créées dans Instantly. L'import des leads est **bloqué sur le plan gratuit** (« Lead limit reached ») : `51_instantly_drafts.py leads` à lancer après l'abonnement.
+  - P1 = 0 en France (pas de données de levée dans Lemlist).
+  - Test Apify jobs (0,17 $) : 99 offres, 3 recoupements avec Lemlist P2 ; Apify ne sert qu'à récupérer l'intitulé exact du poste.
+  - Variables à résoudre avant lancement : `{{concurrent}}` (FU1/FU2 B2B, suites local/hospitalité) et `{{prompt}}` (P4 1.1, 1.2, 1.5).
+  - La mise à jour des statuts de la table `datasets` dans Supabase n'a pas été appliquée : la requête SQL a expiré sans réponse.

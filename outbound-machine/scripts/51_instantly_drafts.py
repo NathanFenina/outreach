@@ -4,7 +4,8 @@ Séquence Igor (VP + FU) × 3, délais 0/3/5/3/10/3 ; suivi d'ouverture et de cl
 Variables de lead (custom_variables) : pb (problème du sous-ICP), ps (preuve du sous-ICP), poste, concurrent, motcle, volume, ville, zone…
 Usage : python 51_instantly_drafts.py plan          (affiche le plan sans rien créer)
         python 51_instantly_drafts.py create        (crée / met à jour les campagnes, sans leads)
-        python 51_instantly_drafts.py leads         (importe les leads enrichis dans les campagnes existantes)"""
+        python 51_instantly_drafts.py export        (un CSV de leads par campagne : ../data/campaigns/instantly/)
+        python 51_instantly_drafts.py leads         (importe les leads enrichis : nécessite un plan payant, le gratuit bloque à quelques leads)"""
 import csv, glob, json, os, re, sys, urllib.request
 from collections import defaultdict
 import outreach_db as db
@@ -119,6 +120,9 @@ def dnc():
     return _DNC
 
 
+SEEN = set()  # un email = une seule campagne
+
+
 def leads_for(c):
     dnc_dom, dnc_mail = dnc()
     cache = json.load(open("../data/datasets/enriched_moltsets.json")) if os.path.exists("../data/datasets/enriched_moltsets.json") else {}
@@ -131,11 +135,14 @@ def leads_for(c):
                 if QUALIF.get(r["domain"], {}).get("fit") is not True: continue
                 m = cache.get(r["linkedin_url"]) or {}
                 email = m.get("email") if m.get("risk_score") in ("A", "B") else None
-                if not email and fe.get(r["linkedin_url"], {}).get("email_status") in ("DELIVERABLE", "HIGH_PROBABILITY"):
+                if not email and fe.get(r["linkedin_url"], {}).get("email_status") in ("DELIVERABLE", "HIGH_PROBABILITY", "Valid & safe to send email", "Probably Valid Email"):
                     email = fe[r["linkedin_url"]]["email"]
-                if not email or email.lower() in dnc_mail: continue
-                cv = {"pb": B2B[r["icp_code"]]["pb"], "ps": ps_b2b(r["icp_code"])} if c["fam"] == "B2B" else {}
-                cv.update(ville=r.get("city") or "", zone=f"à {r['city']}" if r.get("city") else "en France", poste="responsable marketing", tier=r["tier"], dataset=r["dataset"], icp=r["icp_code"])
+                if not email or email.lower() in dnc_mail or email.lower() in SEEN: continue
+                edom, cdom = email.lower().split("@")[-1], r["domain"].lower()
+                if not (edom == cdom or edom.endswith("." + cdom) or cdom.endswith("." + edom)): continue  # email d'une autre société
+                SEEN.add(email.lower())
+                cv ={"pb": B2B[r["icp_code"]]["pb"], "ps": ps_b2b(r["icp_code"])} if c["fam"] == "B2B" else {}
+                cv.update(ville=r.get("city") or "", zone=f"à {r['city']}" if r.get("city") else "en France", tier=r["tier"], dataset=r["dataset"], icp=r["icp_code"])
                 out.append(dict(email=email, first_name=r["first_name"], last_name=r["last_name"], company_name=r["company"],
                                 website=r["domain"], personalization="", custom_variables=cv))
     return out
@@ -158,11 +165,22 @@ elif mode == "create":
         else: r = api("POST", "/api/v2/campaigns", body); ids[k] = r["id"]; print("créée", k, r["id"])
         db.upsert("campaigns", [dict(code=k, name=body["name"], tool="instantly", icp_code=c["icps"][0], esp_lot=c["lot"], language="fr",
                                      country="FR", status="draft", notes=f"Instantly {ids[k]} · {c['tier']} · sous-ICP {', '.join(c['icps'])}")], "code")
+elif mode == "export":  # plan gratuit Instantly : import bloqué (« Lead limit reached ») → un CSV par campagne, prêt à charger
+    os.makedirs("../data/campaigns/instantly", exist_ok=True)
+    for k, c in PLAN.items():
+        ls = leads_for(c)
+        if not ls: continue
+        keys = sorted({x for l in ls for x in l["custom_variables"]})
+        with open(f"../data/campaigns/instantly/{k}.csv", "w", newline="") as fh:
+            w = csv.writer(fh); w.writerow(["email", "first_name", "last_name", "company_name", "website"] + keys)
+            for l in ls: w.writerow([l["email"], l["first_name"], l["last_name"], l["company_name"], l["website"]] + [l["custom_variables"].get(x, "") for x in keys])
+        print(k, len(ls))
 elif mode == "leads":
     ids = existing()
     for k, c in PLAN.items():
         if k not in ids: continue
         ls = leads_for(c)
+        if not ls: continue
         for i in range(0, len(ls), 500):
             api("POST", "/api/v2/leads/add", {"campaign_id": ids[k], "skip_if_in_workspace": True, "leads": ls[i:i + 500]})
         db.call({"action": "update", "table": "campaigns", "values": {"prospects": len(ls)}, "eq": {"code": k}})
