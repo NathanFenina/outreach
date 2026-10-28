@@ -311,3 +311,26 @@ Tests du 28/10 nuit :
 - **DataForSEO baisse de trafic** (100 domaines, 0,24 $) : 53 des 87 domaines avec données en baisse de plus de 10 % sur 12 mois.
 
 Points ouverts relevés en remplissant le tableau : séquence « marque blanche » à écrire pour 1.9 ; preuves manquantes pour 3.x et 4.x ; Apogea (1.3) et Orators (1.10) ont des études de cas sur decupler.com à utiliser en preuve sectorielle ; « +20 % de pipeline Le Point / Pluxee / Décathlon » et « L'Artisan d'à côté +200 clients/mois » viennent des notes de Nathan (copy/00, Base Copy), pas d'une page publiée ; l'objet « familles en plus » (2.6) est à revoir ; les lots G locaux sont trop petits → à regrouper.
+
+---
+
+## 9. Round du 29/10 : décisions Nathan et copies des 4 campagnes prioritaires
+
+**Décisions (commentaires Sheet + messages)** :
+- Q45 Infra : A = Google ✅ ; B Zapmail = Outlook ET autres messageries (décision Nathan) ✅ ; C Microsoft = ❌ (pas d'achat). Recommandation gardée : test de placement Outlook sur 2 boîtes avant volume ; à confirmer avec Igor (il avait dit « other ESPs », Outlook exclu).
+- Q46 Outil d'envoi : **Instantly**. Essai ouvert, clé API OK (INSTANTLY_API) ; import de plus de 250 contacts = Hypergrowth 97 $/mois.
+- Q47 Enrichissement : FullEnrich déjà testé ; tester Moltsets et comparer → fait (§ ci-dessous).
+- Q48 Priorités : 104 Tech, 106 Conseil, 110 Rénovation, 114 Hôtellerie / bien-être. Avant de lancer : monter le niveau des problèmes et des copies, puis validation.
+- Q49 Lead magnets de Nathan : personnalisés (analyse GEO, monitoring 10 prompts, 7 leviers en RDV, page GEO optimisée, pourquoi le concurrent est devant, roadmap pour dépasser le n°1, première partie données structurées + entités) ; génériques (GEO Ready, Cartographie IA, Audit E-E-A-T, Claude Code SEO OS).
+- Q50 Preuves : ESN = Cloudtech + Apogea (attention aux destinataires concurrents d'Apogea) ; Orators trop récent pour servir de preuve ; agences : l'offre marque blanche existe ; vidéo 2 min plus tard.
+- Q51 Datasets : on construit nous-mêmes une partie (pyramide recrute / lève / reste), on demande le reste à Igor.
+- Supprimé : « vous pilotez la croissance de {{companyName}} ».
+
+**Livré** :
+- `copy/31_problemes_b2b.md`, `copy/32_problemes_local_hospitalite.md` : problèmes sourcés par sous-ICP (études, fédérations, lois), avec signaux observables et trous de données à ne pas inventer.
+- `copy/33_bibliotheque_copy.md` : 217 copies numérotées (L = 50 campagnes Lemlist envoyées avec résultats réels ; B = 67 mails Base Copy ; F = 100 séquences des fichiers copy/).
+- `copy/34_sequences_prioritaires.md` + onglet Sheet « 6. Copies à valider » : 17 mails 1 (variantes A/B/C par campagne, mail 1 propre à chaque sous-ICP pour 106 et 114) + suites (VP + FU) × 3.
+- Onglet « 7. Bibliothèque copy » ; Infra et Outils mis à jour.
+- Test Moltsets complet : 386/629 trouvés (61 %) contre 534 (85 %) FullEnrich ; 18 rattrapés ; 22 % d'emails différents entre les deux.
+
+**Meilleures campagnes passées (pour la suite)** : L-38 recrutement 4,3 % · L-36 constat IA chiffré 4,1 % · L-12 10 prompts 3,5 % · L-30 devis perdus BTP 3,4 % · L-08 « j'ai pris les devants » 3,1 % · L-03 Batimat 3,0 %.
