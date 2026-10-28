@@ -12,3 +12,5 @@ data/*.csv
 
 # listes de campagne, logs, cache de qualification (PII)
 data/campaigns/
+data/datasets/
+data/apify/
