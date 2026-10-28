@@ -263,3 +263,30 @@ Sans réponse, Claude applique la valeur par défaut indiquée.
 | Q30 | Tables Supabase dans le projet « LinkedIn App », schéma séparé `outreach` | oui | ✅ nouveau projet Supabase dédié, au même niveau que LinkedIn App |
 | Q31 | Campagnes créées en brouillon dans Lemlist (rien lancé) malgré le renouvellement du 10/11 | oui, lots G seulement | ✅ brouillons Lemlist, toujours scindés par ESP ; remplir le tableau ICP + messages + lead magnets |
 | Q32 | Apify au-delà de 5 $ (plan payant) pour le scrape multi-pays | non | ✅ si ça ne suffit pas, Claude dit quel abonnement et Nathan recharge |
+
+---
+
+## 7. Round du 28/10 soir : méthode par étapes et décisions (Q33 à Q44)
+
+**Méthode validée par Nathan** : on avance par étapes, chacune validée avant la suivante. 1. setup technique → 2. ICP (problèmes, messages, stratégie, lead magnets) → 3. enrichissement et stratégies d'intent (DataForSEO, Moltsets) → 4. datasets → 5. campagnes en brouillon dans l'outil choisi. Rien ne se lance sans go. On prépare tout avant de scraper et on garde trace.
+
+**Support de travail** : Google Sheet kickoff d'Igor « UltB Academy_Kickoff_Nathan » (1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo). Onglets : 1. Groundwork (calculateur boîtes, setup), 2. ICP / VP (lignes Targeting + Messaging, une colonne par ICP), 3. Campaign Management (Status, ICP, Framework, Comments on Sequences, Link to dataset, Link to sequence, Link to campaign), Sales Assets. On garde ses lignes et ses noms, on ajoute nos colonnes et une colonne de validation + commentaires de Nathan.
+
+| Q | Décision de Nathan (28/10 soir) |
+|---|---|
+| Q33 | Tableau ICP : très segmenté, numérotation Igor (1.1, 1.2…), toutes les rubriques du tableau d'Igor, problèmes / palier / mots-clés remplis avec logique, lead magnets, colonne de validation + commentaires à la fin. Regarder aussi ce qu'il a sur ses autres projets. |
+| Q34 | Stratégies d'Igor et copy de la Base Copy : validées comme base. |
+| Q35 | Infra : nouvelles boîtes pour les prospects Microsoft / Azure ; les anciennes restent sur Google. Quelques boîtes possibles pour Google aussi si besoin, mais séparées, avec une règle d'usage précise par groupe. |
+| Q36 | Outils d'envoi : chiffrer PlusVibe et **Emelia** en plus d'Instantly et Lemlist, et comparer. |
+| Q37 | Nathan crée les comptes pour comparer les données (Moltsets, Instantly, FullEnrich) sur les mêmes contacts. |
+| Q38 | DataForSEO : OK pour ≈ 25 $ si le coût pour 7 500 entreprises est sûr ; tester sur quelques campagnes. |
+| Q39 | Google Sheet : OK, celui d'Igor ci-dessus. |
+| Q40 | Taille de campagne : 300 minimum ; avis demandé sur la bonne taille pour l'A/B test. |
+| Q41 | Ordre des pays validé ; on prépare avant de scraper et on garde trace. |
+| Q42 | Dataset : on en fait un nous-mêmes sur une partie des ICP, on demande le reste à Igor. |
+| Q43 | Nathan ne connaît pas « mes » H6-H12 : collision avec les H1-H10 de la Base Copy (29/09). → renommer nos séquences (S1…) pour lever la confusion. |
+| Q44 | Garder les 4 campagnes Lemlist en brouillon (ne pas perdre les 525 leads). |
+
+**À ne plus refaire** (retour Nathan) : tout mélanger au lieu d'avancer par étapes ; lancer des scrapes sans go ; résumer au lieu de montrer les ICP avec leurs problèmes ; ignorer les stratégies déjà discutées avec Igor ou envoyées par Nathan.
+
+**Dépenses du 28/10 soir, faites avant l'arrêt demandé** : Apify 1,08 $ (sur les 5 $ gratuits ; offres « SEO » UK, CH, BE, AE, SA collectées, non exploitées), DataForSEO 0,34 $ (test baisse de trafic : 53 des 87 domaines avec données sont en baisse de plus de 10 % sur 12 mois, 0,24 cent/domaine ; test SERP coupé). 17 datasets Lemlist DB construits (`data/datasets/`, hors git), 0 crédit.
