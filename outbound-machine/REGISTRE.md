@@ -334,3 +334,13 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - Test Moltsets complet : 386/629 trouvés (61 %) contre 534 (85 %) FullEnrich ; 18 rattrapés ; 22 % d'emails différents entre les deux.
 
 **Meilleures campagnes passées (pour la suite)** : L-38 recrutement 4,3 % · L-36 constat IA chiffré 4,1 % · L-12 10 prompts 3,5 % · L-30 devis perdus BTP 3,4 % · L-08 « j'ai pris les devants » 3,1 % · L-03 Batimat 3,0 %.
+
+## 10. Round copies V2 (29/10)
+
+- **Copies V2** : `scripts/copy_v2.py` (contenu) → `scripts/47_copies_v2.py` (dépliage) → `copy/35_copies_v2.md` (367 mails complets) et onglet Sheet « 6b. Copies V2 à valider » (205 lignes : mails 1 par sous-ICP × palier, suites une fois par famille, PS/PPS dans une colonne). V1 renommé « 6. Copies V1 (archive commentée) ».
+- **Pyramide V2** : B2B P1 levée + recrute · P2 recrute · P3a baisse de trafic · P3b concurrent devant Google · P3c concurrent cité par ChatGPT · P4 marché principal (+ mail champion). Local : P1 Maps · P2 saison · P3 ChatGPT · P4 A/B/C/D. Médical : P1 ChatGPT · P4. Hospitalité : P1 · P3 · P4. Onglets 2 (ligne 26, 28, 29) et 2b mis à jour.
+- **Nouveaux sous-ICP** : 2.15 Travaux publics et génie civil, 4.5 Écoles et formations bien-être. 2.1 renommé « BTP, rénovation et entreprise générale ». Codes 1.10 et 2.10 corrigés dans l'onglet 2b (lus comme 1.1 / 2.1).
+- **Règles appliquées** : G2 seulement pour 1.1 ; relance sobre et PPS « non merci » pour 1.6, 1.8, 1.13, 2.6, 4.3 ; mail « interdiction de démarcher » seulement pour 2.2, 2.3, 2.8, 2.9 ; ≤ 80 mots hors PS.
+- **Bibliothèque** : copies d'Igor et d'Elena ajoutées en I-01 à I-26 (`copy/36`, onglet 7).
+- **Mail à Igor** : `copy/37_mail_igor_29-10.md` (datasets ICP 3, ICP 4 international, B2B vague 3 ; question Zapmail → Outlook).
+- **En attente de Nathan** : nom du client « +20 nouveaux clients / mois » (la PS dit « pour un de nos clients » sans nom) ; preuve « Le Point, Pluxee, Décathlon +20 % de pipeline » = notes de Nathan, non publiée ; « L'Artisan +200 clients/mois » dans l'onglet 2 à confirmer (20 ou 200 ?).

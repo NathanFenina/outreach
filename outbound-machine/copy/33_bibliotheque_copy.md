@@ -3803,3 +3803,35 @@ Gabarit :
 > we helped [preuve sociale] [résultat].
 > worth a quick conversation?
 ```
+
+
+## Copies d'Igor et d'Elena (UltB) · I-01 à I-26
+
+Texte complet : copy/36_copies_igor_elena.md.
+
+- **I-01** · Elena (UltB) · mails reçus par Nathan · Elena · VP1 (reçu par Nathan)
+- **I-02** · Elena (UltB) · mails reçus par Nathan · Elena · relance / VP reçu par Nathan
+- **I-03** · Elena (UltB) · mails reçus par Nathan · FU
+- **I-04** · UltB · méthode R.E.P.L.Y. · The R.E.P.L.Y. Method
+- **I-05** · UltB · méthode R.E.P.L.Y. · Cold Email Example #1 · objet « Intersuite cost reduction »
+- **I-06** · UltB · méthode R.E.P.L.Y. · Cold Email Example #2 · objet « AM Retail Group & ABC COMPANY »
+- **I-07** · UltB · méthode R.E.P.L.Y. · Starter Template · objet « [personalization] »
+- **I-08** · UltB · méthode R.E.P.L.Y. · Advanced Tactics
+- **I-09** · UltB · méthode R.E.P.L.Y. · Change up your CTAs -> Low friction + Asking for permission to share Loom
+- **I-10** · UltB · séquence IT services (DNAFactory) · VP1
+- **I-11** · UltB · séquence IT services (DNAFactory) · FU1
+- **I-12** · UltB · séquence IT services (DNAFactory) · VP2
+- **I-13** · UltB · séquence IT services (DNAFactory) · FU2 (Ducklings)
+- **I-14** · UltB · séquence IT services (DNAFactory) · VP3
+- **I-15** · UltB · séquence IT services (DNAFactory) · FU3
+- **I-16** · UltB · séquence agence (MOWEEX) · VP1
+- **I-17** · UltB · séquence agence (MOWEEX) · FU1
+- **I-18** · UltB · séquence agence (MOWEEX) · FU2
+- **I-19** · UltB · séquence agence (MOWEEX) · FU
+- **I-20** · UltB · relances types · 123 - Humorbr
+- **I-21** · UltB · relances types · FU
+- **I-22** · UltB · relances types · Goodbye Email / Breakup email
+- **I-23** · UltB · relances types · VP1 - SL: quick question, FIRSTNAME · objet « quick question, FIRSTNAME »
+- **I-24** · UltB · AAA-Method · AAA-Method VP1 · objet « A: {{firstName}} - quick question »
+- **I-25** · UltB · AAA-Method · AAA-Method VP2
+- **I-26** · UltB · AAA-Method · FU:

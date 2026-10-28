@@ -33,11 +33,11 @@ REF_B2B = "pluxee.fr, betomorrow.com, apogea.fr, lepoint.fr, decathlon.fr, acade
 REF_LOCAL = "clim-confort.fr, reuxtravaux.fr, atoo-energie.fr"
 
 # Paliers de la pyramide (K17) et intents par famille. Coûts mesurés le 28/10 quand c'est indiqué.
-PALIER = {
-    "B2B": "P1 : a levé (< 6 mois) ET recrute en marketing · P2 : recrute en marketing / SEO / growth (I2), nouveau CMO (I4), équipe marketing en croissance (I5) · P3 : marché principal, filtré par baisse de trafic (I8) ou concurrent devant (I6)",
-    "PERF": "P1 : concurrent devant sur « métier + ville » (I6) ou fiche Google faible (I11) · P2 : saison (I12) · P3 : marché principal (I13)",
-    "MED": "P1 : absent des réponses ChatGPT des patients étrangers (I7) ou concurrent devant (I6) · P3 : marché principal",
-    "HOSP": "P1 : concurrent devant sur « hôtel / spa + ville » (I6) ou fiche Google faible (I11) · P3 : marché principal",
+PALIER = {  # pyramide V2 (29/10, Nathan) : un message par palier, copies dans copy_v2.py
+    "B2B": "P1 : a levé (< 6 mois) ET recrute · P2 : recrute (marketing / SEO / growth, nouveau CMO) · P3 intent SEO : P3a baisse de trafic > 10 %, P3b concurrent devant sur Google, P3c concurrent cité par ChatGPT · P4 : marché principal",
+    "PERF": "P1 : concurrent devant sur « métier + ville » (Maps) · P2 : saison · P3 : concurrent cité par ChatGPT · P4 : marché principal (A plateformes de devis, B capacité + performance, C interdiction de démarcher, D maîtres d'ouvrage privés pour 2.15)",
+    "MED": "P1 : ChatGPT cite une autre clinique · P4 : marché principal (intermédiaires à commission)",
+    "HOSP": "P1 : concurrent devant sur Google · P3 : ChatGPT cite un concurrent · P4 : marché principal",
 }
 INTENT = {
     "B2B": "I2 recrute (0 € base Lemlist ; Apify 0,2 cent/offre hors France) · I8 baisse de trafic > 10 % (mesuré : 0,24 cent/domaine ; 53/87 domaines en baisse) · I6 concurrent devant (≈ 0,06 cent/SERP) · I7 absent de ChatGPT (≈ 0,5 cent)",
@@ -328,4 +328,15 @@ SUB = {
     sol=["Réservations directes", "Fiche Google, pages hébergements", "Réservations mesurées"],
     seq="Décideur : S4 · Variante : S5", angle="N1 ; saison", lm="LM11 → appel", hack="Écrire avant la saison (janvier-mars)",
     note="Aucune preuve hôtellerie publiée"),
+ "2.15": dict(ind="Civil Engineering ; Construction (travaux publics, VRD, terrassement, génie civil)",
+    pains=["Marchés publics captés par les plateformes d'appels d'offres : mise en concurrence à 10", "Maîtres d'ouvrage privés qui cherchent sur Google et tombent sur les plus gros", "Dépendance au réseau et aux mêmes donneurs d'ordre"],
+    sol=["Pages par type d'ouvrage et par zone", "Fiche Google et références chantiers", "Demandes privées mesurées"],
+    seq="P1 Maps · P4 B capacité · P4 D maîtres d'ouvrage privés", angle="Demande Nathan 29/10 (BTP, génie civil)",
+    lm="LM5 concurrent devant → appel · VP3 page gratuite", hack="Vocabulaire B2B : marchés, maîtres d'ouvrage", note="Sous-ICP créé à la demande de Nathan"),
+ "4.5": dict(ind="Education ; Professional Training and Coaching ; Wellness and Fitness Services",
+    pains=["Inscriptions dépendantes du bouche-à-oreille et des salons", "Plateformes et gros organismes devant sur « formation + discipline »", "Futurs élèves qui comparent les écoles sur Google et ChatGPT"],
+    sol=["Pages formation par discipline et par ville", "Être cité par les IA", "Demandes de brochure mesurées"],
+    seq="P1 Google · P3 ChatGPT · P4 marché principal", angle="Demande Nathan 29/10 (Gestalt, Madelrieux)",
+    lm="LM5 concurrent devant → appel · VP3 page gratuite + données structurées", hack="Citer Gestalt et Madelrieux (clients du secteur)",
+    note="Ne pas écrire aux concurrents directs de Gestalt / Madelrieux sans accord"),
 }

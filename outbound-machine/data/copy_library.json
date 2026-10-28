@@ -1951,5 +1951,239 @@
   "corps": "- Lecture « sandwich » : le haut, le bas, puis on tourne autour du milieu.\n- **R**elevant results : quels résultats pour des entreprises similaires ?\n- **E**mpathy : priorité + problème du prospect.\n- **P**ersonalization : en quoi ça le concerne, lui, son service, sa boîte ?\n- **L**aser-focus : 80 mots max, une seule action demandée.\n- **Y**ou-oriented : centré sur lui, pas sur nous.\n\nGabarit :\n> objet : [personnalisation]\n> saw [personnalisation], [prénom].\n> usually, that means there's a focus on [priorité]. [persona] oftentimes run into challenges [problème].\n> we helped [preuve sociale] [résultat].\n> worth a quick conversation?",
   "etapes": "",
   "resultat": ""
+ },
+ {
+  "id": "I-01",
+  "source": "Igor / Elena (UltB)",
+  "titre": "Elena (UltB) · mails reçus par Nathan · Elena · VP1 (reçu par Nathan)",
+  "objet": "",
+  "corps": "Saw you worked with decathlon, Nathan. I imagine you wouldn't be against more intros to companies like them.\n\nWe run 45-day lead generation sprints for , and clients usually receive 10-20 qualified intros.\n\nHappy to research 50 relevant prospects on the house, just to show we can find the right ones for decupler.\n\nWould you be open to have a short call about the type of leads you're looking for?\n\nThanks, Elena, Co-Founder at UltB\n\nPS: for AWR we are constantly landing 20+ relevant client conversations per month. Thought we could do something similar for you.\n\nPPS: Not interested right now? Just reply \"no thanks\" and I'll stop.",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-02",
+  "source": "Igor / Elena (UltB)",
+  "titre": "Elena (UltB) · mails reçus par Nathan · Elena · relance / VP reçu par Nathan",
+  "objet": "",
+  "corps": "jeu. 22 oct. 10:41 (il y a 6 jours)\nÀ moi\n\nCe message semble être en anglais\nNathan, hope this didn't get buried. Curious what you thought of my last email.\n\nMake sense to hop on a quick call to see if the sprint is worth running for decupler?\n\nCheers, Elena\n\nP.S. I'll have a short breakdown ready before we chat: your ICP fit, the angles we'd test, and what the 6 weeks would look like.\n\nPPS: Not the right fit? Reply \"bye bye\" and I'll leave you be",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-03",
+  "source": "Igor / Elena (UltB)",
+  "titre": "Elena (UltB) · mails reçus par Nathan · FU",
+  "objet": "",
+  "corps": "Hello Nathan, noticed decupler is working with decathlon and thought we might be able to help you land more collaborations like that.\n\nI think you could be well-suited for our lead gen sprint for :\n-> 6 weeks, limited project duration\n-> 10–20 introductions to decision-makers\n-> verdict on whether outbound works\n\nWould you be against a quick 15-min call?\n\nThanks,\nElena, Founder at UltB\n\nPPS: If you're not interested, just reply “Ctrl+C” and I'll leave you alone",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-04",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · méthode R.E.P.L.Y. · The R.E.P.L.Y. Method",
+  "objet": "",
+  "corps": "Pattern of Reading: Sandwich (top, bottom + circling in the middle)\n\nRelevant results. What outcomes have you helped similar companies achieve?\nEmpathy. How does this align with my priorities or the problems I might be experiencing?\nPersonalization. How does this relate to me, my department, and/or my company?\nLaser-focus. In the fewest words possible (80 or less)—what is the single action you would like me to take?\nYou-oriented. Are you more focused on helping me or talking about how awesome you are?",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-05",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · méthode R.E.P.L.Y. · Cold Email Example #1",
+  "objet": "Intersuite cost reduction",
+  "corps": "Prospect: VP of Customer Support\n\nSubject: Intersuite cost reduction\n\n[personalization] saw the announcement of the Intersuite cost reduction initiative, David.\n\n[empathy = priority + problem] Usually, that means there’s a focus on reducing incoming support calls and pushing customers to self-serve. Support leaders oftentimes run into challenges knowing which digital investments are actually deflecting calls.\n\n[relevant results] We helped ABC UTILITY dramatically reduce cost to serve by finding the sources of increased call volumes.\n\n[CTA] Worth a quick conversation?",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-06",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · méthode R.E.P.L.Y. · Cold Email Example #2",
+  "objet": "AM Retail Group & ABC COMPANY",
+  "corps": "Prospect: Customer Experience Leader\n\nSubject: AM Retail Group & ABC COMPANY\n\n[personalization] curious if you remember [rep’s company] from your time at [current client, past employee], Katie?\n\n[empathy = priority + problem] I imagine a huge focus of yours is building upon your retention strategy to improve customer loyalty and reduce churn.\n\nSiloed data makes identifying key factors like purchase frequency, order value, and granular segmentation difficult.\n\n[relevant results] Steven Madden & Dr Martens are using our help to get better insight into these factors resulting in 55% YoY growth in revenue.\n\n[CTA] Open to learning more?\n\nMeredith\n\nPS:",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-07",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · méthode R.E.P.L.Y. · Starter Template",
+  "objet": "[personalization]",
+  "corps": "Subject: [personalization]\n\nsaw [personalization], [first name].\n\nUsually, that means there’s a focus on [priority]. [persona] oftentimes run into challenges [problem].\n\nWe helped [social proof] [relevant results].\n\nWorth a quick conversation?",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-08",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · méthode R.E.P.L.Y. · Advanced Tactics",
+  "objet": "",
+  "corps": "Boring subject lines -> Internal Camouflage with few words \nSalesloft’s data shows that subject lines with <5 words have the highest open and reply rates. The key is to emulate the subject lines your prospects use when communicating internally. Our friend Will Allred over at Lavender calls this “internal camouflage.”\n\nTEMPLATE\nEXAMPLES\n[area where you help]\nprospecting\noutbound\nchatbots\n24/7\nresponse time\nhiring\nfive-stars\n[common problems]\nlow response rates\ncall reluctance\noverpaying taxes\ntaxes\nR&D\nproblem\n[personalized - a trigger or from something you found on their LinkedIn or company website]\nREPLY Method\nscalability\ngrowing\n“order to chaos”\n143% of quota",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-09",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · méthode R.E.P.L.Y. · Change up your CTAs -> Low friction + Asking for permission to share Loom",
+  "objet": "",
+  "corps": "Not getting replies to your emails? Don’t panic. Before you scrap the entire email, try changing up your ask (call-to-action) at the end of the email.\n\nGong’s data shows that interest-based CTAs outperform specific and open-ended CTAs by 2x. In other words, asking prospects for their interest is more effective than asking for their time.\n\nOpen-Ended CTA\nHigh Friction\nInterest CTA\nLow Friction\nSpecific CTA\nLow Friction (but oftentimes too presumptive)\n“How are you handling [problem] at [company]?”\n“What are you seeing at [company]?”\n“How does this compare to your experience?”\n“Open to learning more?”\n“Does it make sense to connect?”\n“When does it make sense to connect?”\n“Interested in chatting further?”\n“Is this a problem you’re having?”\n“Would it be a bad idea to chat further?”\n“Would it hurt to share more?”\n“Can I get a shot to share how this could be helpful for you at [company name]?”\n“Worth a quick conversation?”\n“Can I get 15 minutes of your time?”\n“Are you free to meet tomorrow?”\n“Does 2pm work for you this Friday?”",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-10",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence IT services (DNAFactory) · VP1",
+  "objet": "",
+  "corps": "saw you are looking for new prospects for DNAFactory, Flaviana. \nWas wondering if you'd profit from a more structured methodology to scale your outreach?\n\nMany IT service providers build predictable B2B sales engines in-house, instead of working with external lead-gen companies. \nWe could help as we did with other European IT companies - like Intertec and safeINIT.\n\nMy co-founder has recorded a 3 min loom on how this could work out for DNAFactory. \n\nMind if I share? \n\nCheers, Elena\nCoFounder at UltB\nPS: typically, our partners see the first results already after 30 days",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-11",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence IT services (DNAFactory) · FU1",
+  "objet": "",
+  "corps": "Hi Flaviana, just wanted to touch base and see if you had any thoughts about my last email.\n\nFrom what I've seen, we could be a fantastic fit for DNAFactory.\n\nWorth a convo?\nThanks for your time!\nCheers, ELena\n--\nSent from my iPhone",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-12",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence IT services (DNAFactory) · VP2",
+  "objet": "",
+  "corps": "out of the blue, Flaviana, but is attracting new clients for DNAFactory a priority for Q2? \n\nIT companies used to rely heavily on referrals and the founder's network, but that's not sustainable.\nWith our DFY deal, you could go from just a few quality meetings to 15-20 per month within 3 months or less - like Intertec and safeINIT.\n\nWe recorded a 3 min video case study showing how we generated 54 qualified meetings for a software company in Europe. \n\nMind if I share?\n\nCheers, Elena\nCo-Founder at UltB\nPS: you could use our system inhouse - it will stay forever yours",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-13",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence IT services (DNAFactory) · FU2 (Ducklings)",
+  "objet": "",
+  "corps": "I haven't heard from you, Flaviana - so that tells me one of three things:\n\n1) You already have scalable B2B processes in place, have conquered the whole market, and are 120% happy with your funnel\n\n2) You're not interested in implementing a scalable B2B Sales Engine internally and want me to stop writing you\n\n3) You've been busy and my emails fell through the cracks like these unfortunate ducklings but are ready to give us a shot because this email made you laugh :)\n\nI'd love to help you save a bunch of time on getting your meetings booked with high-paying B2B prospects through laser-sharp outreach. But let me know either way so I can stop bugging you. \n--\nP.S. I hope the story has a happy ending as it did for the ducklings :)\n\nDon't want to hear from me anymore? Click here to unsubscribe",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-14",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence IT services (DNAFactory) · VP3",
+  "objet": "",
+  "corps": "noticed your team at DNAFactory is trying to reach out to prospects on LinkedIn. \nFlaviana, I was wondering if you'd benefit from putting your whole outreach on steroids?\n\nOur system is specifically designed to help founders & leaders of small IT service providers with two topics:\n1. Fundaments of an internal B2B growth engine -> constantly attract quality leads\n2. Advanced tactics, used by the top 3% of sales organizations -> increase closing rates and reduce sales cycles\n\nMy co-founder has recorded a 3 min video on how this worked out for similar companies. \n\nWould you be opposed to having a quick look? \n\nBest, Elena\nCoFounder at UltB\nPS: typically, our clients see the first results already after 1 month",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-15",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence IT services (DNAFactory) · FU3",
+  "objet": "",
+  "corps": "Hi Flaviana, I was wondering and see if you had any ideas about my last email.\n\nBased on our research, we could be an awesome fit for DNAFactory.\n\nWorth having a convo?\n\nLooking forward to hearing from you soon!\nCheers, ELena\n--\nSent from my iPhone",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-16",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence agence (MOWEEX) · VP1",
+  "objet": "",
+  "corps": "Hey Mina - congrats on rocking onboarding new clients to MOWEEX - digital software Agency :) \nDo you think you spend too much time on prospecting instead of closing?\n\nI was wondering if you'd benefit from 15 - 30 additional qualified meetings appearing in your calendar. \n\nWould you be interested to learn how we helped Zezame, Reach, and iShoutMedia?\n\nBest, Elena\nCoFounder at UltB\nPS: we work mostly on performance-based with a result guarantee, so no risk for you :)\nDon't want to hear from me anymore? Please click here",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-17",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence agence (MOWEEX) · FU1",
+  "objet": "",
+  "corps": "Mina, any thoughts?\nI think we could be a great fit for MOWEEX - digital software Agency.\n\nCheers\nELena at UltB \n--\nSent from my iPhone",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-18",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence agence (MOWEEX) · FU2",
+  "objet": "",
+  "corps": "Mina friendly follow-up.\n\ncongrats on setting growth goals for 2023 - I thought checking in with you on if you'd benefit from getting more meetings booked with high-paying clients through cold outreach.\n\nWould you be interested in learning how we booked 56 qualified calls in 30 days with eCom brands for UltB?\n\nPS: I'd love to hear back from you, even if it's just a quick note",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-19",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · séquence agence (MOWEEX) · FU",
+  "objet": "",
+  "corps": "ELena at UltB\n\nDon't want to hear from me anymore? Please click here",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-20",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · relances types · 123 - Humorbr",
+  "objet": "",
+  "corps": "{{firstName}} - I've been reaching out to you for a while regarding our service for getting more meetings booked with high-paying clients and haven't heard back from you, which tells me either of three things:\n\n1. You have maxed out your growth and conquered 99.99% of the market\n2. You see value in our service but have been too busy to respond & take a call.\n\n3. Your double life as a meth cook has been uncovered and you're currently seeking asylum in Venezuela :)\n\nPlease just write me the number which describes you best so I know how to handle this relationship going forward.\nBest\n{{sendingAccountName}} \n\nPS: if you dont want to hear from me anymore, just let me know \n\nDon't want to hear from me anymore? Please click here",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-21",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · relances types · FU",
+  "objet": "",
+  "corps": "Hi {{firstName}}, hope you are doing awesome!\n\nMany agencies in my network have a hard time booking calls with target clients in 2022. Is this a priority of yours?\n\nWould love to see if we could create a valuable case for {{companyName}}.\nHow about having a 5 min virtual coffee?\nIgor\n\nDon't want to hear from me anymore? Please click here",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-22",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · relances types · Goodbye Email / Breakup email",
+  "objet": "",
+  "corps": "Hi {{firstName}},\n\nI have tried reaching you a few times to help you with getting more meetings booked for your team through cold outbound emails. \n\nBut, as there has been no reply from your end, I guess that the timing is not right - I understand and respect that, this will be my last email.\n\nIn case you want to keep in touch later, please let me know - I will be happy to hear back from you about getting your more booked meetings with high-paying clients. \nCheers,\nIgor",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-23",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · relances types · VP1 - SL: quick question, FIRSTNAME",
+  "objet": "quick question, FIRSTNAME",
+  "corps": "out of the blue question, but I recorded a 2 min Loom on how you could get 50+ qualified meetings each month for {{companyName}} as we did for UltB. Mind if I send it over?\nIgor\nPS: XXXX \n\nDon't want to hear from me anymore? Please here",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-24",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · AAA-Method · AAA-Method VP1",
+  "objet": "A: {{firstName}} - quick question",
+  "corps": "Subject: \nA: {{firstName}} - quick question\nB: loom for {{firstName}}\nC: video for {{firstName}}\n\n{{firstName}}, you are responsible for growth at {{companyName}}, right? Thought I’d reach out. \n\nSo, we helped DecoMarketing add 140K€ in pipeline value within 60 days using the UltB System. I think we could do the same for you. \n\nMay I share a 3 min loom video I recorded on how that could work?\nCheers, Igor\nFounder at UltB\n\nPS: after the setup, you can keep our system forever - without any strings attached \n\n__\n\n{{firstName}}, any thoughts on my last email?\n\nI think we could be a great fit for {{companyName}}. \n\nMEME with SalesMan.\n\nWorth exploring further?\nThanks for your time. \nIgor\n--\nSend from my iPhone\n\n__",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-25",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · AAA-Method · AAA-Method VP2",
+  "objet": "",
+  "corps": "A: follow-up.\nB: Q4 preparation\nC: planning\n\n{{firstName}}, was wondering if attracting new clients is a priority for Q4 at {{companyName}}? Not a lot B2B companies take planning seriously. \n\nI ask because we added a six-figure pipeline value to SafeINIT within 90 days. Thought the same approach could work for {{companyName}}.\n\nMay I share more info?\n\nCheers, Igor\nFounder at UltB\n\nPS: we get you live within 14 days, or money back\n\n__",
+  "etapes": "",
+  "resultat": ""
+ },
+ {
+  "id": "I-26",
+  "source": "Igor / Elena (UltB)",
+  "titre": "UltB · AAA-Method · FU:",
+  "objet": "",
+  "corps": "Ducklings, but shorter.",
+  "etapes": "",
+  "resultat": ""
  }
 ]
