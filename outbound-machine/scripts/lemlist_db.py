@@ -1,5 +1,5 @@
 """Recherche gratuite dans la base People / Companies de Lemlist (quota de recherches : champ « limitation »)."""
-import base64, json, os, time, urllib.request
+import base64, http.client, json, os, time, urllib.request
 from icp_catalog import COUNTRIES
 H = {"Authorization": "Basic " + base64.b64encode((":" + os.environ["LEMLIST_API"]).encode()).decode(), "Content-Type": "application/json"}
 CNAME = {c: n for c, n, *_ in COUNTRIES}
@@ -20,6 +20,8 @@ def search(kind, filters, page=1, size=100):
         except urllib.error.HTTPError as e:
             if e.code == 429 or e.code >= 500: time.sleep(3 * (i + 1)); continue
             raise RuntimeError(e.read().decode()[:300])
+        except (OSError, http.client.HTTPException):  # coupure réseau / réponse tronquée : on réessaie
+            time.sleep(3 * (i + 1))
     raise RuntimeError("lemlist db: échec")
 
 
