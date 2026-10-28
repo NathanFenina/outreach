@@ -40,6 +40,9 @@
 - **K20** Constat Nathan : les « oui » au pré-audit 10 prompts / 7 quick wins ne répondent plus après l'envoi → le lead magnet doit déclencher un appel, pas se livrer entièrement.
 - **K21** Le recrutement n'est qu'un signal : le pain doit porter sur ce que Décupler résout (visibilité, leads). Ex. « vous recrutez un SEO → objectifs de croissance ; une fraction du coût d'un recrutement interne ».
 - **K22** Résultats 20/10 : ~2 000 prospects, 55-60 réponses (≈ 2,7 %), ~10 positives (≈ 20 %), 1 RDV. Igor : « il faut 10× le volume ».
+- **K24** decupler.fr est un domaine secondaire : autorisé pour le cold. Interdit : decupler.com (Nathan, 28/10).
+- **K25** Taille de campagne : 100 leads minimum, 300 maximum (Nathan, 28/10).
+- **K26** Prochaine session Igor : mardi 03/11/2026.
 - **K23** Session 3 : 2 accords verbaux sur les ventes (1 confirmé, 1 en suspens pour raisons perso).
 
 ---
@@ -109,8 +112,8 @@
 ## 4. Chantiers (C)
 
 ### Bloc A · Infra et délivrabilité
-- **C1** ⏸ Vérifier dans Lemlist : 21 boîtes Zapmail connectées + lemwarm actif (V5). → Q1
-- **C2** ⏸ Retirer `nathan@decupler.fr` des expéditeurs de « BTP-Construction » (V6). → Q2
+- **C1** ✅ Vérifier dans Lemlist : 21 boîtes Zapmail connectées + lemwarm actif (V5). → Q1
+- **C2** ✅ Annulé : decupler.fr est un domaine secondaire, autorisé (Q2).
 - **C3** ⏸ Redirection 301 des 7 domaines Zapmail vers decupler.com (V3). → Q3
 - **C4** ⬜ GlockApps 1 boîte par domaine, 16 domaines (D2) ; Zapmail après la chauffe. → Q4
 - **C5** ⬜ Délistage Spamhaus / SURBL des domaines du groupe A (D3) + question SURBL « domaines sosies ». → Q5
@@ -156,13 +159,19 @@
 - **C33** ⬜ Synthèse de toutes les campagnes : prospects uniques, réponses humaines, positives, RDV, et ce qu'on améliore (N24). Lecture Lemlist gratuite.
 
 ### Bloc H · Coaching Igor et suivi
-- **C34** ⬜ Reporter les décisions D1-D27 dans le CR Igor (artifact G6GFRkatP6ZjJhJ1TaWXi4) et dans le point d'étape (étape 4a du 28/10).
+- **C34** 🟡 Reporter les décisions D1-D27 dans le CR Igor (artifact G6GFRkatP6ZjJhJ1TaWXi4) et dans le point d'étape (étape 4a du 28/10).
 - **C35** ⬜ Mettre à jour la Base Copy (artifact Tnfz61qnYrMkJdqLtHCF4g) avec les sous-ICP et les hacks Igor (N5).
-- **C36** ⬜ Mail de devoirs à Igor (D24) : brouillon à préparer.
+- **C36** 🟡 Mail de devoirs à Igor (D24) : brouillon à préparer.
 - **C37** ⏸ 2e paiement + preuve (D25) : Nathan.
 - **C38** ⬜ Rapports d'appels de vente d'Igor + guide 8 étapes : à archiver dans le repo (D23).
 
 ---
+
+### Bloc I · Ajouts du 28/10 (2e retour de Nathan)
+- **C39** ⬜ Suivi de santé gratuit sans GlockApps : taux de réponse humaine par boîte et par domaine (API Lemlist), listes noires par DNS (SURBL, Spamhaus DBL, script), Google Postmaster Tools, score lemwarm. Rapport hebdo.
+- **C40** ⬜ Schéma Supabase « outreach » : entreprises, contacts, sous-ICP, pays, intentions, campagnes, hypothèses, lead magnets, boîtes et domaines, contrôles de santé, liste noire, événements de contact. Tables liées.
+- **C41** ⬜ Lead magnets « en deux temps » : une partie offerte par mail, le reste « je vous le montre en appel » (K19). Chaque lead magnet a sa version mail et sa version appel.
+- **C42** ⬜ Pays riches et peu concurrentiels : Maroc, Tunisie, Arabie saoudite, Émirats, Afrique subsaharienne solvable, US, + pays d'Igor.
 
 ## 5. Correspondance avec le message de Nathan du 28/10 (N)
 
@@ -203,29 +212,41 @@ Voir le message du 28/10 dans la conversation ; les réponses sont reportées ic
 
 | Q | Question | Statut |
 |---|---|---|
-| Q1 | Boîtes Zapmail connectées + lemwarm (capture) | ❓ |
-| Q2 | Go pour retirer nathan@decupler.fr de « BTP-Construction » | ❓ |
-| Q3 | Redirections des 7 domaines : qui / accès | ❓ |
-| Q4 | Budget GlockApps pour 16 tests | ❓ |
-| Q5 | Délistage + noms des futurs domaines | ❓ |
-| Q6 | Date de renouvellement Lemlist + budget outil | ❓ |
-| Q7 | Outil de l'offre SECRET20 | ❓ |
-| Q8 | FullEnrich / Outscraper : garder ? solde Outscraper | ❓ |
-| Q9 | Budget global tests de données | ❓ |
-| Q10 | Validation de la grille ICP | ❓ |
-| Q11 | Mécanique du partenariat à la performance | ❓ |
-| Q12 | Pays × langue × ICP | ❓ |
-| Q13 | Sens de « baisse de trafic interne » + autres intentions | ❓ |
-| Q14 | Combien de décideurs par entreprise | ❓ |
-| Q15 | « Idées de mes reprises » | ❓ |
-| Q16 | Envoi du tableau et demande de dataset à Igor | ❓ |
-| Q17 | Base centrale : Supabase existant ? | ❓ |
-| Q18 | Liste ICP 1 v2 introuvable | ❓ |
-| Q19 | 101-G-1 : 36 emails < 100 leads minimum | ❓ |
-| Q20 | Angle de 101-G-1 | ❓ |
-| Q21 | Cas clients citables par ICP | ❓ |
-| Q22 | Lead magnets : lesquels et qui produit la vidéo | ❓ |
-| Q23 | Où vit le tableau segmenté (Google Sheet partagé ?) | ❓ |
-| Q24 | Liste des clients pour la liste noire | ❓ |
-| Q25 | Date de la prochaine session + mail de devoirs | ❓ |
-| Q26 | Ce que je peux faire sans attendre | ❓ |
+| Q1 | Boîtes Zapmail connectées + lemwarm (capture) | ✅ connectées (Nathan, 28/10) |
+| Q2 | Go pour retirer nathan@decupler.fr de « BTP-Construction » | ✅ decupler.fr = domaine secondaire, autorisé. Seul decupler.com est interdit. C2 annulé. |
+| Q3 | Redirections des 7 domaines : qui / accès | ✅ redirection demandée par Nathan ; je fournis le prompt Claude in Chrome (C3) |
+| Q4 | Budget GlockApps pour 16 tests | ✅ 3 tests faits (dans l'artifact). Suivi santé sans GlockApps à construire (C39) |
+| Q5 | Délistage + noms des futurs domaines | ✅ go délistage |
+| Q6 | Date de renouvellement Lemlist + budget outil | ✅ Lemlist se renouvelle le 10/11/2026 |
+| Q7 | Outil de l'offre SECRET20 | ✅ SECRET20 = Instantly. PlusVibe à étudier (envoi + crédits d'enrichissement pour le même budget) |
+| Q8 | FullEnrich / Outscraper : garder ? solde Outscraper | ✅ Outscraper : 15 $ de réduction chaque mois. Tous les outils sont à trancher dans le comparatif |
+| Q9 | Budget global tests de données | ✅ « tu me dis » → enveloppe proposée en Q27 |
+| Q10 | Validation de la grille ICP | ✅ beaucoup plus granulaire : 1 niche = 1 sous-ICP (ex. rideaux métalliques ≠ monte-escaliers), ajouter hospitalité, maisons de retraite, spa, etc. |
+| Q11 | Mécanique du partenariat à la performance | ✅ pas de mécanique figée : « on cherche des boîtes X qui veulent Y, on a fait Z, seriez-vous contre… » ; Claude propose la meilleure copy |
+| Q12 | Pays × langue × ICP | ✅ FR : France, Suisse romande, Tunisie, Maroc. EN : UK, Arabie saoudite, Dubaï, pays d'Igor, US. Tourisme médical = cliniques en Turquie, Tunisie… qui cherchent des patients étrangers. Afrique subsaharienne : pays solvables où le cold mail marche (au choix de Claude) |
+| Q13 | Sens de « baisse de trafic interne » + autres intentions | ✅ Claude cherche les meilleures intentions, les croise avec les copy et estime le coût par outil (C12) |
+| Q14 | Combien de décideurs par entreprise | ✅ 3 contacts max par entreprise parmi : CEO, fondateur, CMO, responsable growth, responsable SEO, responsable communication, directeur commercial |
+| Q15 | « Idées de mes reprises » | ✅ abandonné |
+| Q16 | Envoi du tableau et demande de dataset à Igor | ✅ mail à Igor rédigé dans la conversation du 28/10 |
+| Q17 | Base centrale : Supabase existant ? | ✅ Supabase = base centrale ; créer des tables dédiées outreach / cold mail (C13) |
+| Q18 | Liste ICP 1 v2 introuvable | ✅ nouvelles campagnes, 121 entreprises c'est trop peu |
+| Q19 | 101-G-1 : 36 emails < 100 leads minimum | ✅ campagne = 100 min, **300 leads max**. Recharge décidée après le choix de l'outil |
+| Q20 | Angle de 101-G-1 | ✅ pas besoin du transcript anglais ; Claude propose les hypothèses |
+| Q21 | Cas clients citables par ICP | ✅ chercher les chiffres sur decupler.com, puis questions si besoin |
+| Q22 | Lead magnets : lesquels et qui produit la vidéo | ✅ partir des idées de la Base Copy + consignes Igor, proposer ; Nathan valide |
+| Q23 | Où vit le tableau segmenté (Google Sheet partagé ?) | ✅ tableau segmenté dans Supabase (tables liées), géré par Claude |
+| Q24 | Liste des clients pour la liste noire | ✅ liste noire = tous les contacts Lemlist + clients (site decupler.com + mémoire) |
+| Q25 | Date de la prochaine session + mail de devoirs | ✅ session mardi 03/11/2026. Mail envoyé aujourd'hui ; setup, ICP, scrape et copy terminés aujourd'hui |
+| Q26 | Ce que je peux faire sans attendre | ✅ go |
+
+### Dernier tour de questions (28/10, avant la phase autonome)
+Sans réponse, Claude applique la valeur par défaut indiquée.
+
+| Q | Question | Défaut | Statut |
+|---|---|---|---|
+| Q27 | Enveloppe de dépenses pour la journée | DataForSEO ≤ 10 $, Apify dans les 5 $ gratuits, FullEnrich ≤ 1 000 crédits déjà payés, Lemlist 180 crédits offerts ; 0 € de nouvel abonnement | ❓ |
+| Q28 | Comptes d'essai à créer par Nathan (Instantly, PlusVibe, Moltsets, Monid) + clés API | comparatif sur infos publiques seulement | ❓ |
+| Q29 | Clé API Outscraper (et clé Apify régénérée ?) | pas de scraping Google Maps | ❓ |
+| Q30 | Tables Supabase dans le projet « LinkedIn App », schéma séparé `outreach` | oui | ❓ |
+| Q31 | Campagnes créées en brouillon dans Lemlist (rien lancé) malgré le renouvellement du 10/11 | oui, lots G seulement | ❓ |
+| Q32 | Apify au-delà de 5 $ (plan payant) pour le scrape multi-pays | non | ❓ |
