@@ -53,26 +53,30 @@ def add(code, fam, tier, icps, lot, sources, label):
     PLAN[code] = dict(fam=fam, tier=tier, icps=icps, lot=lot, sources=sources, label=label)
 
 
-for lot in "GO":
+for lot in "GMO":  # G = Google, M = Microsoft / Outlook, O = autres fournisseurs (règle de nommage Nathan)
     # P1 (levée + recrute) : pas de données de levée en France dans la base Lemlist (29/10) → source à trouver
-    add(f"121-{lot}-P2", "B2B", "P2", ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"], lot, ["DS-10[46]-*-P2"], "B2B FR · recrute en marketing")
+    add(f"121-{lot}-P2", "B2B", "P2", ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"], lot, ["DS-10[46]-*-FR-P2"], "B2B FR · recrute en marketing")
+    add(f"122-{lot}-P2b", "B2B", "P2b", ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"], lot, ["DS-10[46]-*-FR-P2b"], "B2B FR · recrute des commerciaux")
     for icp in ["1.1", "1.2", "1.5", "1.6", "1.7", "1.8"]:
         camp = "104" if icp in ("1.1", "1.2") else "106"
-        add(f"{camp}-{lot}-P4-{icp}", "B2B", "P4", [icp], lot, [f"DS-{camp}-{icp}-FR-P4"], f"{B2B[icp]['label']} · FR · marché principal")
-    add(f"110-{lot}-P4B-2.1", "LOCAL", "P4B", ["2.1"], lot, ["DS-110-2.1-FR-P4"], "BTP et rénovation · FR · 20 chantiers de plus (performance)")
-    add(f"110-{lot}-P4D-2.15", "LOCAL", "P4D", ["2.15"], lot, ["DS-110-2.15-FR-P4"], "Travaux publics · FR · maîtres d'ouvrage privés")
+        add(f"{camp}-{lot}-P4-{icp}", "B2B", "P4", [icp], lot, [f"DS-{camp}-{icp}-FR-P4*"], f"{B2B[icp]['label']} · FR · marché principal")
+    add(f"110-{lot}-P4B-2.1", "LOCAL", "P4B", ["2.1"], lot, ["DS-110-2.1-FR-P4*"], "BTP et rénovation · FR · 20 chantiers de plus (performance)")
+    add(f"110-{lot}-P4D-2.15", "LOCAL", "P4D", ["2.15"], lot, ["DS-110-2.15-FR-P4*"], "Travaux publics · FR · maîtres d'ouvrage privés")
     for icp in ["4.1", "4.2", "4.4"]:
-        add(f"114-{lot}-P4-{icp}", "HOSP", "P4", [icp], lot, [f"DS-114-{icp}-FR-P4"], f"{HOSP[icp]['label']} · FR · marché principal")
+        add(f"114-{lot}-P4-{icp}", "HOSP", "P4", [icp], lot, [f"DS-114-{icp}-FR-P4*"], f"{HOSP[icp]['label']} · FR · marché principal")
 
 
 def sequence(c):
     fam, tier, icps = c["fam"], c["tier"], c["icps"]
     if fam == "B2B":
         icp = icps[0]; sober = len(icps) == 1 and B2B[icp].get("sober")
-        if tier in ("P1", "P2"):
-            subj, body = next((s, b) for e, s, b in B2B_PALIERS if e.startswith(tier))
+        if tier in ("P1", "P2", "P2b"):
+            subj, body = next((s, b) for e, s, b in B2B_PALIERS if e.startswith(tier[:2]))
             body = body.replace("{pb}", "{{pb}}").replace("Avec le recrutement d'un·e {{poste}} en cours", "Avec les recrutements en cours")
             body = body.replace("recrute un·e {{poste}}, {{firstName}}", "recrute en marketing, {{firstName}}")
+            if tier == "P2b":
+                body = body.replace("recrute en marketing, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.",
+                                    "recrute des commerciaux, {{firstName}} : j'imagine qu'il va falloir leur donner des demandes à traiter.")
             subj = "votre recrutement" if subj == "{{poste}}" else subj  # le poste exact n'est pas dans la base : formulation vraie pour tous
             first = (subj, step1(body, "var"))
         else:
@@ -120,6 +124,7 @@ def dnc():
     return _DNC
 
 
+LOT = {"google": "G", "microsoft": "M"}
 SEEN = set()  # un email = une seule campagne
 
 
@@ -131,7 +136,7 @@ def leads_for(c):
     for pat in c["sources"]:
         for fn in sorted(glob.glob(f"../data/datasets/{pat}.csv")):
             for r in csv.DictReader(open(fn)):
-                if r["lot"] != c["lot"] or r["icp_code"] not in c["icps"] or r["domain"].lower() in dnc_dom: continue
+                if LOT.get(r["esp"], "O") != c["lot"] or r["icp_code"] not in c["icps"] or r["domain"].lower() in dnc_dom: continue
                 if QUALIF.get(r["domain"], {}).get("fit") is not True: continue
                 m = cache.get(r["linkedin_url"]) or {}
                 email = m.get("email") if m.get("risk_score") in ("A", "B") else None
@@ -155,6 +160,9 @@ if mode == "plan":
         txt = json.dumps(sequence(c), ensure_ascii=False)
         manque = sorted(set(re.findall(r"\{\{(\w+)\}\}", txt)) - STD)
         print(k, "·", c["label"], "· leads prêts :", len(leads_for(c)), "· variables à remplir :", ", ".join(manque) or "aucune")
+elif mode == "reset":  # supprime les brouillons créés par ce script (aucun n'a de boîte ni de lead)
+    for k, cid in existing().items():
+        if re.match(r"^1\d\d-[GOM]-P", k): api("DELETE", f"/api/v2/campaigns/{cid}"); print("supprimée", k)
 elif mode == "create":
     ids = existing()
     for k, c in PLAN.items():

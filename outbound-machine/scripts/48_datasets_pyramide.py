@@ -21,12 +21,16 @@ CAMPAIGNS = {  # campagne : (sous-ICP, paliers, pages max par palier, contacts m
     "114": (["4.1", "4.2", "4.4"], ["P4"], 15, 2),
 }
 FUNDED = ["Less than 1 month", "1 month to 3 months", "3 months to 6 months"]
+SALES_JOBS = ["commercial", "business developer", "sales", "account executive", "chargé d'affaires", "responsable commercial"]
 MKT_JOBS = ["marketing", "SEO", "growth", "contenu", "content", "acquisition", "communication", "demand generation"]
 TIER_FILTERS = {
     "P1": [("currentCompanyLastFundingRoundAt", FUNDED), ("jobPostingDate", ["Last 90 days"])],
     "P2": [("jobPostingTitle", MKT_JOBS), ("jobPostingDate", ["Last 90 days"])],
+    "P2b": [("jobPostingTitle", SALES_JOBS), ("jobPostingDate", ["Last 90 days"])],  # recrute en commercial
     "P4": [],
 }
+START = int(next((a.split("=")[1] for a in sys.argv if a.startswith("--start=")), 1))  # reprise : pages suivantes
+SUFFIX = next((a.split("=")[1] for a in sys.argv if a.startswith("--suffix=")), "")
 BLOCK = {"deja_contacte", "repondu", "desinscrit", "client", "concurrent", "agressif"}
 RANK = [(1, r"\b(ceo|founder|fondat|co-?fond|pr[ée]sident|directeur g[ée]n[ée]ral|dg\b|g[ée]rant|managing (partner|director)|owner|associ[ée] g[ée]rant|partner|associ[ée]|propri[ée]taire|directeur|directrice|director)"),
         (2, r"(cmo|marketing|growth|commercial|sales|business development|d[ée]veloppement|revenue)"),
@@ -56,18 +60,21 @@ for fn in glob.glob("../data/campaigns/*.csv") + glob.glob("../data/datasets/DS-
         if r.get("domain"): dnc.add(r["domain"].lower())
 
 os.makedirs("../data/datasets", exist_ok=True)
-for camp in sys.argv[1:]:
+TIERS_ARG = next((a.split("=")[1].split(",") for a in sys.argv if a.startswith("--tiers=")), None)
+PAGES_ARG = int(next((a.split("=")[1] for a in sys.argv if a.startswith("--pages=")), 0))
+for camp in [a for a in sys.argv[1:] if not a.startswith("--")]:
     icps, tiers, pages, per_co = CAMPAIGNS[camp]
+    tiers, pages = TIERS_ARG or tiers, PAGES_ARG or pages
     for icp in icps:
         s = SEG[icp]
         for tier in tiers:
-            code = f"DS-{camp}-{icp}-FR-{tier}"
+            code = f"DS-{camp}-{icp}-FR-{tier}{SUFFIX}"
             if os.path.exists(f"../data/datasets/{code}.csv"): print("existe", code); continue
             filters = [f("currentCompanyCountry", [CNAME["FR"]]), f("keywordInCompany", s["kw_fr"] + s["kw_en"]),
                        f("currentCompanyHeadcount", ["1-10", "11-50", "51-200", "201-500"]), f("seniority", DECIDERS)]
             filters += [f(k, v) for k, v in TIER_FILTERS[tier]]
             companies, total, quota = {}, 0, None
-            for page in range(1, (pages if tier == "P4" else 6) + 1):
+            for page in range(START, START + (pages if tier == "P4" else 6)):
                 try:
                     res = search("people", filters, page=page, size=100)
                 except RuntimeError as e:
@@ -104,7 +111,7 @@ for camp in sys.argv[1:]:
                 dnc.update(r["domain"] for r in rows)
                 db.upsert("companies", [dict(domain=d, name=c["name"], country="FR", city=c["city"], icp_code=icp, employees=c["employees"],
                                              linkedin_url=c["linkedin_url"], esp=esp[d][0], mx=esp[d][1], pyramid_tier=int(tier[1]),
-                                             signals={"P1": ["levée < 6 mois", "recrute < 90 j"], "P2": ["recrute marketing < 90 j"]}.get(tier, []),
+                                             signals={"P1": ["levée < 6 mois", "recrute < 90 j"], "P2": ["recrute marketing < 90 j"], "P2b": ["recrute commercial < 90 j"]}.get(tier, []),
                                              source="lemlist_db") for d, c in companies.items()], "domain", ignore_duplicates=True)
             db.upsert("datasets", [dict(code=code, icp_code=icp, zone="FR", countries=["FR"], language="fr", source="lemlist_db",
                                         companies_found=len(companies), companies_g=k["google"], companies_o=k["other"] + k["microsoft"],

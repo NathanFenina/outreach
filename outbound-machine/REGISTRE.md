@@ -363,3 +363,12 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
   - Test Apify jobs (0,17 $) : 99 offres, 3 recoupements avec Lemlist P2 ; Apify ne sert qu'à récupérer l'intitulé exact du poste.
   - Variables à résoudre avant lancement : `{{concurrent}}` (FU1/FU2 B2B, suites local/hospitalité) et `{{prompt}}` (P4 1.1, 1.2, 1.5).
   - La mise à jour des statuts de la table `datasets` dans Supabase n'a pas été appliquée : la requête SQL a expiré sans réponse.
+
+## 12. Retours Nathan 29/10 (nommage, intent, stack)
+- **Nommage** : lot = fournisseur email du prospect, **G Google · M Microsoft / Outlook · O autres** (3 campagnes par cible). 36 brouillons Instantly recréés (12 × G/M/O) ; contrainte Supabase `campaigns.esp_lot` élargie à M.
+- **Palier dans le nom** : `<n°>-<lot>-<palier>-<sous-ICP>` (P2 recrute marketing, P2b recrute commerciaux → campagne 122, P4 marché principal).
+- **Variables {{concurrent}} / {{prompt}}** : à mettre dès le mail 1 (paliers P3b / P3c). Pipeline `53_intent_seo.py` : site → gpt-4o-mini (thématique, ICP client, mot-clé business, question d'acheteur) → DataForSEO (volume + top 10 Google France, n°1 hors annuaires) → ChatGPT recherche web (marques citées). **Bloqué : compte OpenAI à 0 crédit** (credit_balance_exhausted). DataForSEO : 47,56 $.
+- **Lemlist** : lemwarm suspendu (ERR_REP_10003 = rejets avant livraison). Vraie cause : decupleragency.com et decupler-search.com **toujours listés SURBL (127.0.0.64)** ; le CTD conseillé par le support ne règle pas ça. Ne pas relancer lemwarm. Annulation par Nathan : Settings → Billing & Users → Manage → Cancel avant le 10/11 (+ add-on crédits d'enrichissement à part). Export complet : `52_export_lemlist.py`.
+- **Zapmail** : CAPTCHA retiré, vérifié 29/10 : 301 vers decupler.com sur les 7 domaines (http, https, www).
+- **Firecrawl** : 2 clés dans l'environnement (FIRECRAWL_API_KEY_1 / _2) ; le connecteur MCP est à 0 crédit.
+- **Stratégie consolidée** : `copy/39_strategie_outbound.md`.
