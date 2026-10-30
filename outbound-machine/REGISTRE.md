@@ -378,3 +378,9 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - Règle : groupe A PremiumInboxes → prospects Google (lots G) ; groupe B Zapmail → Outlook (M) + autres (O). decupleragency.com / decupler-search.com hors campagnes (SURBL).
 - Lemlist : 11 campagnes encore « running » au dernier relevé ; lemwarm à ne pas relancer ; annulation avant le 10/11.
 - FU2 B2B option 3 : « Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre » (idée Nathan).
+
+## 14. SURBL et boîtes (30/10 soir)
+- **Les 10 domaines PremiumInboxes sont listés SURBL (127.0.0.64)** : decupler-agency, decupler-digital, decupler-geo, decupler-ia, decupler-leads, decupler-search, decupler-seo, decupleragency, decuplerdigital, decuplersystems. Demande de retrait refusée par SURBL le 30/09 (ticket TUH-300-78398 : domaines « cousins », chauffe, fausse CAPTCHA, pièges à spam).
+- Domaines Zapmail (7), decupler.fr et decupler.com : propres.
+- 21/21 boîtes Zapmail dans Instantly, chauffe Instantly active, 10/jour, rattachées aux lots M et O. lemwarm arrêté partout (Nathan). Les 11 campagnes Lemlist encore actives finissent leur séquence.
+- `56_instantly_accounts.py assign` vérifie SURBL à chaque fois : un domaine listé n'est jamais rattaché à une campagne.

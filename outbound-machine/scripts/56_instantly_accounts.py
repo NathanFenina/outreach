@@ -55,7 +55,11 @@ elif mode == "assign":
     # groupe A = domaines PremiumInboxes (prospects Google) ; groupe B = domaines Zapmail (Outlook + autres)
     zap = ("decuplerapp.com", "decuplerlabs.com", "getdecupler.com", "godecupler.com", "mydecupler.com", "decuplerly.com", "decupleroy.com")
     grp_b = [a["email"] for a in acc if a["email"].split("@")[-1] in zap]
-    listed = ("decupleragency.com", "decupler-search.com")  # listés SURBL (29/10) : hors campagnes jusqu'au retrait de la liste
+    def surbl(dom):  # domaine listé SURBL (vérifié à chaque rattachement) : jamais sur une campagne
+        r = json.loads(urllib.request.urlopen(f"https://dns.google/resolve?name={dom}.multi.surbl.org&type=A", timeout=15).read())
+        return bool(r.get("Answer"))
+    listed = {d for d in {a["email"].split("@")[-1] for a in acc} if surbl(d)}
+    print("domaines listés SURBL exclus :", sorted(listed))
     grp_a = [a["email"] for a in acc if a["email"] not in grp_b and not a["email"].endswith("decupler.com") and a["email"].split("@")[-1] not in listed]
     after, camps = None, []
     while True:
