@@ -4,7 +4,7 @@
 3. SERP Google France top 10 + réponse IA de Google (≈ 0,002 $) : position de l'entreprise, n°1 hors sites publics / Wikipédia /
    annuaires / médias / comparateurs, domaines cités par la réponse IA ;
 4. part du trafic du n°1 sur le mot-clé (DataForSEO Labs serp_competitors, trafic estimé par domaine) → {{part}} :
-   « et récupère quasiment tout le trafic » si > 60 %, sinon « et capte la plus grosse part des clics » ;
+   > 80 % « récupère quasiment tout le trafic », > 50 % « la majorité du trafic », sinon « capte la plus grosse part des clics » ;
 5. ChatGPT avec recherche web (gpt-5-mini, ≈ 0,016 $) : la question d'acheteur → marques citées, l'entreprise est-elle citée ;
 6. contrôle que le concurrent vend bien la même chose (gpt-4o-mini).
 Sortie : ../data/datasets/intent_seo.json (cache par domaine). Usage : python 53_intent_seo.py --max 20 DS-104-1.1-FR-P4 ..."""
@@ -24,18 +24,19 @@ COST = [0.0]
 
 
 def post(path, body, timeout=180):
-    r = urllib.request.Request("https://api.dataforseo.com" + path, data=json.dumps(body).encode(), headers=DFS, method="POST")
-    t = json.loads(urllib.request.urlopen(r, timeout=timeout).read())["tasks"][0]
-    COST[0] += t.get("cost") or 0
-    if t["status_code"] != 20000: raise RuntimeError(f"{path} {t['status_message']}")
-    return (t.get("result") or [{}])[0]
+    for i in range(3):  # erreurs ponctuelles côté DataForSEO (« Internal SE Server Error ») : on réessaie
+        r = urllib.request.Request("https://api.dataforseo.com" + path, data=json.dumps(body).encode(), headers=DFS, method="POST")
+        t = json.loads(urllib.request.urlopen(r, timeout=timeout).read())["tasks"][0]
+        COST[0] += t.get("cost") or 0
+        if t["status_code"] == 20000: return (t.get("result") or [{}])[0] or {}
+    raise RuntimeError(f"{path} {t['status_message']}")
 
 
 def llm(system, prompt, model="gpt-4o-mini", web=False):
     b = {"system_message": system[:495], "user_prompt": prompt[:495], "model_name": model, "web_search": web}
     if web: b["web_search_country_iso_code"] = "FR"
     r = post("/v3/ai_optimization/chat_gpt/llm_responses/live", [b])
-    return "".join(s.get("text", "") for it in r.get("items", []) for s in it.get("sections", []))
+    return "".join(s.get("text") or "" for it in (r.get("items") or []) for s in (it.get("sections") or []))
 
 
 def as_json(txt):
@@ -78,8 +79,8 @@ def run(item):
             dom = c["domain"].removeprefix("www.")
             if as_json(llm(SYS_C, f"Activité de référence : {u['thematique']}. Site : {dom} · {c.get('title', '')} · {c.get('description', '')}")).get("concurrent"):
                 out.update(concurrent_google=dom, concurrent_rank=c["rank_group"]); break
-        ai = next((i for i in items if i.get("type") == "ai_overview"), None)
-        out["ai_overview_cite"] = sorted({(r.get("domain") or "").removeprefix("www.") for r in (ai or {}).get("references") or [] if r.get("domain")} - {"google.com"})
+        ai = next((i for i in items if i.get("type") == "ai_overview"), None) or {}
+        out["ai_overview_cite"] = sorted({(r.get("domain") or "").removeprefix("www.") for r in (ai.get("references") or []) if r.get("domain")} - {"google.com"})
         out["ai_overview_entreprise"] = any(d in x for x in out["ai_overview_cite"])
         if out.get("concurrent_google"):
             sc = post("/v3/dataforseo_labs/google/serp_competitors/live", [{"keywords": [u["motcle"]], "location_code": 2250, "language_code": "fr",
@@ -87,7 +88,9 @@ def run(item):
             etv = {x["domain"].removeprefix("www."): x.get("etv") or 0 for x in sc.get("items") or []}
             tot = sum(etv.values())
             out["part_trafic"] = round(100 * etv.get(out["concurrent_google"], 0) / tot) if tot else None
-            out["part"] = "et récupère quasiment tout le trafic" if (out["part_trafic"] or 0) > 60 else "et capte la plus grosse part des clics"
+            p = out["part_trafic"] or 0  # trois niveaux, la formule forte seulement quand c'est mesuré
+            out["part"] = ("et récupère quasiment tout le trafic" if p > 80 else "et récupère la majorité du trafic" if p > 50
+                           else "et capte la plus grosse part des clics")
         ans = llm("Réponds comme ChatGPT à un acheteur en France, avec des recommandations nommées.", u["prompt"], model="gpt-5-mini", web=True)
         out["chatgpt_cite_entreprise"] = company.lower().split()[0] in ans.lower() or d.split(".")[0] in ans.lower()
         out["chatgpt_marques"] = as_json(llm("Réponds UNIQUEMENT en JSON {\"marques\": [...]}.", "Entreprises recommandées, dans l'ordre : " + ans[:420])).get("marques", [])[:5]

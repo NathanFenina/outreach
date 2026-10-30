@@ -66,6 +66,6 @@ elif mode == "assign":
         code = c["name"].split(" · ")[0]
         lot = code.split("-")[1] if code.count("-") >= 2 else ""
         boxes = grp_a if lot == "G" else grp_b if lot in ("M", "O") else None
-        if boxes is None: continue
+        if not boxes: continue  # groupe pas encore connecté (ex. PremiumInboxes en attente)
         r = api("PATCH", f"/api/v2/campaigns/{c['id']}", {"email_list": boxes})
         print(code, lot, len(boxes), "boîtes", "OK" if "error" not in r else r)

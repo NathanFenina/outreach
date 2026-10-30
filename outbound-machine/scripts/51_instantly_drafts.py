@@ -9,8 +9,8 @@ Usage : python 51_instantly_drafts.py plan          (affiche le plan sans rien c
 import csv, glob, json, os, re, sys, urllib.request
 from collections import defaultdict
 import outreach_db as db
-from copy_v2 import (B2B, B2B_PALIERS, B2B_SUITE, LOCAL, LOCAL_PALIERS, LOCAL_SUITE, HOSP, HOSP_PALIERS, HOSP_SUITE,
-                     SIGN, OUT, OUT_SOBER, fill)
+from copy_v2 import (B2B, B2B_PALIERS, B2B_SUITE, B2B_SOBER_FU2, LOCAL, LOCAL_PALIERS, LOCAL_SUITE, LOCAL_P4D, LOCAL_SOBER_FU2, HOSP,
+                     HOSP_PALIERS, HOSP_SUITE, SIGN, OUT, OUT_SOBER, fill, cta_rdv)
 
 H = {"Authorization": "Bearer " + os.environ["INSTANTLY_API"], "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 decupler-outbound"}
 DELAYS = [3, 5, 3, 10, 3, 0]  # attente après chaque étape (jours)
@@ -18,7 +18,7 @@ SCHEDULE = {"schedules": [{"name": "Semaine (heure de Paris)", "timing": {"from"
                            "days": {"1": True, "2": True, "3": True, "4": True, "5": True}, "timezone": "Europe/Belgrade"}]}
 PS_LOCAL = "PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois."
 PS_PERF = "PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas."
-PS_HOSP = "PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble."
+PS_HOSP = "PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble."
 QUALIF = json.load(open("../data/campaigns/qualif.json"))  # 39_qualify.py : on n'enrichit / n'importe que fit=True
 BLOCK = {"deja_contacte", "repondu", "desinscrit", "client", "concurrent", "agressif"}
 
@@ -36,8 +36,10 @@ def html(t):
 
 
 def ps_b2b(code):
-    who, what = B2B[code]["preuve"].split(" : ") if " : " in B2B[code]["preuve"] else (None, B2B[code]["preuve"])
-    return f"PS : pour {who}, {what}." if who else f"PS : {what}."
+    d = B2B[code]
+    if d.get("ps"): return d["ps"]
+    who, what = d["preuve"].split(" : ")
+    return f"PS : pour {who}, {what}."
 
 
 def step1(body, ps, sober=False):
@@ -67,38 +69,35 @@ for lot in "GMO":  # G = Google, M = Microsoft / Outlook, O = autres fournisseur
 
 
 def sequence(c):
+    """Séquence V2.2 : mail 1 en 2 variantes (A livrable / B rendez-vous, test demandé par Nathan), puis FU1 → FU3."""
     fam, tier, icps = c["fam"], c["tier"], c["icps"]
     if fam == "B2B":
         icp = icps[0]; sober = len(icps) == 1 and B2B[icp].get("sober")
         if tier in ("P1", "P2", "P2b"):
-            subj, body = next((s, b) for e, s, b in B2B_PALIERS if e.startswith(tier[:2]))
-            body = body.replace("{pb}", "{{pb}}").replace("Avec le recrutement d'un·e {{poste}} en cours", "Avec les recrutements en cours")
-            body = body.replace("recrute un·e {{poste}}, {{firstName}}", "recrute en marketing, {{firstName}}")
-            if tier == "P2b":
-                body = body.replace("recrute en marketing, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.",
-                                    "recrute des commerciaux, {{firstName}} : j'imagine qu'il va falloir leur donner des demandes à traiter.")
-            subj = "votre recrutement" if subj == "{{poste}}" else subj  # le poste exact n'est pas dans la base : formulation vraie pour tous
-            first = (subj, step1(body, "var"))
+            subj, body = next((s, b) for e, s, b in B2B_PALIERS if e.startswith(tier + " "))
+            first = (subj, body.replace("{pb}", "{{pb}}"), "var", False)
         else:
             subj, body = B2B[icp]["p4"]
-            first = (subj, step1(body, ps_b2b(icp), sober))
+            first = (subj, body, ps_b2b(icp), sober)
         suite = [(o, b) for _, o, b in B2B_SUITE]
-        if sober:
-            suite[2] = ("", "{{firstName}}, une dernière question : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?\n\nUn « oui » ou un « non » me suffit.\n\nNathan")
+        if sober: suite[2] = B2B_SOBER_FU2[1:]
     elif fam == "LOCAL":
         d = dict(LOCAL[icps[0]], label="entreprises du BTP", unit="chantiers") if icps[0] == "2.1" else LOCAL[icps[0]]
-        if tier == "P4D":
-            first = ("vos marchés privés", step1("{{firstName}}, les marchés publics passent par les plateformes d'appel d'offres. Les maîtres d'ouvrage privés, eux, cherchent sur Google « travaux publics {{zone}} », et ce sont vos concurrents qu'ils trouvent.\n\nUn marché privé qui arrive en direct, c'est un dossier sans mise en concurrence à 10.\n\nSeriez-vous contre que je vous montre comment {{companyName}} peut les recevoir ?", PS_LOCAL))
+        if tier == "P4D": first = (LOCAL_P4D[1], LOCAL_P4D[2], PS_LOCAL, False)
         else:
             _, s, b = next(p for p in LOCAL_PALIERS if p[0].startswith("P4 · marché principal B"))
-            first = (fill(s, d), step1(fill(b, d), PS_LOCAL))
+            first = (fill(s, d), fill(b, d), PS_PERF, False)
         suite = [(fill(o, d), fill(b, d)) for _, o, b in LOCAL_SUITE]
     else:
         d = HOSP[icps[0]]; sober = d.get("sober")
-        first = (fill(d["p4"][0], d), step1(d["p4"][1], "" if sober else PS_HOSP, sober))
+        first = (fill(d["p4"][0], d), d["p4"][1], "" if sober else (d.get("ps") or PS_HOSP), sober)
         suite = [(fill(o, d), fill(b, d)) for _, o, b in HOSP_SUITE]
-    steps = [first] + suite
-    return [{"steps": [{"type": "email", "delay": DELAYS[i], "variants": [{"subject": s, "body": html(b)}]} for i, (s, b) in enumerate(steps)]}]
+        if sober: suite[2] = ("", LOCAL_SOBER_FU2[2])
+    subj, body, ps, sober = first
+    v1 = [{"subject": subj, "body": html(step1(body, ps, sober))}, {"subject": subj, "body": html(step1(cta_rdv(body), "" if "offert" in (ps or "") else ps, sober))}]  # PS « offert » sans objet en variante rendez-vous
+    steps = [{"type": "email", "delay": DELAYS[0], "variants": v1}]
+    steps += [{"type": "email", "delay": DELAYS[i + 1], "variants": [{"subject": o, "body": html(b)}]} for i, (o, b) in enumerate(suite)]
+    return [{"steps": steps}]
 
 
 def existing():

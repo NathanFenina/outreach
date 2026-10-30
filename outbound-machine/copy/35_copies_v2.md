@@ -1,6 +1,14 @@
-# Copies V2 à valider (29/10)
+# Copies V2.2 à valider (30/10, après audit)
 
 Générées par scripts/47_copies_v2.py depuis scripts/copy_v2.py. Validation dans le Sheet, onglet « 6b. Copies V2 à valider ».
+Chaque mail 1 existe en variante A (livrable, ci-dessous) et B (dernière phrase remplacée par « Ça vaut 15 minutes pour en parler cette semaine ? »).
+
+## Hypothèses par palier (HADI)
+- **P1** : Une levée + un recrutement = budget et urgence : ≥ 5 % de réponses, ≥ 30 % positives (petit volume).
+- **P2** : Un recrutement marketing / commercial = objectif de pipeline : ≥ 4 % de réponses sur ≥ 150 prospects.
+- **P3** : Un constat chiffré sur leur propre visibilité (concurrent n°1, citations IA) : ≥ 4 % de réponses sur ≥ 300 prospects.
+- **P4** : Marché principal, problème du métier + livrable offert : ≥ 3 % de réponses, ≥ 20 % positives sur ≥ 300 prospects.
+- **A/B** : Livrable (A) contre rendez-vous (B) au mail 1 : on garde la variante avec le plus de « oui » sur ≥ 250 prospects par variante.
 
 
 ## 1.1 éditeurs SaaS
@@ -8,118 +16,130 @@ Générées par scripts/47_copies_v2.py depuis scripts/copy_v2.py. Validation da
 ### V2-001 · P1 · a levé + recrute
 **Objet :** après la levée
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+Félicitations pour la levée, {{firstName}}. Recruter juste après, c'est le signe que le pipeline est la priorité des prochains mois.
 
 La moitié des acheteurs de logiciels commencent maintenant leur recherche dans un chatbot plutôt que sur Google (G2, 2026).
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Seriez-vous contre que je vous envoie, en vidéo de 3 minutes, les 10 questions où vos acheteurs ne vous trouvent pas ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-002 · P2 · recrute
-**Objet :** {{poste}}
+### V2-002 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 La moitié des acheteurs de logiciels commencent maintenant leur recherche dans un chatbot plutôt que sur Google (G2, 2026).
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-003 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-003 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+La moitié des acheteurs de logiciels commencent maintenant leur recherche dans un chatbot plutôt que sur Google (G2, 2026).
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-004 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-004 · P3b · concurrent devant sur Google (hack Igor)
+### V2-005 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-005 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-006 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-La moitié des acheteurs de logiciels commencent maintenant leur recherche dans un chatbot plutôt que sur Google (G2, 2026).
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-006 · P4 · marché principal
+### V2-007 · P4 · marché principal
 **Objet :** shortlist
 
 {{firstName}}, quand un acheteur demande à ChatGPT « {{prompt}} », c'est là que se joue la shortlist, avant même votre site.
 
-Un sur trois finit par acheter à un éditeur qu'il ne connaissait pas (G2, 2026). Autrement dit, la place est encore à prendre.
+Un sur trois finit par acheter à un éditeur qu'il ne connaissait pas (G2, 2026) : la place est encore à prendre.
 
-Seriez-vous contre que je vous montre sur quelles questions de votre catégorie {{companyName}} est absent ?
+Seriez-vous contre que je vous envoie les 10 questions de votre catégorie, et qui y est cité ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-007 · Champion (SEO / contenu / marketing)
+### V2-008 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-008 · FU1 · J+3 · même fil
+### V2-009 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-009 · VP2 · J+8 · nouvel objet
+### V2-010 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-010 · FU2 · J+11 · relance 1-2-3
+### V2-011 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -132,18 +152,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-011 · VP3 · J+21 · nouvel objet
+### V2-012 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-012 · FU3 · J+24 · rupture
+### V2-013 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -156,121 +177,133 @@ Nathan
 
 ## 1.2 startups IA
 
-### V2-013 · P1 · a levé + recrute
+### V2-014 · P1 · a levé + recrute
 **Objet :** après la levée
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+Félicitations pour la levée, {{firstName}}. Recruter juste après, c'est le signe que le pipeline est la priorité des prochains mois.
 
 On compte plus de 1 100 startups IA en France (France Digitale 2026) : se faire citer devient plus dur que lever.
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Seriez-vous contre que je vous envoie, en vidéo de 3 minutes, les 10 questions où vos acheteurs ne vous trouvent pas ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-014 · P2 · recrute
-**Objet :** {{poste}}
+### V2-015 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 On compte plus de 1 100 startups IA en France (France Digitale 2026) : se faire citer devient plus dur que lever.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-015 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-016 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+On compte plus de 1 100 startups IA en France (France Digitale 2026) : se faire citer devient plus dur que lever.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-017 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-016 · P3b · concurrent devant sur Google (hack Igor)
+### V2-018 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-017 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-019 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-On compte plus de 1 100 startups IA en France (France Digitale 2026) : se faire citer devient plus dur que lever.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-018 · P4 · marché principal
+### V2-020 · P4 · marché principal
 **Objet :** 1 100 startups IA
 
-{{firstName}}, il y a aujourd'hui plus de 1 100 startups IA en France (France Digitale). Quand un client demande à ChatGPT un outil pour « {{prompt}} », il en cite trois. Rarement les plus jeunes.
+{{firstName}}, il y a plus de 1 100 startups IA en France (France Digitale). Quand un client demande à ChatGPT un outil pour « {{prompt}} », il en cite trois.
 
-La différence ne se joue pas sur le produit mais sur ce que les IA savent de vous : cas d'usage, preuves, entités.
+La différence se joue sur ce que les IA savent de vous : cas d'usage, preuves, entités.
 
-Ça vaut 15 minutes pour voir où en est {{companyName}} ?
+Seriez-vous contre que je vous envoie où en est {{companyName}} sur ces questions ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-019 · Champion (SEO / contenu / marketing)
+### V2-021 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-020 · FU1 · J+3 · même fil
+### V2-022 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-021 · VP2 · J+8 · nouvel objet
+### V2-023 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-022 · FU2 · J+11 · relance 1-2-3
+### V2-024 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -283,18 +316,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-023 · VP3 · J+21 · nouvel objet
+### V2-025 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-024 · FU3 · J+24 · rupture
+### V2-026 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -307,121 +341,133 @@ Nathan
 
 ## 1.3 ESN et intégrateurs
 
-### V2-025 · P1 · a levé + recrute
+### V2-027 · P1 · a levé + recrute
 **Objet :** après la levée
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+Félicitations pour la levée, {{firstName}}. Recruter juste après, c'est le signe que le pipeline est la priorité des prochains mois.
 
-Les demandes viennent du réseau et des appels d'offres ; sur « intégrateur + éditeur + ville », ce sont les partenaires les mieux référencés qui reçoivent les contacts.
+Sur « intégrateur + éditeur + ville », ce sont les partenaires les mieux référencés qui reçoivent les demandes entrantes.
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Seriez-vous contre que je vous envoie, en vidéo de 3 minutes, les 10 questions où vos acheteurs ne vous trouvent pas ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-026 · P2 · recrute
-**Objet :** {{poste}}
+### V2-028 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
-Les demandes viennent du réseau et des appels d'offres ; sur « intégrateur + éditeur + ville », ce sont les partenaires les mieux référencés qui reçoivent les contacts.
+Sur « intégrateur + éditeur + ville », ce sont les partenaires les mieux référencés qui reçoivent les demandes entrantes.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-027 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-029 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Sur « intégrateur + éditeur + ville », ce sont les partenaires les mieux référencés qui reçoivent les demandes entrantes.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-030 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-028 · P3b · concurrent devant sur Google (hack Igor)
+### V2-031 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-029 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-032 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Les demandes viennent du réseau et des appels d'offres ; sur « intégrateur + éditeur + ville », ce sont les partenaires les mieux référencés qui reçoivent les contacts.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-030 · P4 · marché principal
+### V2-033 · P4 · marché principal
 **Objet :** {{motcle}}
 
 {{firstName}}, « {{motcle}} » est cherché environ {{volume}} fois par mois, et c'est {{concurrent}} qui récupère ces demandes.
 
 Pour une ESN, c'est souvent le seul contact entrant qui n'est ni un appel d'offres ni une recommandation.
 
-Seriez-vous contre que je vous montre ce qui le place devant {{companyName}} ?
+Seriez-vous contre que je vous envoie ce qui le place devant {{companyName}} ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-031 · Champion (SEO / contenu / marketing)
+### V2-034 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-032 · FU1 · J+3 · même fil
+### V2-035 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-033 · VP2 · J+8 · nouvel objet
+### V2-036 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-034 · FU2 · J+11 · relance 1-2-3
+### V2-037 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -434,18 +480,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-035 · VP3 · J+21 · nouvel objet
+### V2-038 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-036 · FU3 · J+24 · rupture
+### V2-039 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -458,121 +505,133 @@ Nathan
 
 ## 1.4 sociétés de cybersécurité
 
-### V2-037 · P1 · a levé + recrute
+### V2-040 · P1 · a levé + recrute
 **Objet :** après la levée
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+Félicitations pour la levée, {{firstName}}. Recruter juste après, c'est le signe que le pipeline est la priorité des prochains mois.
 
-Un RSSI vérifie toujours avant d'appeler : sur Google, et de plus en plus dans ChatGPT. Ce sont les plus gros acteurs qui y sont cités.
+Un RSSI vérifie toujours avant d'appeler : sur Google, et de plus en plus dans ChatGPT, où ce sont les gros acteurs qui sont cités.
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Seriez-vous contre que je vous envoie, en vidéo de 3 minutes, les 10 questions où vos acheteurs ne vous trouvent pas ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-038 · P2 · recrute
-**Objet :** {{poste}}
+### V2-041 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
-Un RSSI vérifie toujours avant d'appeler : sur Google, et de plus en plus dans ChatGPT. Ce sont les plus gros acteurs qui y sont cités.
+Un RSSI vérifie toujours avant d'appeler : sur Google, et de plus en plus dans ChatGPT, où ce sont les gros acteurs qui sont cités.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-039 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-042 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Un RSSI vérifie toujours avant d'appeler : sur Google, et de plus en plus dans ChatGPT, où ce sont les gros acteurs qui sont cités.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-043 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-040 · P3b · concurrent devant sur Google (hack Igor)
+### V2-044 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-041 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-045 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Un RSSI vérifie toujours avant d'appeler : sur Google, et de plus en plus dans ChatGPT. Ce sont les plus gros acteurs qui y sont cités.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-042 · P4 · marché principal
+### V2-046 · P4 · marché principal
 **Objet :** audit de sécurité
 
 {{firstName}}, avant de contacter un prestataire pour un audit ou un pentest, un RSSI se renseigne seul, sur Google et de plus en plus dans ChatGPT.
 
 Sur « {{prompt}} », la réponse cite {{concurrent}}. Pas {{companyName}}.
 
-Ça vaut 15 minutes pour voir les questions où vous pourriez être la référence citée ?
+Seriez-vous contre que je vous envoie les questions où vous pourriez être la référence citée ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-043 · Champion (SEO / contenu / marketing)
+### V2-047 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour Cloudtech, 320 000 clics Google en 12 semaines.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-044 · FU1 · J+3 · même fil
+### V2-048 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-045 · VP2 · J+8 · nouvel objet
+### V2-049 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-046 · FU2 · J+11 · relance 1-2-3
+### V2-050 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -585,18 +644,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-047 · VP3 · J+21 · nouvel objet
+### V2-051 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-048 · FU3 · J+24 · rupture
+### V2-052 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -609,121 +669,120 @@ Nathan
 
 ## 1.5 cabinets de conseil
 
-### V2-049 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-053 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
-Les IA citent McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur les questions de niche (test Consultor, juin 2026).
+Les IA citent d'abord McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur les questions de niche (test Consultor, 2026).
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-050 · P2 · recrute
-**Objet :** {{poste}}
+### V2-054 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
 
-Les IA citent McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur les questions de niche (test Consultor, juin 2026).
+Les IA citent d'abord McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur les questions de niche (test Consultor, 2026).
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-051 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-055 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-052 · P3b · concurrent devant sur Google (hack Igor)
+### V2-056 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-053 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-057 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Les IA citent McKinsey, BCG et Bain ; les petits cabinets ne remontent que sur les questions de niche (test Consultor, juin 2026).
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-054 · P4 · marché principal
-**Objet :** Big Four
+### V2-058 · P4 · marché principal
+**Objet :** grands cabinets
 
 {{firstName}}, quand un dirigeant demande à ChatGPT un cabinet pour « {{prompt}} », il cite d'abord les grands noms. Sur les questions de niche, en revanche, les petits cabinets passent devant (test Consultor, 2026).
 
-C'est là que se fait votre shortlist, souvent un an avant le premier appel.
+C'est là que se fait votre shortlist.
 
-Seriez-vous contre que je vous montre les 10 questions de votre spécialité, et qui y est cité ?
+Seriez-vous contre que je vous envoie les 10 questions de votre spécialité, et qui y est cité ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-055 · Champion (SEO / contenu / marketing)
+### V2-059 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-056 · FU1 · J+3 · même fil
+### V2-060 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-057 · VP2 · J+8 · nouvel objet
+### V2-061 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-058 · FU2 · J+11 · relance 1-2-3
+### V2-062 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -736,18 +795,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-059 · VP3 · J+21 · nouvel objet
+### V2-063 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-060 · FU3 · J+24 · rupture
+### V2-064 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -760,141 +820,141 @@ Nathan
 
 ## 1.6 cabinets d'expertise comptable
 
-### V2-061 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-065 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
-
-Depuis le 1er septembre 2026, la réception des factures électroniques est obligatoire : les dirigeants cherchent un cabinet qui les accompagne.
-
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
-
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
-PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
-
-### V2-062 · P2 · recrute
-**Objet :** {{poste}}
-
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 Depuis le 1er septembre 2026, la réception des factures électroniques est obligatoire : les dirigeants cherchent un cabinet qui les accompagne.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-063 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-066 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Depuis le 1er septembre 2026, la réception des factures électroniques est obligatoire : les dirigeants cherchent un cabinet qui les accompagne.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
+
+### V2-067 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-064 · P3b · concurrent devant sur Google (hack Igor)
+### V2-068 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-065 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-069 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Depuis le 1er septembre 2026, la réception des factures électroniques est obligatoire : les dirigeants cherchent un cabinet qui les accompagne.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-066 · P4 · marché principal
+### V2-070 · P4 · marché principal
 **Objet :** facture électronique
 
 {{firstName}}, depuis le 1er septembre, les dirigeants cherchent un cabinet qui les accompagne sur la facture électronique.
 
-Sur « expert-comptable {{ville}} », c'est {{concurrent}} ou un cabinet en ligne qui sort, pas {{companyName}}.
+Sur « expert-comptable {{ville}} », c'est {{concurrent}} qui sort, pas {{companyName}}.
 
-Seriez-vous contre que je vous montre ce qui leur donne cette place ?
+Seriez-vous contre que je vous envoie ce qui lui donne cette place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-067 · Champion (SEO / contenu / marketing)
+### V2-071 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-068 · FU1 · J+3 · même fil
+### V2-072 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-069 · VP2 · J+8 · nouvel objet
+### V2-073 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-070 · FU2 · J+11 · relance sobre
+### V2-074 · FU2 · J+11 · relance sobre
 **Objet :** (même fil)
 
-{{firstName}}, une dernière question : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?
+{{firstName}}, une question simple : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?
 
 Un « oui » ou un « non » me suffit.
 
 Nathan
 
-### V2-071 · VP3 · J+21 · nouvel objet
+### V2-075 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-072 · FU3 · J+24 · rupture
+### V2-076 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -907,121 +967,120 @@ Nathan
 
 ## 1.7 conseils en M&A et transmission
 
-### V2-073 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-077 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
-7 cédants sur 10 dont le projet est à plus d'un an se renseignent seuls (Bpifrance Le Lab) : ils tombent sur les simulateurs et les plateformes d'annonces.
+7 cédants sur 10 à plus d'un an de la vente se renseignent seuls (Bpifrance Le Lab), sur les simulateurs et les plateformes d'annonces.
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-074 · P2 · recrute
-**Objet :** {{poste}}
+### V2-078 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
 
-7 cédants sur 10 dont le projet est à plus d'un an se renseignent seuls (Bpifrance Le Lab) : ils tombent sur les simulateurs et les plateformes d'annonces.
+7 cédants sur 10 à plus d'un an de la vente se renseignent seuls (Bpifrance Le Lab), sur les simulateurs et les plateformes d'annonces.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-075 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-079 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-076 · P3b · concurrent devant sur Google (hack Igor)
+### V2-080 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-077 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-081 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-7 cédants sur 10 dont le projet est à plus d'un an se renseignent seuls (Bpifrance Le Lab) : ils tombent sur les simulateurs et les plateformes d'annonces.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-078 · P4 · marché principal
+### V2-082 · P4 · marché principal
 **Objet :** vos futurs cédants
 
 {{firstName}}, 7 dirigeants sur 10 qui pensent à céder dans plus d'un an se renseignent encore seuls (Bpifrance Le Lab).
 
-Ils posent leurs questions à Google et à ChatGPT, et tombent sur les simulateurs de valorisation et les plateformes d'annonces, rarement sur un conseil comme {{companyName}}.
+Ils posent leurs questions à Google et à ChatGPT, et tombent sur les simulateurs et les plateformes d'annonces, rarement sur un conseil comme {{companyName}}.
 
-Seriez-vous contre que je vous montre ces questions, et qui y répond aujourd'hui ?
+Seriez-vous contre que je vous envoie ces questions, et qui y répond aujourd'hui ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-079 · Champion (SEO / contenu / marketing)
+### V2-083 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-080 · FU1 · J+3 · même fil
+### V2-084 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-081 · VP2 · J+8 · nouvel objet
+### V2-085 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-082 · FU2 · J+11 · relance 1-2-3
+### V2-086 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -1034,18 +1093,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-083 · VP3 · J+21 · nouvel objet
+### V2-087 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-084 · FU3 · J+24 · rupture
+### V2-088 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1058,141 +1118,141 @@ Nathan
 
 ## 1.8 cabinets de gestion de patrimoine
 
-### V2-085 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-089 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
-44 % des épargnants décident seuls, et près d'un jeune sur cinq consulte une IA avant de placer (AMF 2025) ; le démarchage sans consentement est interdit depuis le 11 août 2026.
+44 % des épargnants décident seuls, et près d'un jeune sur cinq consulte une IA avant de placer (AMF 2025).
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-086 · P2 · recrute
-**Objet :** {{poste}}
+### V2-090 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
 
-44 % des épargnants décident seuls, et près d'un jeune sur cinq consulte une IA avant de placer (AMF 2025) ; le démarchage sans consentement est interdit depuis le 11 août 2026.
+44 % des épargnants décident seuls, et près d'un jeune sur cinq consulte une IA avant de placer (AMF 2025).
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-087 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-091 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-088 · P3b · concurrent devant sur Google (hack Igor)
+### V2-092 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-089 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-093 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-44 % des épargnants décident seuls, et près d'un jeune sur cinq consulte une IA avant de placer (AMF 2025) ; le démarchage sans consentement est interdit depuis le 11 août 2026.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-090 · P4 · marché principal
+### V2-094 · P4 · marché principal
 **Objet :** vos futurs clients
 
 {{firstName}}, depuis le 11 août, plus d'appel sans consentement préalable. Et 44 % des épargnants décident déjà seuls (AMF).
 
 Quand on demande à ChatGPT « {{prompt}} », il cite {{concurrent}}, pas {{companyName}}.
 
-Seriez-vous contre que je vous montre pourquoi ?
+Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-091 · Champion (SEO / contenu / marketing)
+### V2-095 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-092 · FU1 · J+3 · même fil
+### V2-096 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-093 · VP2 · J+8 · nouvel objet
+### V2-097 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-094 · FU2 · J+11 · relance sobre
+### V2-098 · FU2 · J+11 · relance sobre
 **Objet :** (même fil)
 
-{{firstName}}, une dernière question : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?
+{{firstName}}, une question simple : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?
 
 Un « oui » ou un « non » me suffit.
 
 Nathan
 
-### V2-095 · VP3 · J+21 · nouvel objet
+### V2-099 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-096 · FU3 · J+24 · rupture
+### V2-100 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1205,121 +1265,120 @@ Nathan
 
 ## 1.9 agences
 
-### V2-097 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-101 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
-Leurs clients demandent « et ChatGPT ? » ; peu d'agences ont une réponse technique.
+Vos clients vous demandent « et ChatGPT ? », et peu d'agences ont une réponse technique à leur donner.
 
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-098 · P2 · recrute
-**Objet :** {{poste}}
+### V2-102 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
 
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
 
-Leurs clients demandent « et ChatGPT ? » ; peu d'agences ont une réponse technique.
+Vos clients vous demandent « et ChatGPT ? », et peu d'agences ont une réponse technique à leur donner.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-099 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-103 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-100 · P3b · concurrent devant sur Google (hack Igor)
+### V2-104 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-101 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-105 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Leurs clients demandent « et ChatGPT ? » ; peu d'agences ont une réponse technique.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-102 · P4 · marché principal
+### V2-106 · P4 · marché principal
 **Objet :** vos clients et ChatGPT
 
 {{firstName}}, question directe : quand un client vous demande s'il ressort dans ChatGPT, vous refusez, vous sous-traitez ou vous gérez en interne ?
 
 On produit le GEO en marque blanche pour quelques agences : vous gardez le client et la marge, on exécute.
 
-Seriez-vous contre que je fasse l'audit GEO d'un de vos clients, sous votre marque, pour que vous jugiez sur pièce ?
+Seriez-vous contre que je fasse l'audit GEO d'un de vos clients, sous votre marque ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-103 · Champion (SEO / contenu / marketing)
+### V2-107 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : nos clients en marque blanche gardent la relation et la marge.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : l'audit sous votre marque est offert, vous jugez sur pièce.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-104 · FU1 · J+3 · même fil
+### V2-108 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-105 · VP2 · J+8 · nouvel objet
+### V2-109 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-106 · FU2 · J+11 · relance 1-2-3
+### V2-110 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -1332,18 +1391,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-107 · VP3 · J+21 · nouvel objet
+### V2-111 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-108 · FU3 · J+24 · rupture
+### V2-112 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1356,121 +1416,120 @@ Nathan
 
 ## 1.10 agences événementielles et de conférenciers
 
-### V2-109 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-113 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
-
-Les entreprises cherchent un lieu ou un conférencier sur Google et ChatGPT, et ce sont les plateformes qui captent la demande.
-
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
-
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-110 · P2 · recrute
-**Objet :** {{poste}}
-
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 Les entreprises cherchent un lieu ou un conférencier sur Google et ChatGPT, et ce sont les plateformes qui captent la demande.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-111 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-114 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Les entreprises cherchent un lieu ou un conférencier sur Google et ChatGPT, et ce sont les plateformes qui captent la demande.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-115 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-112 · P3b · concurrent devant sur Google (hack Igor)
+### V2-116 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-113 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-117 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Les entreprises cherchent un lieu ou un conférencier sur Google et ChatGPT, et ce sont les plateformes qui captent la demande.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-114 · P4 · marché principal
+### V2-118 · P4 · marché principal
 **Objet :** séminaire {{ville}}
 
 {{firstName}}, quand une entreprise cherche « {{motcle}} », ce sont les plateformes et {{concurrent}} qui récupèrent la demande.
 
-Un devis événementiel qui arrive en direct, c'est une commission en moins et un client à vous.
+Un devis qui arrive en direct, c'est une commission en moins et un client à vous.
 
-Ça vaut 15 minutes pour voir ce qui vous manque pour être choisi en direct ?
+Seriez-vous contre que je vous envoie ce qui vous manque pour être choisi en direct ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-115 · Champion (SEO / contenu / marketing)
+### V2-119 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour l'Académie Madelrieux, +46 % de clics Google en 3 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-116 · FU1 · J+3 · même fil
+### V2-120 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-117 · VP2 · J+8 · nouvel objet
+### V2-121 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-118 · FU2 · J+11 · relance 1-2-3
+### V2-122 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -1483,18 +1542,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-119 · VP3 · J+21 · nouvel objet
+### V2-123 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-120 · FU3 · J+24 · rupture
+### V2-124 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1507,121 +1567,120 @@ Nathan
 
 ## 1.11 cabinets de recrutement
 
-### V2-121 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-125 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
-
-Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabinet par métier tombent sur les jobboards et les gros réseaux.
-
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
-
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-122 · P2 · recrute
-**Objet :** {{poste}}
-
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabinet par métier tombent sur les jobboards et les gros réseaux.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-123 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-126 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabinet par métier tombent sur les jobboards et les gros réseaux.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-127 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-124 · P3b · concurrent devant sur Google (hack Igor)
+### V2-128 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-125 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-129 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Les mandats viennent du réseau et de LinkedIn ; les DRH qui cherchent un cabinet par métier tombent sur les jobboards et les gros réseaux.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-126 · P4 · marché principal
+### V2-130 · P4 · marché principal
 **Objet :** cabinet {{motcle}}
 
 {{firstName}}, quand une DRH cherche « {{motcle}} », elle tombe sur les jobboards et sur {{concurrent}}, rarement sur un cabinet spécialisé comme {{companyName}}.
 
-C'est pourtant exactement la demande que vous voulez : un mandat qui arrive sans prospection.
+C'est pourtant le mandat que vous voulez : celui qui arrive sans prospection.
 
-Seriez-vous contre que je vous montre comment la capter ?
+Seriez-vous contre que je vous envoie comment le capter ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-127 · Champion (SEO / contenu / marketing)
+### V2-131 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-128 · FU1 · J+3 · même fil
+### V2-132 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-129 · VP2 · J+8 · nouvel objet
+### V2-133 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-130 · FU2 · J+11 · relance 1-2-3
+### V2-134 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -1634,18 +1693,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-131 · VP3 · J+21 · nouvel objet
+### V2-135 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-132 · FU3 · J+24 · rupture
+### V2-136 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1658,121 +1718,120 @@ Nathan
 
 ## 1.12 organismes de formation
 
-### V2-133 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-137 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
-
-Les inscriptions dépendent des financeurs et des plateformes ; sur « formation + métier », les gros organismes prennent la place.
-
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
-
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-134 · P2 · recrute
-**Objet :** {{poste}}
-
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 Les inscriptions dépendent des financeurs et des plateformes ; sur « formation + métier », les gros organismes prennent la place.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-135 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-138 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Les inscriptions dépendent des financeurs et des plateformes ; sur « formation + métier », les gros organismes prennent la place.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-139 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-136 · P3b · concurrent devant sur Google (hack Igor)
+### V2-140 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-137 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-141 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Les inscriptions dépendent des financeurs et des plateformes ; sur « formation + métier », les gros organismes prennent la place.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-138 · P4 · marché principal
+### V2-142 · P4 · marché principal
 **Objet :** vos inscriptions
 
 {{firstName}}, sur « {{motcle}} », ce sont les gros organismes et les plateformes qui récupèrent les inscriptions.
 
 Pour l'Académie Madelrieux, un organisme comme vous, on a obtenu +46 % de clics Google en 3 mois, sans publicité.
 
-Seriez-vous contre que je vous montre ce qu'on ferait pour {{companyName}} ?
+Seriez-vous contre que je vous envoie ce qu'on ferait pour {{companyName}} ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-139 · Champion (SEO / contenu / marketing)
+### V2-143 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour Académie Madelrieux, +46 % de clics Google en 3 mois.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-140 · FU1 · J+3 · même fil
+### V2-144 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-141 · VP2 · J+8 · nouvel objet
+### V2-145 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-142 · FU2 · J+11 · relance 1-2-3
+### V2-146 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
@@ -1785,18 +1844,19 @@ Répondez juste le numéro, que je sache quoi faire.
 
 Nathan
 
-### V2-143 · VP3 · J+21 · nouvel objet
+### V2-147 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-144 · FU3 · J+24 · rupture
+### V2-148 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1809,141 +1869,141 @@ Nathan
 
 ## 1.13 cabinets d'avocats d'affaires
 
-### V2-145 · P1 · a levé + recrute
-**Objet :** après la levée
+### V2-149 · P2 · recrute en marketing
+**Objet :** votre recrutement
 
-Félicitations pour la levée, {{firstName}}. Avec le recrutement d'un·e {{poste}} en cours, j'imagine que les demandes entrantes doivent suivre.
-
-Les dossiers viennent de la recommandation ; les annuaires et les legaltech captent les recherches.
-
-Seriez-vous contre que je vous montre où {{companyName}} perd des demandes aujourd'hui ?
-
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
-PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
-
-### V2-146 · P2 · recrute
-**Objet :** {{poste}}
-
-J'ai vu que {{companyName}} recrute un·e {{poste}}, {{firstName}} : j'imagine que plus de demandes entrantes fait partie des objectifs.
+J'ai vu que {{companyName}} recrute en marketing, {{firstName}}. J'imagine que le pipeline entrant fait partie de ses objectifs.
 
 Les dossiers viennent de la recommandation ; les annuaires et les legaltech captent les recherches.
 
-Un recrutement ne règle pas ça seul. Seriez-vous contre que je vous montre sur quelles questions vos concurrents sont cités à votre place ?
+Pour une fraction du coût d'un recrutement, seriez-vous contre que je vous envoie les questions où vos concurrents sont cités à votre place ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-147 · P3a · baisse de trafic (si baisse > 10 %)
+### V2-150 · P2b · recrute des commerciaux
+**Objet :** votre recrutement
+
+J'ai vu que {{companyName}} recrute des commerciaux, {{firstName}}. Il va falloir leur donner des demandes à traiter.
+
+Les dossiers viennent de la recommandation ; les annuaires et les legaltech captent les recherches.
+
+Seriez-vous contre que je vous envoie les questions où vos futurs clients trouvent vos concurrents plutôt que vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
+PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
+
+### V2-151 · P3a · baisse de trafic (si baisse > 10 %)
 **Objet :** trafic {{companyName}}
 
-{{firstName}}, d'après nos estimations, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an. Ce n'est pas forcément de votre fait : depuis juillet, les réponses IA de Google prennent une partie des clics.
+{{firstName}}, d'après les outils SEO, le trafic Google de {{companyName}} a baissé d'environ {{baisse}} % en un an (estimation).
 
-La vraie question, c'est où vos clients posent leurs questions maintenant, et qui y est cité.
+Ce n'est pas forcément de votre fait : depuis l'arrivée des réponses IA de Google en France, une partie des clics ne descend plus jusqu'aux sites.
 
 Seriez-vous contre que je vous envoie le plan pour reprendre ces demandes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-148 · P3b · concurrent devant sur Google (hack Igor)
+### V2-152 · P3b · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
-{{firstName}}, sur « {{motcle}} », {{concurrent}} sort avant {{companyName}}.
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-149 · P3c · concurrent cité par ChatGPT
-**Objet :** {{concurrent}} sur ChatGPT
+### V2-153 · P3c · concurrent cité par les IA (chiffré)
+**Objet :** {{concurrent}} cité, pas vous
 
-{{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}. {{companyName}} n'apparaît pas.
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
 
-Les dossiers viennent de la recommandation ; les annuaires et les legaltech captent les recherches.
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et les 9 autres questions où ça se joue ?
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-150 · P4 · marché principal
+### V2-154 · P4 · marché principal
 **Objet :** avocat {{motcle}}
 
 {{firstName}}, quand un dirigeant cherche « avocat {{motcle}} {{ville}} », ce sont les annuaires et {{concurrent}} qui sortent.
 
 Dans le respect de vos règles déontologiques, votre expertise peut y apparaître : contenu de fond, pages par domaine, présence dans les réponses IA.
 
-Seriez-vous contre que je vous montre où {{companyName}} en est ?
+Seriez-vous contre que je vous envoie où {{companyName}} en est ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-151 · Champion (SEO / contenu / marketing)
+### V2-155 · Champion (SEO / contenu / marketing)
 **Objet :** « {{motcle}} »
 
-Vous gérez le contenu chez {{companyName}}, c'est bien ça, {{firstName}} ?
+{{firstName}}, « {{motcle}} » est cherché {{volume}} fois par mois, et {{concurrent}} y passe devant {{companyName}}, sur Google comme dans ChatGPT.
 
-« {{motcle}} » est cherché {{volume}} fois par mois et {{concurrent}} y est devant vous, sur Google comme dans ChatGPT.
+Il vous manque moins que vous ne pensez : surtout les entités et les données structurées que les IA lisent pour citer une source.
 
-J'ai préparé la première partie des données structurées et des entités qui manquent sur votre page : c'est ce que les IA lisent pour vous citer. Je vous l'envoie ?
+Seriez-vous contre que je vous en envoie la liste ?
 
-Nathan Fenina, Décupler
-PS : pour [client à confirmer], +17 % de pipeline organique.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour Cloudtech, +17 % de leads issus du SEO et des IA en 6 mois.
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-152 · FU1 · J+3 · même fil
+### V2-156 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
-{{firstName}}, des nouvelles de mon dernier message ?
+{{firstName}}, je remonte mon message au cas où il serait passé sous la pile.
 
-La question où {{concurrent}} passe devant vous est la moins grave des 10 que j'ai testées.
-
-Ça vaut 15 minutes ?
+Toujours partant pour que je vous l'envoie ? Un « oui » suffit.
 
 Nathan
 
-### V2-153 · VP2 · J+8 · nouvel objet
+### V2-157 · VP2 · J+8 · nouvel objet
 **Objet :** 1 levier sur 7
 
 {{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.
 
 En haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.
 
-J'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?
+J'ai les 6 autres pour {{companyName}}, classés par impact. Seriez-vous contre que je vous les envoie ?
 
 Nathan
 PS : ce levier est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-154 · FU2 · J+11 · relance sobre
+### V2-158 · FU2 · J+11 · relance sobre
 **Objet :** (même fil)
 
-{{firstName}}, une dernière question : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?
+{{firstName}}, une question simple : la visibilité de {{companyName}} sur Google et dans ChatGPT est-elle un sujet pour vous cette année ?
 
 Un « oui » ou un « non » me suffit.
 
 Nathan
 
-### V2-155 · VP3 · J+21 · nouvel objet
+### V2-159 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée de ma part.
 
-Donnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.
+Donnez-moi la page de {{companyName}} qui compte le plus : je la travaille pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Je vous l'envoie sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-156 · FU3 · J+24 · rupture
+### V2-160 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, je ne veux pas encombrer votre boîte, c'est mon dernier message.
@@ -1956,106 +2016,108 @@ Nathan
 
 ## 2.1 entreprises du BTP et de la rénovation
 
-### V2-157 · P1 · concurrent devant sur Google Maps
+### V2-161 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « rénovation {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-158 · P3 · absent de ChatGPT
+### V2-162 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur rénovation à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleure entreprise de rénovation à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-159 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-163 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-160 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-164 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 chantiers de plus ?
 
 Question directe, {{firstName}} : si 20 chantiers de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques entreprises du BTP et de la rénovation {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-161 · FU1 · J+3 · même fil
+### V2-165 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« rénovation {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« rénovation {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-162 · VP2 · J+8 · nouvel objet
+### V2-166 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « rénovation {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « rénovation {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-163 · FU2 · J+11 · relance 1-2-3
+### V2-167 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-164 · VP3 · J+21 · nouvel objet
+### V2-168 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-165 · FU3 · J+24 · rupture
+### V2-169 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2068,132 +2130,134 @@ Nathan
 
 ## 2.2 installateurs de pompes à chaleur et de clim
 
-### V2-166 · P1 · concurrent devant sur Google Maps
+### V2-170 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « pompe à chaleur {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-167 · P2 · saison (métiers saisonniers)
+### V2-171 · P2 · saison (métiers saisonniers)
 **Objet :** avant la saison
 
-{{firstName}}, Les PAC air-air font -14 % au premier semestre et +31 % au second avec les canicules (Uniclima) : l'hiver se prépare maintenant.
+{{firstName}}, les PAC air-air font +31 % au second semestre avec les canicules (Uniclima). C'est cet hiver que se prépare la visibilité de l'été prochain.
 
 Je cherche quelques installateurs de pompes à chaleur et de clim {{zone}} prêts à prendre 20 installations de plus par mois, en partenariat à la performance : vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-168 · P3 · absent de ChatGPT
+### V2-172 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur pompe à chaleur à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleur installateur de pompe à chaleur à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-169 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-173 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-170 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-174 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 installations de plus ?
 
 Question directe, {{firstName}} : si 20 installations de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques installateurs de pompes à chaleur et de clim {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-171 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique uniquement)
+### V2-175 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique)
 **Objet :** prospecter, c'est fini
 
 {{firstName}}, depuis la loi du 30 juin 2025, impossible de démarcher un particulier pour de la rénovation énergétique, même par SMS ou par mail.
 
-Il ne reste que les clients qui vous cherchent : Google, Maps, et de plus en plus ChatGPT.
+Il ne reste que les clients qui vous cherchent, sur Google et dans ChatGPT.
 
-Je cherche quelques installateurs de pompes à chaleur et de clim {{zone}} prêts à prendre 20 installations de plus par mois, en partenariat à la performance. Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment en recevoir 20 de plus par mois, payé à la performance ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-172 · FU1 · J+3 · même fil
+### V2-176 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« pompe à chaleur {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« pompe à chaleur {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-173 · VP2 · J+8 · nouvel objet
+### V2-177 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « pompe à chaleur {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « pompe à chaleur {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-174 · FU2 · J+11 · relance 1-2-3
+### V2-178 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-175 · VP3 · J+21 · nouvel objet
+### V2-179 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-176 · FU3 · J+24 · rupture
+### V2-180 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2206,119 +2270,121 @@ Nathan
 
 ## 2.3 installateurs photovoltaïques
 
-### V2-177 · P1 · concurrent devant sur Google Maps
+### V2-181 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « panneaux solaires {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-178 · P3 · absent de ChatGPT
+### V2-182 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur panneaux solaires à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleur installateur de panneaux solaires à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-179 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-183 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-180 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-184 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 installations de plus ?
 
 Question directe, {{firstName}} : si 20 installations de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques installateurs photovoltaïques {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-181 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique uniquement)
+### V2-185 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique)
 **Objet :** prospecter, c'est fini
 
 {{firstName}}, depuis la loi du 30 juin 2025, impossible de démarcher un particulier pour de la rénovation énergétique, même par SMS ou par mail.
 
-Il ne reste que les clients qui vous cherchent : Google, Maps, et de plus en plus ChatGPT.
+Il ne reste que les clients qui vous cherchent, sur Google et dans ChatGPT.
 
-Je cherche quelques installateurs photovoltaïques {{zone}} prêts à prendre 20 installations de plus par mois, en partenariat à la performance. Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment en recevoir 20 de plus par mois, payé à la performance ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-182 · FU1 · J+3 · même fil
+### V2-186 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« panneaux solaires {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« panneaux solaires {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-183 · VP2 · J+8 · nouvel objet
+### V2-187 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « panneaux solaires {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « panneaux solaires {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-184 · FU2 · J+11 · relance 1-2-3
+### V2-188 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-185 · VP3 · J+21 · nouvel objet
+### V2-189 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-186 · FU3 · J+24 · rupture
+### V2-190 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2331,106 +2397,108 @@ Nathan
 
 ## 2.4 entreprises de rideaux métalliques
 
-### V2-187 · P1 · concurrent devant sur Google Maps
+### V2-191 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « dépannage rideau métallique {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-188 · P3 · absent de ChatGPT
+### V2-192 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur dépannage rideau métallique à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleure entreprise de rideaux métalliques à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-189 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-193 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-190 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-194 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 interventions de plus ?
 
 Question directe, {{firstName}} : si 20 interventions de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques entreprises de rideaux métalliques {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-191 · FU1 · J+3 · même fil
+### V2-195 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« dépannage rideau métallique {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« dépannage rideau métallique {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-192 · VP2 · J+8 · nouvel objet
+### V2-196 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « dépannage rideau métallique {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « dépannage rideau métallique {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-193 · FU2 · J+11 · relance 1-2-3
+### V2-197 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-194 · VP3 · J+21 · nouvel objet
+### V2-198 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-195 · FU3 · J+24 · rupture
+### V2-199 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2443,106 +2511,108 @@ Nathan
 
 ## 2.5 installateurs de monte-escaliers
 
-### V2-196 · P1 · concurrent devant sur Google Maps
+### V2-200 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « monte-escalier {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-197 · P3 · absent de ChatGPT
+### V2-201 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur monte-escalier à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleur installateur de monte-escalier à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-198 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-202 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-199 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-203 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 installations de plus ?
 
 Question directe, {{firstName}} : si 20 installations de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques installateurs de monte-escaliers {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-200 · FU1 · J+3 · même fil
+### V2-204 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« monte-escalier {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« monte-escalier {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-201 · VP2 · J+8 · nouvel objet
+### V2-205 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « monte-escalier {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « monte-escalier {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-202 · FU2 · J+11 · relance 1-2-3
+### V2-206 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-203 · VP3 · J+21 · nouvel objet
+### V2-207 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-204 · FU3 · J+24 · rupture
+### V2-208 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2555,98 +2625,88 @@ Nathan
 
 ## 2.6 entreprises de pompes funèbres
 
-### V2-205 · P1 · concurrent devant sur Google Maps
+### V2-209 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « pompes funèbres {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-206 · P3 · absent de ChatGPT
+### V2-210 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur pompes funèbres à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « quelles pompes funèbres choisir à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-207 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
-**Objet :** vos devis
+### V2-211 · P4 · marché principal · version sobre (2.6)
+**Objet :** familles à {{ville}}
 
-{{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
+{{firstName}}, quand une famille doit organiser des obsèques à {{ville}}, elle cherche dans l'urgence, souvent sur son téléphone.
 
-Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
+Sur « pompes funèbres {{ville}} », c'est {{concurrent}} qui apparaît en premier.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie ce qui le place devant {{companyName}} ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-208 · P4 · marché principal B · capacité + performance (validée par Nathan)
-**Objet :** 20 familles accompagnées de plus ?
-
-Question directe, {{firstName}} : si 20 familles accompagnées de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
-
-Je cherche quelques entreprises de pompes funèbres {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
-
-Seriez-vous contre que je vous explique comment ça marche ?
-
-Nathan Fenina, Décupler
-PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
-
-### V2-209 · FU1 · J+3 · même fil
+### V2-212 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« pompes funèbres {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« pompes funèbres {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-210 · VP2 · J+8 · nouvel objet
+### V2-213 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « pompes funèbres {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « pompes funèbres {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-211 · FU2 · J+11 · relance sobre (2.6 pompes funèbres)
+### V2-214 · FU2 · J+11 · relance sobre (2.6 pompes funèbres)
 **Objet :** (même fil)
 
-{{firstName}}, je me permets une dernière question : est-ce que la visibilité de {{companyName}} sur Google auprès des familles de {{ville}} est un sujet pour vous cette année ?
+{{firstName}}, une question simple : est-ce que la visibilité de {{companyName}} sur Google auprès des familles de {{ville}} est un sujet pour vous cette année ?
 
 Un « oui » ou un « non » me suffit.
 
 Nathan
 
-### V2-212 · VP3 · J+21 · nouvel objet
+### V2-215 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-213 · FU3 · J+24 · rupture
+### V2-216 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2659,106 +2719,108 @@ Nathan
 
 ## 2.7 entreprises de sécurité incendie
 
-### V2-214 · P1 · concurrent devant sur Google Maps
+### V2-217 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « maintenance extincteurs {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-215 · P3 · absent de ChatGPT
+### V2-218 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur maintenance extincteurs à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleure entreprise de sécurité incendie à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-216 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-219 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-217 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-220 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 contrats de plus ?
 
 Question directe, {{firstName}} : si 20 contrats de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques entreprises de sécurité incendie {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-218 · FU1 · J+3 · même fil
+### V2-221 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« maintenance extincteurs {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« maintenance extincteurs {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-219 · VP2 · J+8 · nouvel objet
+### V2-222 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « maintenance extincteurs {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « maintenance extincteurs {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-220 · FU2 · J+11 · relance 1-2-3
+### V2-223 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-221 · VP3 · J+21 · nouvel objet
+### V2-224 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-222 · FU3 · J+24 · rupture
+### V2-225 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2771,119 +2833,121 @@ Nathan
 
 ## 2.8 menuisiers et poseurs de fenêtres
 
-### V2-223 · P1 · concurrent devant sur Google Maps
+### V2-226 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « fenêtres {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-224 · P3 · absent de ChatGPT
+### V2-227 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur fenêtres à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleur menuisier pour changer ses fenêtres à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-225 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-228 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-226 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-229 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 chantiers de plus ?
 
 Question directe, {{firstName}} : si 20 chantiers de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques menuisiers et poseurs de fenêtres {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-227 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique uniquement)
+### V2-230 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique)
 **Objet :** prospecter, c'est fini
 
 {{firstName}}, depuis la loi du 30 juin 2025, impossible de démarcher un particulier pour de la rénovation énergétique, même par SMS ou par mail.
 
-Il ne reste que les clients qui vous cherchent : Google, Maps, et de plus en plus ChatGPT.
+Il ne reste que les clients qui vous cherchent, sur Google et dans ChatGPT.
 
-Je cherche quelques menuisiers et poseurs de fenêtres {{zone}} prêts à prendre 20 chantiers de plus par mois, en partenariat à la performance. Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment en recevoir 20 de plus par mois, payé à la performance ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-228 · FU1 · J+3 · même fil
+### V2-231 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« fenêtres {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« fenêtres {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-229 · VP2 · J+8 · nouvel objet
+### V2-232 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « fenêtres {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « fenêtres {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-230 · FU2 · J+11 · relance 1-2-3
+### V2-233 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-231 · VP3 · J+21 · nouvel objet
+### V2-234 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-232 · FU3 · J+24 · rupture
+### V2-235 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -2896,132 +2960,134 @@ Nathan
 
 ## 2.9 couvreurs et entreprises d'isolation
 
-### V2-233 · P1 · concurrent devant sur Google Maps
+### V2-236 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « couvreur {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-234 · P2 · saison (métiers saisonniers)
+### V2-237 · P2 · saison (métiers saisonniers)
 **Objet :** avant la saison
 
-{{firstName}}, Après chaque tempête, le premier couvreur visible sur Google Maps prend les appels, et les faux couvreurs font fuir la confiance.
+{{firstName}}, après chaque tempête, le premier couvreur visible sur Google Maps prend les appels, et avec les arnaques, les clients vérifient les avis avant d'appeler.
 
 Je cherche quelques couvreurs et entreprises d'isolation {{zone}} prêts à prendre 20 chantiers de plus par mois, en partenariat à la performance : vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-235 · P3 · absent de ChatGPT
+### V2-238 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
 {{firstName}}, j'ai demandé à ChatGPT « meilleur couvreur à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-236 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-239 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-237 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-240 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 chantiers de plus ?
 
 Question directe, {{firstName}} : si 20 chantiers de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques couvreurs et entreprises d'isolation {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-238 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique uniquement)
+### V2-241 · P4 · marché principal C · interdiction de prospecter (rénovation énergétique)
 **Objet :** prospecter, c'est fini
 
 {{firstName}}, depuis la loi du 30 juin 2025, impossible de démarcher un particulier pour de la rénovation énergétique, même par SMS ou par mail.
 
-Il ne reste que les clients qui vous cherchent : Google, Maps, et de plus en plus ChatGPT.
+Il ne reste que les clients qui vous cherchent, sur Google et dans ChatGPT.
 
-Je cherche quelques couvreurs et entreprises d'isolation {{zone}} prêts à prendre 20 chantiers de plus par mois, en partenariat à la performance. Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment en recevoir 20 de plus par mois, payé à la performance ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-239 · FU1 · J+3 · même fil
+### V2-242 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« couvreur {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« couvreur {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-240 · VP2 · J+8 · nouvel objet
+### V2-243 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « couvreur {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « couvreur {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-241 · FU2 · J+11 · relance 1-2-3
+### V2-244 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-242 · VP3 · J+21 · nouvel objet
+### V2-245 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-243 · FU3 · J+24 · rupture
+### V2-246 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3034,119 +3100,121 @@ Nathan
 
 ## 2.10 piscinistes
 
-### V2-244 · P1 · concurrent devant sur Google Maps
+### V2-247 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « pisciniste {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-245 · P2 · saison (métiers saisonniers)
+### V2-248 · P2 · saison (métiers saisonniers)
 **Objet :** avant la saison
 
-{{firstName}}, Les projets de piscine se décident entre janvier et avril : c'est maintenant qu'il faut être visible.
+{{firstName}}, les projets de piscine se décident entre janvier et avril : c'est maintenant qu'il faut être visible.
 
 Je cherche quelques piscinistes {{zone}} prêts à prendre 20 chantiers de plus par mois, en partenariat à la performance : vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-246 · P3 · absent de ChatGPT
+### V2-249 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
 {{firstName}}, j'ai demandé à ChatGPT « meilleur pisciniste à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-247 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-250 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-248 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-251 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 chantiers de plus ?
 
 Question directe, {{firstName}} : si 20 chantiers de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques piscinistes {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-249 · FU1 · J+3 · même fil
+### V2-252 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« pisciniste {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« pisciniste {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-250 · VP2 · J+8 · nouvel objet
+### V2-253 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « pisciniste {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « pisciniste {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-251 · FU2 · J+11 · relance 1-2-3
+### V2-254 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-252 · VP3 · J+21 · nouvel objet
+### V2-255 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-253 · FU3 · J+24 · rupture
+### V2-256 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3159,106 +3227,108 @@ Nathan
 
 ## 2.11 installateurs d'alarmes et de vidéosurveillance
 
-### V2-254 · P1 · concurrent devant sur Google Maps
+### V2-257 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « alarme maison {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-255 · P3 · absent de ChatGPT
+### V2-258 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, j'ai demandé à ChatGPT « meilleur alarme maison à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
+{{firstName}}, j'ai demandé à ChatGPT « meilleur installateur d'alarme à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-256 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-259 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-257 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-260 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 contrats de plus ?
 
 Question directe, {{firstName}} : si 20 contrats de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques installateurs d'alarmes et de vidéosurveillance {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-258 · FU1 · J+3 · même fil
+### V2-261 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« alarme maison {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« alarme maison {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-259 · VP2 · J+8 · nouvel objet
+### V2-262 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « alarme maison {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « alarme maison {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-260 · FU2 · J+11 · relance 1-2-3
+### V2-263 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-261 · VP3 · J+21 · nouvel objet
+### V2-264 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-262 · FU3 · J+24 · rupture
+### V2-265 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3271,106 +3341,108 @@ Nathan
 
 ## 2.12 cuisinistes
 
-### V2-263 · P1 · concurrent devant sur Google Maps
+### V2-266 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « cuisiniste {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-264 · P3 · absent de ChatGPT
+### V2-267 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
 {{firstName}}, j'ai demandé à ChatGPT « meilleur cuisiniste à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-265 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-268 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-266 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-269 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 projets de plus ?
 
 Question directe, {{firstName}} : si 20 projets de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques cuisinistes {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-267 · FU1 · J+3 · même fil
+### V2-270 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« cuisiniste {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« cuisiniste {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-268 · VP2 · J+8 · nouvel objet
+### V2-271 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « cuisiniste {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « cuisiniste {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-269 · FU2 · J+11 · relance 1-2-3
+### V2-272 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-270 · VP3 · J+21 · nouvel objet
+### V2-273 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-271 · FU3 · J+24 · rupture
+### V2-274 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3383,119 +3455,121 @@ Nathan
 
 ## 2.13 entreprises de déménagement
 
-### V2-272 · P1 · concurrent devant sur Google Maps
+### V2-275 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « déménageur {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-273 · P2 · saison (métiers saisonniers)
+### V2-276 · P2 · saison (métiers saisonniers)
 **Objet :** avant la saison
 
-{{firstName}}, Les devis de l'été se demandent au printemps.
+{{firstName}}, les devis de l'été se demandent au printemps.
 
 Je cherche quelques entreprises de déménagement {{zone}} prêts à prendre 20 déménagements de plus par mois, en partenariat à la performance : vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-274 · P3 · absent de ChatGPT
+### V2-277 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
 {{firstName}}, j'ai demandé à ChatGPT « meilleur déménageur à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-275 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-278 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-276 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-279 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 déménagements de plus ?
 
 Question directe, {{firstName}} : si 20 déménagements de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques entreprises de déménagement {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-277 · FU1 · J+3 · même fil
+### V2-280 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« déménageur {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« déménageur {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-278 · VP2 · J+8 · nouvel objet
+### V2-281 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « déménageur {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « déménageur {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-279 · FU2 · J+11 · relance 1-2-3
+### V2-282 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-280 · VP3 · J+21 · nouvel objet
+### V2-283 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-281 · FU3 · J+24 · rupture
+### V2-284 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3508,119 +3582,121 @@ Nathan
 
 ## 2.14 paysagistes
 
-### V2-282 · P1 · concurrent devant sur Google Maps
+### V2-285 · P1 · concurrent devant sur Google Maps
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « paysagiste {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-283 · P2 · saison (métiers saisonniers)
+### V2-286 · P2 · saison (métiers saisonniers)
 **Objet :** avant la saison
 
-{{firstName}}, Les chantiers du printemps se décident en hiver.
+{{firstName}}, les chantiers du printemps se décident en hiver.
 
 Je cherche quelques paysagistes {{zone}} prêts à prendre 20 chantiers de plus par mois, en partenariat à la performance : vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-284 · P3 · absent de ChatGPT
+### V2-287 · P3 · absent de ChatGPT
 **Objet :** ChatGPT et {{ville}}
 
 {{firstName}}, j'ai demandé à ChatGPT « meilleur paysagiste à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
 De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Seriez-vous contre que je vous montre pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-285 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
+### V2-288 · P4 · marché principal A · plateformes de devis (commentaire Nathan)
 **Objet :** vos devis
 
 {{firstName}}, les plateformes de devis facturent jusqu'à 90 € HT un prospect, et le partagent souvent entre 4 ou 5 artisans.
 
 Nous, on aide nos clients à recevoir leurs demandes en direct, sur leur site et leur fiche Google, sans payer chaque contact.
 
-Seriez-vous contre que je vous montre comment ?
+Seriez-vous contre que je vous envoie comment ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-286 · P4 · marché principal B · capacité + performance (validée par Nathan)
+### V2-289 · P4 · marché principal B · capacité + performance (validée par Nathan)
 **Objet :** 20 chantiers de plus ?
 
 Question directe, {{firstName}} : si 20 chantiers de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
 
 Je cherche quelques paysagistes {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
 
-Seriez-vous contre que je vous explique comment ça marche ?
+Seriez-vous contre que je vous envoie comment ça marche ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-287 · FU1 · J+3 · même fil
+### V2-290 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« paysagiste {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« paysagiste {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-288 · VP2 · J+8 · nouvel objet
+### V2-291 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « paysagiste {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « paysagiste {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-289 · FU2 · J+11 · relance 1-2-3
+### V2-292 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-290 · VP3 · J+21 · nouvel objet
+### V2-293 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-291 · FU3 · J+24 · rupture
+### V2-294 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3633,93 +3709,82 @@ Nathan
 
 ## 2.15 entreprises de travaux publics et de génie civil
 
-### V2-292 · P1 · concurrent devant sur Google Maps
-**Objet :** {{concurrent}} devant
+### V2-295 · P3 · absent de ChatGPT
+**Objet :** ChatGPT et {{ville}}
 
-{{firstName}}, sur « travaux publics {{ville}} », {{concurrent}} sort avant {{companyName}} sur Google Maps. Ces appels-là, c'est lui qui les reçoit.
+{{firstName}}, j'ai demandé à ChatGPT « meilleure entreprise de travaux publics à {{ville}} ». Il cite {{concurrent}}, pas {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+De plus en plus de clients posent la question comme ça avant d'appeler.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous envoie pourquoi il est cité, et ce qu'il faudrait pour l'être aussi ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-293 · P4 · marché principal B · capacité + performance (validée par Nathan)
-**Objet :** 20 marchés de plus ?
-
-Question directe, {{firstName}} : si 20 marchés de plus arrivaient chaque mois, vous auriez l'équipe pour les faire ?
-
-Je cherche quelques entreprises de travaux publics et de génie civil {{zone}} pour un partenariat à la performance : on travaille votre site et votre fiche Google, vous payez sur les résultats, pas avant.
-
-Seriez-vous contre que je vous explique comment ça marche ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-294 · P4 · marché principal D · maîtres d'ouvrage privés
+### V2-296 · P4 · marché principal D · maîtres d'ouvrage privés (2.15)
 **Objet :** vos marchés privés
 
-{{firstName}}, les marchés publics passent par les plateformes d'appel d'offres. Les maîtres d'ouvrage privés, eux, cherchent sur Google « {{motcle}} {{zone}} », et c'est {{concurrent}} qu'ils trouvent.
+{{firstName}}, les marchés publics passent par les plateformes d'appel d'offres. Les maîtres d'ouvrage privés, eux, cherchent sur Google « travaux publics {{zone}} », et c'est {{concurrent}} qu'ils trouvent.
 
 Un marché privé qui arrive en direct, c'est un dossier sans mise en concurrence à 10.
 
-Seriez-vous contre que je vous montre ce qui le place devant {{companyName}} ?
+Seriez-vous contre que je vous envoie ce qui le place devant {{companyName}} ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-295 · FU1 · J+3 · même fil
+### V2-297 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« travaux publics {{ville}} » est cherché environ {{volume}} fois par mois. La plupart de ces appels partent chez les 3 premiers de la carte.
+« travaux publics {{ville}} » est cherché environ {{volume}} fois par mois, et les premiers de la carte reçoivent l'essentiel des appels.
 
-Vous voulez savoir ce qui vous sépare d'eux ?
+Toujours partant pour que je vous envoie ce qui vous sépare d'eux ?
 
 Nathan
 
-### V2-296 · VP2 · J+8 · nouvel objet
+### V2-298 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} est n°1 sur « travaux publics {{ville}} », et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}} sur « travaux publics {{ville}} ».
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-297 · FU2 · J+11 · relance 1-2-3
+### V2-299 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. votre planning est plein jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes sur un chantier ou un appel d'offres et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-298 · VP3 · J+21 · nouvel objet
+### V2-300 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Donnez-moi la page de votre site qui compte le plus : je la travaille gratuitement pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque.
+Donnez-moi la page de votre site qui compte le plus : je la travaille pour que Google et ChatGPT la recommandent, et je vous dis ce qui vous manque. C'est offert.
 
 Vous gardez le résultat. Sur quelle page je travaille ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-299 · FU3 · J+24 · rupture
+### V2-301 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message, je ne veux pas vous encombrer.
@@ -3730,434 +3795,98 @@ Bonne continuation,
 Nathan
 
 
-## 3.1 cliniques de greffe capillaire
-
-### V2-300 · P1 · ChatGPT cite une autre clinique
-**Objet :** {{concurrent}} sur ChatGPT
-
-{{firstName}}, j'ai demandé à ChatGPT, comme le ferait un patient français : « meilleure clinique greffe de cheveux à {{ville}} ». Il recommande {{concurrent}}, pas {{companyName}}.
-
-Ces patients passent ensuite souvent par un intermédiaire qui prend sa commission.
-
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et comment recevoir ces patients en direct ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-301 · P4 · marché principal · intermédiaires
-**Objet :** vos patients français
-
-{{firstName}}, chaque patient qui arrive par un facilitateur vous coûte une commission.
-
-Je cherche quelques cliniques de greffe capillaire {{zone}} prêtes à recevoir plus de patients en direct, depuis la France, la Belgique et la Suisse, via leur propre site et ChatGPT. Vous payez sur les résultats.
-
-Seriez-vous contre que je vous explique comment ça marche ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-302 · FU1 · J+3 · même fil
-**Objet :** (même fil)
-
-{{firstName}}, je remonte mon message.
-
-« clinique greffe de cheveux » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
-
-Nathan
-
-### V2-303 · VP2 · J+8 · nouvel objet
-**Objet :** pourquoi {{concurrent}}
-
-{{firstName}}, pas de rendez-vous cette fois.
-
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
-
-Je vous l'envoie ?
-
-Nathan
-PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
-
-### V2-304 · FU2 · J+11 · relance 1-2-3
-**Objet :** (même fil)
-
-Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
-
-1. votre planning opératoire est plein jusqu'en 2028 ;
-2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes au bloc et vous lirez ce mail ce soir.
-
-Répondez juste le numéro.
-
-Nathan
-
-### V2-305 · VP3 · J+21 · nouvel objet
-**Objet :** votre page
-
-{{firstName}}, dernière idée.
-
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
-
-Vous gardez le résultat. Sur quelle page ?
-
-Nathan
-
-### V2-306 · FU3 · J+24 · rupture
-**Objet :** (même fil)
-
-{{firstName}}, c'est mon dernier message.
-
-Si un jour vous voulez plus de patients en direct en direct, répondez simplement « oui » et je reviens vers vous.
-
-Bonne continuation,
-Nathan
-
-
-## 3.2 cliniques dentaires
-
-### V2-307 · P1 · ChatGPT cite une autre clinique
-**Objet :** {{concurrent}} sur ChatGPT
-
-{{firstName}}, j'ai demandé à ChatGPT, comme le ferait un patient français : « meilleure clinique implants dentaires à {{ville}} ». Il recommande {{concurrent}}, pas {{companyName}}.
-
-Ces patients passent ensuite souvent par un intermédiaire qui prend sa commission.
-
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et comment recevoir ces patients en direct ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-308 · P4 · marché principal · intermédiaires
-**Objet :** vos patients français
-
-{{firstName}}, chaque patient qui arrive par un facilitateur vous coûte une commission.
-
-Je cherche quelques cliniques dentaires {{zone}} prêtes à recevoir plus de patients en direct, depuis la France, la Belgique et la Suisse, via leur propre site et ChatGPT. Vous payez sur les résultats.
-
-Seriez-vous contre que je vous explique comment ça marche ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-309 · FU1 · J+3 · même fil
-**Objet :** (même fil)
-
-{{firstName}}, je remonte mon message.
-
-« clinique implants dentaires » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
-
-Nathan
-
-### V2-310 · VP2 · J+8 · nouvel objet
-**Objet :** pourquoi {{concurrent}}
-
-{{firstName}}, pas de rendez-vous cette fois.
-
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
-
-Je vous l'envoie ?
-
-Nathan
-PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
-
-### V2-311 · FU2 · J+11 · relance 1-2-3
-**Objet :** (même fil)
-
-Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
-
-1. votre planning opératoire est plein jusqu'en 2028 ;
-2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes au bloc et vous lirez ce mail ce soir.
-
-Répondez juste le numéro.
-
-Nathan
-
-### V2-312 · VP3 · J+21 · nouvel objet
-**Objet :** votre page
-
-{{firstName}}, dernière idée.
-
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
-
-Vous gardez le résultat. Sur quelle page ?
-
-Nathan
-
-### V2-313 · FU3 · J+24 · rupture
-**Objet :** (même fil)
-
-{{firstName}}, c'est mon dernier message.
-
-Si un jour vous voulez plus de patients en direct en direct, répondez simplement « oui » et je reviens vers vous.
-
-Bonne continuation,
-Nathan
-
-
-## 3.3 cliniques esthétiques
-
-### V2-314 · P1 · ChatGPT cite une autre clinique
-**Objet :** {{concurrent}} sur ChatGPT
-
-{{firstName}}, j'ai demandé à ChatGPT, comme le ferait un patient français : « meilleure clinique chirurgie esthétique à {{ville}} ». Il recommande {{concurrent}}, pas {{companyName}}.
-
-Ces patients passent ensuite souvent par un intermédiaire qui prend sa commission.
-
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et comment recevoir ces patients en direct ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-315 · P4 · marché principal · intermédiaires
-**Objet :** vos patients français
-
-{{firstName}}, chaque patient qui arrive par un facilitateur vous coûte une commission.
-
-Je cherche quelques cliniques esthétiques {{zone}} prêtes à recevoir plus de patients en direct, depuis la France, la Belgique et la Suisse, via leur propre site et ChatGPT. Vous payez sur les résultats.
-
-Seriez-vous contre que je vous explique comment ça marche ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-316 · FU1 · J+3 · même fil
-**Objet :** (même fil)
-
-{{firstName}}, je remonte mon message.
-
-« clinique chirurgie esthétique » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
-
-Nathan
-
-### V2-317 · VP2 · J+8 · nouvel objet
-**Objet :** pourquoi {{concurrent}}
-
-{{firstName}}, pas de rendez-vous cette fois.
-
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
-
-Je vous l'envoie ?
-
-Nathan
-PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
-
-### V2-318 · FU2 · J+11 · relance 1-2-3
-**Objet :** (même fil)
-
-Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
-
-1. votre planning opératoire est plein jusqu'en 2028 ;
-2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes au bloc et vous lirez ce mail ce soir.
-
-Répondez juste le numéro.
-
-Nathan
-
-### V2-319 · VP3 · J+21 · nouvel objet
-**Objet :** votre page
-
-{{firstName}}, dernière idée.
-
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
-
-Vous gardez le résultat. Sur quelle page ?
-
-Nathan
-
-### V2-320 · FU3 · J+24 · rupture
-**Objet :** (même fil)
-
-{{firstName}}, c'est mon dernier message.
-
-Si un jour vous voulez plus de patients en direct en direct, répondez simplement « oui » et je reviens vers vous.
-
-Bonne continuation,
-Nathan
-
-
-## 3.4 cliniques de chirurgie bariatrique
-
-### V2-321 · P1 · ChatGPT cite une autre clinique
-**Objet :** {{concurrent}} sur ChatGPT
-
-{{firstName}}, j'ai demandé à ChatGPT, comme le ferait un patient français : « meilleure clinique sleeve gastrique à {{ville}} ». Il recommande {{concurrent}}, pas {{companyName}}.
-
-Ces patients passent ensuite souvent par un intermédiaire qui prend sa commission.
-
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et comment recevoir ces patients en direct ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-322 · P4 · marché principal · intermédiaires
-**Objet :** vos patients français
-
-{{firstName}}, chaque patient qui arrive par un facilitateur vous coûte une commission.
-
-Je cherche quelques cliniques de chirurgie bariatrique {{zone}} prêtes à recevoir plus de patients en direct, depuis la France, la Belgique et la Suisse, via leur propre site et ChatGPT. Vous payez sur les résultats.
-
-Seriez-vous contre que je vous explique comment ça marche ?
-
-Nathan Fenina, Décupler
-PS : à la performance, si les demandes n'arrivent pas, vous ne payez pas.
-PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
-
-### V2-323 · FU1 · J+3 · même fil
-**Objet :** (même fil)
-
-{{firstName}}, je remonte mon message.
-
-« clinique sleeve gastrique » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
-
-Nathan
-
-### V2-324 · VP2 · J+8 · nouvel objet
-**Objet :** pourquoi {{concurrent}}
-
-{{firstName}}, pas de rendez-vous cette fois.
-
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
-
-Je vous l'envoie ?
-
-Nathan
-PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
-
-### V2-325 · FU2 · J+11 · relance 1-2-3
-**Objet :** (même fil)
-
-Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
-
-1. votre planning opératoire est plein jusqu'en 2028 ;
-2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes au bloc et vous lirez ce mail ce soir.
-
-Répondez juste le numéro.
-
-Nathan
-
-### V2-326 · VP3 · J+21 · nouvel objet
-**Objet :** votre page
-
-{{firstName}}, dernière idée.
-
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
-
-Vous gardez le résultat. Sur quelle page ?
-
-Nathan
-
-### V2-327 · FU3 · J+24 · rupture
-**Objet :** (même fil)
-
-{{firstName}}, c'est mon dernier message.
-
-Si un jour vous voulez plus de patients en direct en direct, répondez simplement « oui » et je reviens vers vous.
-
-Bonne continuation,
-Nathan
-
-
 ## 4.1 hôtels indépendants
 
-### V2-328 · P1 · concurrent devant sur Google
+### V2-302 · P1 · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « hôtel {{ville}} », {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-329 · P3 · ChatGPT cite un concurrent
+### V2-303 · P3 · ChatGPT cite un concurrent
 **Objet :** {{concurrent}} sur ChatGPT
 
 {{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}, pas {{companyName}}.
 
-Un Français sur trois a déjà préparé un voyage ou une sortie avec une IA, et ces réponses s'appuient sur les avis et les fiches Google.
+Un Français sur trois a déjà utilisé une IA pour préparer un voyage (KAYAK-Ipsos), et ces IA s'appuient surtout sur Booking, pas sur votre site.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-330 · P4 · marché principal
+### V2-304 · P4 · marché principal
 **Objet :** vos commissions
 
-{{firstName}}, on aide nos clients hôteliers à ne plus payer jusqu'à 20 % de commission aux plateformes sur des réservations qu'ils auraient pu recevoir en direct.
+{{firstName}}, chaque réservation Booking coûte de 15 à 25 % de commission (UMIH), et un hôtel sur deux voit une OTA vendre ses chambres moins cher que son propre site (HOTREC 2026).
 
-Un hôtel sur deux voit déjà une OTA vendre ses chambres moins cher que son propre site (HOTREC 2026).
+Seriez-vous contre que je vous envoie combien de recherches « hôtel {{ville}} » pourraient arriver en direct chez {{companyName}} ?
 
-Vous voulez faire pareil ?
-
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-331 · FU1 · J+3 · même fil
+### V2-305 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« hôtel {{ville}} » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
+« hôtel {{ville}} » est cherché environ {{volume}} fois par mois. Toujours partant pour que je vous envoie combien de ces recherches vous reviennent ?
 
 Nathan
 
-### V2-332 · VP2 · J+8 · nouvel objet
+### V2-306 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}}.
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-333 · FU2 · J+11 · relance 1-2-3
+### V2-307 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. vous êtes complets jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes en plein service et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-334 · VP3 · J+21 · nouvel objet
+### V2-308 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
+Donnez-moi la page de votre choix : je la rends citable par les IA, pas seulement par Google (50 critères), et je vous ajoute les données structurées qui vous manquent. C'est offert.
 
 Vous gardez le résultat. Sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-335 · FU3 · J+24 · rupture
+### V2-309 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message.
 
-Si un jour vous voulez plus de réservations directes en direct, répondez simplement « oui » et je reviens vers vous.
+Si un jour vous voulez plus de réservations en direct, répondez simplement « oui » et je reviens vers vous.
 
 Bonne continuation,
 Nathan
@@ -4165,96 +3894,96 @@ Nathan
 
 ## 4.2 spas et instituts
 
-### V2-336 · P1 · concurrent devant sur Google
+### V2-310 · P1 · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « spa {{ville}} », {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-337 · P3 · ChatGPT cite un concurrent
+### V2-311 · P3 · ChatGPT cite un concurrent
 **Objet :** {{concurrent}} sur ChatGPT
 
 {{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}, pas {{companyName}}.
 
-Un Français sur trois a déjà préparé un voyage ou une sortie avec une IA, et ces réponses s'appuient sur les avis et les fiches Google.
+Seriez-vous contre que je vous envoie pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
-
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-338 · P4 · marché principal
+### V2-312 · P4 · marché principal
 **Objet :** vos nouvelles clientes
 
 {{firstName}}, vos fidèles restent, mais les nouvelles clientes qui cherchent « spa {{ville}} » tombent sur {{concurrent}} avant vous, ou passent par une plateforme qui prend sa commission.
 
 Une cliente qui vous trouve sur Google Maps ne vous coûte rien.
 
-Seriez-vous contre que je vous montre comment la récupérer ?
+Seriez-vous contre que je vous envoie comment la récupérer ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-339 · FU1 · J+3 · même fil
+### V2-313 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« spa {{ville}} » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
+« spa {{ville}} » est cherché environ {{volume}} fois par mois. Toujours partant pour que je vous envoie combien de ces recherches vous reviennent ?
 
 Nathan
 
-### V2-340 · VP2 · J+8 · nouvel objet
+### V2-314 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}}.
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-341 · FU2 · J+11 · relance 1-2-3
+### V2-315 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. vous êtes complets jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes en plein service et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-342 · VP3 · J+21 · nouvel objet
+### V2-316 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
+Donnez-moi la page de votre choix : je la rends citable par les IA, pas seulement par Google (50 critères), et je vous ajoute les données structurées qui vous manquent. C'est offert.
 
 Vous gardez le résultat. Sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-343 · FU3 · J+24 · rupture
+### V2-317 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message.
 
-Si un jour vous voulez plus de nouvelles clientes en direct, répondez simplement « oui » et je reviens vers vous.
+Si un jour vous voulez plus de nouvelles clientes, répondez simplement « oui » et je reviens vers vous.
 
 Bonne continuation,
 Nathan
@@ -4262,89 +3991,89 @@ Nathan
 
 ## 4.3 résidences seniors
 
-### V2-344 · P1 · concurrent devant sur Google
+### V2-318 · P1 · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « résidence seniors {{ville}} », {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-345 · P3 · ChatGPT cite un concurrent
+### V2-319 · P3 · ChatGPT cite un concurrent
 **Objet :** {{concurrent}} sur ChatGPT
 
 {{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}, pas {{companyName}}.
 
-Un Français sur trois a déjà préparé un voyage ou une sortie avec une IA, et ces réponses s'appuient sur les avis et les fiches Google.
+Seriez-vous contre que je vous envoie pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
-
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-346 · P4 · marché principal
+### V2-320 · P4 · marché principal
 **Objet :** familles à {{ville}}
 
 {{firstName}}, quand une famille cherche une résidence pour un parent, elle compare en ligne, sur Google et les annuaires, avant d'appeler.
 
 Sur « résidence seniors {{ville}} », c'est {{concurrent}} qui est vu en premier.
 
-Seriez-vous contre que je vous montre ce qui le place devant {{companyName}} ?
+Seriez-vous contre que je vous envoie ce qui le place devant {{companyName}} ?
 
-Nathan Fenina, Décupler
+Nathan Fenina, fondateur de Décupler (SEO + IA)
 PPS : si ce n'est pas le sujet, répondez simplement « non merci ».
 
-### V2-347 · FU1 · J+3 · même fil
+### V2-321 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« résidence seniors {{ville}} » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
+« résidence seniors {{ville}} » est cherché environ {{volume}} fois par mois. Toujours partant pour que je vous envoie combien de ces recherches vous reviennent ?
 
 Nathan
 
-### V2-348 · VP2 · J+8 · nouvel objet
+### V2-322 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}}.
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-349 · FU2 · J+11 · relance sobre (4.3)
+### V2-323 · FU2 · J+11 · relance sobre (4.3)
 **Objet :** (même fil)
 
-{{firstName}}, je me permets une dernière question : est-ce que la visibilité de {{companyName}} sur Google auprès des familles de {{ville}} est un sujet pour vous cette année ?
+{{firstName}}, une question simple : est-ce que la visibilité de {{companyName}} sur Google auprès des familles de {{ville}} est un sujet pour vous cette année ?
 
 Un « oui » ou un « non » me suffit.
 
 Nathan
 
-### V2-350 · VP3 · J+21 · nouvel objet
+### V2-324 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
+Donnez-moi la page de votre choix : je la rends citable par les IA, pas seulement par Google (50 critères), et je vous ajoute les données structurées qui vous manquent. C'est offert.
 
 Vous gardez le résultat. Sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-351 · FU3 · J+24 · rupture
+### V2-325 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message.
 
-Si un jour vous voulez plus de familles en direct, répondez simplement « oui » et je reviens vers vous.
+Si un jour vous voulez plus de familles, répondez simplement « oui » et je reviens vers vous.
 
 Bonne continuation,
 Nathan
@@ -4352,96 +4081,98 @@ Nathan
 
 ## 4.4 campings et résidences de tourisme
 
-### V2-352 · P1 · concurrent devant sur Google
+### V2-326 · P1 · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « camping {{lieu}} », {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-353 · P3 · ChatGPT cite un concurrent
+### V2-327 · P3 · ChatGPT cite un concurrent
 **Objet :** {{concurrent}} sur ChatGPT
 
 {{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}, pas {{companyName}}.
 
-Un Français sur trois a déjà préparé un voyage ou une sortie avec une IA, et ces réponses s'appuient sur les avis et les fiches Google.
+Un Français sur trois a déjà utilisé une IA pour préparer un voyage (KAYAK-Ipsos), et ces IA s'appuient surtout sur Booking, pas sur votre site.
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
+Seriez-vous contre que je vous envoie pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-354 · P4 · marché principal
+### V2-328 · P4 · marché principal
 **Objet :** 900 € de séjour
 
 {{firstName}}, sur un séjour de 900 €, entre 135 et 180 € partent chez la plateforme selon le contrat.
 
 Les recherches « camping {{lieu}} » arrivent surtout sur Booking et sur les grands groupes, pas sur votre site.
 
-Seriez-vous contre que je vous montre où ces réservations directes vous échappent ?
+Seriez-vous contre que je vous envoie où ces réservations directes vous échappent ?
 
-Nathan Fenina, Décupler
-PS : le diagnostic est gratuit et vous le gardez, même si on ne travaille jamais ensemble.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-355 · FU1 · J+3 · même fil
+### V2-329 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« camping {{lieu}} » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
+« camping {{lieu}} » est cherché environ {{volume}} fois par mois. Toujours partant pour que je vous envoie combien de ces recherches vous reviennent ?
 
 Nathan
 
-### V2-356 · VP2 · J+8 · nouvel objet
+### V2-330 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}}.
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-357 · FU2 · J+11 · relance 1-2-3
+### V2-331 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. vous êtes complets jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes en plein service et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-358 · VP3 · J+21 · nouvel objet
+### V2-332 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
+Donnez-moi la page de votre choix : je la rends citable par les IA, pas seulement par Google (50 critères), et je vous ajoute les données structurées qui vous manquent. C'est offert.
 
 Vous gardez le résultat. Sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-359 · FU3 · J+24 · rupture
+### V2-333 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message.
 
-Si un jour vous voulez plus de réservations directes en direct, répondez simplement « oui » et je reviens vers vous.
+Si un jour vous voulez plus de réservations en direct, répondez simplement « oui » et je reviens vers vous.
 
 Bonne continuation,
 Nathan
@@ -4449,96 +4180,205 @@ Nathan
 
 ## 4.5 écoles et formations bien-être
 
-### V2-360 · P1 · concurrent devant sur Google
+### V2-334 · P1 · concurrent devant sur Google
 **Objet :** {{concurrent}} devant
 
 {{firstName}}, sur « formation {{motcle}} {{ville}} », {{concurrent}} sort avant {{companyName}}.
 
-Je peux vous dire pourquoi il est n°1 sur ce terme, et ce qui vous manque pour passer devant.
+Je peux vous dire pourquoi il passe devant, et ce qui vous manque pour le dépasser.
 
-Ça vaut 15 minutes ?
+Seriez-vous contre que je vous l'explique dans une vidéo de 3 minutes ?
 
-Nathan Fenina, Décupler
-PS : pour l'École Humaniste de Gestalt, position moyenne Google passée de 18 à 10.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-361 · P3 · ChatGPT cite un concurrent
+### V2-335 · P3 · ChatGPT cite un concurrent
 **Objet :** {{concurrent}} sur ChatGPT
 
 {{firstName}}, j'ai demandé à ChatGPT « {{prompt}} ». Il recommande {{concurrent}}, pas {{companyName}}.
 
-Un Français sur trois a déjà préparé un voyage ou une sortie avec une IA, et ces réponses s'appuient sur les avis et les fiches Google.
+Seriez-vous contre que je vous envoie pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
 
-Seriez-vous contre que je vous montre pourquoi {{concurrent}} est cité, et ce qu'il faut changer pour l'être aussi ?
-
-Nathan Fenina, Décupler
-PS : pour l'École Humaniste de Gestalt, position moyenne Google passée de 18 à 10.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-362 · P4 · marché principal
+### V2-336 · P4 · marché principal
 **Objet :** vos inscriptions
 
 {{firstName}}, quand quelqu'un cherche « formation {{motcle}} », il compare les écoles sur Google et de plus en plus dans ChatGPT, et c'est {{concurrent}} qui est cité.
 
 Pour l'École Humaniste de Gestalt, on a fait passer la position moyenne Google de 18 à 10.
 
-Seriez-vous contre que je vous montre ce qu'on ferait pour {{companyName}} ?
+Seriez-vous contre que je vous envoie ce qu'on ferait pour {{companyName}} ?
 
-Nathan Fenina, Décupler
-PS : pour l'École Humaniste de Gestalt, position moyenne Google passée de 18 à 10.
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : le plan est offert, vous le gardez même si on ne travaille jamais ensemble.
 PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-363 · FU1 · J+3 · même fil
+### V2-337 · FU1 · J+3 · même fil
 **Objet :** (même fil)
 
 {{firstName}}, je remonte mon message.
 
-« formation {{motcle}} {{ville}} » est cherché environ {{volume}} fois par mois. Vous voulez savoir combien de ces recherches vous reviennent ?
+« formation {{motcle}} {{ville}} » est cherché environ {{volume}} fois par mois. Toujours partant pour que je vous envoie combien de ces recherches vous reviennent ?
 
 Nathan
 
-### V2-364 · VP2 · J+8 · nouvel objet
+### V2-338 · VP2 · J+8 · nouvel objet
 **Objet :** pourquoi {{concurrent}}
 
 {{firstName}}, pas de rendez-vous cette fois.
 
-Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo pourquoi {{concurrent}} passe devant vous, et ce qui vous manque.
+Je regarde votre fiche Google, votre site et vos avis, et je vous dis en 3 minutes de vidéo ce qui vous manque face à {{concurrent}}.
 
 Je vous l'envoie ?
 
 Nathan
 PS : la vidéo est à vous, même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-365 · FU2 · J+11 · relance 1-2-3
+### V2-339 · FU2 · J+11 · relance 1-2-3
 **Objet :** (même fil)
 
 Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :
 
 1. vos promotions sont complètes jusqu'en 2028 ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous êtes en cours et vous lirez ce mail ce soir.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro.
 
 Nathan
 
-### V2-366 · VP3 · J+21 · nouvel objet
+### V2-340 · VP3 · J+21 · nouvel objet
 **Objet :** votre page
 
 {{firstName}}, dernière idée.
 
-Notre outil transforme une page en page citable par les IA, pas seulement par Google, sur 50 critères. Donnez-moi la page de votre choix : je la travaille gratuitement, et je vous ajoute les données structurées qui vous manquent.
+Donnez-moi la page de votre choix : je la rends citable par les IA, pas seulement par Google (50 critères), et je vous ajoute les données structurées qui vous manquent. C'est offert.
 
 Vous gardez le résultat. Sur quelle page ?
 
 Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
 
-### V2-367 · FU3 · J+24 · rupture
+### V2-341 · FU3 · J+24 · rupture
 **Objet :** (même fil)
 
 {{firstName}}, c'est mon dernier message.
 
-Si un jour vous voulez plus de inscrits en direct, répondez simplement « oui » et je reviens vers vous.
+Si un jour vous voulez plus de nouveaux inscrits, répondez simplement « oui » et je reviens vers vous.
 
 Bonne continuation,
 Nathan
+
+
+## 1.x intent SEO / GEO (tous)
+
+### V2-342 · P3b · n°1 sur le mot-clé business + roadmap
+**Objet :** {{motcle}}
+
+{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), c'est {{concurrent}} qui est n°1 {{part}}.
+
+Je peux vous partager la roadmap pour le rattraper : ce qu'il a, ce qui vous manque, dans l'ordre où ça rapporte.
+
+Seriez-vous contre que je la monte pour vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+{{ps}} (preuve du sous-ICP)
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-343 · P3c · visibilité IA (ChatGPT + Perplexity + Google IA)
+**Objet :** {{concurrent}} cité, pas vous
+
+{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.
+
+Sur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.
+
+C'est là que se fait la shortlist. Seriez-vous contre que je vous envoie ce qui le fait citer ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+{{ps}} (preuve du sous-ICP)
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-344 · P3d · réponse IA de Google (AI Overview)
+**Objet :** la réponse de Google
+
+{{firstName}}, quand on cherche « {{motcle}} » sur Google, la réponse IA tout en haut cite {{concurrent}}. Pas {{companyName}}.
+
+Cette réponse passe avant les liens, et beaucoup ne regardent plus ceux d'en dessous.
+
+Seriez-vous contre que je vous envoie comment y entrer ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+{{ps}} (preuve du sous-ICP)
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-345 · VP2 variante · roadmap de rattrapage
+**Objet :** votre roadmap
+
+{{firstName}}, on prépare des roadmaps SEO et IA pour des entreprises comme {{companyName}} : où vous perdez des demandes, qui les récupère, et les 3 actions qui rapportent le plus.
+
+Seriez-vous contre que je monte la vôtre ? Je vous l'envoie, vous gardez le résultat.
+
+Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-346 · VP3 variante · cas client et process
+**Objet :** comment on travaille
+
+{{firstName}}, dernière idée de ma part.
+
+Je peux vous envoyer un cas client proche de {{companyName}} et notre process, étape par étape : audit, pages, citations par les IA, suivi des demandes.
+
+Je vous l'envoie ?
+
+Nathan
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+
+## 2.x intent SEO / GEO (tous)
+
+### V2-347 · P3b · n°1 sur Google Maps + roadmap
+**Objet :** {{concurrent}} devant
+
+{{firstName}}, sur « {{metier}} {{ville}} » ({{volume}} recherches par mois), c'est {{concurrent}} qui est n°1 {{part}}.
+
+Je peux vous partager la roadmap pour passer devant lui : fiche Google, avis, pages du site, dans l'ordre.
+
+Seriez-vous contre que je la monte pour vous ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+### V2-348 · P3c · ChatGPT + Google IA
+**Objet :** {{concurrent}} recommandé
+
+{{firstName}}, j'ai demandé à ChatGPT et à Google « {{pro}} à {{ville}} ». Les deux recommandent {{concurrent}}. {{companyName}} n'apparaît dans aucune réponse.
+
+De plus en plus de clients choisissent comme ça avant d'appeler.
+
+Seriez-vous contre que je vous envoie ce qui le fait recommander ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : pour L'Artisan d'à côté, une entreprise du bâtiment, on est allé chercher 20 nouveaux clients par mois.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
+
+
+## 4.x intent SEO / GEO (tous)
+
+### V2-349 · P3c · ChatGPT + Google IA (hébergements)
+**Objet :** {{concurrent}} recommandé
+
+{{firstName}}, j'ai demandé à ChatGPT et à Google « {{prompt}} ». Les deux recommandent {{concurrent}}. {{companyName}} n'apparaît pas.
+
+Un Français sur trois a déjà utilisé une IA pour préparer un voyage (KAYAK-Ipsos), et ces IA s'appuient surtout sur Booking, pas sur votre site.
+
+Seriez-vous contre que je vous envoie ce qui le fait recommander, et la roadmap pour l'être aussi ?
+
+Nathan Fenina, fondateur de Décupler (SEO + IA)
+PS : c'est offert, vous gardez le résultat même si on ne travaille jamais ensemble.
+PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille.
