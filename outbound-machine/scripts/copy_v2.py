@@ -180,3 +180,27 @@ def fill(t, d):
     for k, v in d.items():
         if isinstance(v, str): t = t.replace("{{" + k + "}}", v).replace("{" + k + "}", v)
     return t
+
+
+# ---------------------------------------------------------------- V2.1 (30/10) : mails 1 « intent SEO / GEO » (P3) + variantes VP2 / VP3
+# Variables remplies par 53_intent_seo.py (DataForSEO) : {{motcle}} {{volume}} {{concurrent}} {{part}} {{prompt}} {{n_reponses}}
+# {{n_concurrent}} {{n_vous}}. {{part}} = « et récupère quasiment tout le trafic » seulement si sa part de trafic estimée > 60 %,
+# sinon « et capte la plus grosse part des clics ». {{concurrent}} = vrai concurrent (pas .gouv, Wikipédia, annuaire, média, comparateur).
+INTENT_V21 = [
+ ("B2B", "P3b · n°1 sur le mot-clé business + roadmap", "{{motcle}}",
+  "{{firstName}}, sur « {{motcle}} » ({{volume}} recherches par mois), c'est {{concurrent}} qui est n°1 {{part}}. {{companyName}} n'est pas en première page.\n\nJe peux vous partager la roadmap pour le rattraper : ce qu'il a, ce qui vous manque, dans l'ordre où ça rapporte.\n\nSeriez-vous contre que je la monte pour vous ?"),
+ ("B2B", "P3c · visibilité IA (ChatGPT + Perplexity + Google IA)", "{{concurrent}} cité, pas vous",
+  "{{firstName}}, j'ai posé la question que vos clients posent, « {{prompt}} », à ChatGPT, Perplexity et Google.\n\nSur {{n_reponses}} réponses, {{concurrent}} est cité {{n_concurrent}} fois. {{companyName}} : {{n_vous}}.\n\nC'est là que se fait la shortlist, avant même votre site. Seriez-vous contre que je vous montre ce qui le fait citer ?"),
+ ("B2B", "P3d · réponse IA de Google (AI Overview)", "la réponse de Google",
+  "{{firstName}}, quand on cherche « {{motcle}} » sur Google, la réponse IA tout en haut cite {{concurrent}}. Pas {{companyName}}.\n\nCette réponse passe avant les liens : beaucoup de clients ne descendent plus plus bas.\n\nÇa vaut 15 minutes pour voir comment y entrer ?"),
+ ("B2B", "VP2 variante · pré-audit", "votre pré-audit",
+  "{{firstName}}, on prépare des pré-audits SEO et IA pour des entreprises comme {{companyName}} : où vous perdez des demandes, qui les récupère, et les 3 actions qui rapportent le plus.\n\nSeriez-vous contre que je monte le vôtre ? Je vous l'envoie, vous gardez le résultat.\n\nNathan"),
+ ("B2B", "VP3 variante · cas clients et process", "comment on travaille",
+  "{{firstName}}, dernière idée de ma part.\n\nJe peux vous envoyer un cas client proche de {{companyName}} et notre process, étape par étape : audit, pages, citations par les IA, suivi des demandes.\n\nJe vous l'envoie ?\n\nNathan"),
+ ("LOCAL", "P3b · n°1 sur Google Maps + roadmap", "{{concurrent}} devant",
+  "{{firstName}}, sur « {{metier}} {{ville}} » ({{volume}} recherches par mois), c'est {{concurrent}} qui est n°1 {{part}}.\n\nJe peux vous partager la roadmap pour passer devant lui : fiche Google, avis, pages du site, dans l'ordre.\n\nSeriez-vous contre que je la monte pour vous ?"),
+ ("LOCAL", "P3c · ChatGPT + Google IA", "{{concurrent}} recommandé",
+  "{{firstName}}, j'ai demandé à ChatGPT et à Google le « meilleur {{metier}} à {{ville}} ». Les deux recommandent {{concurrent}}. {{companyName}} n'apparaît dans aucune réponse.\n\nDe plus en plus de clients choisissent comme ça avant d'appeler.\n\nSeriez-vous contre que je vous montre ce qui le fait recommander ?"),
+ ("HOSP", "P3c · ChatGPT + Google IA", "{{concurrent}} recommandé",
+  "{{firstName}}, j'ai demandé à ChatGPT et à Google « {{prompt}} ». Les deux recommandent {{concurrent}}. {{companyName}} n'apparaît pas.\n\nUn Français sur trois a déjà préparé un voyage ou une sortie avec une IA.\n\nSeriez-vous contre que je vous montre ce qui le fait recommander, et la roadmap pour l'être aussi ?"),
+]

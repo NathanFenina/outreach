@@ -32,7 +32,9 @@ for c in codes:
         if r["domain"].lower() in dnc_dom or QUALIF.get(r["domain"], {}).get("fit") is not True: continue
         if r["linkedin_url"] and r["linkedin_url"] not in cache: todo.append(r["linkedin_url"])
 todo = list(dict.fromkeys(todo))
-bal = call("get_account", {})["results"]["token_balance"]
+acc = call("get_account", {})["results"]
+# plan illimité (Solo) : la limite = emails trouvés restants sur la fenêtre de 5 h (fair use), pas des jetons
+bal = acc["fair_use"]["enrich"]["records"]["5h"]["remaining"] if acc.get("unlimited") else acc["token_balance"]
 print("à chercher", len(todo), "· jetons Moltsets", bal, "· plafond", max_tokens)
 used = 0
 for i in range(0, len(todo), 100):
@@ -40,7 +42,7 @@ for i in range(0, len(todo), 100):
     d = call("linkedin_to_business_email", {"linkedin_urls": todo[i:i + 100]})
     for x in d["results"]:
         cache[x["input"]] = x.get("data") or {}
-    used += d.get("metadata", {}).get("tokens_used") or 0
+    used += d.get("metadata", {}).get("tokens_used") or sum(1 for x in d["results"] if (x.get("data") or {}).get("email"))
     json.dump(cache, open(CACHE, "w"))
     print(i + 100, "jetons utilisés", used, flush=True)
 ok = {u: v for u, v in cache.items() if v.get("email") and v.get("risk_score") in ("A", "B") and v["email"].lower() not in dnc_mail}
