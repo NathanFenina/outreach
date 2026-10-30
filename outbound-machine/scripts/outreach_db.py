@@ -7,7 +7,8 @@ TOKEN_FILE = os.environ.get("INGEST_TOKEN_FILE", "/tmp/claude-0/-home-user-outre
 
 def call(payload):
     tok = os.environ.get("INGEST_TOKEN") or open(TOKEN_FILE).read().strip()
-    req = urllib.request.Request(URL, data=json.dumps(payload).encode(), method="POST",
+    body = json.dumps(payload).replace("\\u0000", "")  # Postgres refuse le caractère nul (vu dans des noms d'entreprise Lemlist)
+    req = urllib.request.Request(URL, data=body.encode(), method="POST",
                                  headers={"Content-Type": "application/json", "x-ingest-token": tok})
     try:
         return json.loads(urllib.request.urlopen(req, timeout=120).read())
