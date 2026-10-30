@@ -14,8 +14,8 @@ Thanks again for the session. Here is my homework and where I stand. The second 
 - Ongoing monitoring: human reply rate per inbox and blacklist checks. GlockApps only when something looks off.
 
 **2. Campaign split and naming**
-- Every campaign is split into Google and Others, based on the MX of each domain. Mimecast and Proofpoint are excluded.
-- Naming: number-batch-hypothesis (e.g. 101-G-1 / 101-O-1), with a hypothesis library.
+- Every campaign is split by the prospect's email provider, based on the MX of each domain: G (Google), M (Microsoft / Outlook, incl. Mimecast and Proofpoint gateways), O (others). G goes out from the current inboxes, M and O from the Zapmail inboxes.
+- Naming: number-provider-tier-subICP (e.g. 104-M-P4-1.1 = campaign 104, Outlook prospects, main market, SaaS), with a hypothesis library.
 
 **3. ICP table: 37 sub-ICPs**
 - ICP 1 B2B (13 sub-ICPs): SaaS, AI startups, IT services and integrators, cybersecurity, consulting, accounting firms, M&A advisors, wealth managers, marketing agencies (white label), event agencies, recruitment firms, training companies, business law firms.
@@ -34,16 +34,17 @@ Thanks again for the session. Here is my homework and where I stand. The second 
 - English: UK, US, UAE, Saudi Arabia, Nordics, Benelux, DACH, plus a few solvent Sub-Saharan markets.
 
 **6. Tools and tests**
-- Enrichment: Moltsets vs FullEnrich on the same 629 contacts. Moltsets found 61 % (flat price), FullEnrich 85 %. Cascade: Moltsets first, FullEnrich on misses.
+- Enrichment: Moltsets first (flat price), FullEnrich on the misses. On our first 900 SaaS / AI contacts, Moltsets found 66 % (risk grade A/B) and FullEnrich recovered 70 % of the rest, so about 90 % in total. Every company is also checked against its website by AI before buying emails (about 20 % removed: competitors, funds, dead sites, out of scope).
+- Datasets: about 4,400 qualified French contacts already built for my 4 priority campaigns, 2,500 more being qualified (SaaS / AI, consulting and finance, construction, hospitality).
 - SEO intent cost (DataForSEO): ~0.24 cent per domain for the traffic history; 53 of 87 tested domains lost more than 10 % of traffic in a year.
 - Sending: moving to Instantly before my Lemlist renewal on Nov 10. Campaigns built as drafts, launch target Nov 6-9.
 
 **7. Dataset request**
 We build the French B2B and local datasets ourselves. Could you run yours for:
-- B2B, France then UK and DACH: SaaS / AI, consulting, marketing and event agencies;
+- B2B, UK and DACH: SaaS / AI, consulting, marketing and event agencies;
 - medical tourism: hair transplant, dental and cosmetic clinics in Turkey, Hungary and Tunisia that target French-speaking patients;
 - hospitality abroad: independent hotels and spas in Belgium, Switzerland and Morocco.
-Please split it Google / Others, without catch-all. I'll send my do-not-contact list (≈ 6,900 already-contacted domains and clients) so you can exclude them.
+Please split it Google / Microsoft / Others (or give me the MX), without catch-all. I'll send my do-not-contact list (≈ 6,900 already-contacted domains and clients) so you can exclude them.
 
 **8. Three questions**
 - You told me to use the Zapmail inboxes (Google Workspace) for non-Google ESPs. Does that include Outlook / Microsoft 365 prospects, or do you keep Microsoft separate? I plan a small placement test first.
