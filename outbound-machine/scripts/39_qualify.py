@@ -66,8 +66,10 @@ def run(item):
 
 
 with ThreadPoolExecutor(6) as ex:
-    for d, res in ex.map(run, todo.items()):
+    for n, (d, res) in enumerate(ex.map(run, todo.items()), 1):
         cache[d] = res
+        if n % 50 == 0:  # sauvegarde au fil de l'eau : un arrêt du conteneur ne fait plus tout perdre
+            json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=0); print(n, "/", len(todo), flush=True)
 json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=0)
 tok = sum(v.get("tokens", 0) for v in cache.values())
 from collections import Counter
