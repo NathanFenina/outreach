@@ -126,7 +126,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -277,7 +277,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -428,7 +428,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -579,7 +579,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -730,7 +730,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -1028,7 +1028,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -1326,7 +1326,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -1477,7 +1477,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -1628,7 +1628,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 
@@ -1779,7 +1779,7 @@ Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses
 
 1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;
 2. ce n'est pas le sujet et vous voulez que j'arrête ;
-3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.
+3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.
 
 Répondez juste le numéro, que je sache quoi faire.
 

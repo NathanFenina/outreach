@@ -77,7 +77,7 @@ B2B_SUITE = [
  ("VP2 · J+8 · nouvel objet", "1 levier sur 7",
   "{{firstName}}, pas de rendez-vous cette fois : un levier que votre équipe peut activer seule.\n\nEn haut de votre page la plus importante, une réponse de 2 phrases à la question que vos clients posent le plus, avec un chiffre. C'est le format que ChatGPT et Google reprennent.\n\nJ'en ai 6 autres pour {{companyName}}, dans l'ordre où ils rapportent. Ce serait une mauvaise idée d'en parler 15 minutes ?\n\nNathan\nPS : ce levier est à vous, même si on ne travaille jamais ensemble."),
  ("FU2 · J+11 · relance 1-2-3", "",
-  "Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :\n\n1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous avez demandé à ChatGPT de me répondre, et il a recommandé {{concurrent}}.\n\nRépondez juste le numéro, que je sache quoi faire.\n\nNathan"),
+  "Je n'ai pas eu de nouvelles, {{firstName}}, ce qui veut dire une de ces 3 choses :\n\n1. {{companyName}} est cité partout dans ChatGPT et vous refusez des clients ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre.\n\nRépondez juste le numéro, que je sache quoi faire.\n\nNathan"),
  ("VP3 · J+21 · nouvel objet", "votre page",
   "{{firstName}}, dernière idée de ma part.\n\nDonnez-moi une page de {{companyName}}, celle qui compte le plus : je la travaille gratuitement pour qu'elle soit citée par les IA (50 critères), et je vous dis ce qui vous manque.\n\nVous gardez le résultat. Je vous l'envoie sur quelle page ?\n\nNathan"),
  ("FU3 · J+24 · rupture", "",
