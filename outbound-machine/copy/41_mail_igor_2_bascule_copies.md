@@ -16,7 +16,7 @@ Quick follow-up on my last email.
 - Lemlist: lemwarm being switched off (warmup now runs in Instantly), renewal cancelled before Nov 10, full export done. ~6,900 already-contacted domains are in Instantly's blocklist.
 
 **2. Leads**
-About 1,500 leads already imported (France: SaaS / AI, consulting and finance, construction), every company checked against its website before buying emails. Enrichment: Moltsets first, FullEnrich on the misses (~90 % found in total).
+About 2,200 leads already imported (France: SaaS / AI, consulting and finance, construction, hospitality), every company checked against its website before buying emails. Enrichment: Moltsets first, FullEnrich on the misses (~90 % found in total).
 
 **3. Copy: could you review it with your process?**
 Sheet (tab "6b. Copies V2 à valider"): https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit#gid=610290001
