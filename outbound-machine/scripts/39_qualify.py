@@ -23,18 +23,31 @@ def page(d):
     return ""
 
 
+SYS = ("Tu qualifies des prospects B2B pour une agence SEO/GEO. Réponds UNIQUEMENT en JSON : {\"fit\": true|false, \"sub_icp\": code ou null, "
+       "\"exclude_reason\": null ou raison courte}. fit=false si : hors du sous-ICP visé ; agence SEO/marketing/web (concurrent) sauf "
+       "sous-ICP 1.9 ; fonds d'investissement ; média ; école ou université ; association ; grand groupe (> 1000 salariés) ; site "
+       "inaccessible et nom qui ne prouve pas l'activité.")
+
+
 def classify(d, company, icp, text):
-    prompt = (f"Entreprise : {company} ({d}). Sous-ICP visé : {icp} {SEG.get(icp, '')}.\nTexte du site : {text or '(site inaccessible)'}\n\n"
-              "Réponds en JSON {\"fit\": true/false, \"sub_icp\": code du sous-ICP le plus juste parmi " + ", ".join(SEG) +
-              " ou null, \"exclude_reason\": null ou une raison courte}. fit=false si : hors du sous-ICP, agence SEO / marketing / web "
-              "(concurrent) sauf si le sous-ICP est 1.9, fonds d'investissement, média, association, grand groupe (> 1000 salariés), "
-              "site inaccessible ET nom qui ne prouve pas l'activité.")
-    body = json.dumps({"model": "gpt-4o-mini", "response_format": {"type": "json_object"}, "temperature": 0,
-                       "messages": [{"role": "user", "content": prompt}]}).encode()
-    req = urllib.request.Request("https://api.openai.com/v1/chat/completions", data=body, method="POST",
-                                 headers={"Authorization": "Bearer " + (os.environ.get("OPENAI_API_KEY") or os.environ["OPEN_AI_KEY"]), "Content-Type": "application/json"})
-    r = json.loads(urllib.request.urlopen(req, timeout=60).read())
-    return json.loads(r["choices"][0]["message"]["content"]), r["usage"]["total_tokens"]
+    head = f"Entreprise : {company} ({d}). Sous-ICP visé : {icp} {SEG.get(icp, '')}. Site : "
+    return llm(SYS, (head + (text or "(site inaccessible)"))[:495])
+
+
+DFS = {"Authorization": "Basic " + __import__("base64").b64encode(f"{os.environ['DATAFORSEO_LOGIN']}:{os.environ['DATAFORSEO_PASSWORD']}".encode()).decode(),
+       "Content-Type": "application/json"}
+
+
+def llm(system, prompt):
+    """gpt-4o-mini via DataForSEO (≈ 0,0009 $ / appel ; le compte OpenAI direct est à 0 crédit depuis le 29/10)."""
+    # limites DataForSEO : 500 caractères pour system_message et pour user_prompt
+    body = json.dumps([{"system_message": system[:495], "user_prompt": prompt[:495], "model_name": "gpt-4o-mini", "web_search": False}]).encode()
+    for i in range(3):  # résultat vide ponctuel côté DataForSEO : on réessaie
+        req = urllib.request.Request("https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_responses/live", data=body, method="POST", headers=DFS)
+        t = json.loads(urllib.request.urlopen(req, timeout=120).read())["tasks"][0]
+        if t.get("result"): break
+    txt = "".join(sec.get("text", "") for it in t["result"][0]["items"] for sec in it.get("sections", []))
+    return json.loads(re.search(r"\{[\s\S]*\}", txt).group(0)), round(t.get("cost", 0) * 1e6)
 
 
 todo = {}
@@ -52,11 +65,11 @@ def run(item):
         return d, {"fit": None, "error": str(e)[:120]}
 
 
-with ThreadPoolExecutor(12) as ex:
+with ThreadPoolExecutor(6) as ex:
     for d, res in ex.map(run, todo.items()):
         cache[d] = res
 json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=0)
 tok = sum(v.get("tokens", 0) for v in cache.values())
 from collections import Counter
-print("fit :", Counter(str(v.get("fit")) for v in cache.values()), "· tokens", tok, "· coût ≈", round(tok * 0.3 / 1e6, 3), "$")
+print("fit :", Counter(str(v.get("fit")) for v in cache.values()), "· coût cumulé ≈", round(tok * 0.3 / 1e6, 3), "$ (OpenAI) / micro-dollars DataForSEO dans tokens")
 print(Counter(v.get("exclude_reason") for v in cache.values() if v.get("fit") is False).most_common(12))

@@ -1,105 +1,126 @@
-"""Intent SEO / GEO par entreprise (paliers P3b et P3c), pour remplir {{motcle}} {{volume}} {{concurrent}} {{prompt}} :
-1. page d'accueil → gpt-4o-mini : thématique, mot-clé business principal (ce qu'un client tape sur Google), question d'acheteur pour ChatGPT ;
-2. DataForSEO : volume mensuel du mot-clé (Google Ads, France) + SERP Google France top 10 → premier concurrent devant l'entreprise ;
-3. ChatGPT avec recherche web (gpt-4o-mini-search-preview) : la question posée telle quelle → marques citées, l'entreprise est-elle citée ?
+"""Intent SEO / GEO par entreprise (paliers P3b, P3c, P3d), tout sur DataForSEO :
+1. page d'accueil → gpt-4o-mini (DataForSEO LLM, ≈ 0,0006 $) : thématique, mot-clé business (ce qu'un client tape), question d'acheteur ;
+2. volume mensuel du mot-clé (Google Ads France, un appel pour tous) ;
+3. SERP Google France top 10 + réponse IA de Google (≈ 0,002 $) : position de l'entreprise, n°1 hors sites publics / Wikipédia /
+   annuaires / médias / comparateurs, domaines cités par la réponse IA ;
+4. part du trafic du n°1 sur le mot-clé (DataForSEO Labs serp_competitors, trafic estimé par domaine) → {{part}} :
+   « et récupère quasiment tout le trafic » si > 60 %, sinon « et capte la plus grosse part des clics » ;
+5. ChatGPT avec recherche web (gpt-5-mini, ≈ 0,016 $) : la question d'acheteur → marques citées, l'entreprise est-elle citée ;
+6. contrôle que le concurrent vend bien la même chose (gpt-4o-mini).
 Sortie : ../data/datasets/intent_seo.json (cache par domaine). Usage : python 53_intent_seo.py --max 20 DS-104-1.1-FR-P4 ..."""
-import base64, csv, json, os, re, sys, urllib.request
+import base64, csv, html, json, os, re, sys, urllib.request
 from concurrent.futures import ThreadPoolExecutor
-ARGS = sys.argv[1:]
 
+ARGS = sys.argv[1:]
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 CACHE = "../data/datasets/intent_seo.json"
 DFS = {"Authorization": "Basic " + base64.b64encode(f"{os.environ['DATAFORSEO_LOGIN']}:{os.environ['DATAFORSEO_PASSWORD']}".encode()).decode(),
        "Content-Type": "application/json"}
-OAI = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"], "Content-Type": "application/json"}
-SKIP = re.compile(r"(wikipedia|youtube|linkedin|facebook|instagram|twitter|x\.com|reddit|quora|indeed|welcometothejungle|pagesjaunes|societe\.com|pappers|amazon|google)\.", re.I)
+NOT_COMPETITOR = re.compile(r"(\.gouv\.fr|\.gov|wikipedia|youtube|linkedin|facebook|instagram|twitter|x\.com|reddit|quora|indeed|welcometothejungle|"
+                            r"pagesjaunes|societe\.com|pappers|infogreffe|amazon|google|lesechos|journaldunet|capterra|appvizer|g2\.com|getapp|"
+                            r"trustpilot|leboncoin|bpifrance|service-public|legifrance|economie\.gouv|cci\.fr|lefigaro|lemonde|bfmtv|maddyness|frenchweb)", re.I)
 QUALIF = json.load(open("../data/campaigns/qualif.json"))
+COST = [0.0]
+
+
+def post(path, body, timeout=180):
+    r = urllib.request.Request("https://api.dataforseo.com" + path, data=json.dumps(body).encode(), headers=DFS, method="POST")
+    t = json.loads(urllib.request.urlopen(r, timeout=timeout).read())["tasks"][0]
+    COST[0] += t.get("cost") or 0
+    if t["status_code"] != 20000: raise RuntimeError(f"{path} {t['status_message']}")
+    return (t.get("result") or [{}])[0]
+
+
+def llm(system, prompt, model="gpt-4o-mini", web=False):
+    b = {"system_message": system[:495], "user_prompt": prompt[:495], "model_name": model, "web_search": web}
+    if web: b["web_search_country_iso_code"] = "FR"
+    r = post("/v3/ai_optimization/chat_gpt/llm_responses/live", [b])
+    return "".join(s.get("text", "") for it in r.get("items", []) for s in it.get("sections", []))
+
+
+def as_json(txt):
+    return json.loads(re.search(r"\{[\s\S]*\}", txt).group(0))
 
 
 def fetch_page(d):
-    import html
     for u in (f"https://{d}", f"https://www.{d}"):
         try:
             t = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=12).read(300000).decode("utf-8", "ignore")
             title = re.search(r"<title[^>]*>(.*?)</title>", t, re.S | re.I)
             meta = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']*)', t, re.I)
             body = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)[\s\S]*?</\1>", " ", t)))
-            return html.unescape(" | ".join(x for x in [title.group(1).strip() if title else "", meta.group(1) if meta else "", body[:1500]] if x))[:2000]
+            return html.unescape(" | ".join(x for x in [title.group(1).strip() if title else "", meta.group(1) if meta else "", body[:600]] if x))
         except Exception:
             continue
     return ""
 
 
-def post(url, body, headers, timeout=120):
-    r = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers, method="POST")
-    return json.loads(urllib.request.urlopen(r, timeout=timeout).read())
+SYS_U = ("Tu aides une agence SEO. Réponds UNIQUEMENT en JSON : {\"thematique\": activité en 5 mots, \"motcle\": LE mot-clé Google "
+         "(2 à 5 mots, français, sans marque, avec un vrai volume) qu'un client tape pour trouver ce type de prestataire, \"prompt\": la "
+         "question qu'un acheteur pose à ChatGPT pour choisir un prestataire de ce type en France, sans marque}.")
+SYS_C = ("Réponds UNIQUEMENT en JSON {\"concurrent\": true|false}. true seulement si le site est une entreprise qui vend la même chose "
+         "(pas un site public, un annuaire, un comparateur, un média, une école, un blog).")
 
 
-def understand(d, company, text):
-    prompt = (f"Entreprise : {company} ({d}). Texte du site : {text}\n\nRéponds en JSON : {{\"thematique\": activité en 5 mots, "
-              "\"icp_client\": qui achète chez eux, \"motcle\": LE mot-clé Google (2 à 5 mots, en français, sans marque) qu'un client "
-              "tape pour trouver ce type de prestataire et qui génère du business, \"prompt\": la question qu'un acheteur poserait à ChatGPT "
-              "pour choisir un prestataire de ce type en France (sans citer de marque)}}")
-    r = post("https://api.openai.com/v1/chat/completions", {"model": "gpt-4o-mini", "response_format": {"type": "json_object"}, "temperature": 0,
-                                                            "messages": [{"role": "user", "content": prompt}]}, OAI)
-    return json.loads(r["choices"][0]["message"]["content"])
-
-
-def serp(kw, own):
-    r = post("https://api.dataforseo.com/v3/serp/google/organic/live/regular",
-             [{"keyword": kw, "location_code": 2250, "language_code": "fr", "depth": 10}], DFS)
-    items = [i for i in (r["tasks"][0]["result"] or [{}])[0].get("items", []) if i.get("type") == "organic"]
-    pos = next((i["rank_group"] for i in items if own in (i.get("domain") or "")), None)
-    top = next((i for i in items if own not in (i.get("domain") or "") and not SKIP.search(i.get("domain") or "")), None)
-    return pos, (top or {}).get("domain", "").removeprefix("www."), (top or {}).get("rank_group"), r["tasks"][0].get("cost", 0)
-
-
-def volumes(kws):
-    r = post("https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live",
-             [{"keywords": kws, "location_code": 2250, "language_code": "fr"}], DFS)
-    return {x["keyword"]: x.get("search_volume") for x in (r["tasks"][0]["result"] or [])}, r["tasks"][0].get("cost", 0)
-
-
-def chatgpt(q, company, d):
-    r = post("https://api.openai.com/v1/chat/completions", {"model": "gpt-4o-mini-search-preview", "web_search_options": {"search_context_size": "low",
-             "user_location": {"type": "approximate", "approximate": {"country": "FR"}}}, "messages": [{"role": "user", "content": q}]}, OAI, timeout=180)
-    ans = r["choices"][0]["message"]["content"]
-    cited = company.lower().split()[0] in ans.lower() or d.split(".")[0] in ans.lower()
-    ex = post("https://api.openai.com/v1/chat/completions", {"model": "gpt-4o-mini", "response_format": {"type": "json_object"}, "temperature": 0,
-              "messages": [{"role": "user", "content": f"Liste en JSON {{\"marques\": [...]}} les entreprises / marques recommandées dans ce texte, dans l'ordre :\n{ans[:4000]}"}]}, OAI)
-    return cited, json.loads(ex["choices"][0]["message"]["content"]).get("marques", [])[:5]
+def run(item):
+    d, company = item
+    out = {"company": company}
+    try:
+        u = as_json(llm(SYS_U, f"Entreprise : {company} ({d}). Site : {fetch_page(d)}"))
+        out.update(u)
+        serp = post("/v3/serp/google/organic/live/advanced", [{"keyword": u["motcle"], "location_code": 2250, "language_code": "fr", "depth": 10,
+                                                                "load_async_ai_overview": True}])
+        items = serp.get("items") or []
+        org = [i for i in items if i.get("type") == "organic"]
+        out["position"] = next((i["rank_group"] for i in org if d in (i.get("domain") or "")), None)
+        cands = [i for i in org if d not in (i.get("domain") or "") and not NOT_COMPETITOR.search(i.get("domain") or "")]
+        for c in cands[:3]:  # premier vrai concurrent
+            dom = c["domain"].removeprefix("www.")
+            if as_json(llm(SYS_C, f"Activité de référence : {u['thematique']}. Site : {dom} · {c.get('title', '')} · {c.get('description', '')}")).get("concurrent"):
+                out.update(concurrent_google=dom, concurrent_rank=c["rank_group"]); break
+        ai = next((i for i in items if i.get("type") == "ai_overview"), None)
+        out["ai_overview_cite"] = sorted({(r.get("domain") or "").removeprefix("www.") for r in (ai or {}).get("references") or [] if r.get("domain")} - {"google.com"})
+        out["ai_overview_entreprise"] = any(d in x for x in out["ai_overview_cite"])
+        if out.get("concurrent_google"):
+            sc = post("/v3/dataforseo_labs/google/serp_competitors/live", [{"keywords": [u["motcle"]], "location_code": 2250, "language_code": "fr",
+                                                                            "item_types": ["organic"], "limit": 20}])
+            etv = {x["domain"].removeprefix("www."): x.get("etv") or 0 for x in sc.get("items") or []}
+            tot = sum(etv.values())
+            out["part_trafic"] = round(100 * etv.get(out["concurrent_google"], 0) / tot) if tot else None
+            out["part"] = "et récupère quasiment tout le trafic" if (out["part_trafic"] or 0) > 60 else "et capte la plus grosse part des clics"
+        ans = llm("Réponds comme ChatGPT à un acheteur en France, avec des recommandations nommées.", u["prompt"], model="gpt-5-mini", web=True)
+        out["chatgpt_cite_entreprise"] = company.lower().split()[0] in ans.lower() or d.split(".")[0] in ans.lower()
+        out["chatgpt_marques"] = as_json(llm("Réponds UNIQUEMENT en JSON {\"marques\": [...]}.", "Entreprises recommandées, dans l'ordre : " + ans[:420])).get("marques", [])[:5]
+    except Exception as e:
+        out["error"] = str(e)[:160]
+    return d, out
 
 
 mx = int(ARGS[ARGS.index("--max") + 1]) if "--max" in ARGS else 20
-codes = [a for a in ARGS if a.startswith("DS-")]
 cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
 todo = []
-for c in codes:
+for c in [a for a in ARGS if a.startswith("DS-")]:
     for r in csv.DictReader(open(f"../data/datasets/{c}.csv")):
         d = r["domain"]
-        if QUALIF.get(d, {}).get("fit") is True and d not in cache and d not in [t[0] for t in todo]: todo.append((d, r["company"]))
+        if QUALIF.get(d, {}).get("fit") is True and d not in cache and d not in dict(todo): todo.append((d, r["company"]))
 todo = todo[:mx]
-print("entreprises", len(todo))
-
-
-def step1(item):
-    d, company = item
-    try: return d, company, understand(d, company, fetch_page(d))
-    except Exception as e: return d, company, {"error": str(e)[:150]}
-
-
-with ThreadPoolExecutor(8) as ex:
-    base = list(ex.map(step1, todo))
-vols, cost = volumes(sorted({b[2]["motcle"].lower() for b in base if b[2].get("motcle")}))
-for d, company, u in base:
-    if not u.get("motcle"): cache[d] = u; continue
-    try:
-        pos, conc, conc_rank, c2 = serp(u["motcle"], d); cost += c2
-        cited, marques = chatgpt(u["prompt"], company, d)
-    except Exception as e:
-        cache[d] = dict(u, error=str(e)[:150]); continue
-    cache[d] = dict(u, company=company, volume=vols.get(u["motcle"].lower()), position=pos, concurrent_google=conc, concurrent_rank=conc_rank,
-                    chatgpt_cite_entreprise=cited, chatgpt_marques=marques)
-    print(d, "|", u["motcle"], vols.get(u["motcle"].lower()), "| pos", pos, "| n°1 :", conc, "| ChatGPT :", "cité" if cited else "absent", marques[:3], flush=True)
+with ThreadPoolExecutor(5) as ex:
+    res = list(ex.map(run, todo))
+kws = sorted({o["motcle"].lower() for _, o in res if o.get("motcle")})
+if kws:
+    try:  # volume Google Ads : le résultat est une liste (pas un seul objet), d'où l'appel direct
+        r = urllib.request.Request("https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live", headers=DFS, method="POST",
+                                   data=json.dumps([{"keywords": kws, "location_code": 2250, "language_code": "fr"}]).encode())
+        t = json.loads(urllib.request.urlopen(r, timeout=180).read())["tasks"][0]
+        vol = {x["keyword"]: x.get("search_volume") for x in t.get("result") or []}
+    except Exception:
+        vol = {}
+    for _, o in res:
+        if o.get("motcle"): o["volume"] = vol.get(o["motcle"].lower())
+for d, o in res:
+    cache[d] = o
+    print(d, "|", o.get("motcle"), o.get("volume"), "| pos", o.get("position"), "| n°1", o.get("concurrent_google"), o.get("part_trafic"), "%",
+          "| IA Google", "cite" if o.get("ai_overview_entreprise") else "absent", "| ChatGPT", "cite" if o.get("chatgpt_cite_entreprise") else "absent",
+          (o.get("chatgpt_marques") or [])[:3], o.get("error", ""), flush=True)
 json.dump(cache, open(CACHE, "w"), ensure_ascii=False, indent=1)
-print("coût DataForSEO", round(cost, 4), "$")
+print("coût DataForSEO", round(COST[0], 3), "$")
