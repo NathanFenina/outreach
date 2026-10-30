@@ -372,3 +372,9 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - **Zapmail** : CAPTCHA retiré, vérifié 29/10 : 301 vers decupler.com sur les 7 domaines (http, https, www).
 - **Firecrawl** : 2 clés dans l'environnement (FIRECRAWL_API_KEY_1 / _2) ; le connecteur MCP est à 0 crédit.
 - **Stratégie consolidée** : `copy/39_strategie_outbound.md`.
+
+## 13. Bascule Instantly (30/10)
+- Instantly Hypergrowth payé (codes Igor : ULTB20OFF1 utilisé sur le mensuel ; SECRET20 à réutiliser). Plan de bascule complet + prompt Claude in Chrome : `copy/40_bascule_instantly.md`.
+- Règle : groupe A PremiumInboxes → prospects Google (lots G) ; groupe B Zapmail → Outlook (M) + autres (O). decupleragency.com / decupler-search.com hors campagnes (SURBL).
+- Lemlist : 11 campagnes encore « running » au dernier relevé ; lemwarm à ne pas relancer ; annulation avant le 10/11.
+- FU2 B2B option 3 : « Claude Code a pris le contrôle de votre PC et ne vous laisse plus répondre » (idée Nathan).
