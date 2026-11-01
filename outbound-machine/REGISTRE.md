@@ -384,3 +384,11 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - Domaines Zapmail (7), decupler.fr et decupler.com : propres.
 - 21/21 boîtes Zapmail dans Instantly, chauffe Instantly active, 10/jour, rattachées aux lots M et O. lemwarm arrêté partout (Nathan). Les 11 campagnes Lemlist encore actives finissent leur séquence.
 - `56_instantly_accounts.py assign` vérifie SURBL à chaque fois : un domaine listé n'est jamais rattaché à une campagne.
+
+## 15. Décisions Nathan (01/11)
+- Chauffe Instantly active sur les 21 boîtes Zapmail.
+- **Remplacer PremiumInboxes** (10 domaines listés SURBL) par de nouvelles adresses propres : achat par Nathan. Aucune campagne depuis PremiumInboxes d'ici là.
+- **Outscraper / Google Maps** : boîtes d'envoi dédiées aux leads locaux, pour ne pas mélanger les réputations.
+- Question des 453 leads Google (lot G sans boîte propre) : posée à Igor (onglet 0 du Sheet, « Questions pour Igor »).
+- Recherche Lemlist terminée pour 104 / 106 / 110 / 114 (P2, P2b, P4 + pages suivantes) ; aucun scraping Outscraper lancé.
+- Validation des copies par Nathan : onglet 6b, colonnes I (Validation) et J (Commentaire).
