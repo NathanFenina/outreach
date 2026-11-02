@@ -1,0 +1,137 @@
+<title>Décupler Outbound Brief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one readable column, a status strip up top, then numbered sections in the order Igor should review them */
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --ink:#1b2320; --muted:#5d6a64; --line:#dde3df;
+  --accent:#1f6f5c; --accent-soft:#e3f0eb; --warn:#a4560b; --warn-soft:#fbefe1; --crit:#a83228; --crit-soft:#f8e6e3;
+  --display:"Fraunces",Georgia,serif; --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121715; --surface:#1a211e; --ink:#e7ece9; --muted:#9aa8a1; --line:#2c3632;
+  --accent:#5fc3a6; --accent-soft:#1d3a31; --warn:#e3a35b; --warn-soft:#3a2a17; --crit:#ec8a7f; --crit-soft:#3d1f1b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121715; --surface:#1a211e; --ink:#e7ece9; --muted:#9aa8a1; --line:#2c3632;
+  --accent:#5fc3a6; --accent-soft:#1d3a31; --warn:#e3a35b; --warn-soft:#3a2a17; --crit:#ec8a7f; --crit-soft:#3d1f1b; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:36px}
+header{display:grid;gap:10px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-size:clamp(1.9rem,4.5vw,2.6rem);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:1.35rem;margin:0 0 12px;text-wrap:balance}
+p{margin:0;max-width:68ch}
+.lead{color:var(--muted)}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.cell{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;gap:6px;min-width:0}
+.cell .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cell .v{font-size:1.05rem;font-weight:600}
+.pill{justify-self:start;font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:999px}
+.ok{background:var(--accent-soft);color:var(--accent)} .wait{background:var(--warn-soft);color:var(--warn)} .bad{background:var(--crit-soft);color:var(--crit)}
+section{display:grid;gap:12px}
+ul,ol{margin:0;padding-left:1.2rem;display:grid;gap:6px;max-width:70ch}
+.table{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:none}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{border-left:3px solid var(--warn);background:var(--warn-soft);padding:12px 14px;border-radius:0 8px 8px 0;max-width:72ch}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.q ol{gap:10px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{font-family:var(--mono);font-size:13px;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:8px;text-decoration:none}
+footer{color:var(--muted);font-size:13px}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Décupler · UltB coaching · pre-session brief</div>
+    <h1>Where Décupler's outbound stands, and what I need from you</h1>
+    <p class="lead">Nathan Fenina, 2 November 2026. Five minutes to read. Your review is needed on the copy (section 4) and on the eight questions at the end.</p>
+  </header>
+
+  <div class="strip" aria-label="Status">
+    <div class="cell"><span class="k">Sending tool</span><span class="v">Instantly Hypergrowth</span><span class="pill ok">live, nothing sent</span></div>
+    <div class="cell"><span class="k">Inboxes ready</span><span class="v num">21 Zapmail</span><span class="pill ok">warmup on, 10/day</span></div>
+    <div class="cell"><span class="k">Old inboxes</span><span class="v num">10 domains</span><span class="pill bad">all on SURBL</span></div>
+    <div class="cell"><span class="k">Leads in Instantly</span><span class="v num">≈ 2,900</span><span class="pill ok">France</span></div>
+    <div class="cell"><span class="k">Copy</span><span class="v">V3, FR + EN</span><span class="pill wait">waiting for your review</span></div>
+  </div>
+
+  <section>
+    <h2>1. Infrastructure</h2>
+    <ul>
+      <li>Every campaign is split by the prospect's email provider (MX lookup): <strong>G</strong> Google, <strong>M</strong> Microsoft / Outlook, <strong>O</strong> others. 39 draft campaigns in Instantly.</li>
+      <li>21 Zapmail inboxes (7 domains, Google Workspace) are connected to Instantly, warmup on, capped at 10 emails a day. SPF, DKIM and DMARC checked. Redirects to decupler.com fixed (no more captcha page).</li>
+      <li>Lemlist: lemwarm stopped everywhere, renewal cancelled before 10 November, full export done. The 6,904 domains we already contacted are in Instantly's blocklist.</li>
+    </ul>
+    <p class="note"><strong>Problem:</strong> all 10 PremiumInboxes domains (the ones meant for Google prospects) are listed on SURBL. SURBL refused delisting on 30 September (lookalike domains, warmup, spamtraps). These inboxes are kept out of every campaign for now, so the G campaigns have no sender.</p>
+  </section>
+
+  <section>
+    <h2>2. Data we built ourselves</h2>
+    <ol>
+      <li>Lemlist people database (free): France, sub-ICP keywords, 5 to 500 employees, decision-makers, up to 3 contacts per company.</li>
+      <li>Signals: hiring in marketing or sales in the last 90 days (tier 2). Funding data is almost empty for France, so tier 1 is small.</li>
+      <li>Blocklist check, then an AI check of every company's homepage: about 1 in 3 removed (out of scope, dead site, funds, large groups, competing agencies).</li>
+      <li>Emails: Moltsets first (risk grade A/B only), FullEnrich on the misses. About 90 % found on our first SaaS / AI batch.</li>
+      <li>Last checks before import: email on the company's own domain, one email in one campaign only, no catch-all.</li>
+    </ol>
+    <div class="table"><table>
+      <thead><tr><th>Campaign</th><th>Target (France)</th><th>Tiers</th></tr></thead>
+      <tbody>
+        <tr><td class="num">104</td><td>SaaS and AI startups</td><td>hiring, main market</td></tr>
+        <tr><td class="num">106</td><td>Consulting, accounting, M&amp;A, wealth managers</td><td>hiring, main market</td></tr>
+        <tr><td class="num">110</td><td>Construction, renovation, civil engineering (performance partnership)</td><td>main market</td></tr>
+        <tr><td class="num">114</td><td>Independent hotels, spas, campsites</td><td>main market</td></tr>
+        <tr><td class="num">121 / 122</td><td>B2B companies hiring in marketing / sales</td><td>hiring</td></tr>
+      </tbody>
+    </table></div>
+    <p>SEO / AI intent (tier 3) is being built on DataForSEO: traffic drop, the competitor ranking #1 on their main keyword and its share of traffic, cost per click on that keyword, and which brands ChatGPT, Perplexity and Google AI cite. First test on 20 companies works end to end but is not reliable enough yet to email anyone.</p>
+  </section>
+
+  <section>
+    <h2>3. The dataset I'm asking you for</h2>
+    <div class="table"><table>
+      <thead><tr><th>#</th><th>Target</th><th>Countries</th><th>Contacts</th><th>Volume</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>SaaS / AI, consulting, marketing and event agencies</td><td>UK, DACH</td><td>CEO / founder, CMO, head of SEO / content</td><td class="num">600 companies</td></tr>
+        <tr><td class="num">2</td><td>Hair transplant, dental, cosmetic clinics targeting French-speaking patients</td><td>Turkey, Hungary, Tunisia</td><td>owner / medical director, international patient manager</td><td class="num">300 clinics</td></tr>
+        <tr><td class="num">3</td><td>Independent hotels and spas</td><td>Belgium, French-speaking Switzerland, Morocco</td><td>owner / GM, revenue manager, marketing</td><td class="num">300 places</td></tr>
+      </tbody>
+    </table></div>
+    <p>Split by provider (Google / Microsoft / others) or with the MX, no catch-all, excluding the 6,904 domains in the do-not-contact file I sent you.</p>
+  </section>
+
+  <section>
+    <h2>4. Copy to validate</h2>
+    <p>Each first email carries one of five core problems: <strong>not enough inbound requests</strong>, <strong>lack of visibility</strong>, <strong>expensive ads</strong>, <strong>a competitor takes the traffic</strong>, <strong>invisible in AI answers</strong>. No call in email 1: we state a concrete finding, offer an asset (7 levers, a roadmap, a short analysis) and look for a "yes". Email 1 is A/B tested: asset (A) against "worth 15 minutes?" (B).</p>
+    <p>The tab <em>6c. Copies V3 FR + EN</em> has every template in French with the English translation next to it, and two columns for you: <em>Igor: OK?</em> and <em>Igor: comment</em>. The tab <em>2c. ICP problems (EN)</em> lists the problems per sub-ICP.</p>
+    <div class="links">
+      <a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit#gid=610290004">Copy V3, FR + EN</a>
+      <a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit#gid=610290005">ICP problems (EN)</a>
+      <a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit">Full kickoff sheet</a>
+    </div>
+  </section>
+
+  <section class="q">
+    <h2>5. My questions for you</h2>
+    <ol>
+      <li><strong>Google prospects (453 leads):</strong> send them from the clean Zapmail inboxes (Google Workspace) for now, or wait for new inboxes?</li>
+      <li><strong>The 10 SURBL-listed domains:</strong> should I replace them? If yes, how many inboxes, and should leads coming from Google Maps get their own inboxes?</li>
+      <li><strong>Ramp-up:</strong> after about three weeks of warmup, what daily volume per inbox do you start with, and how fast do you increase?</li>
+      <li><strong>Outlook:</strong> is a placement test on 2 inboxes enough before sending to Microsoft prospects from Google Workspace inboxes?</li>
+      <li><strong>Which tier first:</strong> the hiring signal (small and warm) or the SEO / AI intent tier (bigger, more personalised)?</li>
+      <li><strong>Email 1 CTA:</strong> do you agree with the A/B test asset vs "worth 15 minutes?", 250+ prospects per variant?</li>
+      <li><strong>Signature:</strong> "Nathan Fenina, Agence Décupler" (it builds my brand, LinkedIn and decupler.com) or just "Nathan"?</li>
+      <li><strong>Intents:</strong> among traffic drop, competitor #1 on their keyword, ad cost and AI citations, which one converts best in your experience?</li>
+    </ol>
+  </section>
+
+  <footer>Everything is drafted, nothing has been sent. I'll apply your comments to the copy before any launch.</footer>
+</div>
