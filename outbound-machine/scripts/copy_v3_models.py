@@ -8,6 +8,11 @@ Chaque entrée : (code, famille, étape, problème, objet FR, texte FR, PS FR, o
 
 PS_TECH = "PS : j'accompagne des entreprises tech et B2B à devenir plus visibles sur Google et les IA, comme Cloudtech (+17 % de CA en 6 mois)."
 PS_TECH_EN = "PS: I help tech and B2B companies become more visible on Google and AI assistants, like Cloudtech (+17% revenue in 6 months)."
+# test A/B du PS demandé par Nathan : version A « +17 % de CA », version B « +17 % de leads »
+PS_TECH_B = "PS : j'accompagne des entreprises tech et B2B à devenir plus visibles sur Google et les IA, comme Cloudtech (+17 % de leads en 6 mois)."
+PS_TECH_B_EN = "PS: I help tech and B2B companies become more visible on Google and AI assistants, like Cloudtech (+17% leads in 6 months)."
+BONUS = "PS : en bonus, je peux vous offrir les données structurées de votre page d'accueil."
+BONUS_EN = "PS: as a bonus, I can give you the structured data for your homepage, free."
 PPS = "PPS : pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille."
 PPS_EN = "PPS: not the right time? Reply \"bye bye\" and I'll leave you alone."
 
@@ -19,7 +24,7 @@ MODELS = [
   "Congrats on the round, {{firstName}}. I know what it takes, well done.\n\nI know what ads cost in your space, and what organic can bring to sales when it is done well.\n\nTo make that budget go further, I've prepared a roadmap with a few actions based on where {{companyName}} stands today. Can I send it over?\n\nIf we're aligned, we jump on a call to go deeper. If not, just tell me.",
   PS_TECH_EN, "Retour Nathan ligne 2 (texte repris presque mot pour mot) + 2 PS"),
  ("B-P2", "B2B", "P2 · recrute (marketing ET commercial regroupés)", "Pas assez de demandes", "votre recrutement",
-  "J'ai vu que {{companyName}} recrute, {{firstName}}, et que vous travaillez avec {{observation}}.\n\nJ'ai regardé votre site de près et j'ai relevé 7 leviers pour que ChatGPT et Google vous recommandent quand vos clients cherchent {{thematique}}.\n\nSeriez-vous contre que je vous les partage ?",
+  "J'ai vu que {{companyName}} recrute, {{firstName}}, et que vous travaillez avec {{observation}}.\n\nJ'ai regardé votre site de près et j'ai relevé 7 leviers pour que ChatGPT et Google vous recommandent quand vos clients cherchent {{thematique}}.\n\nSeriez-vous contre que je vous les partage ? S'ils ne vous apprennent rien, dites-le moi et je ne vous relance plus.",
   PS_TECH, "your hiring",
   "I saw that {{companyName}} is hiring, {{firstName}}, and that you work with {{observation}}.\n\nI took a close look at your site and found 7 levers to get ChatGPT and Google to recommend you when your clients look for {{thematique}}.\n\nWould you be against me sharing them?",
   PS_TECH_EN, "Retour Nathan lignes 3-4 : recrutement regroupé, observation sur le site, 7 leviers, PS « j'accompagne… »"),
@@ -43,11 +48,11 @@ MODELS = [
   PS_TECH, "{{motcle}} on Google Ads",
   "{{firstName}}, one Google Ads click on \"{{motcle}}\" costs about €{{cpc}} in France (SEO tools estimate).\n\n{{companyName}} can get those searches organically, on Google and in AI answers, without paying for every visit.\n\nI've listed the actions to get there. Can I send them over?",
   PS_TECH_EN, "Proposition : problème « Ads chers » (CPC réel DataForSEO)"),
- ("B-P4", "B2B", "P4 · marché principal", "Manque de visibilité", "{{companyName}} et ChatGPT",
-  "{{firstName}}, j'ai analysé la visibilité de {{companyName}} : vous n'apparaissez pas en bonne place sur « {{motcle}} », ni quand on demande à ChatGPT « {{prompt}} ».\n\n{pb}\n\nJ'ai listé les actions pour vous faire remonter : pas un audit généraliste, un plan adapté à votre business. Seriez-vous contre que je vous l'envoie ?",
-  PS_TECH, "{{companyName}} and ChatGPT",
-  "{{firstName}}, I analysed {{companyName}}'s visibility: you don't rank well on \"{{motcle}}\", nor when someone asks ChatGPT \"{{prompt}}\".\n\n{pb_en}\n\nI've listed the actions to move you up: not a generic audit, a plan built for your business. Would you be against me sending it?",
-  PS_TECH_EN, "Retour Nathan ligne 8 + ligne 32 (« pas un audit généraliste »)"),
+ ("B-P4", "B2B", "P4 · marché principal", "Invisible sur l'IA", "{{companyName}} et ChatGPT",
+  "{{firstName}}, l'IA a changé la façon d'être visible : il y a quelques critères à respecter sur vos pages pour que Google et ChatGPT vous recommandent.\n\nJ'ai regardé {{companyName}} : vous n'apparaissez pas en bonne place sur « {{motcle}} », ni quand on demande à ChatGPT « {{prompt}} ».\n\nJe peux vous offrir l'analyse on-page d'une page de votre choix, et vous me dites ce que vous en pensez. Seriez-vous contre ?",
+  BONUS, "{{companyName}} and ChatGPT",
+  "{{firstName}}, AI has changed what it takes to be visible: your pages need to meet a few criteria for Google and ChatGPT to recommend you.\n\nI looked at {{companyName}}: you don't rank well on \"{{motcle}}\", nor when someone asks ChatGPT \"{{prompt}}\".\n\nI can offer you an on-page analysis of one page of your choice, and you tell me what you think. Would you be against it?",
+  BONUS_EN, "Retour Nathan (e) + bonus données structurées (d)"),
  ("B-P4-1.13", "B2B", "P4 · avocats d'affaires (sobre)", "Un concurrent récupère le trafic", "avocat {{motcle}}",
   "{{firstName}}, sur « avocat {{motcle}} {{ville}} », c'est souvent {{concurrent}} qui sort en premier et qui reçoit l'essentiel des demandes.\n\nDans le respect de vos règles déontologiques, j'ai listé les actions pour faire remonter {{companyName}} en premier.\n\nSeriez-vous contre que je vous les envoie ?",
   "PS : j'accompagne des cabinets et des entreprises B2B à devenir plus visibles sur Google et les IA.", "business lawyer {{motcle}}",
@@ -58,6 +63,8 @@ MODELS = [
   PS_TECH, "\"{{motcle}}\"",
   "{{firstName}}, \"{{motcle}}\" is searched {{volume}} times a month, and {{concurrent}} ranks ahead of {{companyName}}, on Google and in ChatGPT.\n\nLooking at your site, I noted what's missing to get cited: mainly structured data and direct answers to your clients' questions.\n\nWould you be against me sending you the list?",
   PS_TECH_EN, "Retour Nathan ligne 22 : phrase « Il vous manque moins que vous ne pensez » supprimée"),
+ ("B-PS-B", "B2B", "Variante B du PS (test CA vs leads, sur tous les mails 1 B2B)", "", "",
+  "(même mail, seul le PS change)", PS_TECH_B, "", "(same email, only the PS changes)", PS_TECH_B_EN, "Demande Nathan : tester « +17 % de CA » (A) contre « +17 % de leads » (B)"),
  ("B-FU1", "B2B", "FU1 · J+3 · même fil", "", "",
   "{{firstName}}, je remonte mon message au cas où il serait passé à la trappe.\n\nToujours partant pour que je vous l'envoie ?\n\nNathan", "", "",
   "{{firstName}}, bumping my message in case it slipped through.\n\nStill up for me sending it?\n\nNathan", "", "Retour Nathan ligne 10"),

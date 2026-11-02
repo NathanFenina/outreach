@@ -1,0 +1,1132 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>CR cold mail Décupler · Igor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, meeting-brief style; tables scroll inside their own box */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#17202b; --muted:#5b6675; --line:#dde2e8;
+  --accent:#1d5c86; --accent-soft:#e3eef6;
+  --good:#1f7a4d; --good-soft:#e2f3ea; --warn:#9a6700; --warn-soft:#fbf1d9; --bad:#b3261e; --bad-soft:#fbe5e3;
+  --display:"Archivo",system-ui,sans-serif; --body:"Source Sans 3",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161c; --surface:#18202a; --fg:#e6ebf1; --muted:#9aa6b4; --line:#2a3542;
+  --accent:#6fb0dd; --accent-soft:#1b2c3b;
+  --good:#5cc191; --good-soft:#15291f; --warn:#e2b54f; --warn-soft:#2b2412; --bad:#f08a82; --bad-soft:#331a19; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161c; --surface:#18202a; --fg:#e6ebf1; --muted:#9aa6b4; --line:#2a3542;
+  --accent:#6fb0dd; --accent-soft:#1b2c3b;
+  --good:#5cc191; --good-soft:#15291f; --warn:#e2b54f; --warn-soft:#2b2412; --bad:#f08a82; --bad-soft:#331a19; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--body)}
+.wrap{max-width:900px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;border-bottom:2px solid var(--fg);padding-bottom:14px}
+h1{font:800 clamp(1.6rem,4vw,2.3rem)/1.1 var(--display);margin:0;text-wrap:balance}
+.meta{color:var(--muted);font-size:.92rem;margin-top:6px}
+.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.lang button{font:600 .85rem var(--body);letter-spacing:.04em;padding:8px 14px;border:0;background:var(--surface);color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+h2{font:700 1.3rem/1.25 var(--display);margin:40px 0 12px;text-wrap:balance}
+h2 .n{font-family:var(--mono);color:var(--accent);font-size:1rem;margin-right:8px}
+h3{font:700 1.02rem var(--display);margin:22px 0 8px}
+p,li{max-width:68ch}
+ul,ol{padding-left:1.2em;margin:8px 0}
+li{margin:4px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.kpi b{display:block;font:700 1.55rem var(--mono);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:.86rem}
+.kpi.alert{border-color:var(--bad)} .kpi.alert b{color:var(--bad)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface);margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 .75rem var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--bg)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.tot td{font-weight:700;background:var(--accent-soft)}
+.pill{display:inline-block;font:600 .74rem var(--body);padding:2px 8px;border-radius:99px;white-space:nowrap}
+.p-good{background:var(--good-soft);color:var(--good)} .p-warn{background:var(--warn-soft);color:var(--warn)} .p-bad{background:var(--bad-soft);color:var(--bad)}
+.note{background:var(--accent-soft);border-radius:6px;padding:12px 16px;margin:12px 0}
+.note.bad{background:var(--bad-soft)}
+code{font-family:var(--mono);font-size:.86em;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+.small{color:var(--muted);font-size:.86rem}
+footer{margin-top:48px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:12px}
+
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 6px}
+.tabs button{font:600 .9rem var(--body);padding:8px 14px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ed{outline:1px dashed var(--line);outline-offset:-3px;border-radius:3px;cursor:text;white-space:pre-wrap}
+.ed:hover{outline-color:var(--accent)}
+.ed:focus{outline:2px solid var(--accent);background:var(--accent-soft)}
+.ed.saved{background:var(--good-soft)}
+.ed.edited{box-shadow:inset 3px 0 0 var(--good)}
+.ro .ed{outline:none;cursor:default}
+.todo{color:var(--warn);font-weight:600}
+body.wide .wrap{max-width:1500px}
+table.grid{table-layout:fixed;width:100%;font-size:.84rem}
+table.grid td,table.grid th{min-width:0;word-wrap:break-word;overflow-wrap:anywhere}
+table.grid thead th:first-child,table.grid tbody th{width:18%}
+table.grid td{line-height:1.45}
+@media (max-width:760px){table.grid{min-width:760px}}
+table.grid tbody th{background:var(--bg);text-transform:none;letter-spacing:0;font-size:.82rem;color:var(--fg)}
+tr.sec td{background:var(--fg);color:var(--bg);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem}
+.kv{display:flex;flex-wrap:wrap;gap:4px 12px;margin:6px 0}
+.kv b{min-width:220px}
+.kv .ed{flex:1;min-width:200px;padding:2px 6px}
+.savebar{font-size:.85rem;color:var(--muted);margin:8px 0}
+pre.tpl{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px;white-space:pre-wrap;font:.88rem/1.5 var(--mono)}
+.qlist{display:grid;gap:12px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.q p{margin:0 0 8px;font-weight:600}
+.q .ed{display:block;min-height:2.2em;padding:6px 8px}
+.chk{width:18px;height:18px;accent-color:var(--good)}
+
+html[lang="en"] .fr{display:none} html:not([lang="en"]) .en{display:none}
+.gbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--good-soft);color:var(--good);font-size:.85rem;padding:6px 10px;border-radius:6px;margin:6px 0}
+.gbar.bad{background:var(--warn-soft);color:var(--warn)}
+.cellwrap{display:flex;gap:4px;align-items:flex-start}
+.cellwrap .ed{flex:1;min-height:1.6em;padding:3px 5px}
+.ed.sug{color:var(--muted);font-style:italic}
+button.ok{border:1px solid var(--good);background:var(--surface);color:var(--good);border-radius:4px;cursor:pointer;font-size:.8rem;padding:1px 6px}
+button.ok:hover{background:var(--good-soft)}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <h1 id="ttl">Compte rendu cold mail · préparation du call avec Igor</h1>
+    <div class="meta" id="meta">Décupler · Nathan Fenina · période analysée : 14 sept. → 12 oct. 2026 (4 semaines) · source : API Lemlist</div>
+  </div>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button id="b-fr" aria-pressed="true">FR</button>
+    <button id="b-en" aria-pressed="false">EN</button>
+  </div>
+</header>
+<nav class="tabs" role="tablist" aria-label="Sections">
+<button role="tab" data-p="p-s4" aria-selected="true"><span class="fr">Session 4 · 03/11</span><span class="en">Session 4 · 3 Nov</span></button>
+<button role="tab" data-p="p-s3" aria-selected="false"><span class="fr">Session 3 · 27/10</span><span class="en">Session 3 · 27 Oct</span></button>
+<button role="tab" data-p="p-s2" aria-selected="false"><span class="fr">Session 2 · 20/10</span><span class="en">Session 2 · 20 Oct</span></button>
+<button role="tab" data-p="p-cr" aria-selected="false"><span class="fr">Compte rendu</span><span class="en">Review</span></button>
+<button role="tab" data-p="p-icp" aria-selected="false">ICP / VP</button>
+<button role="tab" data-p="p-gw" aria-selected="false">Groundwork</button>
+<button role="tab" data-p="p-method" aria-selected="false"><span class="fr">Méthode Igor</span><span class="en">Igor's method</span></button>
+<button role="tab" data-p="p-mc" aria-selected="false">Masterclass</button>
+<button role="tab" data-p="p-deliv" aria-selected="false"><span class="fr">Délivrabilité</span><span class="en">Deliverability</span></button>
+<button role="tab" data-p="p-q" aria-selected="false">Questions</button>
+</nav>
+<div class="gbar" id="gbar" role="status"></div>
+<!-- ===================== SESSION 4 ===================== -->
+<div class="panel" id="p-s4">
+<h2><span class="n">S4</span><span class="fr">Session 4 · mardi 03/11 · où on en est et ce que j'attends de toi</span><span class="en">Session 4 · Tue 3 Nov · where we stand and what I need from you</span></h2>
+<div class="note"><b><span class="fr">Igor, tu peux répondre directement dans les cases en pointillés en bas de cet onglet (enregistrement automatique), ou m'envoyer un mail sur ces points avant la session.</span><span class="en">Igor, you can answer directly in the dashed boxes at the bottom of this tab (saved automatically), or email me on these points before the session.</span></b></div>
+<div class="kpis">
+<div class="kpi"><b>Instantly</b><span><span class="fr">Hypergrowth actif, rien envoyé</span><span class="en">Hypergrowth live, nothing sent</span></span></div>
+<div class="kpi"><b>21</b><span><span class="fr">boîtes Zapmail, chauffe on, 10/jour</span><span class="en">Zapmail inboxes, warmup on, 10/day</span></span></div>
+<div class="kpi alert"><b>10</b><span><span class="fr">domaines PremiumInboxes sur SURBL</span><span class="en">PremiumInboxes domains on SURBL</span></span></div>
+<div class="kpi"><b>≈ 2 900</b><span><span class="fr">leads importés (France)</span><span class="en">leads imported (France)</span></span></div>
+<div class="kpi"><b>39</b><span><span class="fr">campagnes en brouillon</span><span class="en">draft campaigns</span></span></div>
+</div>
+<h3><span class="fr">1. Infrastructure</span><span class="en">1. Infrastructure</span></h3>
+<ul>
+<li><span class="fr">Chaque campagne est scindée selon la messagerie du prospect (lecture du MX) : <b>G</b> Google, <b>M</b> Microsoft / Outlook, <b>O</b> autres.</span><span class="en">Every campaign is split by the prospect's email provider (MX lookup): <b>G</b> Google, <b>M</b> Microsoft / Outlook, <b>O</b> others.</span></li>
+<li><span class="fr">21 boîtes Zapmail (7 domaines, Google Workspace) connectées à Instantly, chauffe active, 10 mails/jour. SPF, DKIM, DMARC vérifiés.</span><span class="en">21 Zapmail inboxes (7 domains, Google Workspace) connected to Instantly, warmup on, 10 emails/day. SPF, DKIM, DMARC checked.</span></li>
+<li><span class="fr">Lemlist : lemwarm arrêté partout, renouvellement annulé avant le 10/11, export complet fait. Les 6 904 domaines déjà contactés sont dans la blocklist Instantly.</span><span class="en">Lemlist: lemwarm stopped everywhere, renewal cancelled before 10 Nov, full export done. The 6,904 already-contacted domains are in Instantly's blocklist.</span></li>
+</ul>
+<div class="note bad"><span class="fr"><b>Problème :</b> les 10 domaines PremiumInboxes (prévus pour les prospects Google) sont listés SURBL ; délistage refusé le 30/09. Ils sont exclus de toutes les campagnes : les campagnes G n'ont pas d'expéditeur pour l'instant.</span><span class="en"><b>Problem:</b> all 10 PremiumInboxes domains (meant for Google prospects) are on SURBL; delisting refused on 30 Sept. They are kept out of every campaign, so the G campaigns have no sender for now.</span></div>
+<h3><span class="fr">2. Les données qu'on a construites</span><span class="en">2. Data we built</span></h3>
+<ol>
+<li><span class="fr">Base Lemlist (gratuite) : France, mots-clés par sous-ICP, 5 à 500 salariés, décideurs, 3 contacts max par entreprise.</span><span class="en">Lemlist people database (free): France, sub-ICP keywords, 5 to 500 employees, decision-makers, max 3 contacts per company.</span></li>
+<li><span class="fr">Signaux : recrutement marketing ou commercial sur 90 jours (palier 2). Les levées de fonds sont quasi vides pour la France : palier 1 petit.</span><span class="en">Signals: hiring in marketing or sales in the last 90 days (tier 2). Funding data is almost empty for France, so tier 1 is small.</span></li>
+<li><span class="fr">Liste noire, puis contrôle IA de la page d'accueil de chaque entreprise : environ 1 sur 3 retirée (hors cible, site mort, grands groupes, agences concurrentes).</span><span class="en">Blocklist, then an AI check of every company's homepage: about 1 in 3 removed (out of scope, dead site, large groups, competing agencies).</span></li>
+<li><span class="fr">Emails : Moltsets d'abord (risque A/B seulement), FullEnrich sur les manquants. Environ 90 % trouvés.</span><span class="en">Emails: Moltsets first (risk grade A/B only), FullEnrich on the misses. About 90% found.</span></li>
+<li><span class="fr">Intention SEO / IA (palier 3) en construction sur DataForSEO : baisse de trafic, concurrent n°1 sur leur mot-clé principal et sa part de trafic, coût par clic, marques citées par ChatGPT / Perplexity / Google IA. Premier test sur 20 entreprises : pas encore assez fiable pour envoyer. Prochaine étape : détecter le vrai concurrent (pas seulement SEO) avec Gemini Flash.</span><span class="en">SEO / AI intent (tier 3) being built on DataForSEO: traffic drop, competitor #1 on their main keyword and its traffic share, cost per click, brands cited by ChatGPT / Perplexity / Google AI. First test on 20 companies: not reliable enough to send yet. Next step: detect the real competitor (not just SEO) with Gemini Flash.</span></li>
+</ol>
+<div class="tbl"><table><thead><tr><th><span class="fr">Campagne</span><span class="en">Campaign</span></th><th><span class="fr">Cible (France)</span><span class="en">Target (France)</span></th><th><span class="fr">Paliers</span><span class="en">Tiers</span></th></tr></thead><tbody>
+<tr><td class="num">104</td><td><span class="fr">Éditeurs SaaS et startups IA</span><span class="en">SaaS and AI startups</span></td><td><span class="fr">recrute, marché principal</span><span class="en">hiring, main market</span></td></tr>
+<tr><td class="num">106</td><td><span class="fr">Conseil, expertise comptable, M&amp;A, CGP</span><span class="en">Consulting, accounting, M&amp;A, wealth managers</span></td><td><span class="fr">recrute, marché principal</span><span class="en">hiring, main market</span></td></tr>
+<tr><td class="num">110</td><td><span class="fr">BTP, rénovation, TP (partenariat à la performance)</span><span class="en">Construction, renovation, civil works (performance partnership)</span></td><td><span class="fr">marché principal</span><span class="en">main market</span></td></tr>
+<tr><td class="num">114</td><td><span class="fr">Hôtels indépendants, spas, campings</span><span class="en">Independent hotels, spas, campsites</span></td><td><span class="fr">marché principal</span><span class="en">main market</span></td></tr>
+<tr><td class="num">121 / 122</td><td><span class="fr">Entreprises B2B qui recrutent en marketing / commercial</span><span class="en">B2B companies hiring in marketing / sales</span></td><td><span class="fr">recrute</span><span class="en">hiring</span></td></tr>
+</tbody></table></div>
+<h3><span class="fr">3. Le dataset que je te demande</span><span class="en">3. The dataset I'm asking you for</span></h3>
+<div class="tbl"><table><thead><tr><th>#</th><th><span class="fr">Cible</span><span class="en">Target</span></th><th><span class="fr">Pays</span><span class="en">Countries</span></th><th class="num">Volume</th></tr></thead><tbody>
+<tr><td>1</td><td><span class="fr">SaaS / IA, conseil, agences marketing et événementiel</span><span class="en">SaaS / AI, consulting, marketing and event agencies</span></td><td>UK, DACH</td><td class="num">600</td></tr>
+<tr><td>2</td><td><span class="fr">Cliniques greffe, dentaire, esthétique visant les patients francophones</span><span class="en">Hair, dental, cosmetic clinics targeting French-speaking patients</span></td><td><span class="fr">Turquie, Hongrie, Tunisie</span><span class="en">Turkey, Hungary, Tunisia</span></td><td class="num">300</td></tr>
+<tr><td>3</td><td><span class="fr">Hôtels indépendants et spas</span><span class="en">Independent hotels and spas</span></td><td><span class="fr">Belgique, Suisse romande, Maroc</span><span class="en">Belgium, French-speaking Switzerland, Morocco</span></td><td class="num">300</td></tr>
+</tbody></table></div>
+<p class="small"><span class="fr">Séparé par messagerie (Google / Microsoft / autres) ou avec le MX, sans catch-all, hors des 6 904 domaines du fichier « ne pas contacter ».</span><span class="en">Split by provider (Google / Microsoft / others) or with the MX, no catch-all, excluding the 6,904 domains in the do-not-contact file.</span></p>
+<h3><span class="fr">4. Copies à valider (V3, FR + EN)</span><span class="en">4. Copy to validate (V3, FR + EN)</span></h3>
+<p><span class="fr">Chaque premier mail porte un des 5 problèmes de fond : <b>pas assez de demandes</b>, <b>manque de visibilité</b>, <b>Ads chers</b>, <b>un concurrent récupère le trafic</b>, <b>invisible sur l'IA</b>. Pas d'appel dans le mail 1 : un constat concret, un livrable offert, on cherche un « oui ».</span><span class="en">Each first email carries one of 5 core problems: <b>not enough inbound requests</b>, <b>lack of visibility</b>, <b>expensive ads</b>, <b>a competitor takes the traffic</b>, <b>invisible in AI answers</b>. No call in email 1: a concrete finding, a free asset, we look for a &quot;yes&quot;.</span></p>
+<ul>
+<li><span class="fr"><b>Test A/B du CTA (mail 1)</b> : livrable (A) contre « Ça vaut 15 minutes pour en parler cette semaine ? » (B), 250+ prospects par variante.</span><span class="en"><b>CTA A/B test (email 1)</b>: asset (A) vs &quot;Worth 15 minutes to talk this week?&quot; (B), 250+ prospects per variant.</span></li>
+<li><span class="fr"><b>Test A/B de la preuve (PS)</b> : Cloudtech « +17 % de CA » contre « +17 % de leads issus du SEO et des IA en 6 mois ».</span><span class="en"><b>Proof A/B test (PS)</b>: Cloudtech &quot;+17% revenue&quot; vs &quot;+17% leads from SEO and AI in 6 months&quot;.</span></li>
+<li><span class="fr"><b>Garantie</b> sur l'offre recrutement : « S'ils ne vous apprennent rien, dites-le moi et je ne vous relance plus. »</span><span class="en"><b>Guarantee</b> on the hiring offer: &quot;If they teach you nothing, tell me and I won't follow up.&quot;</span></li>
+<li><span class="fr"><b>Bonus</b> en PS : les données structurées de leur page d'accueil, offertes.</span><span class="en"><b>Bonus</b> in the PS: structured data for their homepage, free.</span></li>
+<li><span class="fr"><b>Marché principal</b> : « l'IA a changé la façon d'être visible, il y a quelques critères à respecter sur vos pages ; je peux vous offrir l'analyse on-page d'une page de votre choix. »</span><span class="en"><b>Main market</b>: &quot;AI has changed how you get visible, your pages need to meet a few criteria; I can offer an on-page analysis of a page of your choice.&quot;</span></li>
+</ul>
+<p><span class="fr">Dans le Sheet, onglet <em>6c</em> : chaque modèle en français avec la traduction anglaise, et deux colonnes pour toi (<em>Igor : OK ?</em>, <em>Igor : comment</em>). Onglet <em>2c</em> : les problèmes par sous-ICP, en anglais.</span><span class="en">In the Sheet, tab <em>6c</em>: every template in French with the English translation, plus two columns for you (<em>Igor: OK?</em>, <em>Igor: comment</em>). Tab <em>2c</em>: problems per sub-ICP, in English.</span></p>
+<p><a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit#gid=610290004" target="_blank" rel="noopener"><span class="fr">Copies V3 FR + EN</span><span class="en">Copy V3 FR + EN</span></a> · <a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit#gid=610290005" target="_blank" rel="noopener">ICP problems (EN)</a> · <a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit" target="_blank" rel="noopener"><span class="fr">Sheet complet</span><span class="en">Full sheet</span></a></p>
+<h3><span class="fr">5. Mes questions (réponds dans les cases)</span><span class="en">5. My questions (answer in the boxes)</span></h3>
+<div id="s4q-list" class="qlist"></div>
+<p class="small"><span class="fr">Tout est en brouillon, rien n'est envoyé. J'applique tes commentaires avant tout lancement.</span><span class="en">Everything is drafted, nothing has been sent. I'll apply your comments before any launch.</span></p>
+</div>
+<!-- ===================== SESSION 3 ===================== -->
+<style>
+.mail{white-space:pre-wrap;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid rgba(127,127,127,.35);border-radius:8px;padding:12px 14px;margin:8px 0 4px;max-width:72ch;overflow-wrap:anywhere}
+.mail b{font-family:inherit}
+.msg{border-left:3px solid rgba(127,127,127,.5);padding:4px 0 4px 14px;margin:10px 0;max-width:72ch}
+</style>
+<div class="panel" id="p-s3" hidden>
+<h2><span class="n">S3</span><span class="fr">Session 3 · mardi 27/10, 17h · décisions</span><span class="en">Session 3 · Tue 27 Oct, 5 pm · decisions</span></h2>
+<div class="note"><b><span class="fr">Décisions de la session 3 (27/10), reportées le 28/10</span><span class="en">Session 3 decisions (27 Oct), logged on 28 Oct</span></b><br>
+<span class="fr">Registre complet et numéroté (D1 à D27, chantiers C1 à C42) dans le repo : <code>outbound-machine/REGISTRE.md</code>. Le tableau ICP segmenté vit dans la base Supabase « Outreach Cold Mail ».</span><span class="en">Full numbered log (D1 to D27, workstreams C1 to C42) in the repo: <code>outbound-machine/REGISTRE.md</code>. The segmented ICP table lives in the "Outreach Cold Mail" Supabase database.</span></div>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th><span class="fr">Décision / consigne d'Igor</span><span class="en">Igor's decision / instruction</span></th><th><span class="fr">État au 28/10</span><span class="en">Status on 28 Oct</span></th></tr></thead>
+<tbody>
+<tr><td>D1</td><td><span class="fr">Infra actuelle (PremiumInboxes) = prospects Google uniquement ; infra Zapmail = autres messageries</span><span class="en">Current infra (PremiumInboxes) = Google prospects only; Zapmail infra = other providers</span></td><td><span class="fr">✅ Appliqué : chaque campagne a un lot G et un lot O</span><span class="en">✅ Applied: every campaign has a G and an O batch</span></td></tr>
+<tr><td>D2-D3</td><td><span class="fr">GlockApps 1 boîte par domaine ; tenter le délistage Spamhaus / SURBL</span><span class="en">GlockApps 1 inbox per domain; try Spamhaus / SURBL delisting</span></td><td><span class="fr">🟡 Suivi gratuit chaque semaine (DNS, listes noires, Postmaster sur les 7 domaines Zapmail) ; GlockApps seulement en cas d'alerte</span><span class="en">🟡 Free weekly check (DNS, blacklists, Postmaster on the 7 Zapmail domains); GlockApps only on alert</span></td></tr>
+<tr><td>D6</td><td><span class="fr">Scinder chaque campagne Google / non-Google par le MX</span><span class="en">Split every campaign Google / non-Google by MX</span></td><td><span class="fr">✅ Script MX gratuit ; Microsoft, Mimecast, Proofpoint exclus</span><span class="en">✅ Free MX script; Microsoft, Mimecast, Proofpoint excluded</span></td></tr>
+<tr><td>D7</td><td><span class="fr">Ouvrir hors de France : UK, Nordiques, Benelux, DACH, US (Italie possible, pas l'Espagne)</span><span class="en">Go beyond France: UK, Nordics, Benelux, DACH, US (maybe Italy, not Spain)</span></td><td><span class="fr">✅ 27 pays classés en 3 vagues (+ Maroc, Tunisie, Arabie saoudite, Émirats, Afrique solvable, Turquie pour le tourisme médical)</span><span class="en">✅ 27 countries in 3 waves (+ Morocco, Tunisia, Saudi, UAE, solvent Africa, Turkey for medical tourism)</span></td></tr>
+<tr><td>D8-D9</td><td><span class="fr">Sous-ICP 1.1, 1.2, 1.3… ; filtrer sur les effectifs (≥ 5), pas le CA</span><span class="en">Sub-ICPs 1.1, 1.2, 1.3…; filter on headcount (≥ 5), not revenue</span></td><td><span class="fr">✅ 35 sous-ICP (1.x B2B, 2.x services locaux, 3.x tourisme médical, 4.x hôtellerie / seniors), taille de marché mesurée</span><span class="en">✅ 35 sub-ICPs (1.x B2B, 2.x local services, 3.x medical tourism, 4.x hospitality / seniors), market size measured</span></td></tr>
+<tr><td>D10-D11</td><td><span class="fr">Titres en 2 groupes (décideurs, champions) ; écrire à plusieurs décideurs par entreprise, un mail différent chacun</span><span class="en">Titles in 2 groups (decision-makers, champions); write to several decision-makers per company, a different email each</span></td><td><span class="fr">✅ 3 contacts max par entreprise, rangés par rôle</span><span class="en">✅ Max 3 contacts per company, ranked by role</span></td></tr>
+<tr><td>D12</td><td><span class="fr">Pyramide : priorité 1 avec signal, priorité 2 sans signal</span><span class="en">Pyramid: priority 1 with a signal, priority 2 without</span></td><td><span class="fr">✅ 13 intentions chiffrées (recrutement, levée, nouveau CMO, concurrent devant, absent de ChatGPT, baisse de trafic…)</span><span class="en">✅ 13 costed intents (hiring, funding, new CMO, competitor ahead, absent from ChatGPT, traffic drop…)</span></td></tr>
+<tr><td>D13, D16</td><td><span class="fr">Tester Moltsets ; finir le tableau avant de demander le dataset UltB</span><span class="en">Test Moltsets; finish the table before requesting the UltB dataset</span></td><td><span class="fr">🟡 Comparatif fait ; mail de demande de dataset prêt</span><span class="en">🟡 Comparison done; dataset request email ready</span></td></tr>
+<tr><td>D14-D15</td><td><span class="fr">Liste noire (clients + tous ceux déjà contactés) ; base centrale du statut de chaque contact</span><span class="en">Blocklist (clients + everyone already contacted); central database of each contact's status</span></td><td><span class="fr">✅ Supabase « Outreach Cold Mail » : 8 495 emails et 6 891 domaines déjà contactés + clients</span><span class="en">✅ Supabase "Outreach Cold Mail": 8,495 emails and 6,891 domains already contacted + clients</span></td></tr>
+<tr><td>D18-D19</td><td><span class="fr">Coût de la baisse de trafic et des SERP (cible 1-2 cents par entreprise)</span><span class="en">Cost of traffic drop and SERP checks (target 1-2 cents per company)</span></td><td><span class="fr">✅ DataForSEO ≈ 0,3 cent par entreprise (trafic + 3 SERP)</span><span class="en">✅ DataForSEO ≈ 0.3 cent per company (traffic + 3 SERPs)</span></td></tr>
+<tr><td>D20</td><td><span class="fr">Passer sur Instantly si on y pense déjà (lien affilié + 20 %)</span><span class="en">Move to Instantly if already considering it (affiliate link + 20%)</span></td><td><span class="fr">🟡 Recommandé avant le renouvellement Lemlist du 10/11 (≈ 320 $/mois contre ≈ 535 $)</span><span class="en">🟡 Recommended before the Lemlist renewal on 10 Nov (≈ $320/month vs ≈ $535)</span></td></tr>
+<tr><td>D21</td><td><span class="fr">Lead magnets : par avatar, coût, étape du funnel ; une partie par mail, le reste en appel</span><span class="en">Lead magnets: by avatar, cost, funnel stage; part by email, the rest on a call</span></td><td><span class="fr">✅ 13 lead magnets en deux temps (partie mail / partie appel)</span><span class="en">✅ 13 two-step lead magnets (email part / call part)</span></td></tr>
+<tr><td>D23-D26</td><td><span class="fr">Rapports d'appels de vente + guide 8 étapes ; mail de devoirs ; 2e paiement ; prochaine session mardi 03/11</span><span class="en">Sales-call reports + 8-step guide; homework email; 2nd payment; next session Tue 3 Nov</span></td><td><span class="fr">🟡 Mail de devoirs rédigé ; paiement : Nathan</span><span class="en">🟡 Homework email drafted; payment: Nathan</span></td></tr>
+</tbody></table></div>
+<p class="small"><span class="fr">Campagnes créées en brouillon le 28/10 (rien n'est lancé) : 101 (ICP 2, PAC / solaire / sécurité incendie, partenariat à la performance), 102 (ICP 1 B2B, recrute en marketing + palier 3), 103 (ICP 1.7 M&amp;A), chacune en lots G et O.</span><span class="en">Campaigns created as drafts on 28 Oct (nothing launched): 101 (ICP 2, heat pumps / solar / fire safety, performance partnership), 102 (ICP 1 B2B, hiring in marketing + tier 3), 103 (ICP 1.7 M&amp;A), each in G and O batches.</span></p>
+<h3><span class="fr">Préparation de la session (archive)</span><span class="en">Session prep (archive)</span></h3>
+<p class="small"><span class="fr">Proposition de Claude, à relire et ajuster par Nathan avant la session.</span><span class="en">Claude's draft, for Nathan to review and adjust before the session.</span></p>
+
+<h3><span class="fr">1. Le message d'ouverture (direct et transparent)</span><span class="en">1. Opening message (direct and transparent)</span></h3>
+<div class="msg"><span class="fr">« Mon objectif : à la fin de notre accompagnement, je veux voir des rendez-vous qui arrivent grâce au cold mail, pas seulement savoir paramétrer des campagnes. Je te propose qu'on fixe ensemble un objectif chiffré de rendez-vous, et qu'on organise les sessions restantes autour. Je suis d'accord pour espacer les sessions et avoir plus de devoirs, si ça nous permet de garder une session pour analyser les vrais résultats. On a fait 3 sessions, il en reste 3 : je préfère avancer au maximum avant. Tout ça est à discuter et à affiner ensemble, rien de figé. »</span><span class="en">"My goal: by the end of our coaching, I want to see meetings coming from cold email, not just know how to set up campaigns. I suggest we agree on a numeric meeting target together and organise the remaining sessions around it. I'm happy to space out sessions and take on more homework, if that lets us keep a session to review real results. We've done 3 sessions and 3 are left, so I'd rather move as far as possible beforehand. All of this is open to discussion, let's refine it together."</span></div>
+
+<h3><span class="fr">2. Objectif à fixer ensemble (proposition)</span><span class="en">2. Goal to agree (proposal)</span></h3>
+<div class="tbl"><table>
+<thead><tr><th><span class="fr">Indicateur</span><span class="en">Metric</span></th><th class="num"><span class="fr">Aujourd'hui</span><span class="en">Today</span></th><th class="num"><span class="fr">À la dernière session</span><span class="en">By the last session</span></th></tr></thead>
+<tbody>
+<tr><td><span class="fr">RDV qualifiés réservés via les nouvelles campagnes</span><span class="en">Qualified meetings booked from the new campaigns</span></td><td class="num">≈ 2 / <span class="fr">mois</span><span class="en">month</span></td><td class="num">≥ 5 <span class="fr">(à fixer)</span><span class="en">(to set)</span></td></tr>
+<tr><td><span class="fr">Réponses humaines / prospects uniques</span><span class="en">Human replies / unique prospects</span></td><td class="num">0,7 %*</td><td class="num">≥ 3 %</td></tr>
+<tr><td><span class="fr">Réponses positives / réponses</span><span class="en">Positive replies / replies</span></td><td class="num">18 %</td><td class="num">≥ 20 %</td></tr>
+<tr><td><span class="fr">Campagnes actives (lots G et O)</span><span class="en">Live campaigns (G and O batches)</span></td><td class="num">0</td><td class="num">2 <span class="fr">hypothèses × 2 lots</span><span class="en">hypotheses × 2 batches</span></td></tr>
+</tbody></table></div>
+<p class="small"><span class="fr">* calculé par email ; à recalculer par prospect.</span><span class="en">* per email; to recompute per prospect.</span></p>
+
+<h3><span class="fr">3. Rythme proposé</span><span class="en">3. Proposed rhythm</span></h3>
+<ul>
+<li><span class="fr"><b>3 sessions faites, 3 restantes.</b> On les répartit pour que la dernière tombe après au moins 3 semaines d'envois réels.</span><span class="en"><b>3 sessions done, 3 left.</b> Spread them so the last one comes after at least 3 weeks of real sending.</span></li>
+<li><span class="fr">Sessions espacées d'une semaine ou plus, avec plus de devoirs entre deux.</span><span class="en">Sessions spaced a week or more apart, with more homework in between.</span></li>
+<li><span class="fr">Le dernier sujet du programme est repoussé à la fin, pour garder une session « bilan des résultats ».</span><span class="en">The programme's last topic is pushed to the end, to keep a "results review" session.</span></li>
+</ul>
+
+<h3><span class="fr">4. Où on en est (infra)</span><span class="en">4. Where we are (infra)</span></h3>
+<ul>
+<li><span class="fr"><b>Groupe A, Google</b> : 18 boîtes PremiumInboxes. Test GlockApps du 22/10 : Google 100 % en inbox, le reste en spam. Les 9 domaines sont sur SURBL. On continue à envoyer aux prospects Google <b>dès maintenant</b>.</span><span class="en"><b>Group A, Google</b>: 18 PremiumInboxes inboxes. GlockApps test on 22 Oct: Google 100% inbox, the rest spam. All 9 domains are on SURBL. We keep sending to Google prospects <b>right now</b>.</span></li>
+<li><span class="fr"><b>Groupe B, autres messageries</b> : 21 boîtes Zapmail (7 domaines × 3), en chauffe avec lemwarm, prêtes vers le 6/11.</span><span class="en"><b>Group B, other mail servers</b>: 21 Zapmail inboxes (7 domains × 3), warming up with lemwarm, ready around 6 Nov.</span></li>
+<li><span class="fr"><b>Question</b> : SURBL nous a écrit de ne plus utiliser de domaines « sosies » de la marque. Les nouveaux domaines contiennent « decupler ». Est-ce un risque ? Faut-il des noms sans la marque au prochain renouvellement ?</span><span class="en"><b>Question</b>: SURBL told us to stop using brand "lookalike" domains. The new domains contain "decupler". Is that a risk? Should the next batch use names without the brand?</span></li>
+</ul>
+
+<h3><span class="fr">5. Leads : la méthode d'Igor, étape par étape</span><span class="en">5. Leads: Igor's method, step by step</span></h3>
+<ol>
+<li><span class="fr"><b>Trouver les entreprises d'abord, pas les personnes.</b> Avec Apify (place de marché de scrapers) : offres d'emploi LinkedIn ou Indeed en France (« SEO », « marketing digital », « growth », « contenu », publiées depuis moins de 30 jours), ou levées de fonds. Environ 16 $ pour des milliers d'entreprises.</span><span class="en"><b>Find companies first, not people.</b> With Apify (a scraper marketplace): LinkedIn or Indeed job posts in France ("SEO", "digital marketing", "growth", "content", posted in the last 30 days), or funding rounds. About $16 for thousands of companies.</span></li>
+<li><span class="fr"><b>Charger cette liste d'entreprises dans l'outil de recherche</b> (chez Instantly : SuperSearch ; chez Lemlist : l'équivalent à trouver) pour sortir les décideurs (CEO, CMO, head of growth) et leurs emails.</span><span class="en"><b>Load that company list into the search tool</b> (Instantly: SuperSearch; Lemlist: equivalent to find) to get the decision-makers (CEO, CMO, head of growth) and their emails.</span></li>
+<li><span class="fr"><b>Classer par messagerie</b> (colonne fournisseur dans Lemlist ou lecture du MX) : Google → lot G, autres → lot O, Microsoft / Mimecast / Proofpoint → exclus.</span><span class="en"><b>Split by mail provider</b> (provider column in Lemlist or MX lookup): Google → batch G, others → batch O, Microsoft / Mimecast / Proofpoint → excluded.</span></li>
+<li><span class="fr"><b>Vérifier « jamais contacté »</b> contre toutes les campagnes Lemlist, puis importer par lots d'au moins 100.</span><span class="en"><b>Check "never contacted"</b> against all Lemlist campaigns, then import in batches of at least 100.</span></li>
+</ol>
+<p><span class="fr"><b>Questions à Igor :</b> où en est le dataset promis par UltB ? Quel scraper Apify il recommande ? Lemlist a-t-il un équivalent de SuperSearch (import d'une liste d'entreprises) ? On démarre le scrap lundi 26/10.</span><span class="en"><b>Questions for Igor:</b> where is the dataset UltB promised? Which Apify scraper does he recommend? Does Lemlist have a SuperSearch equivalent (import a company list)? We start scraping on Monday 26 Oct.</span></p>
+
+<h3><span class="fr">6. Copy : ce qu'on a déjà, et les nouveaux angles</span><span class="en">6. Copy: what we have, and new angles</span></h3>
+<p><span class="fr">Base de copy (doctrine, 12 accroches, campagnes A/B, séquences, BTP, hooks H1 à H10, relances) :</span><span class="en">Copy library (doctrine, 12 hooks, A/B campaigns, sequences, construction, hooks H1 to H10, follow-ups):</span> <a href="https://claude.ai/artifact/Tnfz61qnYrMkJdqLtHCF4g" target="_blank" rel="noopener">Base Copy Décupler</a> · <span class="fr">Kit post-masterclass</span><span class="en">Post-masterclass kit</span> : <a href="https://claude.ai/artifact/7Jwu1JEGdrxKvVsrX2avCK" target="_blank" rel="noopener">lien</a></p>
+<p><span class="fr">Résultat déjà mesuré : relance post-masterclass sur LinkedIn, 14 réponses sur 125 contacts (11 %). Le mail 2 avec un cas chiffré a le mieux marché.</span><span class="en">Already measured: post-masterclass LinkedIn follow-up, 14 replies out of 125 contacts (11%). Email 2 with a numbers case worked best.</span></p>
+<p class="small"><span class="fr">Nouveaux angles de Nathan (24/10), rédigés au format d'Igor : 80 mots max, aucun lien, CTA orienté « non ». Emails en français (marché France). Les {{variables}} entre accolades demandent une recherche par prospect : on ne les utilise que si la donnée est vérifiée.</span><span class="en">Nathan's new angles (24 Oct), written in Igor's format: 80 words max, no link, no-oriented CTA. Emails in French (French market). The {{variables}} need per-prospect research: only used when the data is verified.</span></p>
+
+<h4>A · BTP · <span class="fr">partenariat à la performance (H4)</span><span class="en">pay-for-performance partnership (H4)</span></h4>
+<div class="mail"><b>objet : chantiers {{ville}}</b>
+
+Bonjour {{firstName}},
+
+Vous seriez ouvert à 15 chantiers de plus par mois ?
+
+Je cherche quelques entreprises du BTP à {{ville}} pour un partenariat à la performance : je m'occupe de votre visibilité sur Google, vous payez sur les chantiers signés. Si vous gagnez, on gagne.
+
+Pour L'Artisan d'à côté, c'est +200 nouveaux clients par mois.
+
+Seriez-vous contre que je vous explique comment ça marche ?
+
+Nathan, Décupler
+PS : pas intéressé ? Répondez « stop ».</div>
+<p class="small"><span class="fr">Relance 1 : « Question honnête : avez-vous l'équipe pour absorber 15 chantiers de plus ? » · Variante de preuve : « +20 signatures en un mois pour un client » (préciser lequel).</span><span class="en">Follow-up 1: "Honest question: do you have the team to take on 15 more jobs?" · Proof variant: "+20 signed jobs in one month for a client" (say which).</span></p>
+
+<h4>B · B2B · <span class="fr">un fait vrai + le concurrent cité par ChatGPT (H1)</span><span class="en">a true fact + the competitor ChatGPT cites (H1)</span></h4>
+<div class="mail"><b>objet : {{concurrent}} sur chatgpt</b>
+
+Bonjour {{firstName}},
+
+J'ai vu {{fait}}. Félicitations.
+
+En regardant votre marché, j'ai demandé à ChatGPT « {{prompt}} » : il recommande {{concurrent}}, pas {{companyName}}.
+
+J'ai trouvé 2 autres questions du même type, où vos clients se décident avant même d'aller sur Google.
+
+Seriez-vous contre que je vous les envoie, avec ce qui fait citer {{concurrent}} ?
+
+Nathan, Décupler
+PS : pas intéressé ? Répondez « stop ».</div>
+<p class="small"><span class="fr">{{fait}} = une levée, un recrutement, une actualité ou une page de leur site. Il doit être vrai et vérifiable.</span><span class="en">{{fait}} = a funding round, a hire, a news item or a page on their site. It must be true and checkable.</span></p>
+
+<h4>C · B2B · <span class="fr">le volume d'un mot-clé où ils sont absents (H2)</span><span class="en">search volume on a keyword where they're absent (H2)</span></h4>
+<div class="mail"><b>objet : {{motcle}}</b>
+
+Bonjour {{firstName}},
+
+« {{motcle}} » est cherché {{volume}} fois par mois en France.
+
+{{concurrent}} est en première page. {{companyName}} n'apparaît pas.
+
+J'ai listé les 10 recherches de ce type où vous perdez des demandes, avec la page à créer pour chacune.
+
+Ce serait une mauvaise idée que je vous envoie la liste ?
+
+Nathan, Décupler
+PS : Le Point, Pluxee, Décathlon : +20 % de pipeline organique.</div>
+
+<h4>D · B2B · <span class="fr">une page rendue « GEO ready », offerte</span><span class="en">one page made "GEO ready", free</span></h4>
+<div class="mail"><b>objet : geo ready</b>
+
+Bonjour {{firstName}},
+
+J'ai passé votre page {{page}} dans notre grille GEO Ready : en l'état, ChatGPT et Perplexity ont du mal à la citer (pas de réponse directe, pas de données structurées).
+
+Je peux vous rendre cette page GEO ready, gratuitement, pour que vous voyiez la différence.
+
+Seriez-vous contre que je m'en occupe ?
+
+Nathan, Décupler
+PS : pas intéressé ? Répondez « stop ».</div>
+<p class="small"><span class="fr">Variantes du même mail (une seule par campagne) : roadmap de 10 contenus avec mots-clés et questions IA, si leur dernier contenu date de plusieurs mois ; balisage des entités et données structurées d'une page, prêt à coller ; feuille de route pour se classer sur un mot-clé où ils sont absents.</span><span class="en">Variants of the same email (one per campaign): a 10-piece content roadmap with keywords and AI questions, if their last content is months old; entity and structured-data markup for one page, ready to paste; a roadmap to rank on a keyword where they're absent.</span></p>
+
+<h4>E · BTP · <span class="fr">résultat + délai + vidéo (idée tirée de la vidéo Netswick)</span><span class="en">result + timeframe + video (from the Netswick video)</span></h4>
+<div class="mail"><b>objet : devis {{prestation}} {{ville}}</b>
+
+Bonjour {{firstName}},
+
+Vous voulez remplir votre planning avant {{saison}} ?
+
+On peut vous amener des demandes de devis de {{prestation}} à {{ville}}, et vous ne payez que sur résultat.
+
+J'ai enregistré une vidéo de 3 min sur votre site, votre fiche Google et vos avis : ce qui vous fait perdre des clients aujourd'hui.
+
+Je vous l'envoie ?
+
+Nathan, Décupler</div>
+<p class="small"><span class="fr">Méthode de la vidéo Netswick (une agence SEO, 78 leads en un mois) : un résultat chiffré, un délai et une inversion du risque, dans les mots du métier du prospect ; puis une vidéo d'audit en 3 piliers (site, fiche Google, avis) qui montre les problèmes sans donner la solution.</span><span class="en">Netswick video method (an SEO agency, 78 leads in one month): a numeric result, a timeframe and risk reversal, in the prospect's trade vocabulary; then a 3-pillar audit video (site, Google Business Profile, reviews) showing the problems without giving the fix.</span></p>
+
+<h3><span class="fr">7. Ce qu'on demande à Igor sur la copy</span><span class="en">7. What we ask Igor about copy</span></h3>
+<ol>
+<li><span class="fr">Quels 2 angles on lance en premier : un B2B (B, C ou D) et un BTP (A ou E) ?</span><span class="en">Which 2 angles do we launch first: one B2B (B, C or D) and one construction (A or E)?</span></li>
+<li><span class="fr">Variables par prospect ({{prompt}}, {{concurrent}}, {{volume}}) : on les produit par agent IA pour chaque lead, ou on garde des mails sans recherche pour aller vite ?</span><span class="en">Per-prospect variables ({{prompt}}, {{concurrent}}, {{volume}}): do we produce them with an AI agent for each lead, or keep research-free emails to move fast?</span></li>
+<li><span class="fr">Le modèle « vous payez sur résultat » pour le BTP : à mettre dans le mail 1, ou garder pour l'appel ?</span><span class="en">The "pay on results" model for construction: in email 1, or keep it for the call?</span></li>
+</ol>
+</div>
+<!-- ===================== SESSION 2 ===================== -->
+<div class="panel" id="p-s2" hidden>
+<h2><span class="n">S2</span><span class="fr">Session 2 · mardi 20/10 · ordre du jour</span><span class="en">Session 2 · Tue 20 Oct · agenda</span></h2>
+<h3><span class="fr">Devoirs de la session 2 · état au 22/10 (pour la session du mardi 27/10, 17h)</span><span class="en">Session 2 homework · status on 22 Oct (for the Tue 27 Oct, 5 pm session)</span></h3>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th><span class="fr">Devoir</span><span class="en">Homework</span></th><th><span class="fr">État</span><span class="en">Status</span></th></tr></thead>
+<tbody>
+<tr><td>1</td><td><span class="fr">Exclure Microsoft, Mimecast et Proofpoint</span><span class="en">Exclude Microsoft, Mimecast and Proofpoint</span></td><td><span class="fr">✅ Fait : 1 110 leads mis en pause</span><span class="en">✅ Done: 1,110 leads paused</span></td></tr>
+<tr><td>2</td><td><span class="fr">Groupe A : infra actuelle sur les prospects Google uniquement</span><span class="en">Group A: current infra on Google prospects only</span></td><td><span class="fr">✅ Fait</span><span class="en">✅ Done</span></td></tr>
+<tr><td>3</td><td><span class="fr">Mail de devoirs à Igor</span><span class="en">Homework email to Igor</span></td><td><span class="fr">✅ Envoyé</span><span class="en">✅ Sent</span></td></tr>
+<tr><td>4</td><td><span class="fr">ICP / VP (2 ICP, 1 cas client par ICP)</span><span class="en">ICP / VP (2 ICPs, 1 case study each)</span></td><td><span class="fr">🟡 3 ICP ; secteurs, taille, postes, problèmes, VP, offres et preuves validés. ICP 1 : signaux et lead magnets validés ; mots-clés, exclusions, CTA et USP encore à valider</span><span class="en">🟡 3 ICPs; industries, size, titles, pains, VPs, offers and proof validated. ICP 1: signals and lead magnets validated; keywords, exclusions, CTA and USP still to validate</span></td></tr>
+<tr><td>5</td><td><span class="fr">Tester chaque domaine dans GlockApps</span><span class="en">Test every domain in GlockApps</span></td><td><span class="fr">✅ Test 3 le 22/10 (decuplerdigital) : Google 100 % en inbox, le reste en spam. Les 9 anciens domaines sont sur SURBL (et Spamhaus pour decuplerdigital) : plus besoin de tester un par un. Conclusion : ancienne infra = Google uniquement</span><span class="en">✅ Test 3 on 22 Oct (decuplerdigital): Google 100% inbox, the rest in spam. All 9 old domains are on SURBL (and Spamhaus for decuplerdigital): no need to test one by one. Conclusion: old infra = Google only</span></td></tr>
+<tr><td>6</td><td><span class="fr">Ne plus utiliser decuplersystems.com</span><span class="en">Stop using decuplersystems.com</span></td><td><span class="fr">🟡 Boîtes supprimées, mais encore attachées aux 12 campagnes actives (erreurs Lemlist) ; à retirer</span><span class="en">🟡 Inboxes deleted but still attached to the 12 active campaigns (Lemlist errors); to remove</span></td></tr>
+<tr><td>7</td><td><span class="fr">Doubler l'infra (nouveaux domaines)</span><span class="en">Double the infra (new domains)</span></td><td><span class="fr">🟡 Zapmail : 10 boîtes créées le 22/10 sur 5 domaines, DNS vérifié. Cible : 21 boîtes (7 domaines × 3), en chauffe jusqu'au ~6/11. PremiumInboxes : 18 boîtes gardées pour Google, les 2 boîtes decuplersystems résiliées</span><span class="en">🟡 Zapmail: 10 inboxes created on 22 Oct on 5 domains, DNS checked. Target: 21 inboxes (7 domains × 3), warming until ~6 Nov. PremiumInboxes: 18 inboxes kept for Google, the 2 decuplersystems inboxes cancelled</span></td></tr>
+<tr><td>8</td><td><span class="fr">Campagnes en 2 lots numérotés (Google / autres)</span><span class="en">Campaigns in 2 numbered batches (Google / other)</span></td><td><span class="fr">🟡 Proposition écrite (ci-dessous), à valider avec Igor le 27/10</span><span class="en">🟡 Proposal written (below), to agree with Igor on 27 Oct</span></td></tr>
+<tr><td>9</td><td><span class="fr">Leads : pyramide « a levé + recrute » → « recrute » → marché principal</span><span class="en">Leads: pyramid "funded + hiring" → "hiring" → main market</span></td><td><span class="fr">⏸️ En pause, lancement lundi 26/10</span><span class="en">⏸️ Paused, starts Monday 26 Oct</span></td></tr>
+<tr><td>10</td><td><span class="fr">Lead magnets (vidéo 3 min, top 10 mots-clés, concurrent mieux placé)</span><span class="en">Lead magnets (3-min video, top 10 keywords, competitor ranking higher)</span></td><td><span class="fr">❌ À choisir. Piste : l'extrait de l'Opportunity Map (Scalezia), 3 lignes : requête ChatGPT où un concurrent est cité + manque à gagner</span><span class="en">❌ To choose. Lead: the Opportunity Map extract (Scalezia), 3 rows: ChatGPT query where a competitor is cited + lost revenue</span></td></tr>
+<tr><td>11</td><td><span class="fr">Mesurer en prospects uniques, pas en emails</span><span class="en">Measure per unique prospect, not per email</span></td><td><span class="fr">🟡 Méthode adoptée ; les chiffres de l'onglet Groundwork sont encore calculés par email</span><span class="en">🟡 Method adopted; Groundwork figures are still computed per email</span></td></tr>
+<tr><td>12</td><td><span class="fr">Transcriptions complètes des appels de vente à Igor</span><span class="en">Full sales-call transcripts to Igor</span></td><td><span class="fr">⏳ Plus tard : tous les appels n'ont pas encore eu lieu</span><span class="en">⏳ Later: not all calls have happened yet</span></td></tr>
+</tbody></table></div>
+<h3><span class="fr">Convention de nommage des campagnes (proposition, à valider avec Igor)</span><span class="en">Campaign naming convention (proposal, to agree with Igor)</span></h3>
+<p><span class="fr">Format : <code>N°-LOT-H · ICP · segment · angle</code>. Exemple : <code>101-G-1 · ICP1 · levée+recrute · Opportunity Map</code> et son jumeau <code>101-O-1</code>.</span><span class="en">Format: <code>No-BATCH-H · ICP · segment · angle</code>. Example: <code>101-G-1 · ICP1 · funded+hiring · Opportunity Map</code> and its twin <code>101-O-1</code>.</span></p>
+<ul>
+<li><span class="fr"><b>N°</b> : 3 chiffres, à partir de <b>101</b> (les anciennes campagnes gardent leur nom). Un nouveau numéro = une nouvelle liste ou une nouvelle séquence.</span><span class="en"><b>No</b>: 3 digits, starting at <b>101</b> (old campaigns keep their names). A new number = a new list or a new sequence.</span></li>
+<li><span class="fr"><b>LOT</b> : <code>G</code> = prospects sur Google (infra actuelle) · <code>O</code> = autres messageries (nouvelle infra). Plus tard, <code>-EN</code> en suffixe pour hors France.</span><span class="en"><b>BATCH</b>: <code>G</code> = Google prospects (current infra) · <code>O</code> = other mail servers (new infra). Later, an <code>-EN</code> suffix for outside France.</span></li>
+<li><span class="fr"><b>H</b> : n° d'hypothèse, défini dans la bibliothèque ci-dessous avant le lancement, avec son critère de succès.</span><span class="en"><b>H</b>: hypothesis number, defined in the library below before launch, with its success criterion.</span></li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>H</th><th><span class="fr">Hypothèse (à valider)</span><span class="en">Hypothesis (to validate)</span></th><th><span class="fr">Critère de succès</span><span class="en">Success criterion</span></th></tr></thead>
+<tbody>
+<tr><td>1</td><td><span class="fr">ICP 1 · R.E.P.L.Y. + extrait de l'Opportunity Map (3 requêtes où un concurrent est cité)</span><span class="en">ICP 1 · R.E.P.L.Y. + Opportunity Map extract (3 queries where a competitor is cited)</span></td><td rowspan="5"><span class="fr">Proposition, à fixer avec Igor : ≥ 3 % de réponses humaines / prospects uniques et ≥ 20 % de positives / réponses, mesuré sur au moins 100 prospects</span><span class="en">Proposal, to set with Igor: ≥ 3% human replies / unique prospects and ≥ 20% positives / replies, measured on at least 100 prospects</span></td></tr>
+<tr><td>2</td><td><span class="fr">ICP 1 · AAA + top 10 mots-clés qui font perdre des leads</span><span class="en">ICP 1 · AAA + top 10 keywords losing leads</span></td></tr>
+<tr><td>3</td><td><span class="fr">ICP 1 · objet « concurrent mieux placé » + vidéo 3 min</span><span class="en">ICP 1 · "competitor ranking higher" subject + 3-min video</span></td></tr>
+<tr><td>4</td><td><span class="fr">ICP 2 · « je cherche des boîtes BTP qui veulent plus de clients » (commission)</span><span class="en">ICP 2 · "looking for construction firms that want more clients" (commission)</span></td></tr>
+<tr><td>5</td><td><span class="fr">ICP 2 · site offert + 97 €/mois</span><span class="en">ICP 2 · free website + €97/month</span></td></tr>
+</tbody></table></div>
+<h3><span class="fr">Checklist de début de réunion</span><span class="en">Kick-off checklist</span></h3>
+<ol>
+<li><span class="fr"><b>Objectifs de fin d'accompagnement</b> : valider le tableau ci-dessous.</span><span class="en"><b>End-of-coaching goals</b>: agree on the table below.</span></li>
+<li><span class="fr"><b>Devoirs faits</b> : ICP / VP rempli, 2 tests GlockApps, désinscription ajoutée, lemwarm actif, accès Lemlist donné, bilan masterclass.</span><span class="en"><b>Homework done</b>: ICP / VP filled, 2 GlockApps tests, unsubscribe added, lemwarm on, Lemlist access given, masterclass review.</span></li>
+<li><span class="fr"><b>Infra</b> : boîtes bloquées par Google (nathan@decuplersystems.com et d'autres) ; combien de nouveaux domaines, quels noms, quel fournisseur, quels réglages de chauffe ?</span><span class="en"><b>Infra</b>: inboxes blocked by Google (nathan@decuplersystems.com and others); how many new domains, which names, which provider, which warm-up settings?</span></li>
+<li><span class="fr"><b>Où trouver les leads</b> : quelles sources pour l'ICP 1 (entreprises qui recrutent) et l'ICP 2 (levées) ? UltB construit-il la liste ?</span><span class="en"><b>Where to find leads</b>: which sources for ICP 1 (hiring) and ICP 2 (funded)? Does UltB build the list?</span></li>
+<li><span class="fr"><b>Rythme</b> : pause pendant la chauffe des nouvelles boîtes, puis sessions de bilan des résultats.</span><span class="en"><b>Rhythm</b>: pause during the new inbox warm-up, then results review sessions.</span></li>
+<li><span class="fr"><b>Outil de test GlockApps</b> (<a href="https://glockapps.com/">glockapps.com</a>) : 2 tests gratuits faits le 14/10 sur 2 boîtes. Le refaire sur chaque nouveau domaine avant lancement ? Quelle fréquence ensuite ? Compte gratuit ou pack de crédits ?</span><span class="en"><b>GlockApps testing tool</b> (<a href="https://glockapps.com/">glockapps.com</a>): 2 free tests run on 14 Oct on 2 inboxes. Re-run on each new domain before launch? How often afterwards? Free account or credit pack?</span></li>
+</ol>
+<h3><span class="fr">Ressources partagées par Igor</span><span class="en">Resources shared by Igor</span></h3>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1amYFN7IPU1b16YnH0-hYb4LZ-eza40Jnn3JVgBA2IKo/edit">Sheet « UltB Academy_Kickoff_Nathan »</a> <span class="small">(Groundwork, ICP / VP, Campaign Management, Sales Assets)</span></li>
+<li><a href="https://docs.google.com/presentation/d/1XdCscUpDnwcNQi8rIn__Ks_sHFqh5MdbrrzXHRHka_E/edit">UltB Academy · Session on Sequences</a></li>
+<li><a href="https://docs.google.com/presentation/d/1ZiIJSboboEZjk5qxEUXVe2RibII6OhB7bsaBMw47m-Y/edit">UltB · Consulting, Education, Training (méthode AAA appliquée, infra, rampup)</a></li>
+<li><a href="https://docs.google.com/document/d/1HeoxtfFhUVoNWmlFhqVI4p5RXtqoUAQzqOiiVGgCOdI/edit">R.E.P.L.Y. Method + objets + CTA</a></li>
+<li><a href="https://docs.google.com/document/d/12qOfGczNu3ckTgn8p8LS5zk53-bLGIHwixvK3FwnFg4/edit">All templates UltB</a></li>
+<li><a href="https://docs.google.com/document/d/1yt9gGKmNHD3CkvDLGbFw7luTGeX1fgYG0mHeHPLNw4E/edit">Exemple de séquence par ICP / VP (Semiflat)</a></li>
+<li><a href="https://docs.google.com/document/d/1FLnnvOMORllNGG8-lwibPaSpq71XaHf2yCS-nW9cdmA/edit">Script vidéo Loom (structure 3 min)</a></li>
+<li><a href="https://docs.google.com/document/d/1X2YLXCC6DPKMXFHF1TN_nht_5D_ljsuHWWJqUlYvfmw/edit">Méthode AAA (Nils, Instantly)</a> · <a href="https://www.youtube.com/watch?v=V2JzpxqMc6A">vidéo</a></li>
+<li><a href="https://docs.google.com/document/d/1ayR4nQf_pgTz5qIYz85bgixty1FtQSkLdxHJoEGSnVA/edit">Modèles de réponses UltB</a></li>
+<li><a href="https://www.close.com/de/resources/followup">Close · Followup Formula</a> · <a href="https://help.instantly.ai/en/articles/6570131-cold-email-copywriting-framework-we-use-to-get-400-replies-monthly">Instantly · frameworks de copywriting</a></li>
+<li><span class="fr">Outils</span><span class="en">Tools</span> : <a href="https://glockapps.com/">GlockApps</a> · <a href="https://thereadtime.com/">thereadtime.com</a> · <a href="https://www.sendspark.com/">Sendspark</a> · <a href="https://hyperise.com/">Hyperise</a> · <a href="https://pitchlane.io/">Pitchlane</a> · <a href="https://www.loom.com/share/8f18c4172fc646b3acde134a64789148">exemple Loom</a> · <a href="https://www.youtube.com/watch?v=nJjO9cIJhTs">SpinTax</a></li>
+<li><span class="fr">Résumé complet dans le repo</span><span class="en">Full summary in the repo</span> : <code>outbound-machine/copy/20_coach_igor_frameworks.md</code></li>
+</ul>
+<h3><span class="fr">1. Objectifs du coaching (à valider en début de session)</span><span class="en">1. Coaching goals (to agree at the start)</span></h3>
+<div class="tbl"><table>
+<thead><tr><th><span class="fr">Indicateur</span><span class="en">Metric</span></th><th class="num"><span class="fr">Aujourd'hui</span><span class="en">Today</span></th><th class="num"><span class="fr">Objectif fin de coaching</span><span class="en">End-of-coaching goal</span></th></tr></thead>
+<tbody>
+<tr><td><span class="fr">Boîtes d'envoi saines</span><span class="en">Healthy sending inboxes</span></td><td class="num">18 (2 bloquées)</td><td class="num">40</td></tr>
+<tr><td><span class="fr">Prospects contactés / mois</span><span class="en">Prospects contacted / month</span></td><td class="num">≈ 2 000</td><td class="num">4 000 – 5 000</td></tr>
+<tr><td><span class="fr">Taux de réponse humaine</span><span class="en">Human reply rate</span></td><td class="num">0,7 %</td><td class="num">≥ 3 %</td></tr>
+<tr><td><span class="fr">Réponses positives / mois</span><span class="en">Positive replies / month</span></td><td class="num">≈ 10</td><td class="num">≥ 40</td></tr>
+<tr><td><span class="fr">RDV / mois</span><span class="en">Meetings / month</span></td><td class="num">≈ 2</td><td class="num">≥ 10</td></tr>
+<tr><td><span class="fr">Nouveaux clients / mois</span><span class="en">New clients / month</span></td><td class="num">?</td><td class="num">2</td></tr>
+</tbody></table></div>
+<p class="small"><span class="fr">Proposition de Claude à valider par Nathan et Igor.</span><span class="en">Claude's proposal, to be agreed by Nathan and Igor.</span></p>
+<h3><span class="fr">2. Décisions d'Igor (mail du 19/10)</span><span class="en">2. Igor's decisions (email, 19 Oct)</span></h3>
+<ul>
+<li><span class="fr"><b>Nouveaux domaines : oui, maintenant.</b> Viser le double de l'infrastructure (20 → 40 boîtes). Même fournisseur possible tant qu'il reste propre chez Google et les serveurs privés.</span><span class="en"><b>New domains: yes, now.</b> Aim to double the infrastructure (20 → 40 inboxes). Same provider is fine while it stays clean on Google and private SMTP.</span></li>
+<li><span class="fr"><b>Microsoft : on n'envoie plus</b> avec l'infrastructure actuelle. Uniquement Google et autres serveurs (SMTP privés).</span><span class="en"><b>Microsoft: stop sending</b> with the current infrastructure. Only Google and other/private SMTP.</span></li>
+<li><span class="fr">Infrastructure dédiée Microsoft (ex. Hypertide) : plus chère, pas prioritaire. D'abord couvrir tout le marché Google + autres.</span><span class="en">Dedicated Microsoft infra (e.g. Hypertide): costlier, not a priority. Cover the Google + other market first.</span></li>
+</ul>
+<h3><span class="fr">3. Points à aborder</span><span class="en">3. Topics</span></h3>
+<ol>
+<li><span class="fr"><b>Technique (à clôturer)</b> : 2 boîtes decuplersystems.com bloquées par Google (« bad_request »), support PremiumInboxes et Lemlist contactés. Nombre et nommage des nouveaux domaines, réglages de chauffe, retrait des prospects Microsoft (42 %).</span><span class="en"><b>Tech (to close)</b>: 2 decuplersystems.com inboxes blocked by Google ("bad_request"), PremiumInboxes and Lemlist support contacted. Number and naming of new domains, warm-up settings, removing Microsoft prospects (42%).</span></li>
+<li><span class="fr"><b>Listes</b> : ICP 1 = entreprises qui recrutent (marketing, growth, SEO), &gt; 10 salariés, France ; ICP 2 = levée &lt; 6 mois, ≥ 500 k€. Qui construit la liste (UltB ou nous) ? Filtre messagerie Google / autres.</span><span class="en"><b>Lists</b>: ICP 1 = companies hiring (marketing, growth, SEO), &gt; 10 employees, France; ICP 2 = funded &lt; 6 months, ≥ €500k. Who builds the list (UltB or us)? Google / other mail filter.</span></li>
+<li><span class="fr"><b>Copy</b> : faire valider une 1re séquence ICP 1 (6 mails R.E.P.L.Y.) ; leçons de la masterclass (11 % de réponses, mail 2 avec cas chiffré).</span><span class="en"><b>Copy</b>: validate a first ICP 1 sequence (6 R.E.P.L.Y. emails); masterclass learnings (11% replies, email 2 with numbers case).</span></li>
+<li><span class="fr"><b>Rythme du coaching</b> : espacer les sessions pendant les 3 semaines de chauffe, puis reprendre au lancement des nouvelles boîtes.</span><span class="en"><b>Coaching rhythm</b>: space sessions during the 3-week warm-up, resume when the new inboxes launch.</span></li>
+</ol>
+</div>
+<div class="panel" id="p-cr" hidden>
+
+<!-- ===================== FRANÇAIS ===================== -->
+<section id="fr" lang="fr">
+
+<h2><span class="n">1</span>Résumé</h2>
+<ul>
+  <li><b>7 856 emails envoyés</b> en 4 semaines, 21 campagnes, 20 boîtes d'envoi sur 10 domaines.</li>
+  <li><b>55 réponses humaines</b> (0,72 % des emails délivrés), dont <b>10 positives</b> (0,13 %) et 5 tièdes.</li>
+  <li><b>RDV : 0 enregistré dans Lemlist.</b> 2 prospects ont demandé un créneau (Nowooo le 21/09, Entreprise &amp; Décisions le 08/10). Je dois confirmer s'ils ont eu lieu.</li>
+  <li><b>Gros sujet : la délivrabilité.</b> Une partie des mails tombe en spam. Les 10 domaines d'envoi sont sur la liste noire SURBL et la demande de retrait a été refusée.</li>
+  <li><b>Goulet d'étranglement :</b> chaque « oui » demande une vidéo de 3 min tournée à la main. Des réponses positives attendent encore leur vidéo.</li>
+</ul>
+
+<h2><span class="n">2</span>Chiffres des 4 dernières semaines</h2>
+<div class="kpis">
+  <div class="kpi"><b>7 856</b><span>emails envoyés</span></div>
+  <div class="kpi"><b>2,1 %</b><span>bounces (166)</span></div>
+  <div class="kpi"><b>55</b><span>réponses humaines · 0,72 %</span></div>
+  <div class="kpi"><b>10</b><span>réponses positives · 0,13 %</span></div>
+  <div class="kpi alert"><b>0</b><span>RDV enregistrés (2 demandés)</span></div>
+</div>
+
+<h3>Semaine par semaine</h3>
+<div class="tbl"><table>
+<thead><tr><th>Semaine</th><th class="num">Envoyés</th><th class="num">Bounces</th><th class="num">Taux bounce</th><th class="num">Réponses*</th></tr></thead>
+<tbody>
+<tr><td>S1 · 14–20 sept.</td><td class="num">2 581</td><td class="num">81</td><td class="num">3,1 %</td><td class="num">15</td></tr>
+<tr><td>S2 · 21–27 sept.</td><td class="num">1 946</td><td class="num">53</td><td class="num">2,7 %</td><td class="num">16</td></tr>
+<tr><td>S3 · 28 sept.–4 oct.</td><td class="num">1 798</td><td class="num">22</td><td class="num">1,2 %</td><td class="num">21</td></tr>
+<tr><td>S4 · 5–12 oct. (en cours)</td><td class="num">1 531</td><td class="num">10</td><td class="num">0,7 %</td><td class="num">9</td></tr>
+<tr class="tot"><td>Total</td><td class="num">7 856</td><td class="num">166</td><td class="num">2,1 %</td><td class="num">60</td></tr>
+</tbody></table></div>
+<p class="small">* Réponses comptées par Lemlist, réponses automatiques comprises. Les ouvertures et clics ne sont pas mesurés, le tracking est désactivé (il aggrave le spam). Les bounces baissent depuis le passage aux emails vérifiés.</p>
+
+<h3>Ce que disent les 60 réponses (lues une par une)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Type</th><th class="num">Nb</th><th>Exemples</th></tr></thead>
+<tbody>
+<tr><td><span class="pill p-good">Positive</span></td><td class="num">10</td><td>« Oui je veux bien », « Yes please », « Prix », demande de RDV (Nowooo, Entreprise &amp; Décisions)</td></tr>
+<tr><td><span class="pill p-warn">Tiède</span></td><td class="num">5</td><td>« pas de budget mais envoyez », « transmis à mes supérieurs », « c'est un peu vague, quels mots-clés ? »</td></tr>
+<tr><td><span class="pill p-warn">Réponse au mail de rupture (1/2/3)</span></td><td class="num">7</td><td>Répondent juste « 2 » ou « 3 » : le format fait réagir mais ne débouche sur rien</td></tr>
+<tr><td><span class="pill p-bad">Refus / stop</span></td><td class="num">30</td><td>« non merci », « retirez-moi », RGPD. 4 plaintes dures : copie CNIL (« pas de lien de désinscription »), « automatisation mal réglée », tutoiement, « on ne vous a rien demandé »</td></tr>
+<tr><td>Mauvais contact</td><td class="num">3</td><td>Ne travaille plus là, mauvaise structure</td></tr>
+<tr><td>Réponse automatique / ticket</td><td class="num">5</td><td>Service client (ManoMano, Webador, Linkeo…)</td></tr>
+</tbody></table></div>
+
+<h3>Par campagne</h3>
+<div class="tbl"><table>
+<thead><tr><th>Campagne</th><th>Statut</th><th class="num">Envoyés</th><th class="num">Bounce</th><th class="num">Réponses</th><th class="num">Positives</th></tr></thead>
+<tbody>
+<tr><td>Conseil · 10 prompts</td><td>active</td><td class="num">451</td><td class="num">0,9 %</td><td class="num">5</td><td class="num">2</td></tr>
+<tr><td>Hôtellerie · analyse offerte</td><td>pause</td><td class="num">245</td><td class="num">3,7 %</td><td class="num">3</td><td class="num">2</td></tr>
+<tr><td>Agences · marque blanche GEO (FR)</td><td>pause</td><td class="num">480</td><td class="num">0,6 %</td><td class="num">3</td><td class="num">1 (RDV)</td></tr>
+<tr><td>B2B Dirigeants · SEO+IA</td><td>pause</td><td class="num">430</td><td class="num">5,6 %</td><td class="num">6</td><td class="num">1</td></tr>
+<tr><td>CMO SaaS · KPI</td><td>active</td><td class="num">186</td><td class="num">0 %</td><td class="num">4</td><td class="num">1</td></tr>
+<tr><td>FR · Hiring · Agents IA</td><td>active</td><td class="num">257</td><td class="num">0,4 %</td><td class="num">2</td><td class="num">1</td></tr>
+<tr><td>Saudi · AI build · Hiring</td><td>active</td><td class="num">118</td><td class="num">1,7 %</td><td class="num">1</td><td class="num">1</td></tr>
+<tr><td>Immo · Vidéo démo</td><td>active</td><td class="num">1 110</td><td class="num">3,0 %</td><td class="num">8</td><td class="num">1</td></tr>
+<tr><td>Batimat · exposants · ChatGPT</td><td>active</td><td class="num">987</td><td class="num">1,8 %</td><td class="num">6</td><td class="num">0</td></tr>
+<tr><td>Immo · Automatisation</td><td>pause</td><td class="num">1 052</td><td class="num">2,0 %</td><td class="num">7</td><td class="num">0</td></tr>
+<tr><td>Levée de fonds · GEO</td><td>active</td><td class="num">613</td><td class="num">0,2 %</td><td class="num">3</td><td class="num">0</td></tr>
+<tr><td>Plombier Nantes · site offert</td><td>pause</td><td class="num">373</td><td class="num">0,8 %</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Institutions · SEO</td><td>pause</td><td class="num">313</td><td class="num">1,6 %</td><td class="num">7</td><td class="num">0</td></tr>
+<tr><td>IT · ESN + éditeurs · 10 prompts</td><td>active</td><td class="num">280</td><td class="num">0 %</td><td class="num">2</td><td class="num">0</td></tr>
+<tr><td>E-commerce · ventes+GEO</td><td>pause</td><td class="num">235</td><td class="num">8,9 %</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Clinique capillaire · agent</td><td>pause</td><td class="num">208</td><td class="num">5,8 %</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>CMO SaaS · pré-audit offert</td><td>active</td><td class="num">191</td><td class="num">0 %</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>Commerce local · SEO Maps</td><td>pause</td><td class="num">154</td><td class="num">0,6 %</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Autres (Agencies EN, santé ×2, BTP, Audit 06)</td><td>—</td><td class="num">173</td><td class="num">5,2 %</td><td class="num">1</td><td class="num">0</td></tr>
+<tr class="tot"><td>Total</td><td></td><td class="num">7 856</td><td class="num">2,1 %</td><td class="num">60</td><td class="num">10</td></tr>
+</tbody></table></div>
+
+<h3>Les 10 réponses positives (à suivre)</h3>
+<ol>
+  <li><b>Entreprise &amp; Décisions</b> (Conseil), Jonas Belaïche : veut le même teaser sur E&amp;D <i>et</i> sur leur société de nettoyage, propose un RDV rapide (08/10). <b>Le plus chaud.</b></li>
+  <li><b>Nowooo</b> (agence, Pau), Vincent Adnet : propose 15 min le jeudi à 16h (21/09).</li>
+  <li><b>Enaxion</b> (Conseil), Antoine Barcat : « preneur de votre vidéo ».</li>
+  <li><b>Photoweb</b> (Hiring FR), Laurent Nusse : « oui, nous voulons bien la recevoir » (09/10).</li>
+  <li><b>Mantis / Wilderness Foundation</b> (Saudi Hiring), Adrian Gardiner : « Yes please » (07/10).</li>
+  <li><b>Atlasco</b> (B2B Dirigeants), Hugo Simon : « oui je veux bien ».</li>
+  <li><b>Manoir de Kerbot</b> (Hôtellerie) : « oui je veux bien ».</li>
+  <li><b>Carnac Lodge</b> (Hôtellerie) : « oui envoyez ».</li>
+  <li><b>theTribe</b> (CMO SaaS), Claire Michard : « curieuse de voir ça ».</li>
+  <li><b>Miz Partners</b> (Immo), Ruben Mizrahi : « Prix ».</li>
+</ol>
+<p class="small">Tièdes : TSM Consulting, Eliadis, Kilian Realty, Maxoutil, La Villa Dune (redirige vers leur service communication).</p>
+
+<h2><span class="n">3</span>Spam : ce que je vois et ce que je ne sais pas</h2>
+<div class="note bad">J'ai vu certains de nos mails tomber en spam et je ne sais pas vraiment pourquoi, ni comment corriger. Je dois vérifier le taux de spam dans Lemlist. Lemlist ne donne pas ce taux par API et, sans tracking, on ne peut pas le déduire des ouvertures.</div>
+<h3>Ce qui est vérifié</h3>
+<ul>
+  <li><b>Authentification OK :</b> SPF (Google), DKIM et DMARC (<code>p=quarantine</code>) passent sur les 10 domaines. Vérifié sur des en-têtes réels.</li>
+  <li><b>Liste noire SURBL :</b> les 10 domaines d'envoi sont listés « ABUSE ». La demande de retrait a été refusée (ticket TUH-300-78398). Motifs donnés : domaines sosies, cold email, faux « re: » dans les objets, tracking de clics, emails tombés dans leurs pièges à spam.</li>
+  <li><b>Spamhaus DBL :</b> non listé. URIBL n'a pas pu être vérifié (requête refusée).</li>
+  <li><b>decupler.com n'est pas listé.</b> Le lien a été retiré de toutes les signatures pour le protéger.</li>
+  <li><b>Volume :</b> environ 20 emails par jour ouvré et par boîte. Ce n'est pas excessif.</li>
+</ul>
+<h3>Causes probables</h3>
+<ol>
+  <li>Domaines sur liste noire SURBL : les filtres anti-spam des entreprises consultent cette liste.</li>
+  <li>Domaines sosies récents (decupler-seo, decupler-leads…) créés en août.</li>
+  <li>Faux « re: » dans les objets des relances.</li>
+  <li>Pas de lien de désinscription : ça provoque des signalements spam et une plainte avec copie à la CNIL.</li>
+  <li>Adresses génériques (info@, contact@) : 311 rien que sur Batimat. Ces boîtes partagées signalent facilement.</li>
+  <li>Liens dans le corps du mail (démo Canva, LinkedIn).</li>
+  <li>Taux de bounce élevé sur certaines listes (e-commerce 8,9 %, santé 11,5 %).</li>
+</ol>
+
+<h2><span class="n">4</span>Comment j'ai trouvé les leads</h2>
+<div class="tbl"><table>
+<thead><tr><th>Source</th><th>Méthode</th><th>Utilisée pour</th></tr></thead>
+<tbody>
+<tr><td>Clay</td><td>39 exports CSV, regroupés dans le CRM Supabase (4 551 leads avec email)</td><td>Premières campagnes par secteur</td></tr>
+<tr><td>FullEnrich</td><td>Recherche par titre exact (CEO, fondateur, DG, président), secteur, pays et taille, 1 personne par entreprise. Coût : 0,25 crédit par contact exporté, environ 1 crédit par email trouvé.</td><td>Conseil, IT, CMO SaaS, Levée</td></tr>
+<tr><td>Offres d'emploi LinkedIn</td><td>Scraping des pages publiques : entreprises qui recrutent un poste donné (667 entreprises en France). Ça donne le signal d'achat et la variable <code>{{poste}}</code>.</td><td>Hiring FR, Saudi Hiring</td></tr>
+<tr><td>Salon Batimat</td><td>Liste des exposants, 483 contacts</td><td>Batimat</td></tr>
+<tr><td>Levées de fonds</td><td>Entreprises qui viennent de lever, emails vérifiés</td><td>Levée de fonds</td></tr>
+<tr><td>Outscraper (Google Maps)</td><td>Commerces et structures locales par ville</td><td>Hôtellerie, plombiers, commerces, cliniques</td></tr>
+</tbody></table></div>
+<p><b>Dédoublonnage systématique :</b> un script vérifie chaque lead contre un registre de 11 955 emails déjà contactés (117 campagnes + désinscrits), au niveau de l'email <i>et</i> du domaine. On ne recontacte jamais quelqu'un. 1 040 profils LinkedIn exportés mais non enrichis sont gardés pour la prospection LinkedIn.</p>
+
+<h2><span class="n">5</span>Les copies testées</h2>
+<div class="tbl"><table>
+<thead><tr><th>Angle</th><th>Objet du 1er mail</th><th>Appel à l'action</th><th>Résultat</th></tr></thead>
+<tbody>
+<tr><td>Analyse offerte, « j'ai pris les devants » (hôtellerie, commerce, institutions, B2B)</td><td>« analyse offerte » / « j'ai pris les devants »</td><td>« un oui je veux bien »</td><td><span class="pill p-good">meilleur ratio en hôtellerie</span></td></tr>
+<tr><td>10 prompts ChatGPT (conseil, IT, Batimat)</td><td>« 10 prompts où {{companyName}} devrait sortir » / « après Batimat, {{companyName}} sur ChatGPT ? »</td><td>vidéo de 3 min</td><td><span class="pill p-good">Conseil : 2 positives</span> <span class="pill p-bad">IT et Batimat : 0</span></td></tr>
+<tr><td>KPI personnalisé (CMO SaaS)</td><td>« {{company}} sur ChatGPT ? » / « 7 opportunités sur {{domain}} »</td><td>« vidéo »</td><td><span class="pill p-warn">1 positive, 1 « trop vague »</span></td></tr>
+<tr><td>Signal recrutement + agents IA</td><td>« votre recrutement {{poste}} » / « scaling the team at {{companyName}}? »</td><td>« dites-moi la tâche qui prend le plus de temps »</td><td><span class="pill p-good">1 FR + 1 Saudi sur 375</span></td></tr>
+<tr><td>Marque blanche pour agences</td><td>« partenaires ? »</td><td>audit offert à leur nom</td><td><span class="pill p-good">1 RDV</span></td></tr>
+<tr><td>Immo : démo vidéo et page GEO-ready offerte</td><td>« signer plus de deals grâce à l'IA ? »</td><td>« envoyez-moi 3 photos »</td><td><span class="pill p-bad">1 positive sur 2 162</span></td></tr>
+<tr><td>Levée de fonds : formation IA</td><td>« l'IA chez {{companyName}} »</td><td>outil gratuit</td><td><span class="pill p-bad">0 sur 613</span></td></tr>
+<tr><td>Site offert (plombiers)</td><td>« site offert »</td><td>—</td><td><span class="pill p-bad">0 sur 373</span></td></tr>
+<tr><td>Mail de rupture</td><td>« je clôture, {{companyName}} ? » (choix 1/2/3)</td><td>répondre 1, 2 ou 3</td><td><span class="pill p-warn">fait répondre, 0 positive</span></td></tr>
+</tbody></table></div>
+<p class="small">Structure type : 4 mails sur 12 jours (J0, J+3, J+4, J+5), relances dans le même fil, signature texte sans lien vers le site.</p>
+
+<h3>Ce qui est prévu</h3>
+<ul>
+  <li>Tester l'envoi de la <b>pré-analyse sans vidéo</b> (texte et captures) pour aller plus vite. La vidéo de 3 min est aujourd'hui le goulet.</li>
+  <li>Parler de l'<b>offre performance pour le BTP</b>.</li>
+  <li>Parler de l'offre <b>« je trouve 7 opportunités GEO »</b>.</li>
+  <li>Test A/B d'objets sur Batimat, relances LinkedIn sur les 1 040 profils, point quotidien des réponses, bilan à J+7, recharge de leads chaque semaine (crédits FullEnrich : 45,75 restants).</li>
+</ul>
+
+<h2><span class="n">6</span>Blocages</h2>
+<ol>
+  <li><b>Délivrabilité :</b> mails en spam, 10 domaines sur liste noire SURBL, aucune mesure fiable du placement en boîte de réception.</li>
+  <li><b>Taux de réponse positive faible :</b> 0,13 %, avec 30 refus pour 10 positives.</li>
+  <li><b>Conversion :</b> les « oui » attendent une vidéo faite à la main. Les RDV ne sont pas suivis dans Lemlist (0 RDV et 0 « intéressé » marqués).</li>
+  <li><b>Conformité :</b> pas de lien de désinscription, une plainte avec la CNIL en copie.</li>
+  <li><b>Budget data :</b> 45,75 crédits FullEnrich, donc peu de nouveaux leads sans recharge.</li>
+</ol>
+
+<h2><span class="n">7</span>Questions auxiliaires à discuter</h2>
+<div class="note"><b>On définit l'objectif dès le début de notre session.</b></div>
+<ol>
+  <li>Comment mesurer notre taux réel de spam (seed test, Google Postmaster, outil Lemlist) ?</li>
+  <li>Domaines listés SURBL : on les garde, on les met en repos, ou on repart sur de nouveaux domaines, et avec quel nommage ?</li>
+  <li>Lien de désinscription en cold B2B France : obligatoire ? Lequel nuit le moins à la délivrabilité ?</li>
+  <li>Faux « re: » et mail de rupture 1/2/3 : à garder ou à arrêter ?</li>
+  <li>Adresses génériques (info@, contact@) : on les exclut ?</li>
+  <li>Livrer la pré-analyse en texte plutôt qu'en vidéo : plus de « oui » ou moins de RDV ?</li>
+  <li>Quel angle pousser : performance BTP, « 7 opportunités GEO », ou signal de recrutement ?</li>
+  <li>Quels benchmarks viser (taux de réponse, taux positif, RDV pour 1 000 envois) ?</li>
+</ol>
+</section>
+
+<!-- ===================== ENGLISH ===================== -->
+<section id="en" lang="en" hidden>
+
+<h2><span class="n">1</span>Summary</h2>
+<ul>
+  <li><b>7,856 emails sent</b> in 4 weeks, across 21 campaigns, from 20 inboxes on 10 domains.</li>
+  <li><b>55 human replies</b> (0.72% of delivered), of which <b>10 positive</b> (0.13%) and 5 lukewarm.</li>
+  <li><b>Meetings: 0 logged in Lemlist.</b> 2 prospects asked for a slot (Nowooo on 21 Sept, Entreprise &amp; Décisions on 8 Oct). I still have to confirm whether they took place.</li>
+  <li><b>Main issue: deliverability.</b> Some emails land in spam. All 10 sending domains are on the SURBL blacklist, and the delisting request was refused.</li>
+  <li><b>Bottleneck:</b> every "yes" needs a 3-minute video recorded by hand. Some positive replies are still waiting for theirs.</li>
+</ul>
+
+<h2><span class="n">2</span>Last 4 weeks in numbers</h2>
+<div class="kpis">
+  <div class="kpi"><b>7,856</b><span>emails sent</span></div>
+  <div class="kpi"><b>2.1%</b><span>bounces (166)</span></div>
+  <div class="kpi"><b>55</b><span>human replies · 0.72%</span></div>
+  <div class="kpi"><b>10</b><span>positive replies · 0.13%</span></div>
+  <div class="kpi alert"><b>0</b><span>meetings logged (2 requested)</span></div>
+</div>
+
+<h3>Week by week</h3>
+<div class="tbl"><table>
+<thead><tr><th>Week</th><th class="num">Sent</th><th class="num">Bounces</th><th class="num">Bounce rate</th><th class="num">Replies*</th></tr></thead>
+<tbody>
+<tr><td>W1 · 14–20 Sept</td><td class="num">2,581</td><td class="num">81</td><td class="num">3.1%</td><td class="num">15</td></tr>
+<tr><td>W2 · 21–27 Sept</td><td class="num">1,946</td><td class="num">53</td><td class="num">2.7%</td><td class="num">16</td></tr>
+<tr><td>W3 · 28 Sept–4 Oct</td><td class="num">1,798</td><td class="num">22</td><td class="num">1.2%</td><td class="num">21</td></tr>
+<tr><td>W4 · 5–12 Oct (in progress)</td><td class="num">1,531</td><td class="num">10</td><td class="num">0.7%</td><td class="num">9</td></tr>
+<tr class="tot"><td>Total</td><td class="num">7,856</td><td class="num">166</td><td class="num">2.1%</td><td class="num">60</td></tr>
+</tbody></table></div>
+<p class="small">* Replies as counted by Lemlist, auto-replies included. Opens and clicks are not measured because tracking is off (it worsens spam). Bounces have dropped since we switched to verified emails.</p>
+
+<h3>What the 60 replies say (each one read)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Type</th><th class="num">#</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td><span class="pill p-good">Positive</span></td><td class="num">10</td><td>"Yes, send it", "Yes please", "Price?", meeting requests (Nowooo, Entreprise &amp; Décisions)</td></tr>
+<tr><td><span class="pill p-warn">Lukewarm</span></td><td class="num">5</td><td>"no budget but send it", "forwarded to my managers", "a bit vague, which keywords?"</td></tr>
+<tr><td><span class="pill p-warn">Reply to breakup email (1/2/3)</span></td><td class="num">7</td><td>Just reply "2" or "3": the format gets replies but leads nowhere</td></tr>
+<tr><td><span class="pill p-bad">No / stop</span></td><td class="num">30</td><td>"no thanks", "remove me", GDPR. 4 harsh complaints: CNIL (French data regulator) in copy ("no unsubscribe link"), "badly set-up automation", informal "tu" tone, "we never asked for this"</td></tr>
+<tr><td>Wrong contact</td><td class="num">3</td><td>Left the company, wrong organisation</td></tr>
+<tr><td>Auto-reply / ticket</td><td class="num">5</td><td>Customer support desks (ManoMano, Webador, Linkeo…)</td></tr>
+</tbody></table></div>
+
+<h3>By campaign</h3>
+<div class="tbl"><table>
+<thead><tr><th>Campaign</th><th>Status</th><th class="num">Sent</th><th class="num">Bounce</th><th class="num">Replies</th><th class="num">Positive</th></tr></thead>
+<tbody>
+<tr><td>Consulting firms · 10 prompts</td><td>running</td><td class="num">451</td><td class="num">0.9%</td><td class="num">5</td><td class="num">2</td></tr>
+<tr><td>Hotels · free analysis</td><td>paused</td><td class="num">245</td><td class="num">3.7%</td><td class="num">3</td><td class="num">2</td></tr>
+<tr><td>Agencies · white-label GEO (FR)</td><td>paused</td><td class="num">480</td><td class="num">0.6%</td><td class="num">3</td><td class="num">1 (meeting)</td></tr>
+<tr><td>B2B founders · SEO+AI</td><td>paused</td><td class="num">430</td><td class="num">5.6%</td><td class="num">6</td><td class="num">1</td></tr>
+<tr><td>SaaS CMOs · KPI</td><td>running</td><td class="num">186</td><td class="num">0%</td><td class="num">4</td><td class="num">1</td></tr>
+<tr><td>FR · Hiring · AI agents</td><td>running</td><td class="num">257</td><td class="num">0.4%</td><td class="num">2</td><td class="num">1</td></tr>
+<tr><td>Saudi · AI build · Hiring</td><td>running</td><td class="num">118</td><td class="num">1.7%</td><td class="num">1</td><td class="num">1</td></tr>
+<tr><td>Real estate · video demo</td><td>running</td><td class="num">1,110</td><td class="num">3.0%</td><td class="num">8</td><td class="num">1</td></tr>
+<tr><td>Batimat exhibitors · ChatGPT</td><td>running</td><td class="num">987</td><td class="num">1.8%</td><td class="num">6</td><td class="num">0</td></tr>
+<tr><td>Real estate · automation</td><td>paused</td><td class="num">1,052</td><td class="num">2.0%</td><td class="num">7</td><td class="num">0</td></tr>
+<tr><td>Recently funded · GEO</td><td>running</td><td class="num">613</td><td class="num">0.2%</td><td class="num">3</td><td class="num">0</td></tr>
+<tr><td>Plumbers Nantes · free website</td><td>paused</td><td class="num">373</td><td class="num">0.8%</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Institutions · SEO</td><td>paused</td><td class="num">313</td><td class="num">1.6%</td><td class="num">7</td><td class="num">0</td></tr>
+<tr><td>IT services &amp; software · 10 prompts</td><td>running</td><td class="num">280</td><td class="num">0%</td><td class="num">2</td><td class="num">0</td></tr>
+<tr><td>E-commerce · sales+GEO</td><td>paused</td><td class="num">235</td><td class="num">8.9%</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Hair clinics · AI agent</td><td>paused</td><td class="num">208</td><td class="num">5.8%</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>SaaS CMOs · free pre-audit</td><td>running</td><td class="num">191</td><td class="num">0%</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>Local shops · Maps SEO</td><td>paused</td><td class="num">154</td><td class="num">0.6%</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Other (Agencies EN, health ×2, construction, Audit 06)</td><td>—</td><td class="num">173</td><td class="num">5.2%</td><td class="num">1</td><td class="num">0</td></tr>
+<tr class="tot"><td>Total</td><td></td><td class="num">7,856</td><td class="num">2.1%</td><td class="num">60</td><td class="num">10</td></tr>
+</tbody></table></div>
+
+<h3>The 10 positive replies (to follow up)</h3>
+<ol>
+  <li><b>Entreprise &amp; Décisions</b> (consulting), Jonas Belaïche: wants the same teaser for E&amp;D <i>and</i> for their cleaning company, asks for a quick meeting (8 Oct). <b>Hottest lead.</b></li>
+  <li><b>Nowooo</b> (agency, Pau), Vincent Adnet: offered 15 min on Thursday at 4pm (21 Sept).</li>
+  <li><b>Enaxion</b> (consulting), Antoine Barcat: "happy to get your video".</li>
+  <li><b>Photoweb</b> (Hiring FR), Laurent Nusse: "yes, we'd like to receive it" (9 Oct).</li>
+  <li><b>Mantis / Wilderness Foundation</b> (Saudi Hiring), Adrian Gardiner: "Yes please" (7 Oct).</li>
+  <li><b>Atlasco</b> (B2B founders), Hugo Simon: "yes please".</li>
+  <li><b>Manoir de Kerbot</b> (hotel): "yes please".</li>
+  <li><b>Carnac Lodge</b> (hotel): "yes, send it".</li>
+  <li><b>theTribe</b> (SaaS CMO), Claire Michard: "curious to see it".</li>
+  <li><b>Miz Partners</b> (real estate), Ruben Mizrahi: "Price?"</li>
+</ol>
+<p class="small">Lukewarm: TSM Consulting, Eliadis, Kilian Realty, Maxoutil, La Villa Dune (redirected to their comms team).</p>
+
+<h2><span class="n">3</span>Spam: what I see and what I don't know</h2>
+<div class="note bad">I've seen some of our emails land in spam and I don't really know why or how to fix it. I need to check the spam rate in Lemlist. Lemlist doesn't expose it through its API, and with tracking off we can't infer it from opens.</div>
+<h3>Verified</h3>
+<ul>
+  <li><b>Authentication OK:</b> SPF (Google), DKIM and DMARC (<code>p=quarantine</code>) pass on all 10 domains. Checked on real headers.</li>
+  <li><b>SURBL blacklist:</b> all 10 sending domains are listed as "ABUSE". The delisting request was refused (ticket TUH-300-78398). Reasons given: lookalike domains, cold email, fake "re:" subjects, click tracking, hits on their spam traps.</li>
+  <li><b>Spamhaus DBL:</b> not listed. URIBL could not be checked (query refused).</li>
+  <li><b>decupler.com is not listed.</b> Its link was removed from every signature to protect it.</li>
+  <li><b>Volume:</b> about 20 emails per working day per inbox. That is not excessive.</li>
+</ul>
+<h3>Likely causes</h3>
+<ol>
+  <li>Domains on the SURBL blacklist, which corporate spam filters check.</li>
+  <li>Recent lookalike domains (decupler-seo, decupler-leads…) registered in August.</li>
+  <li>Fake "re:" in follow-up subjects.</li>
+  <li>No unsubscribe link, which leads to spam reports and one complaint copied to the CNIL.</li>
+  <li>Generic addresses (info@, contact@): 311 on Batimat alone. These shared inboxes report spam easily.</li>
+  <li>Links in the email body (Canva demo, LinkedIn).</li>
+  <li>High bounce rate on some lists (e-commerce 8.9%, health 11.5%).</li>
+</ol>
+
+<h2><span class="n">4</span>How I sourced the leads</h2>
+<div class="tbl"><table>
+<thead><tr><th>Source</th><th>Method</th><th>Used for</th></tr></thead>
+<tbody>
+<tr><td>Clay</td><td>39 CSV exports, merged into the Supabase CRM (4,551 leads with email)</td><td>First industry campaigns</td></tr>
+<tr><td>FullEnrich</td><td>Search by exact title (CEO, founder, MD, president), industry, country and size, one person per company. Cost: 0.25 credit per exported contact, about 1 credit per email found.</td><td>Consulting, IT, SaaS CMOs, funded companies</td></tr>
+<tr><td>LinkedIn job posts</td><td>Scraping of public job pages: companies hiring for a given role (667 companies in France). This gives the buying signal and the <code>{{poste}}</code> (job title) variable.</td><td>Hiring FR, Saudi Hiring</td></tr>
+<tr><td>Batimat trade show</td><td>Exhibitor list, 483 contacts</td><td>Batimat</td></tr>
+<tr><td>Funding rounds</td><td>Companies that just raised, verified emails</td><td>Recently funded</td></tr>
+<tr><td>Outscraper (Google Maps)</td><td>Local businesses by city</td><td>Hotels, plumbers, shops, clinics</td></tr>
+</tbody></table></div>
+<p><b>Systematic deduplication:</b> a script checks every lead against a registry of 11,955 already-contacted emails (117 campaigns plus unsubscribes), at both email <i>and</i> domain level. Nobody is ever contacted twice. 1,040 LinkedIn profiles that were exported but not enriched are kept for LinkedIn outreach.</p>
+
+<h2><span class="n">5</span>Copy tested</h2>
+<div class="tbl"><table>
+<thead><tr><th>Angle</th><th>First-email subject (FR)</th><th>Call to action</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Free analysis, "I went ahead" (hotels, shops, institutions, B2B)</td><td>"analyse offerte" / "j'ai pris les devants"</td><td>"just say yes"</td><td><span class="pill p-good">best ratio in hotels</span></td></tr>
+<tr><td>10 ChatGPT prompts (consulting, IT, Batimat)</td><td>"10 prompts où {{companyName}} devrait sortir" / "après Batimat, {{companyName}} sur ChatGPT ?"</td><td>3-min video</td><td><span class="pill p-good">Consulting: 2 positive</span> <span class="pill p-bad">IT and Batimat: 0</span></td></tr>
+<tr><td>Personalised KPI (SaaS CMOs)</td><td>"{{company}} sur ChatGPT ?" / "7 opportunités sur {{domain}}"</td><td>reply "video"</td><td><span class="pill p-warn">1 positive, 1 "too vague"</span></td></tr>
+<tr><td>Hiring signal + AI agents</td><td>"votre recrutement {{poste}}" / "scaling the team at {{companyName}}?"</td><td>"tell me the most time-consuming task"</td><td><span class="pill p-good">1 FR + 1 Saudi out of 375</span></td></tr>
+<tr><td>White-label for agencies</td><td>"partenaires ?"</td><td>free audit under their brand</td><td><span class="pill p-good">1 meeting</span></td></tr>
+<tr><td>Real estate: video demo and free GEO-ready page</td><td>"signer plus de deals grâce à l'IA ?"</td><td>"send me 3 photos"</td><td><span class="pill p-bad">1 positive out of 2,162</span></td></tr>
+<tr><td>Recently funded: AI training</td><td>"l'IA chez {{companyName}}"</td><td>free tool</td><td><span class="pill p-bad">0 out of 613</span></td></tr>
+<tr><td>Free website (plumbers)</td><td>"site offert"</td><td>—</td><td><span class="pill p-bad">0 out of 373</span></td></tr>
+<tr><td>Breakup email</td><td>"je clôture, {{companyName}} ?" (options 1/2/3)</td><td>reply 1, 2 or 3</td><td><span class="pill p-warn">gets replies, 0 positive</span></td></tr>
+</tbody></table></div>
+<p class="small">Typical structure: 4 emails over 12 days (day 0, +3, +4, +5), follow-ups in the same thread, plain-text signature with no website link.</p>
+
+<h3>What's planned</h3>
+<ul>
+  <li>Test sending the <b>pre-analysis without the video</b> (text and screenshots) to move faster. The 3-min video is the current bottleneck.</li>
+  <li>Discuss the <b>performance-based offer for construction (BTP)</b>.</li>
+  <li>Discuss the <b>"I find 7 GEO opportunities"</b> offer.</li>
+  <li>Subject A/B test on Batimat, LinkedIn follow-ups on the 1,040 profiles, daily reply digest, day-7 review, weekly lead top-up (FullEnrich credits left: 45.75).</li>
+</ul>
+
+<h2><span class="n">6</span>Blockers</h2>
+<ol>
+  <li><b>Deliverability:</b> emails in spam, 10 domains on the SURBL blacklist, no reliable measure of inbox placement.</li>
+  <li><b>Low positive reply rate:</b> 0.13%, with 30 refusals for 10 positives.</li>
+  <li><b>Conversion:</b> the "yes" replies wait for a hand-made video. Meetings aren't tracked in Lemlist (0 meetings and 0 "interested" flagged).</li>
+  <li><b>Compliance:</b> no unsubscribe link, one complaint copied to the CNIL.</li>
+  <li><b>Data budget:</b> 45.75 FullEnrich credits left, so few new leads without a top-up.</li>
+</ol>
+
+<h2><span class="n">7</span>Side questions to discuss</h2>
+<div class="note"><b>We set the goal at the very start of our session.</b></div>
+<ol>
+  <li>How do we measure our real spam rate (seed test, Google Postmaster, Lemlist tool)?</li>
+  <li>SURBL-listed domains: keep them, rest them, or start over on new domains, and with what naming?</li>
+  <li>Unsubscribe link in French B2B cold email: required? Which kind hurts deliverability least?</li>
+  <li>Fake "re:" and the 1/2/3 breakup email: keep or drop?</li>
+  <li>Generic addresses (info@, contact@): exclude them?</li>
+  <li>Delivering the pre-analysis as text instead of video: more "yes" replies, or fewer meetings?</li>
+  <li>Which angle to push: construction performance offer, "7 GEO opportunities", or hiring signal?</li>
+  <li>Which benchmarks should we aim for (reply rate, positive rate, meetings per 1,000 emails)?</li>
+</ol>
+</section>
+
+</div>
+<!-- ===================== ICP / VP ===================== -->
+<div class="panel" id="p-icp" hidden>
+<h2><span class="n">ICP</span><span class="fr">ICP / VP · à remplir ensemble</span><span class="en">ICP / VP · to fill in together</span></h2>
+<p class="small"><span class="fr">Mêmes lignes que l'onglet « 2. ICP / VP » du Sheet d'Igor. Une case <b>vide</b> n'est pas validée : la proposition de Claude s'affiche en gris. Clique dans la case pour écrire, ou sur <b>✓</b> pour garder la proposition. Seul ce que tu écris ou valides est enregistré.</span><span class="en">Same rows as the "2. ICP / VP" tab of Igor's Sheet. An <b>empty</b> cell is not validated: Claude's suggestion shows in grey. Click the cell to write, or <b>✓</b> to keep the suggestion. Only what you write or validate is saved.</span></p>
+<p class="small"><span class="fr">Copy déjà travaillée :</span><span class="en">Copy already worked on:</span> <a href="https://claude.ai/artifact/Tnfz61qnYrMkJdqLtHCF4g" target="_blank" rel="noopener">Base Copy Décupler</a></p>
+<div class="savebar" id="savebar"></div>
+<div class="tbl"><table class="grid">
+<thead><tr id="icp-head"><th></th></tr></thead>
+<tbody id="icp-body"></tbody></table></div>
+</div>
+
+<!-- ===================== GROUNDWORK ===================== -->
+<div class="panel" id="p-gw" hidden>
+<h2><span class="n">GW</span>Groundwork</h2>
+<h3><span class="fr">1.1 Calculateur d'inboxes</span><span class="en">1.1 Inbox calculator</span></h3>
+<div class="tbl"><table>
+<thead><tr><th><span class="fr">Indicateur</span><span class="en">Metric</span></th><th class="num">Sheet Igor</th><th>Benchmark</th><th class="num"><span class="fr">Nous (4 sem.)</span><span class="en">Us (4 wks)</span></th></tr></thead>
+<tbody>
+<tr><td><span class="fr">Nouveaux clients / mois (objectif)</span><span class="en">New clients / month (goal)</span></td><td class="num">1</td><td></td><td class="num">?</td></tr>
+<tr><td><span class="fr">Conversion intéressé → client</span><span class="en">Interested → client</span></td><td class="num">5 %</td><td>10-20 %</td><td class="num">?</td></tr>
+<tr><td><span class="fr">Leads intéressés</span><span class="en">Interested leads</span></td><td class="num">20</td><td></td><td class="num">10</td></tr>
+<tr><td><span class="fr">Part des réponses intéressées</span><span class="en">Share of replies interested</span></td><td class="num">20 %</td><td>8-45 %</td><td class="num">18 %</td></tr>
+<tr><td><span class="fr">Réponses humaines</span><span class="en">Human replies</span></td><td class="num">100</td><td></td><td class="num">55</td></tr>
+<tr><td><span class="fr">Taux de réponse</span><span class="en">Reply rate</span></td><td class="num">2 %</td><td>2-6 %</td><td class="num">0,7 %*</td></tr>
+<tr><td><span class="fr">Étapes de séquence</span><span class="en">Sequence steps</span></td><td class="num">4</td><td>3-4</td><td class="num">4</td></tr>
+<tr><td><span class="fr">Emails / inbox / jour</span><span class="en">Emails / inbox / day</span></td><td class="num">25</td><td></td><td class="num">≈ 20</td></tr>
+<tr><td>Inboxes</td><td class="num">20</td><td></td><td class="num">20</td></tr>
+<tr><td><span class="fr">Inboxes par domaine</span><span class="en">Inboxes per domain</span></td><td class="num">2</td><td>4-5</td><td class="num">2</td></tr>
+<tr><td><span class="fr">Domaines</span><span class="en">Domains</span></td><td class="num">10</td><td></td><td class="num">10</td></tr>
+</tbody></table></div>
+<p class="small"><span class="fr">* Calculé sur les emails ; Igor veut le taux par prospect.</span><span class="en">* Computed per email; Igor wants it per prospect.</span></p>
+<h3>Checklist</h3>
+<div class="tbl"><table>
+<thead><tr><th>✓</th><th><span class="fr">Étape</span><span class="en">Step</span></th><th>Item</th><th><span class="fr">Où on en est (modifiable)</span><span class="en">Status (editable)</span></th></tr></thead>
+<tbody id="gw-list"></tbody></table></div>
+</div>
+
+<!-- ===================== MÉTHODE ===================== -->
+<div class="panel" id="p-method" hidden>
+<h2><span class="n">M</span><span class="fr">Méthode Igor (UltB)</span><span class="en">Igor's method (UltB)</span></h2>
+<h3><span class="fr">Séquence</span><span class="en">Sequence</span></h3>
+<ul>
+<li><span class="fr"><b>(1 VP + 1 FU) × 3 = 6 mails</b>, espacés (0, 3) + (5, 3) + (10, 3) jours. VP1 et FU1 dans le même fil.</span><span class="en"><b>(1 VP + 1 FU) × 3 = 6 emails</b>, spaced (0, 3) + (5, 3) + (10, 3) days. VP1 and FU1 in the same thread.</span></li>
+<li><span class="fr"><b>VP</b> : texte brut, R.E.P.L.Y. ou AAA, 80 mots max, lecture &lt; 20 s. <b>FU</b> : une ligne.</span><span class="en"><b>VP</b>: plain text, R.E.P.L.Y. or AAA, 80 words max, under 20 s to read. <b>FU</b>: one line.</span></li>
+<li><span class="fr">2e paire : <b>tactique 1-2-3</b> avec humour métier. Dernier mail : au revoir.</span><span class="en">2nd pair: <b>1-2-3 tactic</b> with industry humour. Last email: goodbye.</span></li>
+</ul>
+<h3>R.E.P.L.Y.</h3>
+<p><span class="fr"><b>R</b>ésultats pertinents · <b>E</b>mpathie (priorité + problème) · <b>P</b>ersonnalisation · <b>L</b>aser (une seule action) · <b>Y</b>ou (parler de lui).</span><span class="en"><b>R</b>elevant results · <b>E</b>mpathy (priority + problem) · <b>P</b>ersonalization · <b>L</b>aser focus (one action) · <b>Y</b>ou-oriented.</span></p>
+<h3><span class="fr">Objets</span><span class="en">Subject lines</span></h3>
+<ul>
+<li><span class="fr"><b>Généraux</b> : <code>intro: {{companyName}} x Décupler (Nathan)</code>. <b>Hyper-ciblés</b> : problème + prénom. <b>Camouflage interne</b> (1 mot) : <code>audit</code>, <code>accès</code>, <code>croissance</code>, <code>chatgpt</code>.</span><span class="en"><b>General</b>: <code>intro: {{companyName}} x Décupler (Nathan)</code>. <b>Hyper-targeted</b>: problem + first name. <b>Internal camouflage</b> (1 word): <code>audit</code>, <code>access</code>, <code>growth</code>, <code>chatgpt</code>.</span></li>
+<li><span class="fr">Moins de 5 mots, première lettre en minuscule.</span><span class="en">Under 5 words, lowercase first letter.</span></li>
+</ul>
+<h3><span class="fr">CTA et lead magnet</span><span class="en">CTA and lead magnet</span></h3>
+<ul>
+<li><span class="fr">CTA de <b>permission orienté « non »</b> (Chris Voss). Aucun lien dans le 1er mail ; pas de demande de call au 1er contact.</span><span class="en"><b>No-oriented permission</b> CTA (Chris Voss). No link in email 1; never ask for a call on first touch.</span></li>
+<li><span class="fr">Lead magnet : la <b>roadmap du kick-off en version 5/10</b>, produite par agent, seulement pour ceux qui disent oui.</span><span class="en">Lead magnet: a <b>5/10 version of the kick-off roadmap</b>, agent-built, only for those who say yes.</span></li>
+<li><span class="fr">Vidéo 3 min : intro 30 s → 2 cas chiffrés → thèse en 3 piliers → CTA 15 s.</span><span class="en">3-min video: 30 s intro → 2 case studies with numbers → 3-pillar thesis → 15 s CTA.</span></li>
+</ul>
+<h3><span class="fr">Réponses</span><span class="en">Replies</span></h3>
+<p><span class="fr"><b>Intéressé</b> → vidéo + Calendly, relance LinkedIn à J+2 · <b>Tiède</b> → raison + quand revenir · <b>Froid</b> → au revoir + ressource · <b>Agressif</b> → blacklist.</span><span class="en"><b>Interested</b> → video + Calendly, LinkedIn nudge after 2 days · <b>Warm no</b> → reason + when to come back · <b>Cold no</b> → goodbye + resource · <b>Rude</b> → blacklist.</span></p>
+<h3><span class="fr">Conseils business</span><span class="en">Business advice</span></h3>
+<ol>
+<li><span class="fr"><b>Vendre la destination, pas le voyage.</b></span><span class="en"><b>Sell the destination, not the journey.</b></span></li>
+<li><span class="fr"><b>Un seul lapin à la fois</b> (SEO ou agents IA).</span><span class="en"><b>Chase one rabbit at a time</b> (SEO or AI agents).</span></li>
+<li><span class="fr"><b>Hypothèse + critère de succès écrit avant</b> de lancer.</span><span class="en"><b>Write the hypothesis and success criteria</b> before launching.</span></li>
+<li><span class="fr"><b>Offre forte</b> : résultat + cas + ancrage prix + urgence + garantie + bonus.</span><span class="en"><b>Strong offer</b>: outcome + case + price anchor + urgency + guarantee + bonus.</span></li>
+<li><span class="fr"><b>L'argent est dans la relance.</b></span><span class="en"><b>The money is in the follow-up.</b></span></li>
+<li><span class="fr">Mesurer en prospects : réponses → positives → RDV → deals.</span><span class="en">Measure per prospect: replies → positives → meetings → deals.</span></li>
+<li><span class="fr"><b>BAMFAM</b> : fixer le RDV suivant pendant le RDV.</span><span class="en"><b>BAMFAM</b>: book a meeting from a meeting.</span></li>
+<li><span class="fr">Engagements écrits ; 10-20 h/semaine sur le canal.</span><span class="en">Written commitments; 10-20 h/week on the channel.</span></li>
+</ol>
+<h3><span class="fr">Engagements</span><span class="en">Commitments</span></h3>
+<div class="tbl"><table><tbody id="eng-list"></tbody></table></div>
+<p class="small"><span class="fr">Prochaine session : <b>mardi 20/10, 16h30</b>.</span><span class="en">Next session: <b>Tuesday 20 Oct, 4:30 pm</b>.</span></p>
+</div>
+
+<!-- ===================== MASTERCLASS ===================== -->
+<div class="panel" id="p-mc" hidden>
+<h2><span class="n">MC</span><span class="fr">Relance des inscrits à la masterclass (13 → 19/10)</span><span class="en">Masterclass attendee follow-up (13 → 19 Oct)</span></h2>
+<p class="small"><span class="fr">Hypothèse fixée avant le lancement : bon résultat = ≥ 10 appels de 15 min réservés et ≥ 2 inscriptions de plus ; mauvais = moins de 5 appels.</span><span class="en">Hypothesis set before launch: good = ≥ 10 booked 15-min calls and ≥ 2 more sign-ups; bad = fewer than 5 calls.</span></p>
+<div class="tbl"><table>
+<thead><tr><th><span class="fr">Canal</span><span class="en">Channel</span></th><th class="num"><span class="fr">Contactés</span><span class="en">Contacted</span></th><th class="num"><span class="fr">Réponses</span><span class="en">Replies</span></th><th class="num"><span class="fr">Partants pour un appel</span><span class="en">Open to a call</span></th><th class="num">Stop</th></tr></thead>
+<tbody>
+<tr><td><span class="fr">Email (Lemlist, texte brut, 3 mails)</span><span class="en">Email (Lemlist, plain text, 3 emails)</span></td><td class="num">171</td><td class="num">19 · 11 %</td><td class="num">6 · 3,5 %</td><td class="num">5</td></tr>
+<tr><td><span class="fr">LinkedIn 1er degré (message direct)</span><span class="en">LinkedIn 1st degree (direct message)</span></td><td class="num">105</td><td class="num">7 · 7 %</td><td class="num" rowspan="3">3</td><td class="num">—</td></tr>
+<tr><td><span class="fr">LinkedIn 2e degré (invitation puis message)</span><span class="en">LinkedIn 2nd degree (invite then message)</span></td><td class="num">15</td><td class="num">7 · <b>47 %</b></td><td class="num">—</td></tr>
+<tr><td><span class="fr">LinkedIn prolongation</span><span class="en">LinkedIn extension</span></td><td class="num">5</td><td class="num">0</td><td class="num">—</td></tr>
+<tr class="tot"><td>Total</td><td class="num">296</td><td class="num">33 · 11 %</td><td class="num">≈ 8</td><td class="num">5</td></tr>
+</tbody></table></div>
+<p class="small"><span class="fr">Comparaison : cold mail sur 4 semaines = 0,7 % de réponses, 0,13 % de positifs. Une audience chaude répond 15 fois plus. Sébastien Bosse apparaît sur les deux canaux. RDV enregistrés : 0 (à compléter par Nathan) · ventes : à compléter.</span><span class="en">Benchmark: 4-week cold email = 0.7% replies, 0.13% positive. A warm audience replies 15× more. Sébastien Bosse appears on both channels. Meetings logged: 0 (Nathan to complete) · sales: to complete.</span></p>
+<h3><span class="fr">Ce qui a marché</span><span class="en">What worked</span></h3>
+<ul>
+<li><span class="fr">Méthode Igor : texte brut, aucun lien, CTA de permission, mail 1-2-3 avec humour (« Claude Code a pris le contrôle de ton ordi »).</span><span class="en">Igor's method: plain text, no link, permission CTA, 1-2-3 email with humour ("Claude Code took over your computer").</span></li>
+<li><span class="fr">Le mail 2 (cas chiffré « 7 jours de travail faits en 30 min » + prix) a déclenché le plus de réponses : 11 contre 7 pour le mail 1.</span><span class="en">Email 2 (case "7 days of work done in 30 min" + price) triggered the most replies: 11 vs 7 for email 1.</span></li>
+<li><span class="fr">LinkedIn : invitation puis message après acceptation = 47 % de réponses, contre 7 % en message direct.</span><span class="en">LinkedIn: invite then message after acceptance = 47% replies vs 7% for direct messages.</span></li>
+</ul>
+<h3><span class="fr">Pourquoi les autres disent non</span><span class="en">Why the others said no</span></h3>
+<ul>
+<li><span class="fr">« Je veux le faire moi-même » / « je suis venu par curiosité » : l'audience, ce sont surtout des praticiens qui veulent faire seuls, pas des acheteurs d'accompagnement à 990 €.</span><span class="en">"I'll do it myself" / "I came out of curiosity": the audience is mostly practitioners who want to DIY, not buyers of €990 coaching.</span></li>
+<li><span class="fr">Pas de budget (Francis, Ludivine, Olivier) ; pas le temps cette semaine : la fenêtre de 6 jours était trop courte pour caler un appel.</span><span class="en">No budget (Francis, Ludivine, Olivier); no time this week: the 6-day window was too short to book a call.</span></li>
+</ul>
+<h3><span class="fr">Pour la prochaine masterclass</span><span class="en">For the next masterclass</span></h3>
+<ol>
+<li><span class="fr">Qualifier à l'inscription : « Tu as un site à faire tourner ? Pour toi ou pour des clients ? »</span><span class="en">Qualify at sign-up: "Do you have a site to run? For yourself or clients?"</span></li>
+<li><span class="fr">Ajouter une offre « je fais moi-même » à 200-300 € (repo + guide + Q&amp;A de groupe), à côté de l'accompagnement.</span><span class="en">Add a DIY offer at €200-300 (repo + guide + group Q&amp;A) next to the coaching.</span></li>
+<li><span class="fr">Laisser 2 semaines pour les appels ; LinkedIn en invitation puis message.</span><span class="en">Allow 2 weeks for calls; LinkedIn as invite then message.</span></li>
+<li><span class="fr">Relancer les ~14 « plus tard » dans 3 à 4 semaines.</span><span class="en">Re-contact the ~14 "later" in 3-4 weeks.</span></li>
+</ol>
+</div>
+<!-- ===================== DÉLIVRABILITÉ ===================== -->
+<div class="panel" id="p-deliv" hidden>
+<h2><span class="n">D</span><span class="fr">Délivrabilité · GlockApps</span><span class="en">Deliverability · GlockApps</span></h2>
+<div class="note bad"><b><span class="fr">Diagnostic du 14/10 : nos domaines d'envoi sont à remplacer.</span><span class="en">Diagnosis (14 Oct): our sending domains need replacing.</span></b></div>
+<div class="tbl"><table>
+<thead><tr><th><span class="fr">Messagerie</span><span class="en">Mailbox provider</span></th><th class="num">Test 1 · agency</th><th class="num">Test 2 · seo</th><th class="num"><span class="fr">Part de nos prospects</span><span class="en">Share of our prospects</span></th></tr></thead>
+<tbody>
+<tr><td>Google Workspace + Gmail</td><td class="num">✅ 27/27</td><td class="num">✅ 27/27</td><td class="num">33 %</td></tr>
+<tr><td>Microsoft 365 (<span class="fr">entreprises</span><span class="en">business</span>)</td><td class="num">❌ 2/2 spam</td><td class="num">✅ 2/2 inbox</td><td class="num"><b>42 %</b></td></tr>
+<tr><td>Outlook / Hotmail (<span class="fr">perso</span><span class="en">consumer</span>)</td><td class="num">❌ 15/15 spam</td><td class="num">❌ 15/15 spam</td><td class="num">—</td></tr>
+<tr><td><span class="fr">Passerelles de sécurité (Proofpoint, Mimecast…)</span><span class="en">Security gateways (Proofpoint, Mimecast…)</span></td><td class="num">❌ Proofpoint spam</td><td class="num">✅</td><td class="num">7 %</td></tr>
+<tr><td><span class="fr">Autres / OVH</span><span class="en">Other / OVH</span></td><td class="num">—</td><td class="num">—</td><td class="num">18 %</td></tr>
+</tbody></table></div>
+<ul>
+<li><span class="fr"><b>Le contenu est sain</b> (SpamAssassin 1,8, Barracuda 0,5, lien LinkedIn sain). <b>Le problème vient des domaines</b> : les 2 testés sont sur la liste SURBL (abus), retrait refusé.</span><span class="en"><b>Content is clean</b> (SpamAssassin 1.8, Barracuda 0.5, LinkedIn link healthy). <b>The issue is the domains</b>: both tested are SURBL-listed (abuse), delisting refused.</span></li>
+<li><span class="fr">Google nous reçoit à 100 % ; Microsoft, qui pèse la réputation du domaine, nous filtre ou hésite. <b>Environ la moitié de nos prospects est à risque</b> : c'est très probablement la cause n°1 de notre taux de réponse de 0,7 %.</span><span class="en">Google delivers 100%; Microsoft, which weighs domain reputation, filters us or wavers. <b>About half our prospects are at risk</b>: very likely the main cause of our 0.7% reply rate.</span></li>
+<li><span class="fr">En-tête de désinscription (List-Unsubscribe) absent.</span><span class="en">List-Unsubscribe header missing.</span></li>
+</ul>
+<h3><span class="fr">Plan d'action proposé</span><span class="en">Proposed action plan</span></h3>
+<ol>
+<li><span class="fr"><b>Nouveaux domaines propres</b> (nommage verbe + marque, ex. get-decupler.com), boîtes Google, 3 semaines de chauffe, pas de faux « re: », texte brut.</span><span class="en"><b>New clean domains</b> (verb + brand, e.g. get-decupler.com), Google mailboxes, 3-week warm-up, no fake "re:", plain text.</span></li>
+<li><span class="fr">En attendant : envoyer en priorité aux prospects hébergés chez Google avec les domaines actuels ; Microsoft via LinkedIn ou après la chauffe.</span><span class="en">Meanwhile: prioritise Google-hosted prospects on current domains; Microsoft ones via LinkedIn or after warm-up.</span></li>
+<li><span class="fr">Activer la désinscription (en-tête + « répondez stop » en PS).</span><span class="en">Enable unsubscribe (header + "reply stop" PS).</span></li>
+</ol>
+<ul>
+<li><span class="fr"><b>Seule métrique fiable : le taux de réponse humaine.</b> Le score Lemlist n'est pas fiable.</span><span class="en"><b>The only reliable metric is the human reply rate.</b> Lemlist's score is not reliable.</span></li>
+<li><span class="fr">Cible ≈ 100 % en boîte principale chez Google et les serveurs privés ; ~50 % = spam. Outlook peut être ignoré.</span><span class="en">Target ≈ 100% primary inbox at Google and private servers; ~50% = spam. Outlook can be ignored.</span></li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th><span class="fr">Boîte</span><span class="en">Mailbox</span></th><th><span class="fr">Contenu</span><span class="en">Content</span></th><th>Google inbox</th><th>Google spam</th><th>Outlook inbox</th><th><span class="fr">Privés inbox</span><span class="en">Private inbox</span></th><th>Notes</th></tr></thead>
+<tbody id="gl-list"></tbody></table></div>
+</div>
+
+<!-- ===================== QUESTIONS ===================== -->
+<div class="panel" id="p-q" hidden>
+<h2><span class="n">?</span><span class="fr">Questions</span><span class="en">Questions</span></h2>
+<p class="small"><span class="fr">Réponds dans les cases, ou directement dans le chat.</span><span class="en">Answer in the boxes or in the chat.</span></p>
+<div id="q-list" class="qlist"></div>
+</div>
+
+<footer id="foot">Chiffres extraits de l'API Lemlist le 12/10/2026 (statistiques par campagne et par semaine, texte intégral des 65 messages de réponse). Vérifications DNS via Google Public DNS.</footer>
+</div>
+
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function L(){return root.lang==='en'?'en':'fr'}
+  // ---------- language (whole board) ----------
+  var bf=document.getElementById('b-fr'),be=document.getElementById('b-en');
+  var T={fr:["Cold mail Décupler · espace de travail avec Igor","Décupler · Nathan Fenina · période analysée : 14 sept. → 12 oct. 2026 · source : API Lemlist","Chiffres extraits de l'API Lemlist le 12/10/2026. Vérifications DNS via Google Public DNS."],
+         en:["Décupler cold email · workspace with Igor","Décupler · Nathan Fenina · period: 14 Sept → 12 Oct 2026 · source: Lemlist API","Figures pulled from the Lemlist API on 12 Oct 2026. DNS checks via Google Public DNS."]};
+  function setLang(l){
+    root.lang=l;
+    document.getElementById('fr').hidden=l!=='fr';document.getElementById('en').hidden=l!=='en';
+    bf.setAttribute('aria-pressed',l==='fr');be.setAttribute('aria-pressed',l==='en');
+    document.getElementById('ttl').textContent=T[l][0];document.getElementById('meta').textContent=T[l][1];document.getElementById('foot').textContent=T[l][2];
+    renderAll();
+    try{localStorage.setItem('cr-lang',l)}catch(e){}
+  }
+  bf.onclick=function(){setLang('fr')};be.onclick=function(){setLang('en')};
+
+  // ---------- tabs ----------
+  var tabs=[].slice.call(document.querySelectorAll('.tabs button'));
+  function show(id){
+    tabs.forEach(function(b){var on=b.dataset.p===id;b.setAttribute('aria-selected',on);document.getElementById(b.dataset.p).hidden=!on});document.body.classList.toggle('wide',id==='p-icp');
+    try{localStorage.setItem('cr-tab',id)}catch(e){}
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p)})});
+
+  // ---------- data ----------
+  var S={}; // saved docs by key
+  var ICP_HEAD=[
+    {fr:'ICP 1 · B2B : tech, conseil, agences',en:'ICP 1 · B2B: tech, consulting, agencies'},
+    {fr:'ICP 2 · BTP : construction, rénovation, CVC',en:'ICP 2 · Construction: building, renovation, HVAC'},
+    {fr:'ICP 3 · Bien-être et formation',en:'ICP 3 · Wellness and training'}
+  ];
+  var TOP=[
+    {k:'site',fr:'Site de l\'entreprise',en:'Company website',s:{fr:'decupler.com',en:'decupler.com'}},
+    {k:'snap',fr:'Outbound Intelligence Snapshot (UltB)',en:'Outbound Intelligence Snapshot (UltB)',s:{fr:'Dataset fourni par UltB (filtré Google / autres, sans catch-all)',en:'Dataset provided by UltB (filtered Google / other, no catch-all)'}}
+  ];
+  var ROWS=[
+    {sec:{fr:'Ciblage',en:'Targeting'}},
+    {k:'ind',fr:'Secteurs',en:'Industries'},
+    {k:'kw',fr:'Mots-clés : ce qu\'ils font',en:'Keywords: what they do'},
+    {k:'size',fr:'Taille',en:'Company size'},
+    {k:'loc',fr:'Localisation',en:'Location'},
+    {k:'titles',fr:'Postes ciblés',en:'Job titles'},
+    {k:'signals',fr:'Signaux d\'intention (priorité pyramide)',en:'Intent signals (pyramid priority)'},
+    {k:'sites',fr:'Clients / sites de référence',en:'Clients / reference sites'},
+    {k:'excl',fr:'Exclure',en:'Exclude'},
+    {sec:{fr:'Messages',en:'Messaging'}},
+    {k:'pain',fr:'Top 3 problèmes',en:'Top 3 pain points'},
+    {k:'vp',fr:'Top 3 solutions / VP',en:'Top 3 solutions / VPs'},
+    {k:'offer',fr:'Offre et prix',en:'Offer and price'},
+    {k:'case',fr:'Cas clients',en:'Case studies'},
+    {k:'lm',fr:'Lead magnets',en:'Lead magnets'},
+    {k:'cta',fr:'CTA',en:'CTAs'},
+    {k:'usp',fr:'USP',en:'USPs'}
+  ];
+  var SUG={
+    1:{ind:['IT et éditeurs de logiciels, tech, services B2B, conseil (finance, stratégie), agences de tout type','IT and software, tech, B2B services, consulting (finance, strategy), all kinds of agencies'],
+       kw:['ESN, éditeurs SaaS, cabinets de conseil (finance, stratégie), gestion de patrimoine, agences marketing / web / événementiel','IT services, SaaS vendors, consulting firms (finance, strategy), wealth management, marketing / web / events agencies'],
+       size:['CA ≥ 0,5 M€ ou ≥ 5 salariés','Revenue ≥ €0.5M or ≥ 5 employees'],loc:['France (FR) pour commencer ; hors France en anglais ensuite','France (FR) first; outside France in English later'],
+       titles:['CEO / fondateur, CMO, head of growth, sales director','CEO / founder, CMO, head of growth, sales director'],
+       signals:['1. a levé (< 6 mois, ≥ 500 k€) ET recrute en marketing / growth / SEO / contenu\n2. recrute (dont une offre SEO / contenu) ou nouveau CMO / head of growth en poste\n3. marché principal','1. funded (< 6 months, ≥ €500k) AND hiring in marketing / growth / SEO / content\n2. hiring (incl. an SEO / content job) or a new CMO / head of growth\n3. main market'],
+       sites:['TechMedias, Apogea, Orators, BeTomorrow, Yoed, Hestia Finance, Les Nouveaux Investisseurs, Le Point, Pluxee, Décathlon','TechMedias, Apogea, Orators, BeTomorrow, Yoed, Hestia Finance, Les Nouveaux Investisseurs, Le Point, Pluxee, Decathlon'],
+       excl:['Agences SEO / GEO concurrentes · messageries Microsoft, Mimecast, Proofpoint · déjà contactés\nRed flags (Scalezia) à repérer dans les réponses : faible budget marketing, veut des résultats immédiats, exige une garantie chiffrée','Competing SEO / GEO agencies · Microsoft, Mimecast, Proofpoint mail · already contacted\nRed flags (Scalezia) to spot in replies: low marketing budget, wants instant results, demands a numeric guarantee'],
+       pain:['1. Pas assez de leads, Ads de plus en plus chères.\n2. Invisibles sur Google et dans les IA (ChatGPT), dépassés par les concurrents.\n3. Pas de transparence ni de ROI clair sur le SEO.','1. Not enough leads, Ads getting more expensive.\n2. Invisible on Google and in AI (ChatGPT), outrun by competitors.\n3. No transparency or clear ROI on SEO.'],
+       vp:['1. Devenir visible sur Google et cité par les IA sur ses requêtes clés.\n2. Une méthode qui a fait ses preuves, avec un tableau de pilotage partagé (ROI visible).\n3. Automatisation et IA pour produire plus vite.','1. Become visible on Google and cited by AI on key queries.\n2. A proven method with a shared dashboard (visible ROI).\n3. Automation and AI to produce faster.'],
+       offer:['3 formules : 1 000, 1 500 et 2 000 € / mois. Sans engagement ; mois remboursé si les 7 actions rapides ne sont pas livrées le 1er mois.','3 plans: €1,000, €1,500 and €2,000 / month. No commitment; month refunded if the 7 quick wins aren\'t delivered in month 1.'],
+       case:['Le Point, Pluxee, Décathlon : +20 % de pipeline organique · TechMedias, Apogea : chiffre à compléter','Le Point, Pluxee, Decathlon: +20% organic pipeline · TechMedias, Apogea: figure to complete'],
+       lm:['Principal : extrait de l\'Opportunity Map, 3 lignes (requête ChatGPT où un concurrent est cité à sa place + manque à gagner estimé), envoyé seulement à ceux qui disent oui\nÀ tester ensuite : top 10 mots-clés qui vous font perdre des leads · le concurrent qui se classe sur votre mot principal (aussi en objet) · vidéo 3 min','Main: Opportunity Map extract, 3 rows (ChatGPT query where a competitor is cited instead of them + estimated lost revenue), sent only to those who say yes\nTest next: top 10 keywords losing you leads · the competitor ranking on your main keyword (also as subject) · 3-min video'],
+       cta:['« Seriez-vous contre que je vous envoie les 3 requêtes où ChatGPT cite un concurrent à votre place ? » · « Ce serait une mauvaise idée de vous montrer qui sort à votre place ? »','"Would you be opposed to me sending the 3 queries where ChatGPT cites a competitor instead of you?" · "Would it be a bad idea to show you who shows up instead of you?"'],
+       usp:['Google + IA (GEO) ensemble · on fait tout pour vous, de bout en bout · un rapport concret chaque mois, relié aux leads · fondateur expert, interlocuteur identifié · sans engagement','Google + AI (GEO) together · we do it all for you, end to end · a concrete monthly report tied to leads · expert founder, a named contact · no commitment']},
+    2:{ind:['Construction, rénovation, génie climatique (CVC), second œuvre, artisans établis','Construction, renovation, HVAC, finishing trades, established tradespeople'],
+       kw:['rénovation énergétique, climatisation, pompe à chaleur, peinture, couverture, serrurerie, dépannage','energy renovation, air conditioning, heat pump, painting, roofing, locksmith, repairs'],
+       size:['CA > 200 k€ / an, avec une vraie équipe','Revenue > €200k / year, with a real team'],loc:['France, par ville / zone d\'intervention','France, by city / service area'],
+       titles:['Gérant, dirigeant, président, responsable commercial','Owner, managing director, president, sales manager'],
+       signals:['1. recrute (technicien, commercial, assistante) · 2. site ancien ou absent · 3. marché principal','1. hiring (technician, sales, assistant) · 2. outdated or no website · 3. main market'],
+       sites:['L\'Artisan d\'à côté (serrurier), Clim Confort, Reux Travaux, Speed Inter','L\'Artisan d\'à côté (locksmith), Clim Confort, Reux Travaux, Speed Inter'],
+       excl:['Plateformes de devis, agences web BTP ; messageries Microsoft, Mimecast, Proofpoint','Quote platforms, construction web agencies; Microsoft, Mimecast, Proofpoint mail'],
+       pain:['1. Pas assez de chantiers rentables, leads de plateformes partagés.\n2. Invisible sur Google, Maps et les IA ; concurrence rude.\n3. Ads chères ou déjà déçu par une agence.','1. Not enough profitable jobs, shared platform leads.\n2. Invisible on Google, Maps and AI; fierce competition.\n3. Expensive Ads or already let down by an agency.'],
+       vp:['1. Des demandes de devis en direct, sur ses chantiers rentables.\n2. Visible sur Google, Maps et les IA dans sa zone.\n3. On le prouve d\'abord : site offert ou partenariat à la performance.','1. Direct quote requests on profitable jobs.\n2. Visible on Google, Maps and AI in their area.\n3. We prove it first: free website or pay-for-performance partnership.'],
+       offer:['Porte d\'entrée : site offert, puis vente SEO / Ads. Test : partenariat à la performance (« vous ne payez que si vous avez des leads »).','Entry point: free website, then SEO / Ads upsell. Test: pay-for-performance partnership ("you only pay if you get leads").'],
+       case:['Reux Travaux, Clim Confort : chiffre à compléter','Reux Travaux, Clim Confort: figure to complete'],
+       lm:['Site moderne offert (maquette) · combien de devis vous perdez chaque mois à {{ville}} · qui sort à votre place sur Google Maps et ChatGPT · note /10 du site','Free modern website (mock-up) · how many quote requests you lose each month in {{city}} · who shows up instead of you on Google Maps and ChatGPT · site score /10'],
+       cta:['« Ce serait une mauvaise idée que je vous montre la maquette ? » · « Seriez-vous contre que je vous envoie le chiffre pour {{ville}} ? »','"Would it be a bad idea to show you the mock-up?" · "Would you be opposed to me sending the number for {{city}}?"'],
+       usp:['Résultat d\'abord (site offert / performance) · leads exclusifs · SEO local + GEO','Results first (free site / performance) · exclusive leads · local SEO + GEO']},
+    3:{ind:['Bien-être, formation, thérapie, développement personnel','Wellness, training, therapy, personal development'],
+       kw:['école de formation, thérapeute, praticien, centre de bien-être','training school, therapist, practitioner, wellness centre'],
+       size:['CA ≥ 0,5 M€ ou ≥ 5 salariés','Revenue ≥ €0.5M or ≥ 5 employees'],loc:['France','France'],
+       titles:['Fondateur, directeur, responsable marketing','Founder, director, marketing manager'],
+       signals:['1. recrute en marketing · 2. lance une formation / un nouveau centre · 3. marché principal','1. hiring in marketing · 2. launching a course / new centre · 3. main market'],
+       sites:['Académie Madelrieux, Gestalt (École Humaniste de Gestalt)','Académie Madelrieux, Gestalt (École Humaniste de Gestalt)'],
+       excl:['Messageries Microsoft, Mimecast, Proofpoint','Microsoft, Mimecast, Proofpoint mail'],
+       pain:['1. Pas assez d\'inscriptions / de clients, Ads chères.\n2. Invisible sur Google et dans les IA, concurrents mieux placés.\n3. Pas de ROI clair sur le contenu et le SEO.','1. Not enough sign-ups / clients, expensive Ads.\n2. Invisible on Google and AI, competitors ranking higher.\n3. No clear ROI on content and SEO.'],
+       vp:['1. Être la référence citée par Google et les IA sur sa discipline.\n2. Des inscriptions qui arrivent par la recherche, sans dépendre des Ads.\n3. Un suivi transparent des résultats.','1. Be the reference cited by Google and AI on their discipline.\n2. Sign-ups coming from search, without relying on Ads.\n3. Transparent results tracking.'],
+       offer:['Mêmes formules que le B2B : 1 000, 1 500, 2 000 € / mois','Same plans as B2B: €1,000, €1,500, €2,000 / month'],
+       case:['Académie Madelrieux : +45 % de clics Google en 3 mois, citations IA ×5,7 (≈15 → 86)','Académie Madelrieux: +45% Google clicks in 3 months, AI citations x5.7 (≈15 → 86)'],
+       lm:['10 questions que vos futurs élèves posent à ChatGPT (et qui sort) · note /10 du site · 7 opportunités (vidéo 3 min)','10 questions future students ask ChatGPT (and who shows up) · site score /10 · 7 opportunities (3-min video)'],
+       cta:['« Seriez-vous contre que je vous partage la vidéo ? »','"Would you be opposed to me sharing the video?"'],
+       usp:['Cas prouvé dans le secteur (Madelrieux) · Google + IA · sans engagement','Proven case in the sector (Madelrieux) · Google + AI · no commitment']}
+  };
+  var GW=[
+    ['1.1',['Nom d\'une vraie personne','Real person\'s name'],['Nathan Fenina','Nathan Fenina']],
+    ['1.1',['Nombre d\'inboxes et de domaines','Number of inboxes and domains'],['20 inboxes, 10 domaines','20 inboxes, 10 domains']],
+    ['1.2',['S\'inscrire sur Instantly','Sign up to Instantly'],['On est sur Lemlist','We use Lemlist']],
+    ['1.2',['Accès lecture pour igor.shapiro@ultb.io','View access for igor.shapiro@ultb.io'],['À faire','To do']],
+    ['1.2',['Nommage des domaines (CTA : get-, try-…)','Domain naming (CTA: get-, try-…)'],['Domaines actuels sosies, listés SURBL','Current domains are lookalikes, SURBL-listed']],
+    ['1.2',['Warm-up actif 14 jours, en continu','Warm-up on for 14 days, ongoing'],['À vérifier','To check']],
+    ['1.3',['Lien Calendly','Calendly link'],['?','?']],
+    ['1.3',['CRM avec relances auto (Close)','CRM with auto follow-ups (Close)'],['CRM Supabase maison','In-house Supabase CRM']],
+    ['1.3',['Profil LinkedIn + réservation directe','LinkedIn profile + direct booking'],['À vérifier','To check']],
+    ['1.3',['Site + réservation directe','Website + direct booking'],['À vérifier','To check']],
+    ['1.3',['Prise de notes IA','AI notetaker'],['Fireflies','Fireflies']],
+    ['1.3',['Automatisation LinkedIn des intéressés','LinkedIn automation for interested leads'],['À faire','To do']],
+    ['2.1',['Ciblage ICP 1','ICP 1 targeting'],['En cours dans l\'onglet ICP / VP','In progress in the ICP / VP tab']],
+    ['2.1',['Dataset ICP 1 par UltB','ICP 1 dataset by UltB'],['Après validation ICP 1','After ICP 1 is validated']],
+    ['2.2',['Messages ICP 1','ICP 1 messaging'],['En cours','In progress']],
+    ['2.2',['Atelier séquences avec UltB','Sequence workshop with UltB'],['12/10','12 Oct']],
+    ['2.2',['Étudier R.E.P.L.Y.','Study R.E.P.L.Y.'],['Onglet Méthode','Method tab']],
+    ['2.2',['1er brouillon de séquence ICP 1','First ICP 1 sequence draft'],['Pour la session 2','For session 2']]
+  ];
+  var ENG=[
+    [['Relance webinar email + LinkedIn','Webinar follow-up, email + LinkedIn'],['En cours','In progress']],
+    [['Remplir ICP / VP','Fill in ICP / VP'],['En cours','In progress']],
+    [['Tests GlockApps','GlockApps tests'],['En cours','In progress']],
+    [['Mail d\'engagement à Igor','Commitment email to Igor'],['?','?']]
+  ];
+  var GL=[
+    ['nathan@decupler-agency.com',['Mail 1 Conseil actuel','Current Consulting email 1']],
+    ['nathan.fenina@decupler-seo.com',['Mail 1 Batimat actuel','Current Batimat email 1']],
+    ['nathan@decupler-agency.com',['Conseil réécrit façon Igor','Consulting rewritten Igor-style']],
+    ['decupler.com (option)',['Même mail que le test 3','Same email as test 3']]
+  ];
+  var Q=[
+    ['Les 4 ICP proposés (recrutement, levée, conseil, BTP) te vont ? Lequel est l\'ICP 1 ?','Do the 4 proposed ICPs (hiring, funded, consulting, construction) work? Which is ICP 1?'],
+    ['Pour les entreprises qui recrutent ou qui lèvent : on leur vend du SEO/GEO, des agents IA, ou les deux selon le signal ?','For hiring or funded companies: do we sell SEO/GEO, AI agents, or both depending on the signal?'],
+    ['Liste de tes clients à citer (avec un chiffre si possible) ?','Your client list to cite (with a number if possible)?'],
+    ['Offre performance BTP : mécanique et prix ?','Construction performance offer: mechanics and price?'],
+    ['Garantie et délai qu\'on peut écrire ?','Guarantee and timeline we can state?'],
+    ['Lemlist ou Instantly ?','Lemlist or Instantly?'],
+    ['Lien Calendly ?','Calendly link?']
+  ];
+
+  var Q4=[["Prospects Google (453 leads) : je les envoie depuis les boîtes Zapmail propres (Google Workspace) en attendant, ou j'attends de nouvelles boîtes ?", "Google prospects (453 leads): send them from the clean Zapmail inboxes (Google Workspace) for now, or wait for new inboxes?"], ["Les 10 domaines listés SURBL : faut-il les remplacer ? Si oui, combien de boîtes, et faut-il des boîtes dédiées aux leads venant de Google Maps (Outscraper) ?", "The 10 SURBL-listed domains: should I replace them? If yes, how many inboxes, and should Google Maps (Outscraper) leads get dedicated inboxes?"], ["Montée en charge : après ~3 semaines de chauffe, quel volume par boîte et par jour au départ, et à quelle vitesse on monte ?", "Ramp-up: after ~3 weeks of warmup, what daily volume per inbox to start, and how fast do we increase?"], ["Outlook : un test de placement sur 2 boîtes suffit-il avant d'envoyer aux prospects Microsoft depuis des boîtes Google Workspace ?", "Outlook: is a placement test on 2 inboxes enough before sending to Microsoft prospects from Google Workspace inboxes?"], ["Quel palier en premier : signal recrutement (petit, chaud) ou intention SEO / IA (plus gros, plus personnalisé) ?", "Which tier first: hiring signal (small, warm) or SEO / AI intent (bigger, more personalised)?"], ["CTA du mail 1 et preuve : d'accord avec les deux tests A/B (livrable vs « 15 minutes ? », et « +17 % de CA » vs « +17 % de leads ») ?", "Email 1 CTA and proof: do you agree with both A/B tests (asset vs \"15 minutes?\", and \"+17% revenue\" vs \"+17% leads\")?"], ["Signature : « Nathan Fenina, Agence Décupler » (ça construit ma marque, LinkedIn et decupler.com) ou juste « Nathan » ?", "Signature: \"Nathan Fenina, Agence Décupler\" (builds my brand, LinkedIn and decupler.com) or just \"Nathan\"?"], ["Intentions : entre baisse de trafic, concurrent n°1 sur leur mot-clé, coût des Ads et citations IA, laquelle convertit le mieux selon ton expérience ?", "Intents: among traffic drop, competitor #1 on their keyword, ad cost and AI citations, which converts best in your experience?"], ["Autre remarque sur l'infra, le scrap, le dataset ou les copies ?", "Anything else on the infra, scraping, dataset or copy?"]];
+  // ---------- rendering ----------
+  var dbcol=null, canWrite=false;
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML.replace(/\n/g,'<br>')}
+  function val(k){var d=S[k];if(!d)return null;return (L()==='en'&&d.text_en)?d.text_en:d.text}
+  function cell(k,sug,cls){
+    var v=val(k);var has=v!=null&&v!=='';
+    var h='<div class="cellwrap"><div class="ed'+(has?' edited':' sug')+'" data-k="'+k+'"'+(canWrite?' contenteditable="true" role="textbox"':'')+'>'+(has?esc(v):esc(sug||''))+'</div>';
+    if(!has&&sug&&canWrite)h+='<button class="ok" data-ok="'+k+'" title="'+(L()==='en'?'Keep suggestion':'Garder la proposition')+'">✓</button>';
+    return h+'</div>';
+  }
+  function chk(k){var d=S[k];return '<input type="checkbox" class="chk" data-c="'+k+'"'+(d&&d.done?' checked':'')+(canWrite?'':' disabled')+' aria-label="ok">'}
+  function renderAll(){
+    var l=L(),i=l==='en'?1:0;
+    var head='<th></th>'+ICP_HEAD.map(function(h,n){return '<th>'+cell('icp_h'+(n+1),h[l])+'</th>'}).join('');
+    document.getElementById('icp-head').innerHTML=head;
+    var b=TOP.map(function(r){return '<tr><th>'+r[l]+'</th><td colspan="3">'+cell('icp_'+r.k,r.s[l])+'</td></tr>'}).join('');
+    b+=ROWS.map(function(r){
+      if(r.sec)return '<tr class="sec"><td colspan="4">'+r.sec[l]+'</td></tr>';
+      return '<tr><th>'+r[l]+'</th>'+[1,2,3].map(function(n){var s=SUG[n][r.k];return '<td>'+cell('i'+n+'_'+r.k,s?s[i]:'')+'</td>'}).join('')+'</tr>';
+    }).join('');
+    document.getElementById('icp-body').innerHTML=b;
+    document.getElementById('gw-list').innerHTML=GW.map(function(r,n){return '<tr><td>'+chk('gw_c'+n)+'</td><td>'+r[0]+'</td><td>'+esc(r[1][i])+'</td><td>'+cell('gw_n'+n,r[2][i])+'</td></tr>'}).join('');
+    document.getElementById('eng-list').innerHTML=ENG.map(function(r,n){return '<tr><td>'+chk('eng_c'+n)+'</td><td>'+esc(r[0][i])+'</td><td>'+cell('eng_n'+n,r[1][i])+'</td></tr>'}).join('');
+    document.getElementById('gl-list').innerHTML=GL.map(function(r,n){var t=n+1;return '<tr><td>'+t+'</td><td>'+esc(r[0])+'</td><td>'+esc(r[1][i])+'</td>'+['gi','gs','oi','pi','n'].map(function(c){return '<td>'+cell('gl'+t+'_'+c,'')+'</td>'}).join('')+'</tr>'}).join('');
+    document.getElementById('q-list').innerHTML=Q.map(function(q,n){return '<div class="q"><p>'+(n+1)+'. '+esc(q[i])+'</p>'+cell('q'+n,'')+'</div>'}).join('');
+    document.getElementById('s4q-list').innerHTML=Q4.map(function(q,n){return '<div class="q"><p>'+(n+1)+'. '+esc(q[i])+'</p>'+cell('s4q'+n,'')+'</div>'}).join('');
+  }
+
+  // ---------- saving ----------
+  var bar=document.getElementById('gbar');
+  function setBar(t,bad){bar.textContent=t;bar.className='gbar'+(bad?' bad':'')}
+  function save(k,data){
+    if(!dbcol)return;
+    data.at=new Date().toISOString();
+    setBar(L()==='en'?'Saving…':'Enregistrement…');
+    dbcol.doc(k).set(data).then(function(){setBar(L()==='en'?'Saved.':'Enregistré.')},function(e){
+      setBar((L()==='en'?'Not saved: ':'Non enregistré : ')+(e&&e.code||'erreur'),true)});
+  }
+  document.addEventListener('focusin',function(e){var t=e.target;if(t.classList&&t.classList.contains('ed')){t.dataset.before=t.innerText;if(t.classList.contains('sug')){t.dataset.wassug='1'}}});
+  document.addEventListener('focusout',function(e){
+    var t=e.target;if(!(t.classList&&t.classList.contains('ed'))||!canWrite)return;
+    var now=t.innerText.trim();if(now===(t.dataset.before||'').trim())return;
+    var k=t.dataset.k,prev=S[k]||{};var d={text:now};
+    if(L()==='en'){d={text:prev.text||now,text_en:now}}
+    S[k]=d;save(k,d);t.classList.remove('sug');t.classList.add('edited');
+  });
+  document.addEventListener('click',function(e){
+    var ok=e.target.closest&&e.target.closest('button[data-ok]');
+    if(ok){var k=ok.dataset.ok,ed=document.querySelector('.ed[data-k="'+k+'"]');var txt=ed?ed.innerText.trim():'';
+      var d=L()==='en'?{text:txt,text_en:txt}:{text:txt};S[k]=d;save(k,d);renderAll();}
+  });
+  document.addEventListener('change',function(e){var c=e.target;if(c.dataset&&c.dataset.c&&canWrite){S[c.dataset.c]={done:c.checked};save(c.dataset.c,{done:c.checked})}});
+
+  // ---------- boot ----------
+  var lang='fr';try{lang=localStorage.getItem('cr-lang')||'fr'}catch(e){}
+  setLang(lang==='en'?'en':'fr');
+  var h=(location.hash||'').slice(1),map={session4:'p-s4',session3:'p-s3',session2:'p-s2',compterendu:'p-cr',masterclass:'p-mc',icp:'p-icp',groundwork:'p-gw',methode:'p-method',delivrabilite:'p-deliv',questions:'p-q',en:null,fr:null};
+  if(h==='en'||h==='fr')setLang(h);
+  if(map[h])show(map[h]);else{try{var t=localStorage.getItem('cr-tab');if(t&&document.getElementById(t))show(t)}catch(e){}}
+  setBar('Lecture seule tant que la sauvegarde n\'est pas connectée… / Read-only until saving connects…',true);
+  if(!(window.claude&&window.claude.use)){setBar('Lecture seule : ouvre la page sur claude.ai pour modifier. / Read-only: open on claude.ai to edit.',true);return}
+  window.claude.use('db').then(function(db){
+    if(!db){setBar('Lecture seule dans cette vue (connecte-toi sur claude.ai). / Read-only in this view (sign in on claude.ai).',true);return}
+    dbcol=db.collection('cells');canWrite=true;
+    setBar(L()==='en'?'Editable: click any dashed cell. Changes save automatically.':'Modifiable : clique dans une case en pointillés. Enregistrement automatique.');
+    var first=true;
+    dbcol.onSnapshot(function(snap){
+      var ae=document.activeElement;if(!first&&ae&&ae.classList&&ae.classList.contains('ed'))return;
+      snap.docs.forEach(function(d){S[d.id]=d.data()||{}});first=false;renderAll();
+    },function(e){setBar('Sauvegarde indisponible / Saving unavailable ('+e.code+')',true)});
+    renderAll();
+  },function(){setBar('Lecture seule. / Read-only.',true)});
+})();
+
+</script>
+
+</body></html>
