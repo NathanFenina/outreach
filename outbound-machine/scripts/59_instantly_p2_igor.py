@@ -19,6 +19,7 @@ SIG = "{{sendingAccountFirstName}}"
 # Par sous-ICP (docs d'Igor du 02/11). 1.6, 1.7 et 1.8 (finance, M&A, CGP) prennent les lignes du conseil (1.5).
 PS_CA = "PS : Pour Cloudtech, +17 % de CA en 6 mois grâce à Google et aux IA."
 PS_LEADS = "PS : Pour Cloudtech, +17 % de leads en 6 mois grâce à Google et aux IA."
+PS_IA = "PS : Pour Cloudtech, +23 % de visibilité sur les IA."  # chiffre donné par Nathan le 03/11 (mail 3)
 ICP = {
     "1.1": dict(stop="pas de démo", s3o="coût par démo",
                 s3=("J'imagine que chaque nouvelle démo chez {{companyName}} coûte un peu plus cher en Ads que la précédente, {{firstName}}.",
@@ -115,7 +116,7 @@ def leads():
             th = (g.get("thematique") or "").split(",")[0].strip()
             if th and not th[:2].isupper(): th = th[0].lower() + th[1:]  # « CRM » garde ses majuscules, « Stratégie data » → « stratégie data »
             cv = dict(theme=f" quand vos clients cherchent « {th} »" if 2 < len(th) < 45 else "", stopword=d["stop"],
-                      ps1a=d.get("ps", PS_CA), ps1b=d.get("ps", PS_LEADS), ps3=d.get("ps", PS_LEADS), s3o=d["s3o"],
+                      ps1a=d.get("ps", PS_CA), ps1b=d.get("ps", PS_LEADS), ps3=d.get("ps", PS_IA), s3o=d["s3o"],
                       s3a=d["s3"][0], s3b=d["s3"][1], s3c=d["s3"][2], s4a=d["s4"][0], s4b=d["s4"][1],
                       icp=r["icp_code"], tier=r["tier"], dataset=r["dataset"], lot="G" if r["esp"] == "google" else "O")
             out.append(dict(email=email, first_name=r["first_name"], last_name=r["last_name"], company_name=re.split(r" \| | - ", r["company"])[0].replace("™", "").strip(), website=r["domain"],
