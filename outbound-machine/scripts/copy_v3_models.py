@@ -26,7 +26,7 @@ MODELS = [
  ("B-P2", "B2B", "P2 · recrute (marketing ET commercial regroupés)", "Pas assez de demandes", "votre recrutement",
   "J'ai vu que {{companyName}} recrute, {{firstName}}, et que vous travaillez avec {{observation}}.\n\nJ'ai regardé votre site de près et j'ai relevé 7 leviers pour que ChatGPT et Google vous recommandent quand vos clients cherchent {{thematique}}.\n\nSeriez-vous contre que je vous les partage ? S'ils ne vous apprennent rien, dites-le moi et je ne vous relance plus.",
   PS_TECH, "your hiring",
-  "I saw that {{companyName}} is hiring, {{firstName}}, and that you work with {{observation}}.\n\nI took a close look at your site and found 7 levers to get ChatGPT and Google to recommend you when your clients look for {{thematique}}.\n\nWould you be against me sharing them?",
+  "I saw that {{companyName}} is hiring, {{firstName}}, and that you work with {{observation}}.\n\nI took a close look at your site and found 7 levers to get ChatGPT and Google to recommend you when your clients look for {{thematique}}.\n\nWould you be against me sharing them? If they teach you nothing, tell me and I won't follow up.",
   PS_TECH_EN, "Retour Nathan lignes 3-4 : recrutement regroupé, observation sur le site, 7 leviers, PS « j'accompagne… »"),
  ("B-P3a", "B2B", "P3a · baisse de trafic (> 10 %)", "Manque de visibilité", "trafic {{companyName}}",
   "Je vais être direct, {{firstName}} : j'ai analysé le trafic de {{companyName}} avec des outils SEO, et vous avez perdu environ {{baisse}} % de visites Google en un an (estimation, sans accès à votre Search Console).\n\nJ'ai trouvé 3 éléments qui freinent ce trafic.\n\nSeriez-vous contre que je vous les partage ?",
