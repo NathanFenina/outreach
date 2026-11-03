@@ -1,5 +1,5 @@
 """Campagne P2 « recrute » (premier palier lancé, conseil d'Igor du 03/11) avec la séquence v3 d'Igor :
-4 mails, 2 fils (J0 · J3 même fil · J8 nouveau fil · J11 même fil), envoi 7h30-14h en semaine, opt-out aux mails 1 et 3.
+4 mails, 2 fils (J0 · J3 même fil · J8 nouveau fil · J11 même fil), envoi 7h30-14h en semaine, opt-out aux mails 1 et 3 (« sinon les leviers vont ailleurs ») + « bye bye » aux mails 2 et 4 (demande de Nathan, 03/11 ; Igor ne met l'opt-out qu'aux mails 1 et 3 : à revoir avec lui).
 Une seule campagne pour tous les sous-ICP B2B : ce qui change par sous-ICP (preuve, mot d'arrêt, mails 2 à 4) passe dans
 les variables du lead. Prospects Google + autres uniquement (pas de Microsoft depuis Zapmail, Igor 03/11).
 Variable Gemini (58) : {{theme}} = « quand vos clients cherchent « X » » ; vide si Gemini n'a rien de sûr. {{observation}} retirée (faux positifs).
@@ -74,12 +74,12 @@ def step1(ps):
 def sequence():
     s2 = html("\n\n".join(["Bonjour {{firstName}}, j'espère que ce message ne finit pas dans le trou noir des « je réponds plus tard, promis » :)",
                            "Ça vous embêterait que je vous envoie un levier concret pour que ChatGPT cite {{companyName}} ?", SIG,
-                           "PS : Le levier tient en deux lignes : une réponse directe en haut de votre page clé, avec un chiffre. J'en ai 6 autres, classés par impact."]))
+                           "PS : Le levier tient en deux lignes : une réponse directe en haut de votre page clé, avec un chiffre. J'en ai 6 autres, classés par impact.", "PPS : Pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille."]))
     s3 = html("\n\n".join(["{{s3a}}\n{{s3b}}", "{{s3c}}", "Ce serait une mauvaise idée que je vous l'envoie ?", SIG, "{{ps3}}",
                            "PPS : Pas pertinent ? Répondez « {{stopword}} » et la vidéo reste dans mon dossier."]))
     s4 = html("\n".join(["Je n'ai pas de nouvelles, {{firstName}}, alors j'imagine que c'est l'une de ces trois situations :",
                          "1) {{s4a}}", "2) {{s4b}}", "3) Claude a pris le contrôle de votre PC et ne vous laisse plus répondre", "",
-                         "Répondez juste le numéro, que je sache où on en est.", "", SIG, "", "PS : Si c'est le 3, demandez-lui au moins de citer {{companyName}}."]))
+                         "Répondez juste le numéro, que je sache où on en est.", "", SIG, "", "PS : Si c'est le 3, demandez-lui au moins de citer {{companyName}}.", "PPS : Pas le bon moment ? Répondez « bye bye » et je vous laisse tranquille."]))
     return [{"steps": [
         {"type": "email", "delay": 3, "variants": [{"subject": "votre recrutement", "body": step1("{{ps1a}}")},
                                                    {"subject": "votre recrutement", "body": step1("{{ps1b}}")}]},
@@ -145,6 +145,9 @@ if __name__ == "__main__":
                                                "stop_on_auto_reply": False, "open_tracking": False, "link_tracking": False, "text_only": True,
                                                "daily_limit": 60, "email_gap": 10, "random_wait_max": 10, "prioritize_new_leads": False})
         print("créée", r["id"]); open("../data/campaigns/instantly_123.id", "w").write(r["id"])
+    elif mode == "update":  # met à jour la séquence du brouillon existant
+        cid = open("../data/campaigns/instantly_123.id").read().strip()
+        api("PATCH", f"/api/v2/campaigns/{cid}", {"sequences": sequence()}); print("séquence mise à jour", cid)
     elif mode == "leads":
         cid = open("../data/campaigns/instantly_123.id").read().strip()
         for i in range(0, len(ls), 500):
