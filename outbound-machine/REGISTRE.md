@@ -392,3 +392,16 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - Questions pour Igor (onglet 0 du Sheet) : les 453 leads Google (lot G sans boîte propre) et le remplacement des boîtes listées.
 - Recherche Lemlist terminée pour 104 / 106 / 110 / 114 (P2, P2b, P4 + pages suivantes) ; aucun scraping Outscraper lancé.
 - Validation des copies par Nathan : onglet 6b, colonnes I (Validation) et J (Commentaire).
+
+## 16. Réponses d'Igor (03/11) et décisions qui en découlent
+
+- **Microsoft** : on ne l'envoie pas depuis les boîtes Zapmail (Google Workspace). On saute Microsoft pour l'instant ; plus tard, boîtes Microsoft dédiées (Hypertide ou boîtes Microsoft d'Instantly). → campagnes lot M gelées (≈ 1 830 leads en attente).
+- **Zapmail** : sûr pour Google et les autres messageries → les prospects Google (lot G) partent depuis Zapmail. Les 18 boîtes PremiumInboxes (10 domaines) restent hors campagne tant qu'elles sont listées SURBL (vérifié le 03/11 : toutes listées, chauffe active).
+- **Baisse de trafic** : dans le mail 1, dans les 2 premières lignes.
+- **Moins de sous-ICP, plus de volume** : Igor propose 7 sous-ICP (1.1, 1.2, 1.5, 1.9, 1.10, 4.1, 4.2), séquence 4 mails / 2 fils (J0, J3 même fil, J8 nouveau fil, J11 même fil), envoi 7h30-14h, opt-out aux mails 1 et 3. Docs : v2 (sans signal) et v3 (paliers de signaux).
+- **Montée en charge** : Google / autres 15/jour/boîte, +5 par semaine jusqu'à 25. Microsoft 10/jour, +3/semaine jusqu'à 20.
+- **Tests de placement** : pas maintenant ; 1-2 semaines après le lancement.
+- **Premier palier** : le petit palier chaud (P2 recrute). ≈ 135 leads prêts hors Microsoft.
+- **Liste noire** : Igor trouve 7 000 domaines trop. Vérifié : 6 356 domaines ont réellement reçu un email Lemlist, 11 seulement LinkedIn, 26 jamais contactés, 516 absents de l'export. Règle à revoir avec Igor (délai de recontact).
+- **Dataset Igor** : scrap lancé, livré par ESP et par ICP.
+- **FullEnrich (03/11)** : 41 contacts P2 prioritaires ratés par Moltsets → 34 trouvés, 28 utilisables (valid / probably valid, hors catch-all), 34 crédits. Reste 245,75 crédits.
