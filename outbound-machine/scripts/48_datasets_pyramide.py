@@ -17,6 +17,7 @@ SEG = {s["code"]: s for s in SEGMENTS}
 CAMPAIGNS = {  # campagne : (sous-ICP, paliers, pages max par palier, contacts max par entreprise)
     "104": (["1.1", "1.2"], ["P1", "P2", "P4"], 20, 3),
     "106": (["1.5", "1.6", "1.7", "1.8"], ["P1", "P2", "P4"], 12, 3),
+    "107": (["1.9", "1.10"], ["P2", "P2b", "P4"], 12, 3),  # 03/11 : sous-ICP retenus par Igor, datasets manquants
     "110": (["2.1", "2.15"], ["P4"], 20, 2),
     "114": (["4.1", "4.2", "4.4"], ["P4"], 15, 2),
 }
