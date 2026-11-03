@@ -2,11 +2,11 @@
 4 mails, 2 fils (J0 · J3 même fil · J8 nouveau fil · J11 même fil), envoi 7h30-14h en semaine, opt-out aux mails 1 et 3.
 Une seule campagne pour tous les sous-ICP B2B : ce qui change par sous-ICP (preuve, mot d'arrêt, mails 2 à 4) passe dans
 les variables du lead. Prospects Google + autres uniquement (pas de Microsoft depuis Zapmail, Igor 03/11).
-Variables Gemini (58) : {{thematique}} et {{observation}} ; sans observation, la phrase s'arrête à « recrute ».
+Variable Gemini (58) : {{theme}} = « quand vos clients cherchent « X » » ; vide si Gemini n'a rien de sûr. {{observation}} retirée (faux positifs).
 Test A/B demandé par Nathan sur le mail 1 : PS « +17 % de CA » (A) contre « +17 % de leads » (B).
 Rien n'est lancé : brouillon, sans boîte rattachée.
 Usage : python 59_instantly_p2_igor.py plan | domains | create | leads"""
-import csv, glob, json, os, sys, urllib.request
+import csv, glob, json, os, re, sys, urllib.request
 import outreach_db as db
 
 H = {"Authorization": "Bearer " + os.environ.get("INSTANTLY_API", ""), "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 decupler-outbound"}
@@ -52,6 +52,9 @@ ICP = {
                      "Vous êtes curieux de voir comment {{companyName}} pourrait recevoir plus de demandes en direct, mais vous étiez sur un événement toute la semaine")),
 }
 ALIAS = {"1.6": "1.5", "1.7": "1.5", "1.8": "1.5"}
+# Relecture du 03/11 : hors cible malgré la qualification IA (fonds, banque, réseau immobilier, mutuelle, association, agences SEO concurrentes, hors France)
+EXCLUDE = {"carac.fr", "coachingwaysme.com", "emotional-intelligence-mastery.com", "garageisep.com", "opalecapital.com", "orpi.com", "pictet.com",
+           "simply-on.fr", "stride.vc", "tzcld.fr", "ucatchit.com"}
 
 
 def html(t):
@@ -60,9 +63,9 @@ def html(t):
 
 def step1(ps):
     return html("\n\n".join([
-        "Bonjour {{firstName}}, j'ai vu que {{companyName}} recrute{{obs}}.",
+        "Bonjour {{firstName}}, j'ai vu que {{companyName}} recrute.",
         "Une équipe qui grandit a besoin de demandes entrantes, et elles pourraient partir chez des concurrents mieux cités sur Google et ChatGPT.",
-        "J'ai regardé votre site de près et relevé 7 leviers pour que ChatGPT et Google recommandent {{companyName}} sur {{thematique}}.",
+        "J'ai regardé votre site de près et relevé 7 leviers pour que ChatGPT et Google recommandent {{companyName}}{{theme}}.",
         "Seriez-vous contre que je vous les partage ? S'ils ne vous apprennent rien, dites-le moi et je ne vous relance plus.",
         SIG, ps, "PPS : Pas pertinent ? Répondez « {{stopword}} » et les 7 leviers iront à quelqu'un d'autre."]))
 
@@ -98,7 +101,7 @@ def leads():
     for fn in sorted(glob.glob("../data/datasets/DS-1*-FR-P2*.csv")):
         for r in csv.DictReader(open(fn)):
             icp = ALIAS.get(r["icp_code"], r["icp_code"])
-            if icp not in ICP or r["esp"] == "microsoft" or r["domain"].lower() in dnc_dom: continue
+            if icp not in ICP or r["domain"].lower() in EXCLUDE or r["esp"] == "microsoft" or r["domain"].lower() in dnc_dom: continue
             if Q.get(r["domain"], {}).get("fit") is not True: continue
             m = M.get(r["linkedin_url"]) or {}
             email = m.get("email") if m.get("risk_score") in ("A", "B") else None
@@ -108,13 +111,14 @@ def leads():
             if not (edom == cdom or edom.endswith("." + cdom) or cdom.endswith("." + edom) or edom.split(".")[0] == cdom.split(".")[0]): continue
             seen.add(email.lower())
             g, d = G.get(r["domain"]) or {}, ICP[icp]
-            obs = (g.get("observation") or "").strip()
-            cv = dict(obs=f", et que vous travaillez avec {obs}" if obs and len(obs) < 40 else "",
-                      thematique=(g.get("thematique") or "").strip().lower() or "votre marché", stopword=d["stop"],
+            # {{observation}} retirée (relecture 03/11 : trop de faux positifs) ; thématique = 1er terme proposé par Gemini
+            th = (g.get("thematique") or "").split(",")[0].strip()
+            if th and not th[:2].isupper(): th = th[0].lower() + th[1:]  # « CRM » garde ses majuscules, « Stratégie data » → « stratégie data »
+            cv = dict(theme=f" quand vos clients cherchent « {th} »" if 2 < len(th) < 45 else "", stopword=d["stop"],
                       ps1a=d.get("ps", PS_CA), ps1b=d.get("ps", PS_LEADS), ps3=d.get("ps", PS_LEADS), s3o=d["s3o"],
                       s3a=d["s3"][0], s3b=d["s3"][1], s3c=d["s3"][2], s4a=d["s4"][0], s4b=d["s4"][1],
                       icp=r["icp_code"], tier=r["tier"], dataset=r["dataset"], lot="G" if r["esp"] == "google" else "O")
-            out.append(dict(email=email, first_name=r["first_name"], last_name=r["last_name"], company_name=r["company"], website=r["domain"],
+            out.append(dict(email=email, first_name=r["first_name"], last_name=r["last_name"], company_name=re.split(r" \| | - ", r["company"])[0].replace("™", "").strip(), website=r["domain"],
                             custom_variables=cv))
     return out
 
@@ -134,7 +138,7 @@ if __name__ == "__main__":
     elif mode == "plan":
         from collections import Counter
         print(len(ls), "leads", Counter(l["custom_variables"]["icp"] for l in ls), Counter(l["custom_variables"]["lot"] for l in ls))
-        print("avec observation", sum(1 for l in ls if l["custom_variables"]["obs"]), "· thématique par défaut", sum(1 for l in ls if l["custom_variables"]["thematique"] == "votre marché"))
+        print("avec thématique", sum(1 for l in ls if l["custom_variables"]["theme"]))
     elif mode == "create":
         r = api("POST", "/api/v2/campaigns", {"name": NAME, "campaign_schedule": SCHEDULE, "sequences": sequence(), "stop_on_reply": True,
                                                "stop_on_auto_reply": False, "open_tracking": False, "link_tracking": False, "text_only": True,
