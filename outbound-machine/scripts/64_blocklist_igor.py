@@ -41,6 +41,6 @@ if len(sys.argv) > 1 and sys.argv[1] == "apply":
         api("POST", "/api/v2/block-lists-entries", {"bl_value": v})
         if n % 500 == 0: print("ajoutés", n, flush=True)
     for n, i in enumerate(to_del, 1):
-        api("DELETE", f"/api/v2/block-lists-entries/{i}")
+        api("DELETE", f"/api/v2/block-lists-entries/{i}", {})  # Instantly refuse un DELETE sans corps JSON
         if n % 500 == 0: print("retirés", n, flush=True)
     print("FIN liste noire", flush=True)
