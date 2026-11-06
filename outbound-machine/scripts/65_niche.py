@@ -30,6 +30,18 @@ def gemini(lang, text, model="gemini-3.5-flash"):
                 txt = "".join(s.get("text", "") for it in t["result"][0]["items"] for s in it.get("sections", []))
                 mm = re.search(r"\{[\s\S]*\}", txt)
                 if mm: return dict(json.loads(mm.group(0)), cost=t.get("cost", 0), model=m)
+    # dernier repli : gpt-4o-mini (endpoint ChatGPT de DataForSEO, plus stable que Gemini)
+    body = json.dumps([{"system_message": SYS[lang][:495], "user_prompt": text[:495], "model_name": "gpt-4o-mini", "web_search": False}]).encode()
+    for _ in range(2):
+        try:
+            t = json.loads(urllib.request.urlopen(urllib.request.Request("https://api.dataforseo.com/v3/ai_optimization/chat_gpt/llm_responses/live",
+                                                                         data=body, method="POST", headers=DFS), timeout=120).read())["tasks"][0]
+        except Exception:
+            continue
+        if t.get("result"):
+            txt = "".join(s.get("text", "") for it in t["result"][0]["items"] for s in it.get("sections", []))
+            mm = re.search(r"\{[\s\S]*\}", txt)
+            if mm: return dict(json.loads(mm.group(0)), cost=t.get("cost", 0), model="gpt-4o-mini")
     return {"error": "pas de réponse", "cost": 0}
 
 
@@ -40,7 +52,7 @@ if __name__ == "__main__":
     for f in files:
         for r in csv.DictReader(open(f)):
             d = (r.get("domain") or "").lower()
-            if d and d not in cache and d not in todo:
+            if d and (d not in cache or cache[d].get("error")) and d not in todo:
                 todo[d] = f"{r.get('company_name') or r.get('company')}: {r.get('company_description') or ''} {r.get('company_keywords') or ''}".strip()
     print("à classer", len(todo), flush=True)
     with ThreadPoolExecutor(6) as ex:
