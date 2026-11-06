@@ -95,6 +95,79 @@ PLAN = {  # code : (nom, séquence, ps3, sources)
            [("ours", "1.9", "classic"), ("ours", "1.10", None), ("igor", "bonus-fr", "Marketing agency (FR)|classic"), ("igor", "bonus-fr", "Event agency (FR)")]),
 }
 
+# ===== V6 (06/11, retours Nathan + vérifications par entreprise, 68_lead_checks.py) =====
+# Les phrases « {{companyName}} ne sort pas sur les questions que j'ai testées », « j'ai trouvé 3 quick wins » et
+# « plusieurs opportunités organiques ne sont pas adressées » ne partent que si la vérification le confirme pour CE lead ;
+# sinon la version neutre. Le mail 3 B (concurrent) part aux leads dont le concurrent est trouvé dans Google, le A aux autres.
+PAGE_EN = ["Hi {{firstName}}, simpler idea: send me one page of your site, and I'll send it back optimised to get cited by ChatGPT and Google.",
+           "It's free, and you keep it either way. Which page would you pick?", "Nathan"]
+PAGE_FR = ["Bonjour {{firstName}}, plus simple : envoyez-moi une page de votre site, je vous la renvoie travaillée pour être citée par ChatGPT et Google.",
+           "C'est offert, et vous la gardez dans tous les cas. Laquelle choisiriez-vous ?", "Nathan"]
+for k, lang in (("S1EN", "EN"), ("S2EN", "EN"), ("S1FR", "FR"), ("S2FR", "FR")):
+    signature, ps1 = (SIG_EN, SEQ[k][0][1][-1]) if lang == "EN" else (SIG_FR, SEQ[k][0][1][-1])
+    cta = "Would you be against a quick video showing you how to get more leads from AI search?" if lang == "EN" else \
+          "Seriez-vous contre une courte vidéo pour vous montrer comment être recommandé par les IA ?"
+    hi = "Hi {{firstName}}," if lang == "EN" else "Bonjour {{firstName}},"
+    SEQ[k] = [(SEQ[k][0][0], [hi, "{{l1}}", "{{l2}}", cta, signature, ps1]),
+              ("", PAGE_EN if lang == "EN" else PAGE_FR),
+              ("{{m3s}}", [hi, "{{m3a}}", "{{m3b}}", "{{m3c}}", signature, "{{ps3}}",
+                           "PPS: Not a priority? Reply \"no thanks\" and I'll close the file." if lang == "EN" else "PPS : Pas prioritaire ? Répondez « non merci » et je clos le dossier."])]
+SEQ["S3bFR"][1] = ("", PAGE_FR)
+CHECKS = json.load(open("../data/datasets/lead_checks.json")) if os.path.exists("../data/datasets/lead_checks.json") else {}
+
+
+ACRO = {"ai": "AI", "ia": "IA", "seo": "SEO", "geo": "GEO", "crm": "CRM", "erp": "ERP", "b2b": "B2B", "b2c": "B2C", "saas": "SaaS", "it": "IT",
+        "hr": "HR", "rh": "RH", "grc": "GRC", "voip": "VoIP", "d2c": "D2C", "pr": "PR", "ux": "UX", "ui": "UI", "api": "API", "smes": "SMEs",
+        "pme": "PME", "tpe": "TPE", "esg": "ESG", "rse": "RSE", "m&a": "M&A", "cfo": "CFO", "daf": "DAF", "ppc": "PPC", "sea": "SEA", "iot": "IoT"}
+
+
+def nice(n):
+    return " ".join(ACRO.get(w, w) for w in (n or "").split())
+
+
+def personal(seq, company, niche, d):
+    niche = nice(niche)
+    c = CHECKS.get(d) or {}
+    absent = c.get("ai_tested") and not c.get("ai_cited")
+    wins = len(c.get("audit") or []) >= 3
+    out_g = c.get("serp_ok") and not c.get("serp_pos")
+    comp = c.get("competitor")
+    if seq in ("S1EN", "S2EN"):
+        what = f"the best {niche}" if seq == "S1EN" else f"the best {niche} firms"
+        l1 = (f"I was looking at what ChatGPT recommends for {what}, and {company} didn't come up in the answers I tested." if absent
+              else f"I was looking at what ChatGPT recommends for {what}.")
+        l2 = (f"I found 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility."
+              if wins else f"I can show you 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility.")
+        if comp:
+            m3 = (f"{comp} instead of {company}", f"I was looking for {niche} on Google, and {comp} came up first, not {company}.",
+                  f"I thought you might want to change that. I can put together a quick checklist on how to get {company} ahead, on Google and in ChatGPT.",
+                  "Would you be against a 3-minute video walking you through it?")
+        else:
+            m3 = (f"{company}'s organic opportunities",
+                  (f"I was looking at your site and noticed several organic opportunities {company} isn't covering yet." if out_g
+                   else f"I was looking at your site and the organic opportunities around {niche}."),
+                  "I can put them in a map: keywords with buying intent, AI prompts and the real competitors capturing them, so search turns into sales opportunities.",
+                  "Can I record a 3-minute video showing how to get more of those opportunities?")
+    else:
+        what = f"le meilleur {niche}" if seq != "S2FR" else f"un cabinet en {niche}"
+        l1 = (f"Je regardais ce qui sort quand on demande à ChatGPT {what}, et j'ai remarqué que {company} ne sort pas sur les questions que j'ai testées." if absent
+              else f"Je regardais ce qui sort quand on demande à ChatGPT {what}.")
+        l2 = (f"J'ai trouvé 3 quick wins pour que {company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité."
+              if wins else f"Je peux vous montrer 3 quick wins pour que {company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité.")
+        if comp:
+            m3 = (f"{comp} plutôt que {company}", f"Je cherchais {niche} sur Google, et c'est {comp} qui est sorti en premier, pas {company}.",
+                  f"Je me suis dit que vous voudriez peut-être changer ça. Je peux vous préparer une courte checklist pour faire passer {company} devant, sur Google et dans ChatGPT.",
+                  "Seriez-vous contre une vidéo de 3 minutes pour vous la présenter ?")
+        else:
+            m3 = (f"les opportunités organiques de {company}",
+                  (f"Je regardais votre site et j'ai vu que plusieurs opportunités organiques ne sont pas encore adressées par {company}." if out_g
+                   else f"Je regardais votre site et les opportunités organiques autour de {niche}."),
+                  "Je peux vous les sortir dans une cartographie : mots-clés à intention d'achat, questions posées aux IA, vrais concurrents qui les captent, pour transformer la recherche en opportunités commerciales.",
+                  "Je vous enregistre une vidéo de 3 minutes pour vous montrer comment capter plus d'opportunités organiques ?")
+    return dict(l1=l1, l2=l2, m3s=m3[0], m3a=m3[1], m3b=m3[2], m3c=m3[3], m3_variant="B" if comp else "A",
+                checked=bool(c), ai_absent=bool(absent), quick_wins=len(c.get("audit") or []))
+
+
 
 def html(lines):
     return "".join(f"<div>{l}</div><div><br /></div>" if i < len(lines) - 1 else f"<div>{l}</div>" for i, l in enumerate(x for l in lines for x in [l.replace("\n", "</div><div>")]))
@@ -153,7 +226,9 @@ def leads():
                 if not e or e in seen or e in bl or r["domain"].lower() in bdom: continue
                 seen.add(e)
                 n = ((NICHE.get(r["domain"].lower()) or {}).get("niche") or "").strip().lower()
-                cv = dict(niche=n or NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
+                cv = dict(niche=nice(n) if n else NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
+                cname = re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip()
+                if seq in ("S1EN", "S2EN", "S1FR", "S2FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
                 ls.append(dict(email=r["email"], first_name=r["first"], last_name=r["last"],
                                company_name=re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip(), website=r["domain"], custom_variables=cv))
         out[code] = ls
@@ -178,7 +253,7 @@ if __name__ == "__main__":
         fb = sum(1 for l in ls if l["custom_variables"]["niche"] == NICHE_FALLBACK[seq] and NICHE_FALLBACK[seq])
         print(code, name, "·", len(ls), "leads ·", len({l["website"] for l in ls}), "entreprises · niche par défaut", fb)
         if mode == "create" and code not in ids:
-            r = api("POST", "/api/v2/campaigns", {"name": f"{code} · {name} · BROUILLON V5", "campaign_schedule": SCHED, "sequences": sequence(seq),
+            r = api("POST", "/api/v2/campaigns", {"name": f"{code} · {name} · BROUILLON V6", "campaign_schedule": SCHED, "sequences": sequence(seq),
                                                    "stop_on_reply": True, "stop_on_auto_reply": False, "open_tracking": False, "link_tracking": False,
                                                    "text_only": True, "daily_limit": 100, "email_gap": 10, "random_wait_max": 10, "prioritize_new_leads": False})
             ids[code] = r["id"]; json.dump(ids, open(IDS, "w"), indent=1); print("  créée", r["id"])
