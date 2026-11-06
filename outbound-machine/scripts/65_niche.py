@@ -45,8 +45,16 @@ def gemini(lang, text, model="gemini-3.5-flash"):
     return {"error": "pas de réponse", "cost": 0}
 
 
+def homepage(d):
+    """Page d'accueil (titre + description + extrait), pour nos leads qui n'ont pas de description d'entreprise."""
+    src = open("58_gemini_concurrent.py").read().split("DFS = ")[0]
+    g = {"__name__": "x"}; exec(src.replace('src = open("39_qualify.py")', 'src = open("39_qualify.py")'), g)
+    return g["page"](d)
+
+
 if __name__ == "__main__":
     lang, files = sys.argv[1], sys.argv[2:]
+    if lang == "fr": CACHE = "../data/datasets/niche_fr.json"  # fichier séparé : deux classements en parallèle ne s'écrasent pas
     cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
     todo = {}
     for f in files:
@@ -54,9 +62,10 @@ if __name__ == "__main__":
             d = (r.get("domain") or "").lower()
             if d and (d not in cache or cache[d].get("error")) and d not in todo:
                 todo[d] = f"{r.get('company_name') or r.get('company')}: {r.get('company_description') or ''} {r.get('company_keywords') or ''}".strip()
+                if len(todo[d]) < 60: todo[d] = "HOME:" + d  # pas de description : on lira la page d'accueil
     print("à classer", len(todo), flush=True)
     with ThreadPoolExecutor(6) as ex:
-        for n, (d, res) in enumerate(zip(todo, ex.map(lambda t: gemini(lang, t), todo.values())), 1):
+        for n, (d, res) in enumerate(zip(todo, ex.map(lambda t: gemini(lang, (lambda h: h if not t.startswith("HOME:") else (t[5:] + " : " + (homepage(t[5:]) or "")))(t)), todo.values())), 1):
             cache[d] = res
             if n % 100 == 0: json.dump(cache, open(CACHE, "w"), ensure_ascii=False); print(n, flush=True)
     json.dump(cache, open(CACHE, "w"), ensure_ascii=False)
