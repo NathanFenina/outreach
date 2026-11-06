@@ -84,7 +84,7 @@ SEQ = {
    M3A_FR],
 }
 SEO_RX = re.compile(r"\bseo\b|search engine|référencement|referencement|digital|numérique|web|growth|acquisition|performance|sea\b|ppc|ads\b", re.I)
-NICHE_FALLBACK = {"S1EN": "b2b software", "S2EN": "consulting", "S1FR": "logiciel b2b", "S2FR": "conseil", "S3aFR": "", "S3bFR": "", "S4FR": "votre marché"}
+NICHE_FALLBACK = {"S1EN": "b2b software", "S2EN": "consulting", "S1FR": "logiciel b2b", "S2FR": "conseil", "S3aFR": "", "S3bFR": "votre secteur", "S4FR": "votre marché"}  # S3bFR : le mail 3 utilise {{niche}}
 PLAN = {  # code : (nom, séquence, ps3, sources)
  "201-G": ("SaaS-AI UK-DACH · S1 EN", "S1EN", PS_CA_EN, [("igor", "saas-ai", None)]),
  "202-G": ("Consulting UK-DACH · S2 EN", "S2EN", PS_LEADS_EN, [("igor", "consulting", None)]),
