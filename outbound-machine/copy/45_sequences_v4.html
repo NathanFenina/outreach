@@ -1,0 +1,201 @@
+<html><head><meta charset="utf-8"></head><body>
+<h1>Décupler · Séquences V4 (3 mails) · à valider par Nathan puis Igor</h1>
+<p>6 novembre 2026. Rédigées à partir de la session du 04/11 avec Igor (transcript complet), de ses docs v2 / v3 et de l'idée « TASM » (post de Jake Ward). Rien n'est importé dans Instantly avant la relecture d'Igor.</p>
+
+<h2>0. Ce qui change par rapport à V3 (retours d'Igor appliqués)</h2>
+<ul>
+<li><b>3 mails par séquence</b> : mail 1 = offre A · mail 2 (J+3, même fil) = petite relance · mail 3 (J+8, nouveau fil) = offre B.</li>
+<li><b>L'offre d'abord, en résultat</b> : « 3 quick wins qui… », « les recherches qui peuvent vous amener des demandes », plus de « 7 leviers » (trop) ni de « 50 critères ».</li>
+<li><b>Emballage vidéo</b> : « je peux vous enregistrer une vidéo de 3 minutes » (on l'enregistre seulement après un oui ; on n'écrit pas « j'ai enregistré » avant de l'avoir fait).</li>
+<li><b>Ton conversationnel</b> : « je me demandais », « je me suis dit », « j'imagine ».</li>
+<li><b>Hyper-personnalisation par sous-industrie</b> : variable {{niche}} (ex. « logiciel CRM pour PME »), classée par IA à partir de la description de l'entreprise.</li>
+<li><b>Signal relié à l'offre</b> : le recrutement n'est gardé que si l'offre l'utilise (plan des 90 premiers jours pour la personne recrutée).</li>
+<li><b>Une seule preuve par mail</b>, vraie : Cloudtech +17 % de CA en 6 mois, +17 % de leads en 6 mois, +23 % de visibilité dans les réponses des IA ; BeTomorrow (agence) ; Orators (agence de conférenciers).</li>
+<li><b>Opt-out</b> : une ligne au premier mail de chaque fil (mails 1 et 3), conformité RGPD.</li>
+<li><b>Signature</b> : nom complet en première ligne (« Nathan Fenina »), puis « Décupler ».</li>
+<li><b>Pas d'obsession A/B</b> : on teste les 3 offres d'Igor + TASM en les répartissant entre les séquences, puis on itère sur l'offre.</li>
+</ul>
+
+<h2>1. Les 4 offres testées et où elles sont</h2>
+<table border="1" cellpadding="4">
+<tr><th>Offre</th><th>Idée d'origine</th><th>Où</th></tr>
+<tr><td>A · 3 quick wins pour être recommandé par ChatGPT / Google (+ vidéo)</td><td>Igor (« 3 quick wins qui peuvent apporter +X % »)</td><td>S1 mail 1 · S2 mail 3</td></tr>
+<tr><td>B · Carte du marché de recherche (TASM) : mots-clés à intention d'achat, qui les capte, pages à créer, en un tableau</td><td>Nathan (post Jake Ward)</td><td>S1 mail 3 · S2 mail 1 · S4 mail 3</td></tr>
+<tr><td>C · « J'ai cherché [catégorie] à [ville] et c'est [concurrent] qui sort, pas vous » (+ vidéo)</td><td>Igor</td><td>S3 mail 1 (concurrent vérifié dans Google, sinon mail de repli)</td></tr>
+<tr><td>D · Audit de visibilité IA offert pour un client de l'agence, sous sa marque</td><td>Igor (v2, marque blanche)</td><td>S3 mail 3</td></tr>
+<tr><td>E · Plan des 90 premiers jours pour la personne recrutée</td><td>Igor (relier le recrutement à l'offre)</td><td>S4 mail 1</td></tr>
+</table>
+
+<h2>2. Variables</h2>
+<ul>
+<li>{{firstName}}, {{companyName}} : Instantly. Repli si prénom vide : « Hi there » / « Bonjour ».</li>
+<li>{{niche}} : sous-industrie précise (IA, à partir de la description, ≈ 0,0014 $ / entreprise). Si l'IA n'est pas sûre : repli EN « your market », FR « votre marché ».</li>
+<li>{{city}} et {{competitor}} (S3 seulement) : recherche Google « marketing agency + ville », 1er vrai résultat hors annuaires et médias, vérifié. Si l'agence elle-même est 1re ou si rien n'est sûr : mail de repli.</li>
+</ul>
+
+<h2>3. Audiences de départ proposées (onglet « 9. Audiences » du Sheet)</h2>
+<ul>
+<li>Igor · SaaS-AI UK-DACH, lot G (1 107) → S1 EN</li>
+<li>Igor · Consulting UK-DACH, lot G (344) → S2 EN</li>
+<li>Nous · éditeurs SaaS + startups IA France, lot G (≈ 500) → S1 FR</li>
+<li>Nous · entreprises qui recrutent en marketing / commercial, lot G (≈ 90) → S4 FR</li>
+<li>Ensuite : agences marketing (Igor, 1 052 en G) → S3 EN ; lots O dès que les boîtes AirMail sont chauffées.</li>
+</ul>
+
+<h1>S1 · SaaS / IA</h1>
+<h2>S1 EN (dataset Igor, UK-DACH)</h2>
+<h3>Mail 1 · J0 · subject: {{niche}} on chatgpt</h3>
+<p>Hi {{firstName}},</p>
+<p>I was wondering how {{companyName}} shows up when someone asks ChatGPT for the best {{niche}}. More and more buyers build their shortlist there, before they ever book a demo.</p>
+<p>I can send you 3 quick wins that could get {{companyName}} recommended more often, the same kind of fixes that brought Cloudtech +23% visibility in AI answers.</p>
+<p>Would you be against me sending them over?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS: Not looking for more demos right now? Reply "no thanks" and I won't follow up.</p>
+<h3>Mail 2 · J+3 · same thread</h3>
+<p>Hi {{firstName}}, just floating this back up in case it got buried under the demo requests :)</p>
+<p>Want me to send the 3 quick wins? Two minutes to read.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · new thread · subject: {{companyName}}'s search market</h3>
+<p>Hi {{firstName}},</p>
+<p>Most SEO proposals are a list of tasks: fix this, publish that, build links. I'd rather show you the size of the opportunity.</p>
+<p>I can map the buying-intent searches in {{niche}}, who captures that demand today and the pages that would bring {{companyName}} the most leads, all in one table. Some you probably already target. Many you don't.</p>
+<p>Can I record a 3-minute video walking you through it?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS: For Cloudtech, +17% revenue in 6 months from Google and AI search.</p>
+<p>PPS: Not a priority? Reply "no thanks" and I'll close the file.</p>
+
+<h2>S1 FR (nos leads 1.1 / 1.2 + BONUS FR SaaS-IA)</h2>
+<h3>Mail 1 · J0 · objet : {{niche}} sur chatgpt</h3>
+<p>Bonjour {{firstName}},</p>
+<p>Je me demandais comment {{companyName}} ressort quand on demande à ChatGPT le meilleur {{niche}}. De plus en plus d'acheteurs font leur shortlist là, avant même de demander une démo.</p>
+<p>Je peux vous envoyer 3 quick wins pour que {{companyName}} soit recommandé plus souvent, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité dans les réponses des IA.</p>
+<p>Seriez-vous contre que je vous les envoie ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS : Pas le sujet du moment ? Répondez « non merci » et je ne vous relance pas.</p>
+<h3>Mail 2 · J+3 · même fil</h3>
+<p>Bonjour {{firstName}}, je remonte mon message au cas où il serait passé sous une pile de demandes de démo :)</p>
+<p>Je vous envoie les 3 quick wins ? Ça se lit en 2 minutes.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · nouveau fil · objet : le marché de recherche de {{companyName}}</h3>
+<p>Bonjour {{firstName}},</p>
+<p>La plupart des propositions SEO sont des listes de tâches : corriger ceci, publier cela, faire des liens. Je préfère vous montrer la taille de l'opportunité.</p>
+<p>Je peux cartographier les recherches à intention d'achat sur {{niche}}, qui capte cette demande aujourd'hui et les pages qui amèneraient le plus de leads à {{companyName}}, dans un seul tableau. Vous en travaillez sûrement certaines. Beaucoup d'autres, non.</p>
+<p>Je vous enregistre une vidéo de 3 minutes pour vous le montrer ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS : Pour Cloudtech, +17 % de CA en 6 mois grâce à Google et aux IA.</p>
+<p>PPS : Pas prioritaire ? Répondez « non merci » et je clos le dossier.</p>
+
+<h1>S2 · Conseil</h1>
+<h2>S2 EN (dataset Igor, UK-DACH)</h2>
+<h3>Mail 1 · J0 · subject: who wins {{niche}} searches</h3>
+<p>Hi {{firstName}},</p>
+<p>I was curious who business leaders find when they search for {{niche}} on Google or ask ChatGPT. Usually it's the big firms, even when a specialist like {{companyName}} is the better fit.</p>
+<p>I can map the searches your future clients make, who wins them today and the 3 pages that would bring you the most enquiries, all in one table.</p>
+<p>Would it be a bad idea if I sent it?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS: For Cloudtech, +17% leads in 6 months from Google and AI search.</p>
+<p>PPS: Network keeps you busy enough? Reply "no thanks" and I won't follow up.</p>
+<h3>Mail 2 · J+3 · same thread</h3>
+<p>Hi {{firstName}}, I guess partners' calendars fill up fast :)</p>
+<p>Shall I send the table anyway? You can read it between two meetings.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · new thread · subject: between two referrals</h3>
+<p>Hi {{firstName}},</p>
+<p>I imagine most of {{companyName}}'s new clients come through referrals. That works well, until the quarter the network goes quiet.</p>
+<p>I can record a 3-minute video with 3 quick wins that could get {{companyName}} cited when leaders ask Google or ChatGPT for a {{niche}} firm. Cloudtech got +23% visibility in AI answers with this approach.</p>
+<p>Want me to record it for you?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PPS: Not relevant? Reply "no thanks" and the video stays in my folder.</p>
+
+<h2>S2 FR (nos leads 1.5 + BONUS FR conseil)</h2>
+<h3>Mail 1 · J0 · objet : qui gagne les recherches {{niche}}</h3>
+<p>Bonjour {{firstName}},</p>
+<p>Je me demandais qui les dirigeants trouvent quand ils cherchent {{niche}} sur Google ou demandent à ChatGPT. Souvent, ce sont les grands cabinets, même quand un spécialiste comme {{companyName}} serait plus adapté.</p>
+<p>Je peux cartographier les recherches de vos futurs clients, qui les gagne aujourd'hui et les 3 pages qui vous amèneraient le plus de demandes, dans un seul tableau.</p>
+<p>Ce serait une mauvaise idée que je vous l'envoie ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS : Pour Cloudtech, +17 % de leads en 6 mois grâce à Google et aux IA.</p>
+<p>PPS : Votre réseau vous suffit ? Répondez « non merci » et je ne vous relance pas.</p>
+<h3>Mail 2 · J+3 · même fil</h3>
+<p>Bonjour {{firstName}}, j'imagine que l'agenda des associés se remplit vite :)</p>
+<p>Je vous envoie quand même le tableau ? Il se lit entre deux rendez-vous.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · nouveau fil · objet : entre deux recommandations</h3>
+<p>Bonjour {{firstName}},</p>
+<p>J'imagine que la plupart des nouveaux clients de {{companyName}} arrivent par recommandation. Ça marche bien, jusqu'au trimestre où le réseau se tait.</p>
+<p>Je peux vous enregistrer une vidéo de 3 minutes avec 3 quick wins pour que {{companyName}} soit cité quand un dirigeant demande à Google ou à ChatGPT un cabinet en {{niche}}. Cloudtech a gagné +23 % de visibilité dans les réponses des IA avec cette méthode.</p>
+<p>Je vous l'enregistre ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PPS : Pas pertinent ? Répondez « non merci » et la vidéo reste dans mon dossier.</p>
+
+<h1>S3 · Agences marketing</h1>
+<h2>S3 EN (dataset Igor, UK-DACH)</h2>
+<h3>Mail 1 · J0 · subject: {{competitor}} in {{city}}</h3>
+<p>Hi {{firstName}},</p>
+<p>I was looking for a marketing agency in {{city}} on Google, and {{competitor}} came up first, not {{companyName}}.</p>
+<p>I thought you might want to change that. I can record a 3-minute video with 3 fixes to get {{companyName}} found first, on Google and in ChatGPT.</p>
+<p>Can I send it over?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS: We've already worked on visibility for agencies like BeTomorrow.</p>
+<p>PPS: Fully booked with clients? Reply "no thanks" and I won't follow up.</p>
+<p><i>Repli (concurrent non vérifié ou agence déjà 1re) : on envoie directement le mail 3 en mail 1.</i></p>
+<h3>Mail 2 · J+3 · same thread</h3>
+<p>Hi {{firstName}}, I guess client briefs ate your week :)</p>
+<p>Want the video anyway? It's 3 minutes.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · new thread · subject: what about chatgpt?</h3>
+<p>Hi {{firstName}},</p>
+<p>I guess some of your clients have started asking "what about ChatGPT?".</p>
+<p>We run GEO under your brand: you keep the client and the margin, we do the work. I'm happy to run a free AI-visibility audit for one of your clients, under your name, so you can judge on real work.</p>
+<p>Would you be against picking which client?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PPS: Not for you? Reply "no thanks" and the audit goes to another agency.</p>
+
+<h2>S3 FR (nos leads 1.9 + BONUS FR agences)</h2>
+<h3>Mail 1 · J0 · objet : {{competitor}} à {{city}}</h3>
+<p>Bonjour {{firstName}},</p>
+<p>Je cherchais une agence marketing à {{city}} sur Google, et c'est {{competitor}} qui est sorti en premier, pas {{companyName}}.</p>
+<p>Je me suis dit que vous voudriez peut-être changer ça. Je peux vous enregistrer une vidéo de 3 minutes avec 3 corrections pour que {{companyName}} sorte en premier, sur Google et dans ChatGPT.</p>
+<p>Je vous l'envoie ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS : On a déjà travaillé la visibilité d'agences comme BeTomorrow.</p>
+<p>PPS : Débordé par vos clients ? Répondez « non merci » et je ne vous relance pas.</p>
+<h3>Mail 2 · J+3 · même fil</h3>
+<p>Bonjour {{firstName}}, j'imagine que les briefs clients ont pris toute la semaine :)</p>
+<p>Je vous envoie quand même la vidéo ? Elle dure 3 minutes.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · nouveau fil · objet : et chatgpt ?</h3>
+<p>Bonjour {{firstName}},</p>
+<p>J'imagine que certains de vos clients commencent à vous demander « et ChatGPT ? ».</p>
+<p>On fait le GEO en marque blanche : vous gardez le client et la marge, on exécute. Je peux faire un audit de visibilité IA offert pour un de vos clients, sous votre nom, pour que vous jugiez sur pièce.</p>
+<p>Seriez-vous contre qu'on choisisse lequel ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PPS : Pas pour vous ? Répondez « non merci » et l'audit ira à une autre agence.</p>
+
+<h1>S4 · Recrutement (FR, réalignée selon Igor)</h1>
+<p><i>Igor : « j'ai vu que vous recrutez » ne marche que si l'offre est reliée au recrutement. Ici l'offre aide la personne recrutée à démarrer.</i></p>
+<h3>Mail 1 · J0 · objet : votre recrutement marketing</h3>
+<p>Bonjour {{firstName}},</p>
+<p>J'ai vu que {{companyName}} recrute en marketing. Je me suis dit que la personne qui arrive aura besoin de résultats rapidement.</p>
+<p>Je peux lui préparer un plan des 90 premiers jours : les 3 actions SEO et IA qui peuvent faire remonter {{companyName}} dans le top 3 sur Google et dans les réponses de ChatGPT.</p>
+<p>Ça vous intéresse que je vous l'envoie ?</p>
+<p>Nathan Fenina<br>Décupler</p>
+<p>PS : Pour Cloudtech, +17 % de CA en 6 mois grâce à Google et aux IA.</p>
+<p>PPS : Pas pertinent ? Répondez « non merci » et je ne vous relance pas.</p>
+<p><i>Variante recrutement commercial (P2b) : « J'ai vu que {{companyName}} recrute des commerciaux. Je me suis dit qu'ils auront besoin de demandes entrantes dès leur arrivée. Je peux vous préparer les 3 actions SEO et IA qui peuvent remplir leur agenda plus vite… »</i></p>
+<h3>Mail 2 · J+3 · même fil</h3>
+<p>Bonjour {{firstName}}, j'imagine que les entretiens de recrutement prennent toute la place en ce moment :)</p>
+<p>Je vous envoie le plan ? Il peut servir dès le premier jour.</p>
+<p>Nathan</p>
+<h3>Mail 3 · J+8 · nouveau fil · objet : le marché de recherche de {{companyName}}</h3>
+<p>(identique au mail 3 de S1 FR : carte du marché de recherche, TASM)</p>
+
+<h1>Réserve (à tester plus tard, retours d'Igor)</h1>
+<ul>
+<li><b>Baisse de trafic</b> (si la vérification montre une vraie baisse) : « J'ai regardé le trafic de {{companyName}} : environ {{drop}} % de visites Google en moins sur un an. J'ai préparé 3 quick wins pour revenir sur la bonne trajectoire. Je vous les partage ? » (dans les 2 premières lignes, comme demandé par Igor).</li>
+<li><b>Page rendue visible sur ChatGPT, offerte</b> (positionnée sur le résultat, sans « 50 critères ») : « Donnez-moi une page de votre site : je la rends plus visible sur ChatGPT et Google, gratuitement, et vous jugez sur pièce. »</li>
+<li><b>BTP, partenariat à la performance</b> : « Je cherche une entreprise du bâtiment à {{city}} qui peut absorber 20 nouveaux clients par mois, en partenariat à la performance. Ouvert à en parler ? » (Igor : pas nouveau, mais peu utilisé en Europe ; les réponses arrivent moins qualifiées).</li>
+<li><b>Relance 1-2-3 avec la blague</b> (« Claude a pris le contrôle de votre PC ») : à réutiliser lors du recontact à 90 jours, avec l'offre non utilisée.</li>
+<li><b>Spintax</b> : plus tard, comme Igor l'a proposé.</li>
+</ul>
+</body></html>

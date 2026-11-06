@@ -32,7 +32,8 @@ TIER_FILTERS = {
 }
 START = int(next((a.split("=")[1] for a in sys.argv if a.startswith("--start=")), 1))  # reprise : pages suivantes
 SUFFIX = next((a.split("=")[1] for a in sys.argv if a.startswith("--suffix=")), "")
-BLOCK = {"deja_contacte", "repondu", "desinscrit", "client", "concurrent", "agressif"}
+BLOCK = {"deja_contacte",  # 06/11 règle Igor : « déjà contacté » bloque l'email, pas le domaine (collègues joignables)
+         "repondu", "desinscrit", "client", "concurrent", "agressif"}
 RANK = [(1, r"\b(ceo|founder|fondat|co-?fond|pr[ée]sident|directeur g[ée]n[ée]ral|dg\b|g[ée]rant|managing (partner|director)|owner|associ[ée] g[ée]rant|partner|associ[ée]|propri[ée]taire|directeur|directrice|director)"),
         (2, r"(cmo|marketing|growth|commercial|sales|business development|d[ée]veloppement|revenue)"),
         (3, r"(seo|content|contenu|communication|acquisition|digital|web)")]
@@ -52,7 +53,7 @@ def current_exp(p):
 dnc, dnc_mail = set(), set()
 for r in db.select("do_not_contact", "email,domain,reason"):
     if r["reason"] in BLOCK:
-        if r["domain"]: dnc.add(r["domain"].lower())
+        if r["domain"] and r["reason"] != "deja_contacte": dnc.add(r["domain"].lower())
         if r["email"]: dnc_mail.add(r["email"].lower())
 for fn in glob.glob("../data/campaigns/*.csv") + glob.glob("../data/datasets/DS-*.csv"):
     if "/DS-1" in fn and "-FR-P" not in fn and os.path.basename(fn).count("-") == 2:
@@ -63,10 +64,12 @@ for fn in glob.glob("../data/campaigns/*.csv") + glob.glob("../data/datasets/DS-
 os.makedirs("../data/datasets", exist_ok=True)
 TIERS_ARG = next((a.split("=")[1].split(",") for a in sys.argv if a.startswith("--tiers=")), None)
 PAGES_ARG = int(next((a.split("=")[1] for a in sys.argv if a.startswith("--pages=")), 0))
+ICPS_ARG = next((a.split("=")[1].split(",") for a in sys.argv if a.startswith("--icps=")), None)  # ex. --icps=1.5 : seulement ces sous-ICP
 for camp in [a for a in sys.argv[1:] if not a.startswith("--")]:
     icps, tiers, pages, per_co = CAMPAIGNS[camp]
     tiers, pages = TIERS_ARG or tiers, PAGES_ARG or pages
     for icp in icps:
+        if ICPS_ARG and icp not in ICPS_ARG: continue
         s = SEG[icp]
         for tier in tiers:
             code = f"DS-{camp}-{icp}-FR-{tier}{SUFFIX}"

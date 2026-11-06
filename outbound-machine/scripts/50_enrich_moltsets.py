@@ -9,7 +9,8 @@ import outreach_db as db
 H = {"Authorization": "Bearer " + os.environ["MOLTESETS_API"], "Content-Type": "application/json", "User-Agent": "decupler-outbound"}
 CACHE = "../data/datasets/enriched_moltsets.json"
 QUALIF = json.load(open("../data/campaigns/qualif.json"))  # 39_qualify.py : on n'enrichit / n'importe que fit=True
-BLOCK = {"deja_contacte", "repondu", "desinscrit", "client", "concurrent", "agressif"}
+BLOCK = {"deja_contacte",  # 06/11 règle Igor : « déjà contacté » bloque l'email, pas le domaine (collègues joignables)
+         "repondu", "desinscrit", "client", "concurrent", "agressif"}
 args = sys.argv[1:]
 max_tokens = int(args[args.index("--max-tokens") + 1]) if "--max-tokens" in args else 0
 codes = [a for a in args if a.startswith("DS-")]
@@ -23,7 +24,7 @@ def call(tool, body):
 dnc_dom, dnc_mail = set(), set()
 for r in db.select("do_not_contact", "email,domain,reason"):
     if r["reason"] in BLOCK:
-        if r["domain"]: dnc_dom.add(r["domain"].lower())
+        if r["domain"] and r["reason"] != "deja_contacte": dnc_dom.add(r["domain"].lower())
         if r["email"]: dnc_mail.add(r["email"].lower())
 cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
 todo = []
