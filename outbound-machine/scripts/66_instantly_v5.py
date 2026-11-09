@@ -114,6 +114,9 @@ for k, lang in (("S1EN", "EN"), ("S2EN", "EN"), ("S1FR", "FR"), ("S2FR", "FR")):
               ("{{m3s}}", [hi, "{{m3a}}", "{{m3b}}", "{{m3c}}", signature, "{{ps3}}",
                            "PPS: Not a priority? Reply \"no thanks\" and I'll close the file." if lang == "EN" else "PPS : Pas prioritaire ? Répondez « non merci » et je clos le dossier."])]
 SEQ["S3bFR"][1] = ("", PAGE_FR)
+SEQ["S3bFR"][2] = SEQ["S1FR"][2]
+SEQ["S4FR"][2] = SEQ["S1FR"][2]
+SEQ["S2FR"][0] = ("{{niche}} sur chatgpt", SEQ["S2FR"][0][1])
 CHECKS = json.load(open("../data/datasets/lead_checks.json")) if os.path.exists("../data/datasets/lead_checks.json") else {}
 
 
@@ -124,6 +127,14 @@ ACRO = {"ai": "AI", "ia": "IA", "seo": "SEO", "geo": "GEO", "crm": "CRM", "erp":
 
 def nice(n):
     return " ".join(ACRO.get(w, w) for w in (n or "").split())
+
+
+def que(x):  # « que IOWNIT » → « qu'IOWNIT »
+    return "qu'" if (x or "a")[0].lower() in "aeiouyhéèêàâîôûœ" else "que "
+
+
+def de(x):  # « cabinets de conseil », « cabinets d'expertise comptable »
+    return "d'" if (x or "a")[0].lower() in "aeiouyhéèêàâîôûœ" else "de "
 
 
 def personal(seq, company, niche, d):
@@ -140,7 +151,7 @@ def personal(seq, company, niche, d):
         l2 = (f"I found 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility."
               if wins else f"I can show you 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility.")
         if comp:
-            m3 = (f"{comp} instead of {company}", f"I was looking for {niche} on Google, and {comp} came up first, not {company}.",
+            m3 = (f"{comp} instead of {company}", f"I searched for \u201c{niche}\u201d on Google, and {comp} came up first, not {company}.",
                   f"I thought you might want to change that. I can put together a quick checklist on how to get {company} ahead, on Google and in ChatGPT.",
                   "Would you be against a 3-minute video walking you through it?")
         else:
@@ -150,13 +161,13 @@ def personal(seq, company, niche, d):
                   "I can put them in a map: keywords with buying intent, AI prompts and the real competitors capturing them, so search turns into sales opportunities.",
                   "Can I record a 3-minute video showing how to get more of those opportunities?")
     else:
-        what = f"le meilleur {niche}" if seq != "S2FR" else f"un cabinet en {niche}"
-        l1 = (f"Je regardais ce qui sort quand on demande à ChatGPT {what}, et j'ai remarqué que {company} ne sort pas sur les questions que j'ai testées." if absent
+        what = f"le meilleur {niche}" if seq != "S2FR" else f"les meilleurs cabinets {de(niche)}{niche}"
+        l1 = (f"Je regardais ce qui sort quand on demande à ChatGPT {what}, et j'ai remarqué {que(company)}{company} ne sort pas sur les questions que j'ai testées." if absent
               else f"Je regardais ce qui sort quand on demande à ChatGPT {what}.")
-        l2 = (f"J'ai trouvé 3 quick wins pour que {company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité."
-              if wins else f"Je peux vous montrer 3 quick wins pour que {company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité.")
+        l2 = (f"J'ai trouvé 3 quick wins pour {que(company)}{company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité."
+              if wins else f"Je peux vous montrer 3 quick wins pour {que(company)}{company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité.")
         if comp:
-            m3 = (f"{comp} plutôt que {company}", f"Je cherchais {niche} sur Google, et c'est {comp} qui est sorti en premier, pas {company}.",
+            m3 = (f"{comp} plutôt {que(company)}{company}", f"J'ai tapé « {niche} » sur Google, et c'est {comp} qui est sorti en premier, pas {company}.",
                   f"Je me suis dit que vous voudriez peut-être changer ça. Je peux vous préparer une courte checklist pour faire passer {company} devant, sur Google et dans ChatGPT.",
                   "Seriez-vous contre une vidéo de 3 minutes pour vous la présenter ?")
         else:
@@ -232,7 +243,7 @@ def leads():
                 n = ((NICHE.get(r["domain"].lower()) or {}).get("niche") or "").strip().lower()
                 cv = dict(niche=nice(n) if n else NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
                 cname = re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip()
-                if seq in ("S1EN", "S2EN", "S1FR", "S2FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
+                if seq in ("S1EN", "S2EN", "S1FR", "S2FR", "S3bFR", "S4FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
                 ls.append(dict(email=r["email"], first_name=r["first"], last_name=r["last"],
                                company_name=re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip(), website=r["domain"], custom_variables=cv))
         out[code] = ls
@@ -261,6 +272,17 @@ if __name__ == "__main__":
                                                    "stop_on_reply": True, "stop_on_auto_reply": False, "open_tracking": False, "link_tracking": False,
                                                    "text_only": True, "daily_limit": 100, "email_gap": 10, "random_wait_max": 10, "prioritize_new_leads": False})
             ids[code] = r["id"]; json.dump(ids, open(IDS, "w"), indent=1); print("  créée", r["id"])
+        if mode == "rebuild" and code in ids and (len(sys.argv) < 3 or code in sys.argv[2:]):
+            c = api("GET", f"/api/v2/campaigns/{ids[code]}")
+            if c.get("status") != 0: print("  pas un brouillon, on ne touche pas"); continue
+            api("DELETE", f"/api/v2/campaigns/{ids[code]}", {})
+            r = api("POST", "/api/v2/campaigns", {"name": f"{code} · {name} · BROUILLON V6", "campaign_schedule": SCHED, "sequences": sequence(seq),
+                                                   "stop_on_reply": True, "stop_on_auto_reply": False, "open_tracking": False, "link_tracking": False,
+                                                   "text_only": True, "daily_limit": 100, "email_gap": 10, "random_wait_max": 10, "prioritize_new_leads": False})
+            ids[code] = r["id"]; json.dump(ids, open(IDS, "w"), indent=1)
+            for i in range(0, len(ls), 500):
+                api("POST", "/api/v2/leads/add", {"campaign_id": ids[code], "skip_if_in_workspace": False, "leads": ls[i:i + 500]})
+            print("  reconstruite", len(ls), "leads")
         if mode == "update" and code in ids:
             api("PATCH", f"/api/v2/campaigns/{ids[code]}", {"sequences": sequence(seq)}); print("  séquence mise à jour")
         if mode == "leads" and code in ids:
