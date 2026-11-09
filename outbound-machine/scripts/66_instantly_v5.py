@@ -76,11 +76,9 @@ SEQ = {
      "PS : Débordé par vos clients ? Répondez « non merci » et je ne vous relance pas."]),
    ("", ["Bonjour {{firstName}}, j'imagine que les rendus clients ont pris toute la semaine :)", "Je vous enregistre quand même la vidéo ? Elle dure 3 minutes.", "Nathan"]),
    M3A_FR],
- "S4FR": [("votre recrutement marketing", ["Bonjour {{firstName}},",
-     "J'ai vu que {{companyName}} recrute en marketing. Je me suis dit que la personne qui arrive aura besoin de résultats rapidement.",
-     "Je peux lui préparer un plan des 90 premiers jours : les 3 actions SEO et IA qui peuvent faire remonter {{companyName}} dans le top 3 sur Google et dans les réponses de ChatGPT.",
-     "Ça vous intéresse que je vous l'envoie ?", SIG_FR, PS_CA_FR, "PPS : Pas pertinent ? Répondez « non merci » et je ne vous relance pas."]),
-   ("", ["Bonjour {{firstName}}, j'imagine que les entretiens de recrutement prennent toute la place en ce moment :)", "Je vous envoie le plan ? Il peut servir dès le premier jour.", "Nathan"]),
+ "S4FR": [("{{s4o}}", ["Bonjour {{firstName}},", "{{s4a}}", "{{s4b}}",
+     "Seriez-vous contre une courte vidéo pour vous les montrer ?", SIG_FR, PS_CA_FR, "PPS : Pas pertinent ? Répondez « non merci » et je ne vous relance pas."]),
+   ("", ["Bonjour {{firstName}}, j'imagine que les recrutements prennent toute la place en ce moment :)", "Je vous enregistre la vidéo ? Elle dure 3 minutes, et elle peut servir à la nouvelle équipe dès le premier jour.", "Nathan"]),
    M3A_FR],
 }
 SEO_RX = re.compile(r"\bseo\b|search engine|référencement|referencement|digital|numérique|web|growth|acquisition|performance|sea\b|ppc|ads\b", re.I)
@@ -91,9 +89,9 @@ PLAN = {  # code : (nom, séquence, ps3, sources)
  "204-G": ("Recrute en marketing ou commercial France · S4 FR", "S4FR", PS_LEADS_FR, [("tier", "P2", None)]),
  "203-G": ("SaaS / IA France · S1 FR", "S1FR", PS_CA_FR, [("ours", "1.1", None), ("ours", "1.2", None), ("igor", "bonus-fr", "SaaS / AI (FR)")]),
  "205-G": ("Conseil, compta, M&A, patrimoine France · S2 FR", "S2FR", PS_LEADS_FR, [("ours", "1.5", None), ("ours", "1.6", None), ("ours", "1.7", None), ("ours", "1.8", None), ("igor", "bonus-fr", "Consulting (FR)")]),
- "206-G": ("Agences SEO / digitales France · S3a FR", "S3aFR", "", [("ours", "1.9", "seo"), ("igor", "bonus-fr", "Marketing agency (FR)|seo")]),
- "207-G": ("Agences classiques et événementielles France · S3b FR", "S3bFR", PS_CA_FR,
-           [("ours", "1.9", "classic"), ("ours", "1.10", None), ("igor", "bonus-fr", "Marketing agency (FR)|classic"), ("igor", "bonus-fr", "Event agency (FR)")]),
+ "206-G": ("Agences communication, web, digital sans SEO France (marque blanche) · S3a FR", "S3aFR", "", [("ours", "1.9", None), ("ours", "1.10", None), ("igor", "bonus-fr", "Marketing agency (FR)"), ("igor", "bonus-fr", "Event agency (FR)")]),
+ "207-G": ("Agences événementielles France · S3b FR", "S3bFR", PS_CA_FR,
+           [("ours", "1.9", None), ("ours", "1.10", None), ("igor", "bonus-fr", "Marketing agency (FR)"), ("igor", "bonus-fr", "Event agency (FR)")]),
 }
 
 # ===== V6 (06/11, retours Nathan + vérifications par entreprise, 68_lead_checks.py) =====
@@ -118,6 +116,9 @@ SEQ["S3bFR"][2] = SEQ["S1FR"][2]
 SEQ["S4FR"][2] = SEQ["S1FR"][2]
 SEQ["S2FR"][0] = ("{{niche}} sur chatgpt", SEQ["S2FR"][0][1])
 CHECKS = json.load(open("../data/datasets/lead_checks.json")) if os.path.exists("../data/datasets/lead_checks.json") else {}
+AGENCY = json.load(open("../data/datasets/agency_checks.json")) if os.path.exists("../data/datasets/agency_checks.json") else {}
+SEQ["S3bFR"][0] = ("{{s3s}}", ["Bonjour {{firstName}},", "{{l1}}", "{{l2}}", "Seriez-vous contre une courte vidéo pour vous montrer comment être recommandé par les IA ?", SIG_FR,
+                                "PS : Débordé par vos clients ? Répondez « non merci » et je ne vous relance pas."])
 
 
 ACRO = {"ai": "AI", "ia": "IA", "seo": "SEO", "geo": "GEO", "crm": "CRM", "erp": "ERP", "b2b": "B2B", "b2c": "B2C", "saas": "SaaS", "it": "IT",
@@ -137,13 +138,24 @@ def de(x):  # « cabinets de conseil », « cabinets d'expertise comptable »
     return "d'" if (x or "a")[0].lower() in "aeiouyhéèêàâîôûœ" else "de "
 
 
+def de_nom(x):  # « de Le Mazette » → « du Mazette », « de Les Ateliers » → « des Ateliers », « de Atelier » → « d'Atelier »
+    for a, b in (("Le ", "du "), ("Les ", "des "), ("le ", "du "), ("les ", "des ")):
+        if (x or "").startswith(a): return b + x[len(a):]
+    return de(x) + (x or "")
+
+
+USE_COMPETITOR = False  # 09/11 : désactivé (Google varie selon le jour / le lieu, « sort en premier » pas fiable). Mail 3 = cartographie pour tous.
+FUND_RX = re.compile(r"capital[ -]?risque|fonds d'investissement|fonds de capital|venture capital|private equity|investissement (en|pour) |"
+                     r"banque d'investissement|\bvc\b|ventures?\b|capital\b", re.I)
+
+
 def personal(seq, company, niche, d):
     niche = nice(niche)
     c = CHECKS.get(d) or {}
     absent = c.get("ai_tested") and not c.get("ai_cited")
     wins = len(c.get("audit") or []) >= 3
     out_g = c.get("serp_ok") and not c.get("serp_pos")
-    comp = c.get("competitor")
+    comp = c.get("competitor") if USE_COMPETITOR else None
     if seq in ("S1EN", "S2EN"):
         what = f"the best {niche}" if seq == "S1EN" else f"the best {niche} firms"
         l1 = (f"I was looking at what ChatGPT recommends for {what}, and {company} didn't come up in the answers I tested." if absent
@@ -171,7 +183,7 @@ def personal(seq, company, niche, d):
                   f"Je me suis dit que vous voudriez peut-être changer ça. Je peux vous préparer une courte checklist pour faire passer {company} devant, sur Google et dans ChatGPT.",
                   "Seriez-vous contre une vidéo de 3 minutes pour vous la présenter ?")
         else:
-            m3 = (f"les opportunités organiques de {company}",
+            m3 = (f"les opportunités organiques {de_nom(company)}",
                   (f"Je regardais votre site et j'ai vu que plusieurs opportunités organiques ne sont pas encore adressées par {company}." if out_g
                    else f"Je regardais votre site et les opportunités organiques autour de {niche}."),
                   "Je peux vous les sortir dans une cartographie : mots-clés à intention d'achat, questions posées aux IA, vrais concurrents qui les captent, pour transformer la recherche en opportunités commerciales.",
@@ -235,15 +247,40 @@ def leads():
                         if not e: continue
                         ed, cd = e.lower().split("@")[-1], r["domain"].lower()
                         if not (ed == cd or ed.endswith("." + cd) or ed.split(".")[0] == cd.split(".")[0]): continue
-                        rows.append(dict(email=e, first=r["first_name"], last=r["last_name"], company=r["company"], domain=r["domain"], city=r.get("city") or ""))
+                        rows.append(dict(email=e, first=r["first_name"], last=r["last_name"], company=r["company"], domain=r["domain"], city=r.get("city") or "", tier=r.get("tier") or ""))
             for r in rows:
                 e = (r["email"] or "").lower()
                 if not e or e in seen or e in bl or r["domain"].lower() in bdom: continue
-                seen.add(e)
                 n = ((NICHE.get(r["domain"].lower()) or {}).get("niche") or "").strip().lower()
+                if FUND_RX.search(n) or FUND_RX.search(r["company"] or ""): continue  # fonds / VC : pas une cible (09/11)
+                if seq in ("S3aFR", "S3bFR"):  # agences : celles qui vendent du SEO sont des concurrentes (exclues) ; digitales → 206, classiques → 207
+                    a = AGENCY.get(r["domain"].lower())
+                    if not a or a.get("error") or a.get("vend_seo"): continue
+                    t = (a.get("type") or "").lower()
+                    kind_ag = ("event" if re.search(r"événement|evenement|conférenc|conferenc|production|audiovisuel", t) else
+                               "mkt" if re.search(r"communication|web|digital|design|social|marketing|créati|creati|influence|\brp\b|contenu|vidéo|video|motion|wordpress|no-code|numérique|branding", t)
+                               else None)
+                    if kind_ag is None: continue  # voyage, enseignes, recrutement, coaching… : pas une cible
+                    if (seq == "S3aFR") != (kind_ag == "mkt"): continue
+                seen.add(e)  # marqué « utilisé » seulement une fois tous les filtres passés
                 cv = dict(niche=nice(n) if n else NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
                 cname = re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip()
                 if seq in ("S1EN", "S2EN", "S1FR", "S2FR", "S3bFR", "S4FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
+                if seq == "S3bFR":  # 09/11 Nathan : « j'ai vu que vous ne remontez pas sur 2 questions lancées sur ChatGPT » (seulement si vrai)
+                    a = AGENCY.get(r["domain"].lower()) or {}
+                    q = (a.get("prompts") or [""])[0]
+                    q = f"{a.get('type') or 'agence'} à {r['city']}" if r["city"] else (a.get("type") or "agence")
+                    l1 = (f"J'ai lancé 2 questions sur ChatGPT autour de « {q} », et j'ai vu {que(cname)}{cname} ne remonte pas dans les réponses."
+                          if a.get("tested") and not a.get("cited") else f"J'ai lancé quelques questions sur ChatGPT autour de « {q} ».")
+                    cv.update(l1=l1, l2="Je peux vous montrer 3 quick wins pour entrer dans ces réponses, la méthode qui a apporté à Cloudtech +23 % de visibilité dans les réponses des IA.",
+                              s3s=f"{a.get('type') or 'agences'} à {r['city']} sur chatgpt" if r["city"] else f"{a.get('type') or 'agences'} sur chatgpt")
+                if seq == "S4FR":  # 09/11 Nathan : « l'équipe marketing s'agrandit », relié au SEO / IA, pas « vous recrutez »
+                    if r.get("tier") == "P2b":
+                        cv.update(s4o="votre équipe commerciale", s4a=f"J'ai vu que l'équipe commerciale {de_nom(cname)} s'agrandit. De nouveaux commerciaux, ce sont aussi plus de demandes entrantes à trouver, et Google comme ChatGPT peuvent en apporter chaque semaine.",
+                                  s4b=f"Je peux vous montrer les 3 actions SEO et IA qui peuvent remplir leur agenda plus vite.")
+                    else:
+                        cv.update(s4o="votre équipe marketing", s4a=f"J'ai vu que l'équipe marketing {de_nom(cname)} s'agrandit. Quand une équipe grandit, on attend vite des résultats, et côté SEO et IA il y a souvent quelques actions simples à mettre en place pour générer plus de demandes.",
+                                  s4b=f"Je peux vous montrer les 3 actions qui peuvent faire remonter {cname} dans le top 3 sur Google et dans les réponses de ChatGPT.")
                 ls.append(dict(email=r["email"], first_name=r["first"], last_name=r["last"],
                                company_name=re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip(), website=r["domain"], custom_variables=cv))
         out[code] = ls
