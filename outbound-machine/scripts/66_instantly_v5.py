@@ -115,6 +115,7 @@ SEQ["S3bFR"][1] = ("", PAGE_FR)
 SEQ["S3bFR"][2] = SEQ["S1FR"][2]
 SEQ["S4FR"][2] = SEQ["S1FR"][2]
 SEQ["S2FR"][0] = ("{{niche}} sur chatgpt", SEQ["S2FR"][0][1])
+REAL = json.load(open("../data/datasets/verify_real.json")) if os.path.exists("../data/datasets/verify_real.json") else {}
 CHECKS = json.load(open("../data/datasets/lead_checks.json")) if os.path.exists("../data/datasets/lead_checks.json") else {}
 AGENCY = json.load(open("../data/datasets/agency_checks.json")) if os.path.exists("../data/datasets/agency_checks.json") else {}
 SEQ["S3bFR"][0] = ("{{s3s}}", ["Bonjour {{firstName}},", "{{l1}}", "{{l2}}", "Seriez-vous contre une courte vidéo pour vous montrer comment être recommandé par les IA ?", SIG_FR,
@@ -144,7 +145,7 @@ def de_nom(x):  # « de Le Mazette » → « du Mazette », « de Les Ateliers �
     return de(x) + (x or "")
 
 
-USE_COMPETITOR = True  # 09/11 soir (Nathan : « le message est bon, il faut bien faire le taff ») : mail 3 B seulement si 71_competitor_strict.py valide
+USE_COMPETITOR = False  # 09/11 soir : réactivé puis recoupé (5Mins) : les relevés Google DataForSEO ne sont pas stables → B coupé tant que la source n'est pas fiable (71 garde la validation stricte)
 STRICT = json.load(open("../data/datasets/competitor_strict.json")) if os.path.exists("../data/datasets/competitor_strict.json") else {}
 GIANTS = re.compile(r"(accenture|bcg|mckinsey|bain|deloitte|pwc|kpmg|\bey\.com|capgemini|ibm|microsoft|salesforce|oracle|sap\.com|hubspot|"
                     r"adobe|amazon|aws|google|cisco|atos|sopra|cgi\.com|infosys|wipro|tcs\.com|cognizant|publicis|wpp|havas|dentsu|liferay)", re.I)
@@ -155,9 +156,10 @@ FUND_RX = re.compile(r"capital[ -]?risque|fonds d'investissement|fonds de capita
 def personal(seq, company, niche, d):
     niche = nice(niche)
     c = CHECKS.get(d) or {}
-    absent = c.get("ai_tested") and not c.get("ai_cited")
+    rv = REAL.get(d) or {}  # 73_verify_real.py : vrai ChatGPT (recherche web). « ne sort pas » seulement si absent des DEUX
+    absent = c.get("ai_tested") and not c.get("ai_cited") and rv.get("real_tested") and not rv.get("real_cited")
     wins = len(c.get("audit") or []) >= 3
-    out_g = c.get("serp_ok") and not c.get("serp_pos")
+    out_g = False  # 09/11 : Google via DataForSEO change à chaque relevé (5Mins : absent chez nous, 1er chez Nathan) → plus de phrase « non adressées »
     st = STRICT.get(d) or {}
     comp = (c.get("competitor") if USE_COMPETITOR and st.get("ok") and st.get("competitor") == c.get("competitor_domain")
             and not GIANTS.search(c.get("competitor_domain") or "") else None)
@@ -279,7 +281,7 @@ def leads():
                     q = (a.get("prompts") or [""])[0]
                     q = f"{a.get('type') or 'agence'} à {r['city']}" if r["city"] else (a.get("type") or "agence")
                     l1 = (f"J'ai lancé 2 questions sur ChatGPT autour de « {q} », et j'ai vu {que(cname)}{cname} ne remonte pas dans les réponses."
-                          if a.get("tested") and not a.get("cited") else f"J'ai lancé quelques questions sur ChatGPT autour de « {q} ».")
+                          if a.get("tested") and not a.get("cited") and (REAL.get(r["domain"].lower()) or {}).get("real_tested_s3b") and not (REAL.get(r["domain"].lower()) or {}).get("real_cited_s3b") else f"J'ai lancé quelques questions sur ChatGPT autour de « {q} ».")
                     cv.update(l1=l1, l2="Je peux vous montrer 3 quick wins pour entrer dans ces réponses, la méthode qui a apporté à Cloudtech +23 % de visibilité dans les réponses des IA.",
                               s3s=f"{a.get('type') or 'agences'} à {r['city']} sur chatgpt" if r["city"] else f"{a.get('type') or 'agences'} sur chatgpt")
                 if seq == "S4FR":  # 09/11 Nathan : « l'équipe marketing s'agrandit », relié au SEO / IA, pas « vous recrutez »
