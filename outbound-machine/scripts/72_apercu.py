@@ -41,6 +41,13 @@ for code, (name, seq, ps3, _) in PLAN.items():
         for l in B:
             c = l["custom_variables"]
             btable.append((code, l["company_name"], l["website"], c.get("niche"), c.get("m3s", "").split(" plutôt")[0].split(" instead")[0]))
+    import random
+    smp = random.Random(code).sample(ls, min(15, len(ls)))
+    smp = sorted(smp, key=lambda l: l["custom_variables"].get("m3_variant", "A"))
+    blk.append("<p class='n'>15 autres leads tirés au hasard (niche, phrase d'ouverture, objet du mail 3) :</p><table><tr><th>Entreprise</th><th>Niche</th><th>Ouverture mail 1</th><th>Objet mail 3</th></tr>"
+               + "".join(f"<tr><td>{html.escape(l['company_name'])}<br><span class='n'>{l['website']}</span></td><td>{html.escape(l['custom_variables'].get('niche') or '')}</td>"
+                         f"<td>{html.escape(render(next((x for x in s[0][1] if '{{l1}}' in x or '{{s4a}}' in x), s[0][1][1]), l))}</td><td>{html.escape(render(s[2][0], l))}</td></tr>" for l in smp)
+               + "</table>")
     out.append("".join(blk))
 
 seen, rows = set(), []

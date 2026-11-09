@@ -272,7 +272,7 @@ def leads():
                     if (seq == "S3aFR") != (kind_ag == "mkt"): continue
                 seen.add(e)  # marqué « utilisé » seulement une fois tous les filtres passés
                 cv = dict(niche=nice(n) if n else NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
-                cname = re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip()
+                cname = re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").replace("®", "").strip()
                 if seq in ("S1EN", "S2EN", "S1FR", "S2FR", "S3bFR", "S4FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
                 if seq == "S3bFR":  # 09/11 Nathan : « j'ai vu que vous ne remontez pas sur 2 questions lancées sur ChatGPT » (seulement si vrai)
                     a = AGENCY.get(r["domain"].lower()) or {}
@@ -290,7 +290,7 @@ def leads():
                         cv.update(s4o="votre équipe marketing", s4a=f"J'ai vu que l'équipe marketing {de_nom(cname)} s'agrandit. Quand une équipe grandit, on attend vite des résultats, et côté SEO et IA il y a souvent quelques actions simples à mettre en place pour générer plus de demandes.",
                                   s4b=f"Je peux vous montrer les 3 actions qui peuvent faire remonter {cname} dans le top 3 sur Google et dans les réponses de ChatGPT.")
                 ls.append(dict(email=r["email"], first_name=r["first"], last_name=r["last"],
-                               company_name=re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").strip(), website=r["domain"], custom_variables=cv))
+                               company_name=re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").replace("®", "").strip(), website=r["domain"], custom_variables=cv))
         out[code] = ls
     return out
 
