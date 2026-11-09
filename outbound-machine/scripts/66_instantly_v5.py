@@ -88,8 +88,9 @@ NICHE_FALLBACK = {"S1EN": "b2b software", "S2EN": "consulting", "S1FR": "logicie
 PLAN = {  # code : (nom, séquence, ps3, sources)
  "201-G": ("SaaS-AI UK-DACH · S1 EN", "S1EN", PS_CA_EN, [("igor", "saas-ai", None)]),
  "202-G": ("Consulting UK-DACH · S2 EN", "S2EN", PS_LEADS_EN, [("igor", "consulting", None)]),
+ "204-G": ("Recrute en marketing ou commercial France · S4 FR", "S4FR", PS_LEADS_FR, [("tier", "P2", None)]),
  "203-G": ("SaaS / IA France · S1 FR", "S1FR", PS_CA_FR, [("ours", "1.1", None), ("ours", "1.2", None), ("igor", "bonus-fr", "SaaS / AI (FR)")]),
- "205-G": ("Conseil France · S2 FR · PremiumInboxes", "S2FR", PS_LEADS_FR, [("ours", "1.5", None), ("igor", "bonus-fr", "Consulting (FR)")]),
+ "205-G": ("Conseil, compta, M&A, patrimoine France · S2 FR · PremiumInboxes", "S2FR", PS_LEADS_FR, [("ours", "1.5", None), ("ours", "1.6", None), ("ours", "1.7", None), ("ours", "1.8", None), ("igor", "bonus-fr", "Consulting (FR)")]),
  "206-G": ("Agences SEO / digitales France · S3a FR · PremiumInboxes", "S3aFR", "", [("ours", "1.9", "seo"), ("igor", "bonus-fr", "Marketing agency (FR)|seo")]),
  "207-G": ("Agences classiques et événementielles France · S3b FR · PremiumInboxes", "S3bFR", PS_CA_FR,
            [("ours", "1.9", "classic"), ("ours", "1.10", None), ("igor", "bonus-fr", "Marketing agency (FR)|classic"), ("igor", "bonus-fr", "Event agency (FR)")]),
@@ -208,8 +209,11 @@ def leads():
                         if (typ == "seo") != is_seo: continue
                     rows.append(dict(email=r["email"], first=r["first_name"], last=r["last_name"], company=r["company_name"], domain=r["domain"], city=r["company_city"]))
             else:
-                for fn in glob.glob(f"../data/datasets/DS-1*-{key}-FR-*.csv"):
+                for fn in glob.glob("../data/datasets/DS-1*-FR-*.csv"):
+                    if kind == "tier" and not re.search(r"-FR-P2b?\.csv$", fn): continue
                     for r in csv.DictReader(open(fn)):
+                        # sous-ICP effectif : celui du repêchage (67_requalify.py) s'il existe, sinon celui du dataset
+                        if kind == "ours" and (Q.get(r["domain"], {}).get("sub_icp_final") or r["icp_code"]) != key: continue
                         if r["esp"] != "google" or Q.get(r["domain"], {}).get("fit") is not True: continue
                         if filt:
                             is_seo = bool(SEO_RX.search(r["company"]))
