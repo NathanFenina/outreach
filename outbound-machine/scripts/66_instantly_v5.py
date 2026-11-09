@@ -2,7 +2,7 @@
 (J0 · J+3 même fil · J+8 nouveau fil), envoi 7h30-14h en semaine, opt-out au 1er mail de chaque fil.
 Leads : dataset UltB d'Igor (lot G) + nos leads FR (Moltsets A/B ou FullEnrich utilisable), liste noire par personne
 (contact_history : < 90 jours, réponse, désinscrit, bounce), Microsoft exclu, un email = une seule campagne.
-Rien n'est lancé : aucune boîte rattachée (Zapmail ou PremiumInboxes se rattachent au lancement).
+Rien n'est lancé : aucune boîte rattachée (Zapmail se rattache au lancement ; AirMail pour les lots O quand il sera chauffé ; PremiumInboxes abandonné le 09/11).
 Mail 3 B (« {{competitor}} sort, pas vous ») et S3b mail 1 viendront quand les concurrents seront vérifiés dans Google.
 Usage : python 66_instantly_v5.py plan | create | leads"""
 import csv, datetime, glob, json, os, re, sys, urllib.request
@@ -90,9 +90,9 @@ PLAN = {  # code : (nom, séquence, ps3, sources)
  "202-G": ("Consulting UK-DACH · S2 EN", "S2EN", PS_LEADS_EN, [("igor", "consulting", None)]),
  "204-G": ("Recrute en marketing ou commercial France · S4 FR", "S4FR", PS_LEADS_FR, [("tier", "P2", None)]),
  "203-G": ("SaaS / IA France · S1 FR", "S1FR", PS_CA_FR, [("ours", "1.1", None), ("ours", "1.2", None), ("igor", "bonus-fr", "SaaS / AI (FR)")]),
- "205-G": ("Conseil, compta, M&A, patrimoine France · S2 FR · PremiumInboxes", "S2FR", PS_LEADS_FR, [("ours", "1.5", None), ("ours", "1.6", None), ("ours", "1.7", None), ("ours", "1.8", None), ("igor", "bonus-fr", "Consulting (FR)")]),
- "206-G": ("Agences SEO / digitales France · S3a FR · PremiumInboxes", "S3aFR", "", [("ours", "1.9", "seo"), ("igor", "bonus-fr", "Marketing agency (FR)|seo")]),
- "207-G": ("Agences classiques et événementielles France · S3b FR · PremiumInboxes", "S3bFR", PS_CA_FR,
+ "205-G": ("Conseil, compta, M&A, patrimoine France · S2 FR", "S2FR", PS_LEADS_FR, [("ours", "1.5", None), ("ours", "1.6", None), ("ours", "1.7", None), ("ours", "1.8", None), ("igor", "bonus-fr", "Consulting (FR)")]),
+ "206-G": ("Agences SEO / digitales France · S3a FR", "S3aFR", "", [("ours", "1.9", "seo"), ("igor", "bonus-fr", "Marketing agency (FR)|seo")]),
+ "207-G": ("Agences classiques et événementielles France · S3b FR", "S3bFR", PS_CA_FR,
            [("ours", "1.9", "classic"), ("ours", "1.10", None), ("igor", "bonus-fr", "Marketing agency (FR)|classic"), ("igor", "bonus-fr", "Event agency (FR)")]),
 }
 
