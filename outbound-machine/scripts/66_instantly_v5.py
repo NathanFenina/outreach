@@ -144,7 +144,10 @@ def de_nom(x):  # « de Le Mazette » → « du Mazette », « de Les Ateliers �
     return de(x) + (x or "")
 
 
-USE_COMPETITOR = False  # 09/11 : désactivé (Google varie selon le jour / le lieu, « sort en premier » pas fiable). Mail 3 = cartographie pour tous.
+USE_COMPETITOR = True  # 09/11 soir (Nathan : « le message est bon, il faut bien faire le taff ») : mail 3 B seulement si 71_competitor_strict.py valide
+STRICT = json.load(open("../data/datasets/competitor_strict.json")) if os.path.exists("../data/datasets/competitor_strict.json") else {}
+GIANTS = re.compile(r"(accenture|bcg|mckinsey|bain|deloitte|pwc|kpmg|\bey\.com|capgemini|ibm|microsoft|salesforce|oracle|sap\.com|hubspot|"
+                    r"adobe|amazon|aws|google|cisco|atos|sopra|cgi\.com|infosys|wipro|tcs\.com|cognizant|publicis|wpp|havas|dentsu|liferay)", re.I)
 FUND_RX = re.compile(r"capital[ -]?risque|fonds d'investissement|fonds de capital|venture capital|private equity|investissement (en|pour) |"
                      r"banque d'investissement|\bvc\b|ventures?\b|capital\b", re.I)
 
@@ -155,7 +158,10 @@ def personal(seq, company, niche, d):
     absent = c.get("ai_tested") and not c.get("ai_cited")
     wins = len(c.get("audit") or []) >= 3
     out_g = c.get("serp_ok") and not c.get("serp_pos")
-    comp = c.get("competitor") if USE_COMPETITOR else None
+    st = STRICT.get(d) or {}
+    comp = (c.get("competitor") if USE_COMPETITOR and st.get("ok") and st.get("competitor") == c.get("competitor_domain")
+            and not GIANTS.search(c.get("competitor_domain") or "") else None)
+    in_top = c.get("serp_pos")
     if seq in ("S1EN", "S2EN"):
         what = f"the best {niche}" if seq == "S1EN" else f"the best {niche} firms"
         l1 = (f"I was looking at what ChatGPT recommends for {what}, and {company} didn't come up in the answers I tested." if absent
@@ -163,7 +169,8 @@ def personal(seq, company, niche, d):
         l2 = (f"I found 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility."
               if wins else f"I can show you 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility.")
         if comp:
-            m3 = (f"{comp} instead of {company}", f"I searched for \u201c{niche}\u201d on Google, and {comp} came up first, not {company}.",
+            m3 = (f"{comp} instead of {company}", (f"I searched for \u201c{niche}\u201d on Google, and {comp} came up ahead of {company}." if in_top
+                   else f"I searched for \u201c{niche}\u201d on Google: {comp} is on the first page, {company} isn't."),
                   f"I thought you might want to change that. I can put together a quick checklist on how to get {company} ahead, on Google and in ChatGPT.",
                   "Would you be against a 3-minute video walking you through it?")
         else:
@@ -179,7 +186,8 @@ def personal(seq, company, niche, d):
         l2 = (f"J'ai trouvé 3 quick wins pour {que(company)}{company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité."
               if wins else f"Je peux vous montrer 3 quick wins pour {que(company)}{company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité.")
         if comp:
-            m3 = (f"{comp} plutôt {que(company)}{company}", f"J'ai tapé « {niche} » sur Google, et c'est {comp} qui est sorti en premier, pas {company}.",
+            m3 = (f"{comp} plutôt {que(company)}{company}", (f"J'ai tapé « {niche} » sur Google, et {comp} sort devant {company}." if in_top
+                   else f"J'ai tapé « {niche} » sur Google : {comp} est en première page, {company} n'y est pas."),
                   f"Je me suis dit que vous voudriez peut-être changer ça. Je peux vous préparer une courte checklist pour faire passer {company} devant, sur Google et dans ChatGPT.",
                   "Seriez-vous contre une vidéo de 3 minutes pour vous la présenter ?")
         else:
