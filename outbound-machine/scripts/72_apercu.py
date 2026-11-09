@@ -76,5 +76,14 @@ sinon <b>A « cartographie »</b>. S3a (agences marque blanche) garde son propre
 <h2>Mail 3 B · à contrôler sur Google</h2><p class="n">{len(rows)} entreprises. Google varie selon le lieu et la personne : vérifier un échantillon avant le lancement.</p>
 <table><tr><th>Campagne</th><th>Entreprise</th><th>Site</th><th>Recherche</th><th>Concurrent cité</th><th></th></tr>{tab}</table>
 </body></html>"""
-open("../copy/48_apercu_mails.html", "w").write(page)
+if "--igor" in sys.argv:  # version courte pour Igor : 1 exemple par campagne, sans les tableaux internes
+    page = re.sub(r"<p class='n'>15 autres leads[\s\S]*?</table>", "", page)
+    page = page[:page.index("<h2>Mail 3 B")] + "</body></html>" if "<h2>Mail 3 B" in page else page
+    page = page.replace("Aperçu des mails · vrais leads, rendu final", "Décupler · wave 1 preview (real leads, final render)")
+    page = re.sub(r"<p><b>Où est quoi :</b>[\s\S]*?</p>", "<p><b>Sequence:</b> mail 1 = ChatGPT check + 3 quick wins (the 'didn't come up' line is only written when verified on real ChatGPT for that lead). "
+                  "Mail 2 (day 3, same thread) = 'send me one page, I'll optimise it for free'. Mail 3 (day 8, new thread) = map of organic opportunities + 3-min video. "
+                  "S3a (white-label agencies) keeps its own mail 3. One real lead per campaign below, exactly as Instantly will send it.</p>", page)
+    open("../copy/49_apercu_igor.html", "w").write(page)
+else:
+    open("../copy/48_apercu_mails.html", "w").write(page)
 print("ok", [(a, c, d) for a, b, c, d in stats], "B uniques", len(rows))
