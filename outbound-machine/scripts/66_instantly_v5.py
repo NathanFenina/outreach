@@ -279,7 +279,9 @@ def leads():
                 if not e or e in seen or e in bl or r["domain"].lower() in bdom: continue
                 n = ((NICHE.get(r["domain"].lower()) or {}).get("niche") or "").strip().lower()
                 au = NAUDIT.get(r["domain"].lower()) or {}  # 74_niche_audit.py : niche relue contre le site
-                if au.get("site") and au.get("target_ok") is False and code != "204-G": continue  # pas le type d'entreprise visé
+                if (au.get("site") and au.get("target_ok") is False and code != "204-G"
+                        and not (code == "205-G" and re.search(r"conseil|consult|cabinet|comptab|patrimoine|fusion|m&a|transmission|audit|expertise|advisory", au.get("niche") or "", re.I))):
+                    continue  # pas le type d'entreprise visé (205 : gpt-4o-mini trop sévère sur les cabinets de conseil, on garde ceux dont la niche dit « conseil »)
                 if au.get("site") and au.get("niche_ok") is False and (au.get("niche") or "").strip(): n = au["niche"].strip().lower()
                 if FUND_RX.search(n) or FUND_RX.search(r["company"] or ""): continue  # fonds / VC : pas une cible (09/11)
                 if seq in ("S3aFR", "S3bFR"):  # agences : celles qui vendent du SEO sont des concurrentes (exclues) ; digitales → 206, classiques → 207

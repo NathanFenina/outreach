@@ -14,7 +14,7 @@ page, llm = g["page"], g["llm"]
 P = "../data/datasets/niche_audit.json"
 TARGET = {"201-G": ("en", "B2B software / SaaS / AI product or AI services company"), "202-G": ("en", "consulting or advisory firm"),
           "203-G": ("fr", "éditeur de logiciel SaaS, startup IA / data ou société tech B2B"), "204-G": ("fr", "entreprise B2B (tout secteur)"),
-          "205-G": ("fr", "cabinet de conseil, d'expertise comptable, de M&A / transmission ou de gestion de patrimoine (CGP)"),
+          "205-G": ("fr", "cabinet de conseil (stratégie, management, IT, SI, RH, digital, transformation, ingénierie…), expertise comptable, M&A / transmission ou gestion de patrimoine (CGP) ; PAS une agence de com, un organisme de formation, un recruteur, une agence immobilière"),
           "206-G": ("fr", "agence de communication, web, digital, design ou marketing"), "207-G": ("fr", "agence événementielle")}
 SYS = ("You audit B2B prospect data. JSON only: {\"niche_ok\": true if the given niche accurately describes the company's MAIN offer, "
        "\"niche\": the correct niche, 2-6 words, lowercase, in the requested language, as a buyer would ask ChatGPT for it "
