@@ -69,10 +69,18 @@ if __name__ == "__main__":
     items = list(todo.values())
     if "--limit" in sys.argv: items = items[:int(sys.argv[sys.argv.index("--limit") + 1])]
     print("à tester", len(items), "· passages déjà faits", sum(len(i[5]) for i in items), flush=True)
+    import urllib.request
+    def balance():  # solde réel DataForSEO (10/11 : on mesure, on n'estime plus)
+        t = json.loads(urllib.request.urlopen(urllib.request.Request("https://api.dataforseo.com/v3/appendix/user_data", headers=g["g"]["DFS"]), timeout=60).read())
+        return t["tasks"][0]["result"][0]["money"]["balance"]
+    cap = float(sys.argv[sys.argv.index("--budget") + 1]) if "--budget" in sys.argv else 10.0
+    b0 = balance(); print("solde de départ", round(b0, 2), "$ · plafond", cap, "$", flush=True)
     with ThreadPoolExecutor(8) as ex:
-        for k, (d, res) in enumerate(ex.map(run, items), 1):
-            cache[d] = res
-            if k % 200 == 0: json.dump(cache, open(P, "w"), ensure_ascii=False); print(k, flush=True)
+        for i in range(0, len(items), 100):  # par lots de 100, contrôle du solde entre chaque lot
+            for d, res in ex.map(run, items[i:i + 100]): cache[d] = res
+            json.dump(cache, open(P, "w"), ensure_ascii=False)
+            spent = b0 - balance(); print(i + 100, "· dépensé", round(spent, 2), "$", flush=True)
+            if spent >= cap: print("PLAFOND ATTEINT, arrêt"); break
     json.dump(cache, open(P, "w"), ensure_ascii=False)
     v = [cache[i[0]] for i in items]
     print("absents sur 2 passages", sum(1 for x in v if len(x.get("runs") or []) >= 2 and not any(x["runs"])),
