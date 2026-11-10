@@ -22,9 +22,13 @@ def run(item):
     d, company, n, country, fr, prev, s3b_prompts, prev_s3b = item
     name = re.sub(r"[^a-z0-9]", "", (company or d.split(".")[0]).lower())[:12] or d.split(".")[0]
     out = {"niche": n, "runs": list(prev), "same_as_first": bool(prev)}
+    tries = 0
     while n and len(out["runs"]) < 2 and not any(out["runs"]):
         txt = chatgpt(prompt(n, fr), country)
-        if not txt: break
+        if not txt:
+            tries += 1
+            if tries >= 3: break
+            continue
         out["runs"].append(cited(txt, name, d))
     if s3b_prompts:
         out["s3b_runs"] = list(prev_s3b)
@@ -48,21 +52,24 @@ if __name__ == "__main__":
         for l in ls:
             d, cv = l["website"].lower(), l["custom_variables"]
             n = (cv.get("niche") or "").lower()
-            if d in todo or (d in cache and cache[d].get("niche") == n): continue
+            old = cache.get(d) or {}
+            done = (len(old.get("runs") or []) >= 2 or any(old.get("runs") or [])) if code != "207-G" else \
+                   (len(old.get("s3b_runs") or []) >= 2 or any(old.get("s3b_runs") or []))
+            if d in todo or (old and old.get("niche") == n and done): continue
             c, r, a = C.get(d) or {}, R.get(d) or {}, A.get(d) or {}
             same = (c.get("niche") or "").lower() == n
             if code == "207-G":
                 if not (a.get("tested") and not a.get("cited")): continue
-                prev_s3b = [r["real_cited_s3b"]] if "real_cited_s3b" in r else []
+                prev_s3b = old.get("s3b_runs") or ([r["real_cited_s3b"]] if "real_cited_s3b" in r else [])
                 todo[d] = (d, l["company_name"], "", "FR", True, [], a.get("prompts") or [], prev_s3b)
                 continue
             if same and c.get("ai_cited"): continue  # déjà cité par gpt-4o-mini : phrase neutre, rien à tester
-            prev = [r["real_cited"]] if same and "real_cited" in r else []
+            prev = (old.get("runs") or []) if old.get("niche") == n and old.get("runs") else ([r["real_cited"]] if same and "real_cited" in r else [])
             todo[d] = (d, l["company_name"], n, "FR" if code in FR else CTRY.get(d, "GB"), code in FR, prev, [], [])
     items = list(todo.values())
     if "--limit" in sys.argv: items = items[:int(sys.argv[sys.argv.index("--limit") + 1])]
     print("à tester", len(items), "· passages déjà faits", sum(len(i[5]) for i in items), flush=True)
-    with ThreadPoolExecutor(16) as ex:
+    with ThreadPoolExecutor(8) as ex:
         for k, (d, res) in enumerate(ex.map(run, items), 1):
             cache[d] = res
             if k % 200 == 0: json.dump(cache, open(P, "w"), ensure_ascii=False); print(k, flush=True)
