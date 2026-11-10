@@ -416,3 +416,4 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - « X ne sort pas sur ChatGPT » : seulement si le VRAI ChatGPT (avec recherche web, DataForSEO llm_scraper) ne cite pas X sur au moins 2 passages, sur la niche finale (75_absence.py). Sinon phrase neutre.
 - Aucune phrase sur Google ni concurrent tant que la source n'est pas stable (relevés SERP différents à chaque appel).
 - Dépense DataForSEO : solde réel mesuré avant / pendant chaque lot, plafond annoncé (--budget), 8 appels en parallèle max.
+- **10/11 soir : GO de Nathan** (« ok pour tout ») sur la page 48_apercu_mails.html → lancement vague 1 le 11/11 à 7h30 (201-207, Zapmail 21 boîtes × 10/j, plafonds 60/55/25/25/15/15/15).
