@@ -1,0 +1,73 @@
+"""« X ne sort pas sur ChatGPT » : preuve solide (Nathan, 10/11). Le vrai ChatGPT (avec recherche web) ne donne pas toujours la
+même liste (SyncSpider : absent au 1er passage, cité au 2e). On pose donc la question au vrai ChatGPT au moins 2 fois, sur la
+niche FINALE (après 74_niche_audit.py), et on n'écrit « ne sort pas » que si AUCUN passage ne cite l'entreprise. Dès qu'un
+passage la cite, on s'arrête (phrase neutre). Le 1er passage de 73_verify_real.py est réutilisé si la niche n'a pas changé.
+Agences S3b : 2 passages des 2 questions par ville. ≈ 0,004 $ / passage.
+Sortie : ../data/datasets/absence.json. Usage : python 75_absence.py [--limit N]"""
+import json, os, re, sys
+from concurrent.futures import ThreadPoolExecutor
+
+src = open("73_verify_real.py").read().split("\nif __name__")[0]
+g = {"__name__": "x"}; exec(compile(src, "73_verify_real.py", "exec"), g)
+chatgpt, cited = g["chatgpt"], g["cited"]
+P = "../data/datasets/absence.json"
+FR = {"203-G", "204-G", "205-G", "206-G", "207-G"}
+
+
+def prompt(n, fr):
+    return f"Quels sont les meilleurs {n} ? Donne 10 noms d'entreprises." if fr else f"What are the best {n}? Give 10 company names."
+
+
+def run(item):
+    d, company, n, country, fr, prev, s3b_prompts, prev_s3b = item
+    name = re.sub(r"[^a-z0-9]", "", (company or d.split(".")[0]).lower())[:12] or d.split(".")[0]
+    out = {"niche": n, "runs": list(prev), "same_as_first": bool(prev)}
+    while n and len(out["runs"]) < 2 and not any(out["runs"]):
+        txt = chatgpt(prompt(n, fr), country)
+        if not txt: break
+        out["runs"].append(cited(txt, name, d))
+    if s3b_prompts:
+        out["s3b_runs"] = list(prev_s3b)
+        while len(out["s3b_runs"]) < 2 and not any(out["s3b_runs"]):
+            txts = [chatgpt(p, "FR") for p in s3b_prompts]
+            if not any(txts): break
+            out["s3b_runs"].append(any(cited(x, name, d) for x in txts))
+    return d, out
+
+
+if __name__ == "__main__":
+    import csv, glob
+    src66 = open("66_instantly_v5.py").read().split('if __name__ == "__main__":')[0]
+    g66 = {"__name__": "x"}; exec(compile(src66, "66_instantly_v5.py", "exec"), g66)
+    C, A, R = g66["CHECKS"], g66["AGENCY"], g66["REAL"]
+    CTRY = {r["domain"].lower(): (r.get("company_country") or "GB").upper() for f in glob.glob("../data/datasets/igor/ready_*.csv") for r in csv.DictReader(open(f))}
+    cache = json.load(open(P)) if os.path.exists(P) else {}
+    todo = {}
+    for code, ls in g66["leads"]().items():
+        if code in ("204-G", "206-G"): continue  # S4 et S3a n'ont pas la phrase « ne sort pas »
+        for l in ls:
+            d, cv = l["website"].lower(), l["custom_variables"]
+            n = (cv.get("niche") or "").lower()
+            if d in todo or (d in cache and cache[d].get("niche") == n): continue
+            c, r, a = C.get(d) or {}, R.get(d) or {}, A.get(d) or {}
+            same = (c.get("niche") or "").lower() == n
+            if code == "207-G":
+                if not (a.get("tested") and not a.get("cited")): continue
+                prev_s3b = [r["real_cited_s3b"]] if "real_cited_s3b" in r else []
+                todo[d] = (d, l["company_name"], "", "FR", True, [], a.get("prompts") or [], prev_s3b)
+                continue
+            if same and c.get("ai_cited"): continue  # déjà cité par gpt-4o-mini : phrase neutre, rien à tester
+            prev = [r["real_cited"]] if same and "real_cited" in r else []
+            todo[d] = (d, l["company_name"], n, "FR" if code in FR else CTRY.get(d, "GB"), code in FR, prev, [], [])
+    items = list(todo.values())
+    if "--limit" in sys.argv: items = items[:int(sys.argv[sys.argv.index("--limit") + 1])]
+    print("à tester", len(items), "· passages déjà faits", sum(len(i[5]) for i in items), flush=True)
+    with ThreadPoolExecutor(16) as ex:
+        for k, (d, res) in enumerate(ex.map(run, items), 1):
+            cache[d] = res
+            if k % 200 == 0: json.dump(cache, open(P, "w"), ensure_ascii=False); print(k, flush=True)
+    json.dump(cache, open(P, "w"), ensure_ascii=False)
+    v = [cache[i[0]] for i in items]
+    print("absents sur 2 passages", sum(1 for x in v if len(x.get("runs") or []) >= 2 and not any(x["runs"])),
+          "· cités au moins une fois", sum(1 for x in v if any(x.get("runs") or [])),
+          "· agences absentes 2 fois", sum(1 for x in v if len(x.get("s3b_runs") or []) >= 2 and not any(x["s3b_runs"])), "/", sum(1 for x in v if "s3b_runs" in x))

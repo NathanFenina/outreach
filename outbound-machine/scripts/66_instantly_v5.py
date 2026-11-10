@@ -59,7 +59,7 @@ SEQ = {
      "PS : Votre réseau vous suffit ? Répondez « non merci » et je ne vous relance pas."]),
    ("", ["Bonjour {{firstName}}, j'imagine que l'agenda des associés se remplit vite :)", "Je vous enregistre quand même la vidéo ? Elle se regarde entre deux rendez-vous.", "Nathan"]),
    M3A_FR],
- "S3aFR": [("et chatgpt ?", ["Bonjour {{firstName}},", "J'imagine que certains de vos clients commencent à vous demander « et ChatGPT ? ».",
+ "S3aFR": [("vos clients et chatgpt", ["Bonjour {{firstName}},", "J'imagine que certains de vos clients commencent à vous demander d'être référencés sur les IA, comme ChatGPT.",
      "On fait le GEO en marque blanche : vous gardez le client et la marge, on exécute. Je peux faire un audit de visibilité IA offert pour un de vos clients, sous votre nom, pour que vous jugiez sur pièce.",
      "Seriez-vous contre qu'on choisisse lequel ?", SIG_FR, "PS : Pas pour vous ? Répondez « non merci » et l'audit ira à une autre agence."]),
    ("", ["Bonjour {{firstName}}, j'imagine que les briefs clients ont pris toute la semaine :)", "Je fais quand même l'audit ? Vous n'avez qu'à choisir le client.", "Nathan"]),
@@ -115,6 +115,8 @@ SEQ["S3bFR"][1] = ("", PAGE_FR)
 SEQ["S3bFR"][2] = SEQ["S1FR"][2]
 SEQ["S4FR"][2] = SEQ["S1FR"][2]
 SEQ["S2FR"][0] = ("{{niche}} sur chatgpt", SEQ["S2FR"][0][1])
+NAUDIT = json.load(open("../data/datasets/niche_audit.json")) if os.path.exists("../data/datasets/niche_audit.json") else {}
+ABS = json.load(open("../data/datasets/absence.json")) if os.path.exists("../data/datasets/absence.json") else {}
 REAL = json.load(open("../data/datasets/verify_real.json")) if os.path.exists("../data/datasets/verify_real.json") else {}
 # 10/11 Igor : mail « 1-2-3 humour » dans le même fil, 5 jours ouvrés après le mail 2. Nathan : en mail 4 (le mail 3 cartographie reste
 # en mail 3 pour tester autre chose avant), objet vide = réponse dans le fil du mail 3.
@@ -169,7 +171,9 @@ def personal(seq, company, niche, d):
     niche = nice(niche)
     c = CHECKS.get(d) or {}
     rv = REAL.get(d) or {}  # 73_verify_real.py : vrai ChatGPT (recherche web). « ne sort pas » seulement si absent des DEUX
-    absent = c.get("ai_tested") and not c.get("ai_cited") and rv.get("real_tested") and not rv.get("real_cited")
+    ab = ABS.get(d) or {}  # 75_absence.py : au moins 2 réponses du vrai ChatGPT sur la niche FINALE, aucune ne cite l'entreprise
+    absent = (ab.get("niche") == (niche or "").lower() and len(ab.get("runs") or []) >= 2 and not any(ab["runs"])
+              and not (ab.get("same_as_first") and c.get("ai_cited")))
     wins = len(c.get("audit") or []) >= 3
     out_g = False  # 09/11 : Google via DataForSEO change à chaque relevé (5Mins : absent chez nous, 1er chez Nathan) → plus de phrase « non adressées »
     st = STRICT.get(d) or {}
@@ -274,6 +278,9 @@ def leads():
                 e = (r["email"] or "").lower()
                 if not e or e in seen or e in bl or r["domain"].lower() in bdom: continue
                 n = ((NICHE.get(r["domain"].lower()) or {}).get("niche") or "").strip().lower()
+                au = NAUDIT.get(r["domain"].lower()) or {}  # 74_niche_audit.py : niche relue contre le site
+                if au.get("site") and au.get("target_ok") is False and code != "204-G": continue  # pas le type d'entreprise visé
+                if au.get("site") and au.get("niche_ok") is False and (au.get("niche") or "").strip(): n = au["niche"].strip().lower()
                 if FUND_RX.search(n) or FUND_RX.search(r["company"] or ""): continue  # fonds / VC : pas une cible (09/11)
                 if seq in ("S3aFR", "S3bFR"):  # agences : celles qui vendent du SEO sont des concurrentes (exclues) ; digitales → 206, classiques → 207
                     a = AGENCY.get(r["domain"].lower())
@@ -286,14 +293,15 @@ def leads():
                     if (seq == "S3aFR") != (kind_ag == "mkt"): continue
                 seen.add(e)  # marqué « utilisé » seulement une fois tous les filtres passés
                 cv = dict(niche=nice(n) if n else NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
-                cname = re.sub(r"[ ,]+(ltd\.?|limited|gmbh|sas|sarl|sa|ag|llc|inc\.?|plc|bv|s\.a\.s\.?)$", "", re.split(r" \| | - | – |, ", r["company"] or "")[0].replace("™", "").replace("®", "").strip(), flags=re.I)
+                cname = re.sub(r"[\U0001F000-\U0001FFFF\u2600-\u27BF]", "", r["company"] or "").strip() or r["company"]
+                cname = re.sub(r"[ ,]+(ltd\.?|limited|gmbh|sas|sarl|sa|ag|llc|inc\.?|plc|bv|s\.a\.s\.?)$", "", re.split(r" \| | - | – |, ", cname)[0].replace("™", "").replace("®", "").strip(), flags=re.I)
                 if seq in ("S1EN", "S2EN", "S1FR", "S2FR", "S3bFR", "S4FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
                 if seq == "S3bFR":  # 09/11 Nathan : « j'ai vu que vous ne remontez pas sur 2 questions lancées sur ChatGPT » (seulement si vrai)
                     a = AGENCY.get(r["domain"].lower()) or {}
                     q = (a.get("prompts") or [""])[0]
                     q = f"{a.get('type') or 'agence'} à {r['city']}" if r["city"] else (a.get("type") or "agence")
                     l1 = (f"J'ai lancé 2 questions sur ChatGPT autour de « {q} », et j'ai vu {que(cname)}{cname} ne remonte pas dans les réponses."
-                          if a.get("tested") and not a.get("cited") and (REAL.get(r["domain"].lower()) or {}).get("real_tested_s3b") and not (REAL.get(r["domain"].lower()) or {}).get("real_cited_s3b") else f"J'ai lancé quelques questions sur ChatGPT autour de « {q} ».")
+                          if a.get("tested") and not a.get("cited") and len((ABS.get(r["domain"].lower()) or {}).get("s3b_runs") or []) >= 2 and not any(ABS[r["domain"].lower()]["s3b_runs"]) else f"J'ai lancé quelques questions sur ChatGPT autour de « {q} ».")
                     cv.update(l1=l1, l2="Je peux vous montrer 3 quick wins pour entrer dans ces réponses, la méthode qui a apporté à Cloudtech +23 % de visibilité dans les réponses des IA.",
                               s3s=f"{a.get('type') or 'agences'} à {r['city']} sur chatgpt" if r["city"] else f"{a.get('type') or 'agences'} sur chatgpt")
                 if seq == "S4FR":  # 09/11 Nathan : « l'équipe marketing s'agrandit », relié au SEO / IA, pas « vous recrutez »
