@@ -116,6 +116,34 @@ SEQ["S3bFR"][2] = SEQ["S1FR"][2]
 SEQ["S4FR"][2] = SEQ["S1FR"][2]
 SEQ["S2FR"][0] = ("{{niche}} sur chatgpt", SEQ["S2FR"][0][1])
 REAL = json.load(open("../data/datasets/verify_real.json")) if os.path.exists("../data/datasets/verify_real.json") else {}
+# 10/11 Igor : mail « 1-2-3 humour » dans le même fil, 5 jours ouvrés après le mail 2. Nathan : en mail 4 (le mail 3 cartographie reste
+# en mail 3 pour tester autre chose avant), objet vide = réponse dans le fil du mail 3.
+H123 = {
+ "S1EN": ["Hi {{firstName}}, I haven't heard back, which usually means one of three things:",
+          "1. {{companyName}} is already the first name ChatGPT gives and you're turning demos away;\n2. it's not a priority and you'd like me to stop;\n3. you asked ChatGPT to reply to me, and it recommended someone else.",
+          "Just reply with the number :)", "Nathan"],
+ "S2EN": ["Hi {{firstName}}, I haven't heard back, which usually means one of three things:",
+          "1. your partners' calendars are full until 2028;\n2. it's not a priority and you'd like me to stop;\n3. you asked ChatGPT to reply to me, and it recommended a Big Four firm.",
+          "Just reply with the number :)", "Nathan"],
+ "S1FR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
+          "1. {{companyName}} est déjà le premier nom cité par ChatGPT et vous refusez des démos ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous avez demandé à ChatGPT de me répondre, et il a recommandé quelqu'un d'autre.",
+          "Répondez juste le numéro :)", "Nathan"],
+ "S2FR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
+          "1. l'agenda des associés est plein jusqu'en 2028 ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous avez demandé à ChatGPT de me répondre, et il a recommandé un grand cabinet.",
+          "Répondez juste le numéro :)", "Nathan"],
+ "S3aFR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
+           "1. aucun client ne vous a encore demandé « et ChatGPT ? » ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous êtes en plein rush de rendus et vous lirez ce mail ce soir.",
+           "Répondez juste le numéro :)", "Nathan"],
+ "S3bFR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
+           "1. vous êtes complets jusqu'en 2028 ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous êtes sur un événement et vous lirez ce mail ce soir.",
+           "Répondez juste le numéro :)", "Nathan"],
+ "S4FR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
+          "1. la nouvelle équipe a déjà tout réglé côté SEO et IA ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous êtes entre deux entretiens d'embauche et vous lirez ce mail ce soir.",
+          "Répondez juste le numéro :)", "Nathan"],
+}
+for k, body in H123.items():
+    SEQ[k] = SEQ[k][:3] + [("", body)]
+DELAYS = (3, 7, 5, 0)  # jours avant l'étape suivante ; 7 jours calendaires = 5 jours ouvrés entre le mail 2 et le mail 3 (Igor)
 CHECKS = json.load(open("../data/datasets/lead_checks.json")) if os.path.exists("../data/datasets/lead_checks.json") else {}
 AGENCY = json.load(open("../data/datasets/agency_checks.json")) if os.path.exists("../data/datasets/agency_checks.json") else {}
 SEQ["S3bFR"][0] = ("{{s3s}}", ["Bonjour {{firstName}},", "{{l1}}", "{{l2}}", "Seriez-vous contre une courte vidéo pour vous montrer comment être recommandé par les IA ?", SIG_FR,
@@ -209,7 +237,7 @@ def html(lines):
 
 def sequence(code):
     s = SEQ[code]
-    return [{"steps": [{"type": "email", "delay": d, "variants": [{"subject": subj, "body": html(body)}]} for (subj, body), d in zip(s, (3, 5, 0))]}]
+    return [{"steps": [{"type": "email", "delay": d, "variants": [{"subject": subj, "body": html(body)}]} for (subj, body), d in zip(s, DELAYS)]}]
 
 
 def blocked():

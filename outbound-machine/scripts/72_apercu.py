@@ -6,7 +6,7 @@ import datetime, html, re, sys
 src = open("66_instantly_v5.py").read().split('if __name__ == "__main__":')[0]
 g = {"__name__": "x"}; exec(compile(src, "66_instantly_v5.py", "exec"), g)
 PLAN, SEQ, leads = g["PLAN"], g["SEQ"], g["leads"]
-WHEN = ["Mail 1 · J0 · nouveau fil", "Mail 2 · J+3 · même fil (relance)", "Mail 3 · J+8 · nouveau fil (relance)"]
+WHEN = ["Mail 1 · J0 · nouveau fil", "Mail 2 · J+3 · même fil (relance)", "Mail 3 · J+10 (5 jours ouvrés après le mail 2) · nouveau fil", "Mail 4 · J+15 · même fil que le mail 3 · 1-2-3 humour (Igor)"]
 
 
 def render(t, lead):
@@ -68,7 +68,7 @@ table{{border-collapse:collapse;width:100%;font-size:13px;display:block;overflow
 a{{color:var(--acc)}}</style></head><body>
 <h1>Aperçu des mails · vrais leads, rendu final</h1>
 <p class="n">{datetime.date.today():%d/%m/%Y}. Un lead réel par campagne, tel qu'Instantly l'enverra. Rien n'est envoyé.</p>
-<p><b>Où est quoi :</b> mail 1 = ChatGPT + 3 quick wins (premier message). Mail 2 = « envoyez-moi une page » (relance, même fil).
+<p><b>Où est quoi :</b> mail 1 = ChatGPT + 3 quick wins (premier message). Mail 2 = « envoyez-moi une page » (relance, même fil). Mail 4 = « 1-2-3 humour » proposé par Igor.
 Mail 3 = relance dans un nouveau fil : <b>B « concurrent »</b> si le concurrent est validé strictement (même métier, même type de client, page d'accueil des deux sites lue),
 sinon <b>A « cartographie »</b>. S3a (agences marque blanche) garde son propre mail 3.</p>
 <table><tr><th>Campagne</th><th>Nom</th><th>Leads</th><th>Mail 3 B</th></tr>{summary}</table>
@@ -81,7 +81,7 @@ if "--igor" in sys.argv:  # version courte pour Igor : 1 exemple par campagne, s
     page = page[:page.index("<h2>Mail 3 B")] + "</body></html>" if "<h2>Mail 3 B" in page else page
     page = page.replace("Aperçu des mails · vrais leads, rendu final", "Décupler · wave 1 preview (real leads, final render)")
     page = re.sub(r"<p><b>Où est quoi :</b>[\s\S]*?</p>", "<p><b>Sequence:</b> mail 1 = ChatGPT check + 3 quick wins (the 'didn't come up' line is only written when verified on real ChatGPT for that lead). "
-                  "Mail 2 (day 3, same thread) = 'send me one page, I'll optimise it for free'. Mail 3 (day 8, new thread) = map of organic opportunities + 3-min video. "
+                  "Mail 2 (day 3, same thread) = 'send me one page, I'll optimise it for free'. Mail 3 (5 business days after mail 2, new thread) = map of organic opportunities + 3-min video. Mail 4 (same thread) = your 1-2-3 humor follow-up. "
                   "S3a (white-label agencies) keeps its own mail 3. One real lead per campaign below, exactly as Instantly will send it.</p>", page)
     open("../copy/49_apercu_igor.html", "w").write(page)
 else:
