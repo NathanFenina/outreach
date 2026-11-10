@@ -118,29 +118,13 @@ SEQ["S2FR"][0] = ("{{niche}} sur chatgpt", SEQ["S2FR"][0][1])
 REAL = json.load(open("../data/datasets/verify_real.json")) if os.path.exists("../data/datasets/verify_real.json") else {}
 # 10/11 Igor : mail « 1-2-3 humour » dans le même fil, 5 jours ouvrés après le mail 2. Nathan : en mail 4 (le mail 3 cartographie reste
 # en mail 3 pour tester autre chose avant), objet vide = réponse dans le fil du mail 3.
-H123 = {
- "S1EN": ["Hi {{firstName}}, I haven't heard back, which usually means one of three things:",
-          "1. {{companyName}} is already the first name ChatGPT gives and you're turning demos away;\n2. it's not a priority and you'd like me to stop;\n3. you asked ChatGPT to reply to me, and it recommended someone else.",
-          "Just reply with the number :)", "Nathan"],
- "S2EN": ["Hi {{firstName}}, I haven't heard back, which usually means one of three things:",
-          "1. your partners' calendars are full until 2028;\n2. it's not a priority and you'd like me to stop;\n3. you asked ChatGPT to reply to me, and it recommended a Big Four firm.",
-          "Just reply with the number :)", "Nathan"],
- "S1FR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
-          "1. {{companyName}} est déjà le premier nom cité par ChatGPT et vous refusez des démos ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous avez demandé à ChatGPT de me répondre, et il a recommandé quelqu'un d'autre.",
-          "Répondez juste le numéro :)", "Nathan"],
- "S2FR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
-          "1. l'agenda des associés est plein jusqu'en 2028 ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous avez demandé à ChatGPT de me répondre, et il a recommandé un grand cabinet.",
-          "Répondez juste le numéro :)", "Nathan"],
- "S3aFR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
-           "1. aucun client ne vous a encore demandé « et ChatGPT ? » ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous êtes en plein rush de rendus et vous lirez ce mail ce soir.",
-           "Répondez juste le numéro :)", "Nathan"],
- "S3bFR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
-           "1. vous êtes complets jusqu'en 2028 ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous êtes sur un événement et vous lirez ce mail ce soir.",
-           "Répondez juste le numéro :)", "Nathan"],
- "S4FR": ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
-          "1. la nouvelle équipe a déjà tout réglé côté SEO et IA ;\n2. ce n'est pas le sujet et vous voulez que j'arrête ;\n3. vous êtes entre deux entretiens d'embauche et vous lirez ce mail ce soir.",
-          "Répondez juste le numéro :)", "Nathan"],
-}
+H123_FR = ["Bonjour {{firstName}}, sans nouvelles de votre part, j'imagine une de ces 3 choses :",
+           "1. {{companyName}} est déjà premier sur ChatGPT et vous ne cherchez plus de nouveaux clients ;\n2. ce n'est pas prioritaire, ou pas de budget en ce moment ;\n3. Claude a pris la main sur votre PC et vous empêche de répondre à mon message.",
+           "Répondez juste le numéro :)", "Nathan"]
+H123_EN = ["Hi {{firstName}}, I haven't heard back, so I'm guessing one of these 3 things:",
+           "1. {{companyName}} is already first on ChatGPT and you're not looking for new clients;\n2. it's not a priority, or there's no budget right now;\n3. Claude has taken over your computer and won't let you reply to my message.",
+           "Just reply with the number :)", "Nathan"]
+H123 = {k: (H123_EN if k.endswith("EN") else H123_FR) for k in ("S1EN", "S2EN", "S1FR", "S2FR", "S3aFR", "S3bFR", "S4FR")}  # 10/11 : formulation de Nathan
 for k, body in H123.items():
     SEQ[k] = SEQ[k][:3] + [("", body)]
 DELAYS = (3, 7, 5, 0)  # jours avant l'étape suivante ; 7 jours calendaires = 5 jours ouvrés entre le mail 2 et le mail 3 (Igor)
@@ -151,8 +135,8 @@ SEQ["S3bFR"][0] = ("{{s3s}}", ["Bonjour {{firstName}},", "{{l1}}", "{{l2}}", "Se
 
 
 ACRO = {"ai": "AI", "ia": "IA", "seo": "SEO", "geo": "GEO", "crm": "CRM", "erp": "ERP", "b2b": "B2B", "b2c": "B2C", "saas": "SaaS", "it": "IT",
-        "hr": "HR", "rh": "RH", "grc": "GRC", "voip": "VoIP", "d2c": "D2C", "pr": "PR", "ux": "UX", "ui": "UI", "api": "API", "smes": "SMEs",
-        "pme": "PME", "tpe": "TPE", "esg": "ESG", "rse": "RSE", "m&a": "M&A", "cfo": "CFO", "daf": "DAF", "ppc": "PPC", "sea": "SEA", "iot": "IoT"}
+        "hr": "HR", "rh": "RH", "grc": "GRC", "voip": "VoIP", "d2c": "D2C", "pr": "PR", "ux": "UX", "ui": "UI", "api": "API", "sap": "SAP", "tms": "TMS", "aml": "AML", "pme": "PME", "tpe": "TPE", "sap": "SAP", "tms": "TMS", "aml": "AML", "eti": "ETI", "eti": "ETI", "rse": "RSE", "smes": "SMEs",
+        "pme": "PME", "tpe": "TPE", "sap": "SAP", "tms": "TMS", "aml": "AML", "eti": "ETI", "esg": "ESG", "rse": "RSE", "m&a": "M&A", "cfo": "CFO", "daf": "DAF", "ppc": "PPC", "sea": "SEA", "iot": "IoT"}
 
 
 def nice(n):
@@ -193,7 +177,7 @@ def personal(seq, company, niche, d):
             and not GIANTS.search(c.get("competitor_domain") or "") else None)
     in_top = c.get("serp_pos")
     if seq in ("S1EN", "S2EN"):
-        what = f"the best {niche}" if seq == "S1EN" else f"the best {niche} firms"
+        what = f"the best {niche}" if seq == "S1EN" or re.search(r"(consultancy|consulting|services|advisory|firms?|agency|agencies|partners)$", niche, re.I) else f"the best {niche} firms"
         l1 = (f"I was looking at what ChatGPT recommends for {what}, and {company} didn't come up in the answers I tested." if absent
               else f"I was looking at what ChatGPT recommends for {what}.")
         l2 = (f"I found 3 quick wins that would help {company} get recommended more often in AI answers, the same kind of fixes that brought Cloudtech +23% visibility."
@@ -210,9 +194,9 @@ def personal(seq, company, niche, d):
                   "I can put them in a map: keywords with buying intent, AI prompts and the real competitors capturing them, so search turns into sales opportunities.",
                   "Can I record a 3-minute video showing how to get more of those opportunities?")
     else:
-        what = f"le meilleur {niche}" if seq != "S2FR" else f"les meilleurs cabinets {de(niche)}{niche}"
-        l1 = (f"Je regardais ce qui sort quand on demande à ChatGPT {what}, et j'ai remarqué {que(company)}{company} ne sort pas sur les questions que j'ai testées." if absent
-              else f"Je regardais ce qui sort quand on demande à ChatGPT {what}.")
+        what = f"qui choisir en « {niche} »"  # 10/11 : « le meilleur solution / gestion… » cassait l'accord ; « qui choisir en « … » » marche pour toutes les niches
+        l1 = (f"Je regardais ce que recommande ChatGPT quand on lui demande {what}, et j'ai remarqué {que(company)}{company} ne sort pas sur les questions que j'ai testées." if absent
+              else f"Je regardais ce que recommande ChatGPT quand on lui demande {what}.")
         l2 = (f"J'ai trouvé 3 quick wins pour {que(company)}{company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité."
               if wins else f"Je peux vous montrer 3 quick wins pour {que(company)}{company} soit plus recommandé dans les réponses des IA, le même type d'actions qui a apporté à Cloudtech +23 % de visibilité.")
         if comp:
@@ -302,7 +286,7 @@ def leads():
                     if (seq == "S3aFR") != (kind_ag == "mkt"): continue
                 seen.add(e)  # marqué « utilisé » seulement une fois tous les filtres passés
                 cv = dict(niche=nice(n) if n else NICHE_FALLBACK[seq], city=r["city"] or ("votre ville" if seq.endswith("FR") else "your city"), ps3=ps3, campaign=code)
-                cname = re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").replace("®", "").strip()
+                cname = re.sub(r"[ ,]+(ltd\.?|limited|gmbh|sas|sarl|sa|ag|llc|inc\.?|plc|bv|s\.a\.s\.?)$", "", re.split(r" \| | - | – |, ", r["company"] or "")[0].replace("™", "").replace("®", "").strip(), flags=re.I)
                 if seq in ("S1EN", "S2EN", "S1FR", "S2FR", "S3bFR", "S4FR"): cv.update(personal(seq, cname, cv["niche"], r["domain"].lower()))
                 if seq == "S3bFR":  # 09/11 Nathan : « j'ai vu que vous ne remontez pas sur 2 questions lancées sur ChatGPT » (seulement si vrai)
                     a = AGENCY.get(r["domain"].lower()) or {}
@@ -320,7 +304,7 @@ def leads():
                         cv.update(s4o="votre équipe marketing", s4a=f"J'ai vu que l'équipe marketing {de_nom(cname)} s'agrandit. Quand une équipe grandit, on attend vite des résultats, et côté SEO et IA il y a souvent quelques actions simples à mettre en place pour générer plus de demandes.",
                                   s4b=f"Je peux vous montrer les 3 actions qui peuvent faire remonter {cname} dans le top 3 sur Google et dans les réponses de ChatGPT.")
                 ls.append(dict(email=r["email"], first_name=r["first"], last_name=r["last"],
-                               company_name=re.split(r" \| | - ", r["company"] or "")[0].replace("™", "").replace("®", "").strip(), website=r["domain"], custom_variables=cv))
+                               company_name=cname, website=r["domain"], custom_variables=cv))
         out[code] = ls
     return out
 
