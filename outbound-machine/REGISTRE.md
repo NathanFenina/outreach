@@ -418,3 +418,4 @@ Points ouverts relevés en remplissant le tableau : séquence « marque blanche 
 - Dépense DataForSEO : solde réel mesuré avant / pendant chaque lot, plafond annoncé (--budget), 8 appels en parallèle max.
 - **10/11 soir : GO de Nathan** (« ok pour tout ») sur la page 48_apercu_mails.html → lancement vague 1 le 11/11 à 7h30 (201-207, Zapmail 21 boîtes × 10/j, plafonds 60/55/25/25/15/15/15).
 - **11/11 07:30 : vague 1 LANCÉE** · 201-207 actives, 21 boîtes Zapmail (10/j/boîte), plafonds 201=60, 203=55, 202=25, 205=25, 204=15, 206=15, 207=15. Liste noire relancée (4 981, aucun changement). AirMail non rattaché. Pas de réponse d'Igor dans Gmail.
+- **11/11 : go d'Igor sur le mail 4 « 1-2-3 humour »** (déjà en place). Go Nathan pour les réponses types (copy/50_reponses_types.md).
