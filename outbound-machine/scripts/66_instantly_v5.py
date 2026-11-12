@@ -211,7 +211,7 @@ def personal(seq, company, niche, d):
         else:
             m3 = (f"les opportunités organiques {de_nom(company)}",
                   (f"Je regardais votre site et j'ai vu que plusieurs opportunités organiques ne sont pas encore adressées par {company}." if out_g
-                   else f"Je regardais votre site et les opportunités organiques autour de {niche}."),
+                   else f"Je regardais votre site et les opportunités organiques autour de « {niche} »."),
                   "Je peux vous les sortir dans une cartographie : mots-clés à intention d'achat, questions posées aux IA, vrais concurrents qui les captent, pour transformer la recherche en opportunités commerciales.",
                   "Je vous enregistre une vidéo de 3 minutes pour vous montrer comment capter plus d'opportunités organiques ?")
     return dict(l1=l1, l2=l2, m3s=m3[0], m3a=m3[1], m3b=m3[2], m3c=m3[3], m3_variant="B" if comp else "A",

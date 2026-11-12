@@ -27,6 +27,8 @@ lim = (datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=90)).isofor
 hist = db.select("contact_history", "email,last_contacted_at,replied,unsubscribed,bounced")
 keep_mail = {h["email"] for h in hist if h["replied"] or h["unsubscribed"] or h["bounced"] or (h["last_contacted_at"] or "") >= lim}
 keep_dom = {r["domain"].lower() for r in db.select("do_not_contact", "domain,reason") if r["reason"] in ("client", "concurrent", "agressif") and r["domain"]}
+# 12/11 : réponses « non merci » de la vague 1 (et autres refus notés à la main) → email bloqué définitivement
+keep_mail |= {r["email"].lower() for r in db.select("do_not_contact", "email,reason") if r.get("email") and r["reason"] in ("desinscrit", "repondu", "agressif", "client")}
 want = keep_mail | keep_dom
 entries, after = [], None
 while True:

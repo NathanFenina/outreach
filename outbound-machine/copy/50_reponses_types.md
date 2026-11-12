@@ -6,12 +6,12 @@ Réponse au mail 4 « 1-2-3 » : traiter le chiffre (1 = déjà premiers, 2 = pa
 ## 1. Intéressé (« oui », « envoyez la vidéo », « ça m'intéresse »)
 **FR**
 > Merci {{firstName}} ! Je vous enregistre la vidéo (3 min) sur {{companyName}} : ce que ChatGPT répond aujourd'hui sur {{niche}}, et les 3 quick wins pour y entrer.
-> Je vous l'envoie d'ici demain. Si vous préférez en parler directement, voici mon agenda : [Calendly].
+> Je vous l'envoie d'ici demain. Si vous préférez en parler directement, voici mon agenda : https://decupler.com/rendez-vous/.
 > Nathan
 
 **EN**
 > Thanks {{firstName}}! I'll record the 3-minute video for {{companyName}}: what ChatGPT says today about {{niche}}, and the 3 quick wins to get in there.
-> You'll have it by tomorrow. If you'd rather talk it through, here's my calendar: [Calendly].
+> You'll have it by tomorrow. If you'd rather talk it through, here's my calendar: https://decupler.com/rendez-vous/.
 > Nathan
 
 ## 2. Mail 2 accepté (« voici la page »)
